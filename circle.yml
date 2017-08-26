@@ -9,7 +9,6 @@ machine:
 
 dependencies:
   override:
-    - gem update
     - bundle install
 
 deployment:
