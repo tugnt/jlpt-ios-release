@@ -1,0 +1,23 @@
+machine:
+  xcode:
+    version: "8.3.3"
+  environment:
+    XCODE_WORKSPACE: ./jlpt-ios-release.xcworkspace
+    GYM_CODE_SIGNING_IDENTITY: "iPhone Distribution: ThaoDan Inc"
+  timezone:
+    Asia/Tokyo
+
+dependencies:
+  override:
+    - gem update
+    - bundle install
+
+deployment:
+  beta:
+    branch: master
+    commands:
+      - bundle exec fastlane fabric
+  production:
+    branch: release
+    commands:
+      - bundle exec fastlane release_appstore
