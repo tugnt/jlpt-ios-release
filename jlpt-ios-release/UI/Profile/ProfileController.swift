@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ProfileController.swift
 //  jlpt-ios-release
 //
 //  Created by Nguyen Trong Tung on 2017/09/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ProfileController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

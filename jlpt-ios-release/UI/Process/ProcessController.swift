@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ProcessController.swift
 //  jlpt-ios-release
 //
 //  Created by Nguyen Trong Tung on 2017/09/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ProcessController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
