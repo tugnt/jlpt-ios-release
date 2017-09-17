@@ -19,4 +19,5 @@ target 'jlpt-ios-release' do
   pod 'Alamofire', '~> 4.4'
   pod 'Fabric'
   pod 'Crashlytics'
+  pod 'SwiftyJSON'
 end
