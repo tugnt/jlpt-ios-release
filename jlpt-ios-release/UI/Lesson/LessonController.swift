@@ -20,41 +20,46 @@ struct Section {
 class LessonController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     let categoryId = String(describing: CategoryViewCell.self)
     lazy var sections: [Section] = {
-        let categoriesTip = [LessonCategory(itemLessons: [ItemLesson(title: "Title 1", imageName: "imagename")]),
-                             LessonCategory(itemLessons: [ItemLesson(title: "Title 1", imageName: "imagename"),
-                                                          ItemLesson(title: "Title 1", imageName: "imagename")]),
-                             LessonCategory(itemLessons: [ItemLesson(title: "Title 1", imageName: "imagename"),
-                                                          ItemLesson(title: "Title 1", imageName: "imagename")])]
+        let categoriesTip = [LessonCategory(itemLessons: [ItemLesson(title: "Title 1", imageName: "imagename", typeLesson: .tip, typeJLPT: .reading, level: nil)]),
+                             LessonCategory(itemLessons: [ItemLesson(title: "Title 1", imageName: "imagename", typeLesson: .tip, typeJLPT: .reading, level: nil),
+                                                          ItemLesson(title: "Title 1", imageName: "imagename", typeLesson: .tip, typeJLPT: .reading, level: nil)]),
+                             LessonCategory(itemLessons: [ItemLesson(title: "Title 1", imageName: "imagename", typeLesson: .tip, typeJLPT: .reading, level: nil),
+                                                          ItemLesson(title: "Title 1", imageName: "imagename", typeLesson: .tip, typeJLPT: .reading, level: nil)])]
         let sectionTip = Section(header: "Tips", categories: categoriesTip)
         
-        let jlptN1Tip = [LessonCategory(itemLessons: [ItemLesson(title: "Title 1", imageName: "imagename"),
-                                                      ItemLesson(title: "Title 1", imageName: "imagename")]),
-                         LessonCategory(itemLessons: [ItemLesson(title: "Title 1", imageName: "imagename"),
-                                                      ItemLesson(title: "Title 1", imageName: "imagename")])]
+        let jlptN1Tip = [LessonCategory(itemLessons: [ItemLesson(title: "Title 1", imageName: "imagename", typeLesson: .tip, typeJLPT: .reading, level: nil)]),
+                         LessonCategory(itemLessons: [ItemLesson(title: "Title 1", imageName: "imagename", typeLesson: .tip, typeJLPT: .reading, level: nil),
+                                                      ItemLesson(title: "Title 1", imageName: "imagename", typeLesson: .tip, typeJLPT: .reading, level: nil)]),
+                         LessonCategory(itemLessons: [ItemLesson(title: "Title 1", imageName: "imagename", typeLesson: .tip, typeJLPT: .reading, level: nil),
+                                                      ItemLesson(title: "Title 1", imageName: "imagename", typeLesson: .tip, typeJLPT: .reading, level: nil)])]
         let sectionJlptN1 = Section(header: "JlptN1", categories: jlptN1Tip)
         
-        let jlptN2Tip = [LessonCategory(itemLessons: [ItemLesson(title: "Title 1", imageName: "imagename"),
-                                                      ItemLesson(title: "Title 1", imageName: "imagename")]),
-                         LessonCategory(itemLessons: [ItemLesson(title: "Title 1", imageName: "imagename"),
-                                                      ItemLesson(title: "Title 1", imageName: "imagename")])]
+        let jlptN2Tip = [LessonCategory(itemLessons: [ItemLesson(title: "Title 1", imageName: "imagename", typeLesson: .tip, typeJLPT: .reading, level: nil)]),
+                         LessonCategory(itemLessons: [ItemLesson(title: "Title 1", imageName: "imagename", typeLesson: .tip, typeJLPT: .reading, level: nil),
+                                                      ItemLesson(title: "Title 1", imageName: "imagename", typeLesson: .tip, typeJLPT: .reading, level: nil)]),
+                         LessonCategory(itemLessons: [ItemLesson(title: "Title 1", imageName: "imagename", typeLesson: .tip, typeJLPT: .reading, level: nil),
+                                                      ItemLesson(title: "Title 1", imageName: "imagename", typeLesson: .tip, typeJLPT: .reading, level: nil)])]
         let sectionJlptN2 = Section(header: "JlptN2", categories: jlptN2Tip)
         
-        let jlptN3Tip = [LessonCategory(itemLessons: [ItemLesson(title: "Title 1", imageName: "imagename"),
-                                                      ItemLesson(title: "Title 1", imageName: "imagename")]),
-                         LessonCategory(itemLessons: [ItemLesson(title: "Title 1", imageName: "imagename"),
-                                                      ItemLesson(title: "Title 1", imageName: "imagename")])]
+        let jlptN3Tip = [LessonCategory(itemLessons: [ItemLesson(title: "Title 1", imageName: "imagename", typeLesson: .tip, typeJLPT: .reading, level: nil)]),
+                         LessonCategory(itemLessons: [ItemLesson(title: "Title 1", imageName: "imagename", typeLesson: .tip, typeJLPT: .reading, level: nil),
+                                                      ItemLesson(title: "Title 1", imageName: "imagename", typeLesson: .tip, typeJLPT: .reading, level: nil)]),
+                         LessonCategory(itemLessons: [ItemLesson(title: "Title 1", imageName: "imagename", typeLesson: .tip, typeJLPT: .reading, level: nil),
+                                                      ItemLesson(title: "Title 1", imageName: "imagename", typeLesson: .tip, typeJLPT: .reading, level: nil)])]
         let sectionJlptN3 = Section(header: "JlptN3", categories: jlptN3Tip)
         
-        let jlptN4Tip = [LessonCategory(itemLessons: [ItemLesson(title: "Title 1", imageName: "imagename"),
-                                                      ItemLesson(title: "Title 1", imageName: "imagename")]),
-                         LessonCategory(itemLessons: [ItemLesson(title: "Title 1", imageName: "imagename"),
-                                                      ItemLesson(title: "Title 1", imageName: "imagename")])]
+        let jlptN4Tip = [LessonCategory(itemLessons: [ItemLesson(title: "Title 1", imageName: "imagename", typeLesson: .tip, typeJLPT: .reading, level: nil)]),
+                         LessonCategory(itemLessons: [ItemLesson(title: "Title 1", imageName: "imagename", typeLesson: .tip, typeJLPT: .reading, level: nil),
+                                                      ItemLesson(title: "Title 1", imageName: "imagename", typeLesson: .tip, typeJLPT: .reading, level: nil)]),
+                         LessonCategory(itemLessons: [ItemLesson(title: "Title 1", imageName: "imagename", typeLesson: .tip, typeJLPT: .reading, level: nil),
+                                                      ItemLesson(title: "Title 1", imageName: "imagename", typeLesson: .tip, typeJLPT: .reading, level: nil)])]
         let sectionJlptN4 = Section(header: "JlptN4", categories: jlptN4Tip)
         
-        let jlptN5Tip = [LessonCategory(itemLessons: [ItemLesson(title: "Title 1", imageName: "imagename"),
-                                                      ItemLesson(title: "Title 1", imageName: "imagename")]),
-                         LessonCategory(itemLessons: [ItemLesson(title: "Title 1", imageName: "imagename"),
-                                                      ItemLesson(title: "Title 1", imageName: "imagename")])]
+        let jlptN5Tip = [LessonCategory(itemLessons: [ItemLesson(title: "Title 1", imageName: "imagename", typeLesson: .tip, typeJLPT: .reading, level: nil)]),
+                         LessonCategory(itemLessons: [ItemLesson(title: "Title 1", imageName: "imagename", typeLesson: .tip, typeJLPT: .reading, level: nil),
+                                                      ItemLesson(title: "Title 1", imageName: "imagename", typeLesson: .tip, typeJLPT: .reading, level: nil)]),
+                         LessonCategory(itemLessons: [ItemLesson(title: "Title 1", imageName: "imagename", typeLesson: .tip, typeJLPT: .reading, level: nil),
+                                                      ItemLesson(title: "Title 1", imageName: "imagename", typeLesson: .tip, typeJLPT: .reading, level: nil)])]
         let sectionJlptN5 = Section(header: "JlptN5", categories: jlptN5Tip)
         
         return [sectionTip, sectionJlptN1, sectionJlptN2, sectionJlptN3, sectionJlptN4, sectionJlptN5]
@@ -102,5 +107,5 @@ class LessonController: UICollectionViewController, UICollectionViewDelegateFlow
             assert(false, "Unexpected element kind")
         }
         
-    }    
+    }
 }
