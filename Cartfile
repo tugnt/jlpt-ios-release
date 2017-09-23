@@ -1,2 +1,4 @@
 github "Alamofire/Alamofire"
+github "airbnb/lottie-ios" "master"
+github "Ramotion/expanding-collection"
 
