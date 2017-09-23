@@ -33,18 +33,18 @@ enum TypeLesson: String {
 }
 
 enum TypeJLPT: String {
-    case reading = "reading"
-    case listening = "listening"
-    case grammar = "grammar"
-    case vocabulary = "vocabulary"
+    case reading = "Reading"
+    case listening = "Listening"
+    case grammar = "Grammar"
+    case vocabulary = "Vocabulary"
 }
 
 enum LevelJLPT: String {
-    case N1 = "N1"
-    case N2 = "N2"
-    case N3 = "N3"
-    case N4 = "N4"
-    case N5 = "N5"
+    case N1 = "1"
+    case N2 = "2"
+    case N3 = "3"
+    case N4 = "4"
+    case N5 = "5"
 }
 
 class LessonViewCell: BaseViewCell {
@@ -69,7 +69,7 @@ class LessonViewCell: BaseViewCell {
         showData()
     }
     
-    func lessonSelected() {
+    @objc func lessonSelected() {
         print("Selected")
     }
     

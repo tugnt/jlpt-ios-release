@@ -16,8 +16,7 @@ target 'jlpt-ios-release' do
     inherit! :search_paths
     # Pods for testing
   end
-  pod 'Alamofire', '~> 4.4'
   pod 'Fabric'
   pod 'Crashlytics'
-  pod 'SwiftyJSON'
+  pod 'Himotoki'
 end
