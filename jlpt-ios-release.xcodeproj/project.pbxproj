@@ -12,8 +12,9 @@
 		1A136C401F6D3EA500DF343E /* UIStoryboard+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A136C3F1F6D3EA500DF343E /* UIStoryboard+Identifier.swift */; };
 		1A2B25CF1F512DFB00DFFD3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B25CE1F512DFB00DFFD3A /* AppDelegate.swift */; };
 		1A2B25D91F512DFB00DFFD3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B25D71F512DFB00DFFD3A /* LaunchScreen.storyboard */; };
-		1A2B25E41F512DFB00DFFD3A /* jlpt_ios_releaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B25E31F512DFB00DFFD3A /* jlpt_ios_releaseTests.swift */; };
 		1A2B25EF1F512DFB00DFFD3A /* jlpt_ios_releaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B25EE1F512DFB00DFFD3A /* jlpt_ios_releaseUITests.swift */; };
+		1AB04DB61F7630F600E5AC27 /* Tips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB04DB51F7630F600E5AC27 /* Tips.swift */; };
+		1AB04DBB1F76384500E5AC27 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB04DBA1F76384500E5AC27 /* Unit.swift */; };
 		1AC50CEF1F6E5A69007D161C /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC50CEE1F6E5A69007D161C /* ApiClient.swift */; };
 		1AC50CF11F6E5DB0007D161C /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC50CF01F6E5DB0007D161C /* ApiError.swift */; };
 		1AC50CF31F6E5E1A007D161C /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC50CF21F6E5E1A007D161C /* RequestError.swift */; };
@@ -64,11 +65,12 @@
 		1A2B25D81F512DFB00DFFD3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A2B25DA1F512DFB00DFFD3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A2B25DF1F512DFB00DFFD3A /* jlpt-ios-releaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "jlpt-ios-releaseTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A2B25E31F512DFB00DFFD3A /* jlpt_ios_releaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jlpt_ios_releaseTests.swift; sourceTree = "<group>"; };
 		1A2B25E51F512DFB00DFFD3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A2B25EA1F512DFB00DFFD3A /* jlpt-ios-releaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "jlpt-ios-releaseUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2B25EE1F512DFB00DFFD3A /* jlpt_ios_releaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jlpt_ios_releaseUITests.swift; sourceTree = "<group>"; };
 		1A2B25F01F512DFB00DFFD3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AB04DB51F7630F600E5AC27 /* Tips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tips.swift; sourceTree = "<group>"; };
+		1AB04DBA1F76384500E5AC27 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		1AC50CEE1F6E5A69007D161C /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiClient.swift; path = "jlpt-ios-release/ApiService/ApiClient.swift"; sourceTree = SOURCE_ROOT; };
 		1AC50CF01F6E5DB0007D161C /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiError.swift; path = "jlpt-ios-release/Errors/ApiError.swift"; sourceTree = SOURCE_ROOT; };
 		1AC50CF21F6E5E1A007D161C /* RequestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestError.swift; path = "jlpt-ios-release/Errors/RequestError.swift"; sourceTree = SOURCE_ROOT; };
@@ -135,6 +137,8 @@
 			children = (
 				1AC50CFA1F6F8798007D161C /* Question.swift */,
 				DF4C22F11F74CA7E00B2CCC5 /* Result.swift */,
+				1AB04DB51F7630F600E5AC27 /* Tips.swift */,
+				1AB04DBA1F76384500E5AC27 /* Unit.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -209,7 +213,6 @@
 		1A2B25E21F512DFB00DFFD3A /* jlpt-ios-releaseTests */ = {
 			isa = PBXGroup;
 			children = (
-				1A2B25E31F512DFB00DFFD3A /* jlpt_ios_releaseTests.swift */,
 				1A2B25E51F512DFB00DFFD3A /* Info.plist */,
 				1AC50CFC1F6F9481007D161C /* ApiTets.swift */,
 			);
@@ -662,7 +665,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AD738681F6D3CC400A4A1B9 /* ProfileController.swift in Sources */,
+				1AB04DB61F7630F600E5AC27 /* Tips.swift in Sources */,
 				1AEA8B331F6D5234005A7FC0 /* CategoryHeaderView.swift in Sources */,
+				1AB04DBB1F76384500E5AC27 /* Unit.swift in Sources */,
 				DF4C22F21F74CA7E00B2CCC5 /* Result.swift in Sources */,
 				1A136C3E1F6D3E7D00DF343E /* UIView+Contraint.swift in Sources */,
 				1AC50CFB1F6F8798007D161C /* Question.swift in Sources */,
@@ -688,7 +693,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AC50CFD1F6F9481007D161C /* ApiTets.swift in Sources */,
-				1A2B25E41F512DFB00DFFD3A /* jlpt_ios_releaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
