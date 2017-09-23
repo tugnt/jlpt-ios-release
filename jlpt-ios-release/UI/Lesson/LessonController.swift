@@ -106,6 +106,5 @@ class LessonController: UICollectionViewController, UICollectionViewDelegateFlow
         default:
             assert(false, "Unexpected element kind")
         }
-        
     }
 }

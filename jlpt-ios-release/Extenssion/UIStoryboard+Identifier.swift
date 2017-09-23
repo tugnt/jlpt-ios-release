@@ -12,11 +12,15 @@ extension UIStoryboard {
     enum Storyboard: String{
         case progress
         case profile
+        case intro
+        case startApp
         
         var name: String {
             switch self {
-            case .progress: return "Process"
-            case .profile: return "Profile"
+            case .progress:     return "Process"
+            case .profile:      return "Profile"
+            case .intro:        return "Introduction"
+            case .startApp:      return "StartApp"
             }
         }
     }
