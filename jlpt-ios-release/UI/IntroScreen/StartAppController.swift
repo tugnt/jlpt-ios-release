@@ -42,11 +42,12 @@ class StartAppController: UIViewController {
         }
         
         let widthScreen = view.bounds.width
-        let withText: CGFloat = 80
+        let withText: CGFloat = 60
         let padding = Int((widthScreen - ( withText * 4 )) / 2 )
         for (index, aniView) in animations.enumerated() {
+            view.translatesAutoresizingMaskIntoConstraints = false
             view.addConstraintsWithFormat("H:|-\(index * Int(withText) + padding)-[v0(\(withText))]-|", views: aniView)
-            view.addConstraintsWithFormat("V:|-300-[v0(70)]", views: aniView)
+            view.addConstraintsWithFormat("V:|-300-[v0(60)]|", views: aniView)
             aniView.play()
         }
     }

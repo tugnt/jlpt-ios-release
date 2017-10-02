@@ -83,23 +83,15 @@ extension IntroductionController {
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        guard let curentIndex = arrayPage.index(of: viewController) else {
-            return nil
-        }
-        if (curentIndex == 0 ) || (curentIndex == NSNotFound) {
-            return nil
-        }
+        guard let curentIndex = arrayPage.index(of: viewController) else { return nil }
+        if (curentIndex == 0 ) || (curentIndex == NSNotFound) { return nil }
         let previousIndex = curentIndex - 1
         return arrayPage[previousIndex]
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        guard let curentIndex = arrayPage.index(of: viewController) else {
-            return nil
-        }
-        if (curentIndex == arrayPage.count - 1) || (curentIndex == NSNotFound) {
-            return nil
-        }
+        guard let curentIndex = arrayPage.index(of: viewController) else { return nil }
+        if (curentIndex == arrayPage.count - 1) || (curentIndex == NSNotFound) { return nil }
         let nextIndex = curentIndex + 1
         return arrayPage[nextIndex]
     }

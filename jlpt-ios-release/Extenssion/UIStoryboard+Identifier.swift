@@ -20,7 +20,7 @@ extension UIStoryboard {
             case .progress:     return "Process"
             case .profile:      return "Profile"
             case .intro:        return "Introduction"
-            case .startApp:      return "StartApp"
+            case .startApp:     return "StartApp"
             }
         }
     }
@@ -29,3 +29,4 @@ extension UIStoryboard {
         self.init(name: storyboard.name, bundle: bundle)
     }
 }
+

@@ -27,7 +27,11 @@ class CategoryHeaderView: UICollectionReusableView {
     
     func setUpHeader(){
         addSubview(label)
-        addConstraintsWithFormat("V:|[v0]|", views: label)
+        translatesAutoresizingMaskIntoConstraints = false
+        addConstraintsWithFormat("V:|-5-[v0]-5-|", views: label)
         label.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        
+        /// - Set up attribute label header
+        label.textColor = .white
     }
 }

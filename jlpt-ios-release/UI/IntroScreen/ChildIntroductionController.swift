@@ -33,8 +33,11 @@ class ChildIntroductionController: UIViewController {
     
     @objc func  startNow() {
         let vc = TabbarController()
-        let newRootController = UINavigationController(rootViewController: vc)
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.window?.rootViewController = newRootController
+        let _ = UINavigationController(rootViewController: vc)
+        guard let window = UIApplication.shared.keyWindow else {
+            assertionFailure("keyWindowがnil!!")
+            return
+        }
+        window.rootViewController = vc
     }
 }

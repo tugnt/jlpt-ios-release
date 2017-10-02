@@ -19,16 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Crashlytics.self])
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        
-        let rootController:StartAppController = UIStoryboard(storyboard: .startApp).instantiateViewController(withIdentifier: "StartAppController") as! StartAppController
-        //let navigationController = UINavigationController(rootViewController: rootController)
-        window?.rootViewController = rootController
-        
-        // - Setup color of UIPageViewController' dots
-        let pageControl = UIPageControl.appearance()
-        pageControl.pageIndicatorTintColor = .lightGray
-        pageControl.currentPageIndicatorTintColor = UtilsColor.lottie()
-        
+        let rootController: StartAppController = UIStoryboard(storyboard: .startApp).instantiateViewController(withIdentifier: "StartAppController") as! StartAppController
+        window?.rootViewController = TabbarController()
         return true
     }
     

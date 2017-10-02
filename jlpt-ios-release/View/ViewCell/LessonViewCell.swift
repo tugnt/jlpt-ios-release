@@ -47,6 +47,10 @@ enum LevelJLPT: String {
     case N5 = "5"
 }
 
+protocol LessonCellDelegate:class {
+    func cellDidSelected(_ cell: LessonViewCell)
+}
+
 class LessonViewCell: BaseViewCell {
     static var identifier: String {
         return String(describing: self)
@@ -54,28 +58,35 @@ class LessonViewCell: BaseViewCell {
     var title: UILabel  = UILabel()
     var imageView: UIImageView = UIImageView()
     var lesson: ItemLesson?
+    var cellSelected: ((LessonViewCell) -> ())?
     
+    var lessonItem: ItemLesson? {
+        didSet {
+            guard let item = lessonItem else { return }
+            title.text = item.title
+            let image = UIImage(named: item.imageName)
+            imageView.image = image
+        }
+    }
+    
+    /// - Setup view here
     override func setUpView() {
-        backgroundColor = .red
-        // Todo: setup view here
+        backgroundColor = .clear
         self.addSubview(title)
         self.addSubview(imageView)
         title.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         imageView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         addConstraintsWithFormat("V:|[v0]-10-[v1]|", views: title,imageView)
+        addConstraintsWithFormat("H:|[v0]|", views: imageView)
         self.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(lessonSelected))
         addGestureRecognizer(tap)
-        showData()
+        
+        /// - Set up attribute label
+        title.textColor = .white
     }
     
     @objc func lessonSelected() {
-        print("Selected")
-    }
-    
-    func showData () {
-        title.text = "Show"
-        let image = UIImage(named: "lesson")
-        imageView.image = image
+        cellSelected!(self)
     }
 }
