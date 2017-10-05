@@ -14,7 +14,7 @@ struct TipRequest: JLPTRequest {
     var endPoint: String {
         return "/tips/\(type.rawValue)"
     }
-    var method: HTTPMethod = .get
+    let method: HTTPMethod = .get
     let type: TypeJLPT
 }
 

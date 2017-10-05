@@ -55,6 +55,6 @@ class StartAppController: UIViewController {
     @objc func startApp() {
         let sb = UIStoryboard(storyboard: .intro)
         let vc: IntroductionController = sb.instantiateViewController(withIdentifier: String(describing: IntroductionController.self)) as! IntroductionController
-        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

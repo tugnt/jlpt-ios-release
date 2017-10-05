@@ -36,7 +36,6 @@ class LessonController: UICollectionViewController, UICollectionViewDelegateFlow
         super.viewDidLoad()
         collectionView?.backgroundColor = .white
         navigationItem.title = "Bài học"
-        //navigationController?.navigationBar.tintColor = .blue
         collectionView?.alwaysBounceVertical = true
         collectionView?.register(CategoryViewCell.self, forCellWithReuseIdentifier: categoryId)
         collectionView?.register(CategoryHeaderView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: CategoryHeaderView.identifier)
@@ -54,12 +53,14 @@ class LessonController: UICollectionViewController, UICollectionViewDelegateFlow
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: categoryId, for: indexPath) as? CategoryViewCell
-        cell?.itemLesson = sections[indexPath.section].categories[indexPath.row].itemLessons
-        cell?.cellLessonSelected = { (cell) in
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: categoryId, for: indexPath) as? CategoryViewCell else {
+            return UICollectionViewCell()
+        }
+        cell.itemLesson = sections[indexPath.section].categories[indexPath.row].itemLessons
+        cell.cellLessonSelected = { (cell) in
             self.cellSecletec(cell)
         }
-        return cell!
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -93,11 +94,14 @@ class LessonController: UICollectionViewController, UICollectionViewDelegateFlow
             /// - Move to list question of JLPT
             let sb = UIStoryboard(name: "ListQuestionController", bundle: nil)
             let vc: ListQuestionController = sb.instantiateViewController(withIdentifier: String(describing: ListQuestionController.self)) as! ListQuestionController
+            
             self.navigationController?.pushViewController(vc, animated: true)
         } else {
             /// - Move to list hint screen
+            let type = cell.lessonItem?.typeJLPT
             let sb = UIStoryboard(name: "ListHintController", bundle: nil)
             let vc: ListHintController = sb.instantiateViewController(withIdentifier: String(describing: ListHintController.self)) as! ListHintController
+            vc.type = type
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

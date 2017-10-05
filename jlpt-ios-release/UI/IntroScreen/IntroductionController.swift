@@ -31,6 +31,7 @@ class IntroductionController: UIPageViewController, UIPageViewControllerDelegate
         configurePageControl()
         skipButton.addTarget(self, action: #selector(skipIntroduction), for: .touchUpInside)
         setUpSkipButton()
+        navigationController?.isNavigationBarHidden = true 
     }
     
     func setUpSkipButton() {

@@ -19,8 +19,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Crashlytics.self])
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        let rootController: StartAppController = UIStoryboard(storyboard: .startApp).instantiateViewController(withIdentifier: "StartAppController") as! StartAppController
-        window?.rootViewController = TabbarController()
+        
+        /// - Custom status bar
+        application.statusBarStyle = .lightContent
+        
+        /// - Set root controller
+        let sb = UIStoryboard(name: "Introduction", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: String(describing: IntroductionController.self)) as! IntroductionController
+        let navigationController = UINavigationController(rootViewController: vc)
+        window?.rootViewController = navigationController
+        
         return true
     }
     

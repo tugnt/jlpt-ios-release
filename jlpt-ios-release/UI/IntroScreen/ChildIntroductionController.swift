@@ -33,11 +33,6 @@ class ChildIntroductionController: UIViewController {
     
     @objc func  startNow() {
         let vc = TabbarController()
-        let _ = UINavigationController(rootViewController: vc)
-        guard let window = UIApplication.shared.keyWindow else {
-            assertionFailure("keyWindowがnil!!")
-            return
-        }
-        window.rootViewController = vc
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
