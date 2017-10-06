@@ -8,20 +8,25 @@
 
 import UIKit
 
-class TabbarController: UITabBarController {
-
+class TabbarController: UITabBarController, UITabBarControllerDelegate {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.delegate = self
+        
         let layout = UICollectionViewFlowLayout()
         let lessionController = LessonController(collectionViewLayout: layout)
+        let lessionTabItem = UITabBarItem(title: "Lesson", image: UIImage(named: "lesson"), tag: 0)
+        let navController = UINavigationController(rootViewController: lessionController)
+        navController.tabBarItem = lessionTabItem
         
-        let profileController: ProfileController = (UIStoryboard(storyboard: .profile, bundle: nil).instantiateViewController(withIdentifier: String(describing: ProfileController.self)) as? ProfileController)!
+        let profileController: ProfileController = UIStoryboard(storyboard: .profile, bundle: nil).instantiateViewController(withIdentifier: String(describing: ProfileController.self)) as! ProfileController
         
-        let progressController: ProcessController = (UIStoryboard(storyboard: .progress, bundle: nil).instantiateViewController(withIdentifier: String(describing: ProcessController.self)) as? ProcessController)!
+        let progressController: ProcessController = UIStoryboard(storyboard: .progress, bundle: nil).instantiateViewController(withIdentifier: String(describing: ProcessController.self)) as! ProcessController
         
-        viewControllers = [createNavController("Lession", "lesson", viewController: lessionController),
-                           createNavController("Progress", "process", viewController: progressController),
-                           createNavController("Profile", "profile", viewController: profileController)]
+        self.viewControllers = [createNavController("Lession", "lesson", viewController: lessionController),
+                                createNavController("Progress", "process", viewController: progressController),
+                                createNavController("Profile", "profile", viewController: profileController)]
     }
     
     fileprivate func createNavController(_ title: String,_ imageName: String, viewController: UIViewController) -> UINavigationController {
@@ -30,5 +35,4 @@ class TabbarController: UITabBarController {
         navController.tabBarItem.image = UIImage(named: imageName)
         return navController
     }
-
 }

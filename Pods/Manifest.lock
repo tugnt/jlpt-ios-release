@@ -1,8 +1,8 @@
 PODS:
-  - Crashlytics (3.8.5):
+  - Crashlytics (3.8.6):
     - Fabric (~> 1.6.3)
-  - Fabric (1.6.12)
-  - Himotoki (3.0.1)
+  - Fabric (1.6.13)
+  - Himotoki (3.1.0)
 
 DEPENDENCIES:
   - Crashlytics
@@ -10,10 +10,10 @@ DEPENDENCIES:
   - Himotoki
 
 SPEC CHECKSUMS:
-  Crashlytics: dfbae35ef22ca189240d230ad501feea4ee85d2d
-  Fabric: f050464eac45a2ce5a8e6e6a07e977c0df32fe28
-  Himotoki: 85fda41d4d0e14f7228317a3b474175cdfb8f515
+  Crashlytics: 95d05f4e4c19a771250c4bd9ce344d996de32bbf
+  Fabric: 2fb5676bc811af011a04513451f463dac6803206
+  Himotoki: b09643fa5456d49bda43d0fb4e30dfa79e37f72f
 
 PODFILE CHECKSUM: 537ba08fe4348a11eebd23a7acb0e8047df24e37
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.3.1

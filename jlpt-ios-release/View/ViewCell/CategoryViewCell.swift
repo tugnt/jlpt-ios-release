@@ -20,20 +20,20 @@ struct LessonCategory {
 class CategoryViewCell: BaseViewCell, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     private let cellId = "lessonId"
     private let cellLessonWidth: CGFloat = 80
-    
     var itemLesson: [ItemLesson] = []
-    
     let categoryCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .clear
         return collectionView
     }()
+    var cellLessonSelected: ((LessonViewCell) -> Void)?
     
     override func setUpView() {
         addSubview(categoryCollectionView)
+        translatesAutoresizingMaskIntoConstraints = false
         addConstraintsWithFormat("H:|-10-[v0]-10-|", views: categoryCollectionView)
         addConstraintsWithFormat("V:|[v0]|", views: categoryCollectionView)
         categoryCollectionView.delegate = self
@@ -51,7 +51,10 @@ class CategoryViewCell: BaseViewCell, UICollectionViewDataSource, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LessonViewCell.identifier, for: indexPath) as? LessonViewCell
-        
+        cell?.lessonItem = itemLesson[indexPath.row]
+        cell?.cellSelected = { (cell) in
+            self.cellLessonSelected!(cell)
+        }
         return cell!
     }
     

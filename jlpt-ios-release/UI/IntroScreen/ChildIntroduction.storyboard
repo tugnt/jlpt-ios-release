@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Child Introduction Controller-->
+        <scene sceneID="TbP-4x-j5t">
+            <objects>
+                <viewController storyboardIdentifier="ChildIntroductionController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8Ji-sd-3Bv" customClass="ChildIntroductionController" customModule="jlpt_ios_release" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MMa-DK-bip">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PLs-5q-C7E">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0zu-UK-aoE">
+                                <rect key="frame" x="87" y="698" width="200" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="8K8-Wd-C3Z"/>
+                                    <constraint firstAttribute="width" constant="200" id="hsj-vF-VdZ"/>
+                                </constraints>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nbJ-El-1uA" firstAttribute="bottom" secondItem="0zu-UK-aoE" secondAttribute="bottom" constant="10" id="0rc-TL-JKQ"/>
+                            <constraint firstItem="nbJ-El-1uA" firstAttribute="bottom" secondItem="PLs-5q-C7E" secondAttribute="bottom" id="6cf-by-BR3"/>
+                            <constraint firstItem="0zu-UK-aoE" firstAttribute="centerX" secondItem="nbJ-El-1uA" secondAttribute="centerX" id="Bza-lX-LSz"/>
+                            <constraint firstItem="PLs-5q-C7E" firstAttribute="trailing" secondItem="nbJ-El-1uA" secondAttribute="trailing" id="Gr6-yB-nNp"/>
+                            <constraint firstItem="PLs-5q-C7E" firstAttribute="leading" secondItem="nbJ-El-1uA" secondAttribute="leading" id="H66-JT-zbC"/>
+                            <constraint firstItem="PLs-5q-C7E" firstAttribute="top" secondItem="nbJ-El-1uA" secondAttribute="top" id="PzZ-v1-bgv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nbJ-El-1uA"/>
+                    </view>
+                    <connections>
+                        <outlet property="loadingImage" destination="PLs-5q-C7E" id="8oq-eO-p9K"/>
+                        <outlet property="startButton" destination="0zu-UK-aoE" id="sWc-bw-mlV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zmv-0O-yDI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-87.200000000000003" y="213.54679802955667"/>
+        </scene>
+    </scenes>
+</document>
