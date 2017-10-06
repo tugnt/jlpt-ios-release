@@ -22,7 +22,13 @@
 		1A3684AA1F8005BC001FEF88 /* ChildIntroduction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A3684A91F8005BC001FEF88 /* ChildIntroduction.storyboard */; };
 		1A6520651F851D5A00E21905 /* HintCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6520641F851D5A00E21905 /* HintCell.swift */; };
 		1A65206B1F866A4200E21905 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A65206A1F866A4200E21905 /* CardView.swift */; };
-		1AB04DB61F7630F600E5AC27 /* Tips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB04DB51F7630F600E5AC27 /* Tips.swift */; };
+		1A65206F1F87B96500E21905 /* HintViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A65206E1F87B96500E21905 /* HintViewModel.swift */; };
+		1A6520741F87BECE00E21905 /* HintQuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6520731F87BECE00E21905 /* HintQuestionController.swift */; };
+		1A6520761F87BEE000E21905 /* HintQuestionController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A6520751F87BEE000E21905 /* HintQuestionController.storyboard */; };
+		1A6520781F87C68F00E21905 /* TheoryHintController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A6520771F87C68F00E21905 /* TheoryHintController.storyboard */; };
+		1A65207B1F87C6AE00E21905 /* TheoryHintController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A65207A1F87C6AE00E21905 /* TheoryHintController.swift */; };
+		1A65207D1F87EF7100E21905 /* HintQuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A65207C1F87EF7100E21905 /* HintQuestionModel.swift */; };
+		1AB04DB61F7630F600E5AC27 /* Hint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB04DB51F7630F600E5AC27 /* Hint.swift */; };
 		1AB04DBB1F76384500E5AC27 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB04DBA1F76384500E5AC27 /* Unit.swift */; };
 		1AB79E2F1F769F1200C2F8AE /* IntroductionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB79E2E1F769F1200C2F8AE /* IntroductionController.swift */; };
 		1ABBE6B51F76B98300A23796 /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABBE6B41F76B98300A23796 /* Lottie.framework */; };
@@ -96,7 +102,13 @@
 		1A3684A91F8005BC001FEF88 /* ChildIntroduction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChildIntroduction.storyboard; sourceTree = "<group>"; };
 		1A6520641F851D5A00E21905 /* HintCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintCell.swift; sourceTree = "<group>"; };
 		1A65206A1F866A4200E21905 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		1AB04DB51F7630F600E5AC27 /* Tips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tips.swift; sourceTree = "<group>"; };
+		1A65206E1F87B96500E21905 /* HintViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintViewModel.swift; sourceTree = "<group>"; };
+		1A6520731F87BECE00E21905 /* HintQuestionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintQuestionController.swift; sourceTree = "<group>"; };
+		1A6520751F87BEE000E21905 /* HintQuestionController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HintQuestionController.storyboard; sourceTree = "<group>"; };
+		1A6520771F87C68F00E21905 /* TheoryHintController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TheoryHintController.storyboard; sourceTree = "<group>"; };
+		1A65207A1F87C6AE00E21905 /* TheoryHintController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoryHintController.swift; sourceTree = "<group>"; };
+		1A65207C1F87EF7100E21905 /* HintQuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintQuestionModel.swift; sourceTree = "<group>"; };
+		1AB04DB51F7630F600E5AC27 /* Hint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hint.swift; sourceTree = "<group>"; };
 		1AB04DBA1F76384500E5AC27 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		1AB79E2E1F769F1200C2F8AE /* IntroductionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionController.swift; sourceTree = "<group>"; };
 		1ABBE6B41F76B98300A23796 /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lottie.framework; path = Carthage/Build/iOS/Lottie.framework; sourceTree = "<group>"; };
@@ -173,10 +185,8 @@
 		1A23E61C1F6F84C8004BB9FF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1AC50CFA1F6F8798007D161C /* Question.swift */,
-				DF4C22F11F74CA7E00B2CCC5 /* Result.swift */,
-				1AB04DB51F7630F600E5AC27 /* Tips.swift */,
-				1AB04DBA1F76384500E5AC27 /* Unit.swift */,
+				1A65206D1F87B93000E21905 /* Api */,
+				1A65206C1F87B92600E21905 /* View Models */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -267,6 +277,53 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		1A65206C1F87B92600E21905 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				1A65206E1F87B96500E21905 /* HintViewModel.swift */,
+				1A65207C1F87EF7100E21905 /* HintQuestionModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		1A65206D1F87B93000E21905 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				1AC50CFA1F6F8798007D161C /* Question.swift */,
+				DF4C22F11F74CA7E00B2CCC5 /* Result.swift */,
+				1AB04DB51F7630F600E5AC27 /* Hint.swift */,
+				1AB04DBA1F76384500E5AC27 /* Unit.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		1A6520701F87BE8C00E21905 /* ListHint */ = {
+			isa = PBXGroup;
+			children = (
+				1AD2FD701F80D98B00B5167D /* ListHintController.storyboard */,
+				1AD2FD721F80D9A300B5167D /* ListHintController.swift */,
+			);
+			path = ListHint;
+			sourceTree = "<group>";
+		};
+		1A6520721F87BEAF00E21905 /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				1A6520731F87BECE00E21905 /* HintQuestionController.swift */,
+				1A6520751F87BEE000E21905 /* HintQuestionController.storyboard */,
+			);
+			path = Question;
+			sourceTree = "<group>";
+		};
+		1A6520791F87C69700E21905 /* Theory */ = {
+			isa = PBXGroup;
+			children = (
+				1A6520771F87C68F00E21905 /* TheoryHintController.storyboard */,
+				1A65207A1F87C6AE00E21905 /* TheoryHintController.swift */,
+			);
+			path = Theory;
+			sourceTree = "<group>";
+		};
 		1AB79E2D1F769EE400C2F8AE /* IntroScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,8 +340,9 @@
 		1AD2FD6E1F80D92400B5167D /* Hint */ = {
 			isa = PBXGroup;
 			children = (
-				1AD2FD701F80D98B00B5167D /* ListHintController.storyboard */,
-				1AD2FD721F80D9A300B5167D /* ListHintController.swift */,
+				1A6520791F87C69700E21905 /* Theory */,
+				1A6520721F87BEAF00E21905 /* Question */,
+				1A6520701F87BE8C00E21905 /* ListHint */,
 			);
 			path = Hint;
 			sourceTree = "<group>";
@@ -553,8 +611,10 @@
 				1A3684A61F7D3B3B001FEF88 /* Introduction.storyboard in Resources */,
 				1AD2FD791F80D9E000B5167D /* ListQuestionController.storyboard in Resources */,
 				1A3684A41F7D2DFC001FEF88 /* StartApp.storyboard in Resources */,
+				1A6520781F87C68F00E21905 /* TheoryHintController.storyboard in Resources */,
 				1A3684A81F8001A4001FEF88 /* Assets.xcassets in Resources */,
 				1AD738761F6D3D8E00A4A1B9 /* Profile.storyboard in Resources */,
+				1A6520761F87BEE000E21905 /* HintQuestionController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -759,7 +819,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AD738681F6D3CC400A4A1B9 /* ProfileController.swift in Sources */,
-				1AB04DB61F7630F600E5AC27 /* Tips.swift in Sources */,
+				1AB04DB61F7630F600E5AC27 /* Hint.swift in Sources */,
 				1A6520651F851D5A00E21905 /* HintCell.swift in Sources */,
 				1AEA8B331F6D5234005A7FC0 /* CategoryHeaderView.swift in Sources */,
 				1AD2FD731F80D9A300B5167D /* ListHintController.swift in Sources */,
@@ -767,10 +827,12 @@
 				DF4C22F21F74CA7E00B2CCC5 /* Result.swift in Sources */,
 				1A136C3E1F6D3E7D00DF343E /* UIView+Contraint.swift in Sources */,
 				1AC50CFB1F6F8798007D161C /* Question.swift in Sources */,
+				1A65207B1F87C6AE00E21905 /* TheoryHintController.swift in Sources */,
 				1A65206B1F866A4200E21905 /* CardView.swift in Sources */,
 				1AC50CF71F6E69B8007D161C /* JLPTResponse.swift in Sources */,
 				1AC50CF91F6F859E007D161C /* JLPTService.swift in Sources */,
 				1A136C401F6D3EA500DF343E /* UIStoryboard+Identifier.swift in Sources */,
+				1A65206F1F87B96500E21905 /* HintViewModel.swift in Sources */,
 				1AD2FD761F80D9CC00B5167D /* ListQuestionController.swift in Sources */,
 				1AEA8B2C1F6D4986005A7FC0 /* CategoryViewCell.swift in Sources */,
 				1AEA8B2E1F6D49DD005A7FC0 /* LessonViewCell.swift in Sources */,
@@ -787,7 +849,9 @@
 				1AD2FD7B1F8112AC00B5167D /* UIViewController+Storyboard.swift in Sources */,
 				1A36849A1F77498E001FEF88 /* Images.swift in Sources */,
 				1AEA8B2A1F6D4967005A7FC0 /* BaseViewCell.swift in Sources */,
+				1A6520741F87BECE00E21905 /* HintQuestionController.swift in Sources */,
 				1A2B25CF1F512DFB00DFFD3A /* AppDelegate.swift in Sources */,
+				1A65207D1F87EF7100E21905 /* HintQuestionModel.swift in Sources */,
 				1A36849E1F7752E9001FEF88 /* ChildIntroductionController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

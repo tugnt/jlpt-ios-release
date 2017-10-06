@@ -46,9 +46,7 @@ class IntroductionController: UIPageViewController, UIPageViewControllerDelegate
     
     @objc func skipIntroduction() {
         let vc = TabbarController()
-        let navigationController = UINavigationController(rootViewController: vc)
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.window?.rootViewController = navigationController
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     override init(transitionStyle style: UIPageViewControllerTransitionStyle, navigationOrientation: UIPageViewControllerNavigationOrientation, options: [String : Any]? = nil) {

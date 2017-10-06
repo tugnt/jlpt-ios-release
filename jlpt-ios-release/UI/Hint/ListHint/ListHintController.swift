@@ -23,7 +23,7 @@ class ListHintController: UIViewController {
 
     func fetchHintData(){
         guard let type = self.type else { return }
-        let request = TipRequest(type: type)
+        let request = HintRequest(type: type)
         ApiClient.instance.request(request: request, completion: { (result) in
             switch result {
             case .success(let value):
@@ -49,6 +49,11 @@ extension ListHintController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? HintCell else {
             return UITableViewCell()
         }
+        cell.selectionStyle = .none
         return cell 
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
 }
