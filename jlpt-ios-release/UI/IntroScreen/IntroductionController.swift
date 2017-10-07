@@ -96,8 +96,7 @@ extension IntroductionController {
     }
     
     func viewControllerAtIndex(index: Int) -> UIViewController {
-        let sb = UIStoryboard(name: "ChildIntroduction", bundle: nil)
-        let vc: ChildIntroductionController = sb.instantiateViewController(withIdentifier: String(describing: ChildIntroductionController.self)) as! ChildIntroductionController
+        let vc = StoryboardScene.ChildIntroduction.childIntroductionController.instantiate()
         vc.pageIndex = index
         return vc
     }

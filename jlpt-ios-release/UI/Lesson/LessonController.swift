@@ -41,7 +41,7 @@ class LessonController: UICollectionViewController, UICollectionViewDelegateFlow
         collectionView?.register(CategoryHeaderView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: CategoryHeaderView.identifier)
         self.edgesForExtendedLayout = .init(rawValue: 0)
         /// - Add galaxy image background for Lesson Screen
-        collectionView?.backgroundColor = UIColor(patternImage: UIImage(named: "galaxy_background")!)
+        collectionView?.backgroundColor = UIColor(patternImage: UIImage(asset: Asset.galaxyBackground))
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -92,15 +92,13 @@ class LessonController: UICollectionViewController, UICollectionViewDelegateFlow
     func cellSecletec(_ cell: LessonViewCell) {
         if cell.lessonItem?.level != nil {
             /// - Move to list question of JLPT
-            let sb = UIStoryboard(name: "ListQuestionController", bundle: nil)
-            let vc: ListQuestionController = sb.instantiateViewController(withIdentifier: String(describing: ListQuestionController.self)) as! ListQuestionController
-            
+            let vc = StoryboardScene.ListQuestionController.listQuestionController.instantiate()
             self.navigationController?.pushViewController(vc, animated: true)
+            
         } else {
             /// - Move to list hint screen
             let type = cell.lessonItem?.typeJLPT
-            let sb = UIStoryboard(name: "ListHintController", bundle: nil)
-            let vc: ListHintController = sb.instantiateViewController(withIdentifier: String(describing: ListHintController.self)) as! ListHintController
+            let vc = StoryboardScene.ListHintController.listHintController.instantiate()
             vc.type = type
             self.navigationController?.pushViewController(vc, animated: true)
         }
