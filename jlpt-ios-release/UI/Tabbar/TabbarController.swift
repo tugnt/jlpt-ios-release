@@ -20,9 +20,11 @@ class TabbarController: UITabBarController, UITabBarControllerDelegate {
         let navController = UINavigationController(rootViewController: lessionController)
         navController.tabBarItem = lessionTabItem
         
-        let profileController: ProfileController = UIStoryboard(storyboard: .profile, bundle: nil).instantiateViewController(withIdentifier: String(describing: ProfileController.self)) as! ProfileController
+        let profileController = StoryboardScene.Process.processController.instantiate()
+            //: ProfileController = UIStoryboard(storyboard: .profile, bundle: nil).instantiateViewController(withIdentifier: String(describing: ProfileController.self)) as! ProfileController
         
-        let progressController: ProcessController = UIStoryboard(storyboard: .progress, bundle: nil).instantiateViewController(withIdentifier: String(describing: ProcessController.self)) as! ProcessController
+        let progressController = StoryboardScene.Process.processController.instantiate()
+            //UIStoryboard(storyboard: .progress, bundle: nil).instantiateViewController(withIdentifier: String(describing: ProcessController.self)) as! ProcessController
         
         self.viewControllers = [createNavController("Lession", "lesson", viewController: lessionController),
                                 createNavController("Progress", "process", viewController: progressController),
