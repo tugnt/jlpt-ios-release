@@ -20,6 +20,8 @@
 		1A3684AA1F8005BC001FEF88 /* ChildIntroduction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A3684A91F8005BC001FEF88 /* ChildIntroduction.storyboard */; };
 		1A46AC391F892199001FF467 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A46AC381F892199001FF467 /* Storyboards.swift */; };
 		1A46AC3D1F894479001FF467 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A46AC3C1F894479001FF467 /* Images.swift */; };
+		1A46AC461F895208001FF467 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A46AC441F895206001FF467 /* RxSwift.framework */; };
+		1A46AC471F895208001FF467 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A46AC451F895207001FF467 /* RxCocoa.framework */; };
 		1A6520651F851D5A00E21905 /* HintCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6520641F851D5A00E21905 /* HintCell.swift */; };
 		1A65206B1F866A4200E21905 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A65206A1F866A4200E21905 /* CardView.swift */; };
 		1A65206F1F87B96500E21905 /* HintViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A65206E1F87B96500E21905 /* HintViewModel.swift */; };
@@ -101,6 +103,8 @@
 		1A3684A91F8005BC001FEF88 /* ChildIntroduction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChildIntroduction.storyboard; sourceTree = "<group>"; };
 		1A46AC381F892199001FF467 /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		1A46AC3C1F894479001FF467 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		1A46AC441F895206001FF467 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		1A46AC451F895207001FF467 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		1A6520641F851D5A00E21905 /* HintCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintCell.swift; sourceTree = "<group>"; };
 		1A65206A1F866A4200E21905 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		1A65206E1F87B96500E21905 /* HintViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintViewModel.swift; sourceTree = "<group>"; };
@@ -158,6 +162,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A46AC461F895208001FF467 /* RxSwift.framework in Frameworks */,
+				1A46AC471F895208001FF467 /* RxCocoa.framework in Frameworks */,
 				1AF26ADA1F76E52F0098062A /* PaperOnboarding.framework in Frameworks */,
 				1ABBE6B51F76B98300A23796 /* Lottie.framework in Frameworks */,
 				DF4C22EF1F74B6C300B2CCC5 /* Alamofire.framework in Frameworks */,
@@ -488,6 +494,8 @@
 		7F5454142D252C22DDB39D77 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A46AC451F895207001FF467 /* RxCocoa.framework */,
+				1A46AC441F895206001FF467 /* RxSwift.framework */,
 				1AF26AD91F76E52F0098062A /* PaperOnboarding.framework */,
 				1AF26AD71F76E51A0098062A /* PaperOnboarding.framework.dSYM */,
 				1ABBE6B41F76B98300A23796 /* Lottie.framework */,
@@ -791,6 +799,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Lottie.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/PaperOnboarding.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 			);
 			name = Carthage;
 			outputPaths = (

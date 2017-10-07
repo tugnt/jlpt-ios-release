@@ -1,3 +1,4 @@
 github "Alamofire/Alamofire" "4.5.1"
 github "Ramotion/expanding-collection" "1.1.1"
+github "ReactiveX/RxSwift" "3.6.1"
 github "airbnb/lottie-ios" "973c08da8ccf3dbc171bcd9e8748e6368c5a2107"
