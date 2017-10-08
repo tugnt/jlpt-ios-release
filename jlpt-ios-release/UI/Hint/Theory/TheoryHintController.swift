@@ -7,29 +7,26 @@
 //
 
 import UIKit
+import MarkdownView
 
 class TheoryHintController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let mdView = MarkdownView()
+        view.addSubview(mdView)
+        mdView.translatesAutoresizingMaskIntoConstraints = false
+        mdView.topAnchor.constraint(equalTo: topLayoutGuide.topAnchor).isActive = true
+        mdView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        mdView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        mdView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor).isActive = true
+        guard let url = URL(string: "https://raw.githubusercontent.com/keitaoouchi/MarkdownView/master/sample.md") else { return }
+        let markdown = try! String(contentsOf: url, encoding: String.Encoding.utf8)
+        // Load content from here
+        mdView.load(markdown: markdown, enableImage: true)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

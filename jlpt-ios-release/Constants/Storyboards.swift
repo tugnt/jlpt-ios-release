@@ -3,7 +3,6 @@
 // swiftlint:disable sorted_imports
 import Foundation
 import UIKit
-import jlpt_ios_release
 
 // swiftlint:disable file_length
 
@@ -55,9 +54,6 @@ enum StoryboardScene {
 
     static let childIntroductionController = SceneType<jlpt_ios_release.ChildIntroductionController>(storyboard: ChildIntroduction.self, identifier: "ChildIntroductionController")
   }
-  enum HintQuestionController: StoryboardType {
-    static let storyboardName = "HintQuestionController"
-  }
   enum Introduction: StoryboardType {
     static let storyboardName = "Introduction"
 
@@ -70,15 +66,21 @@ enum StoryboardScene {
 
     static let initialScene = InitialSceneType<UIViewController>(storyboard: LaunchScreen.self)
   }
-  enum ListHintController: StoryboardType {
-    static let storyboardName = "ListHintController"
+  enum ListHint: StoryboardType {
+    static let storyboardName = "ListHint"
 
-    static let listHintController = SceneType<jlpt_ios_release.ListHintController>(storyboard: ListHintController.self, identifier: "ListHintController")
+    static let listHintController = SceneType<jlpt_ios_release.ListHintController>(storyboard: ListHint.self, identifier: "ListHintController")
   }
-  enum ListQuestionController: StoryboardType {
-    static let storyboardName = "ListQuestionController"
+  enum ListJLPTQuestion: StoryboardType {
+    static let storyboardName = "ListJLPTQuestion"
 
-    static let listQuestionController = SceneType<jlpt_ios_release.ListQuestionController>(storyboard: ListQuestionController.self, identifier: "ListQuestionController")
+    static let listQuestionController = SceneType<jlpt_ios_release.ListQuestionController>(storyboard: ListJLPTQuestion.self, identifier: "ListQuestionController")
+  }
+  enum ListeningQuestion: StoryboardType {
+    static let storyboardName = "ListeningQuestion"
+  }
+  enum NomalQuestion: StoryboardType {
+    static let storyboardName = "NomalQuestion"
   }
   enum Process: StoryboardType {
     static let storyboardName = "Process"
@@ -97,8 +99,11 @@ enum StoryboardScene {
 
     static let startAppController = SceneType<jlpt_ios_release.StartAppController>(storyboard: StartApp.self, identifier: "StartAppController")
   }
-    
-    
+  enum TheoryHint: StoryboardType {
+    static let storyboardName = "TheoryHint"
+
+    static let theoryHintController = SceneType<jlpt_ios_release.TheoryHintController>(storyboard: TheoryHint.self, identifier: "TheoryHintController")
+  }
 }
 
 enum StoryboardSegue {

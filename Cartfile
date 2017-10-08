@@ -2,3 +2,4 @@ github "Alamofire/Alamofire"
 github "airbnb/lottie-ios" "master"
 github "Ramotion/expanding-collection"
 github "ReactiveX/RxSwift" ~> 3.0
+github "keitaoouchi/MarkdownView"

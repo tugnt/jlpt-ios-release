@@ -44,6 +44,10 @@ class LessonController: UICollectionViewController, UICollectionViewDelegateFlow
         collectionView?.backgroundColor = UIColor(patternImage: UIImage(asset: Asset.galaxyBackground))
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return sections.count
     }
@@ -92,15 +96,13 @@ class LessonController: UICollectionViewController, UICollectionViewDelegateFlow
     func cellSecletec(_ cell: LessonViewCell) {
         if cell.lessonItem?.level != nil {
             /// - Move to list question of JLPT
-            let vc = StoryboardScene.ListQuestionController.listQuestionController.instantiate()
-            self.navigationController?.pushViewController(vc, animated: true)
-            
         } else {
             /// - Move to list hint screen
             let type = cell.lessonItem?.typeJLPT
-            let vc = StoryboardScene.ListHintController.listHintController.instantiate()
+            let vc = StoryboardScene.ListHint.listHintController.instantiate()
             vc.type = type
-            self.navigationController?.pushViewController(vc, animated: true)
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

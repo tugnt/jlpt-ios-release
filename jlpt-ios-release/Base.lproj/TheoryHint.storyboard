@@ -11,31 +11,31 @@
     </dependencies>
     <scenes>
         <!--Theory Hint Controller-->
-        <scene sceneID="zis-qU-xMr">
+        <scene sceneID="xSA-RF-7kL">
             <objects>
-                <viewController storyboardIdentifier="TheoryHintController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hac-kY-7Vn" customClass="TheoryHintController" customModule="jlpt_ios_release" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6NT-jD-IQE">
+                <viewController storyboardIdentifier="TheoryHintController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4NX-9B-4rZ" customClass="TheoryHintController" customModule="jlpt_ios_release" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gXp-SO-6QZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rNL-d4-ymE" customClass="CTView" customModule="jlpt_ios_release" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LjZ-KZ-N1q">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Boo-Kf-d8S" firstAttribute="trailing" secondItem="rNL-d4-ymE" secondAttribute="trailing" id="NPN-er-752"/>
-                            <constraint firstItem="Boo-Kf-d8S" firstAttribute="bottom" secondItem="rNL-d4-ymE" secondAttribute="bottom" id="a2n-QO-yKk"/>
-                            <constraint firstItem="rNL-d4-ymE" firstAttribute="top" secondItem="Boo-Kf-d8S" secondAttribute="top" id="bnK-t8-e87"/>
-                            <constraint firstItem="rNL-d4-ymE" firstAttribute="leading" secondItem="Boo-Kf-d8S" secondAttribute="leading" id="uyn-1H-hZR"/>
+                            <constraint firstItem="LjZ-KZ-N1q" firstAttribute="top" secondItem="wFa-ln-tDs" secondAttribute="top" id="4cs-hB-j4S"/>
+                            <constraint firstItem="wFa-ln-tDs" firstAttribute="trailing" secondItem="LjZ-KZ-N1q" secondAttribute="trailing" id="K1n-dj-EIH"/>
+                            <constraint firstItem="LjZ-KZ-N1q" firstAttribute="leading" secondItem="wFa-ln-tDs" secondAttribute="leading" id="XtS-5Q-rYn"/>
+                            <constraint firstItem="wFa-ln-tDs" firstAttribute="bottom" secondItem="LjZ-KZ-N1q" secondAttribute="bottom" id="d2O-sD-2eb"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Boo-Kf-d8S"/>
+                        <viewLayoutGuide key="safeArea" id="wFa-ln-tDs"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QQK-wi-is6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1dV-lb-YIH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="145" y="-187"/>
+            <point key="canvasLocation" x="58" y="150"/>
         </scene>
     </scenes>
 </document>
