@@ -97,8 +97,11 @@ enum StoryboardScene {
 
     static let startAppController = SceneType<jlpt_ios_release.StartAppController>(storyboard: StartApp.self, identifier: "StartAppController")
   }
-    
-    
+  enum TheoryHintController: StoryboardType {
+    static let storyboardName = "TheoryHintController"
+
+    static let theoryHintController = SceneType<jlpt_ios_release.TheoryHintController>(storyboard: TheoryHintController.self, identifier: "TheoryHintController")
+  }
 }
 
 enum StoryboardSegue {

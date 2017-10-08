@@ -22,6 +22,8 @@
 		1A46AC3D1F894479001FF467 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A46AC3C1F894479001FF467 /* Images.swift */; };
 		1A46AC461F895208001FF467 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A46AC441F895206001FF467 /* RxSwift.framework */; };
 		1A46AC471F895208001FF467 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A46AC451F895207001FF467 /* RxCocoa.framework */; };
+		1A46AC491F89AD9A001FF467 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A46AC481F89AD9A001FF467 /* CoreText.framework */; };
+		1A46AC4B1F89ADF2001FF467 /* CTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A46AC4A1F89ADF2001FF467 /* CTView.swift */; };
 		1A6520651F851D5A00E21905 /* HintCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6520641F851D5A00E21905 /* HintCell.swift */; };
 		1A65206B1F866A4200E21905 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A65206A1F866A4200E21905 /* CardView.swift */; };
 		1A65206F1F87B96500E21905 /* HintViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A65206E1F87B96500E21905 /* HintViewModel.swift */; };
@@ -105,6 +107,8 @@
 		1A46AC3C1F894479001FF467 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		1A46AC441F895206001FF467 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		1A46AC451F895207001FF467 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		1A46AC481F89AD9A001FF467 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		1A46AC4A1F89ADF2001FF467 /* CTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTView.swift; sourceTree = "<group>"; };
 		1A6520641F851D5A00E21905 /* HintCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintCell.swift; sourceTree = "<group>"; };
 		1A65206A1F866A4200E21905 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		1A65206E1F87B96500E21905 /* HintViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintViewModel.swift; sourceTree = "<group>"; };
@@ -162,6 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A46AC491F89AD9A001FF467 /* CoreText.framework in Frameworks */,
 				1A46AC461F895208001FF467 /* RxSwift.framework in Frameworks */,
 				1A46AC471F895208001FF467 /* RxCocoa.framework in Frameworks */,
 				1AF26ADA1F76E52F0098062A /* PaperOnboarding.framework in Frameworks */,
@@ -467,6 +472,7 @@
 			children = (
 				1AF26AD01F76D6140098062A /* CustomButton.swift */,
 				1A65206A1F866A4200E21905 /* CardView.swift */,
+				1A46AC4A1F89ADF2001FF467 /* CTView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -494,6 +500,7 @@
 		7F5454142D252C22DDB39D77 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A46AC481F89AD9A001FF467 /* CoreText.framework */,
 				1A46AC451F895207001FF467 /* RxCocoa.framework */,
 				1A46AC441F895206001FF467 /* RxSwift.framework */,
 				1AF26AD91F76E52F0098062A /* PaperOnboarding.framework */,
@@ -863,6 +870,7 @@
 				1AC50CF71F6E69B8007D161C /* JLPTResponse.swift in Sources */,
 				1AC50CF91F6F859E007D161C /* JLPTService.swift in Sources */,
 				1A46AC3D1F894479001FF467 /* Images.swift in Sources */,
+				1A46AC4B1F89ADF2001FF467 /* CTView.swift in Sources */,
 				1A136C401F6D3EA500DF343E /* UIStoryboard+Identifier.swift in Sources */,
 				1A65206F1F87B96500E21905 /* HintViewModel.swift in Sources */,
 				1AD2FD761F80D9CC00B5167D /* ListQuestionController.swift in Sources */,
