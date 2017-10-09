@@ -54,6 +54,7 @@ extension ListHintController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let vc = StoryboardScene.TheoryHint.theoryHintController.instantiate()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

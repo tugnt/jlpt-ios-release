@@ -20,15 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        /// - Custom status bar
-        application.statusBarStyle = .lightContent
+        /// - Set up navigation bar
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().barTintColor = ColorName.navBackground.color
+        UINavigationBar.appearance().tintColor = .white
+        UIApplication.shared.statusBarStyle = .lightContent
         
         /// - Set root controller
-        let sb = UIStoryboard(name: "Introduction", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: String(describing: IntroductionController.self)) as! IntroductionController
+        let vc = StoryboardScene.Introduction.initialScene.instantiate()
         let navigationController = UINavigationController(rootViewController: vc)
         window?.rootViewController = navigationController
-        
         return true
     }
     

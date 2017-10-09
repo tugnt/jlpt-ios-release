@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		015EE0821FC6BED4EE298993 /* Pods_jlpt_ios_release.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8801B0FB1C671067D045E0C /* Pods_jlpt_ios_release.framework */; };
 		1A136C3E1F6D3E7D00DF343E /* UIView+Contraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A136C3D1F6D3E7D00DF343E /* UIView+Contraints.swift */; };
-		1A136C401F6D3EA500DF343E /* UIStoryboard+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A136C3F1F6D3EA500DF343E /* UIStoryboard+Identifier.swift */; };
 		1A2B25CF1F512DFB00DFFD3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B25CE1F512DFB00DFFD3A /* AppDelegate.swift */; };
 		1A2B25EF1F512DFB00DFFD3A /* jlpt_ios_releaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B25EE1F512DFB00DFFD3A /* jlpt_ios_releaseUITests.swift */; };
 		1A36849E1F7752E9001FEF88 /* ChildIntroductionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A36849D1F7752E9001FEF88 /* ChildIntroductionController.swift */; };
@@ -22,12 +21,20 @@
 		1A46AC3D1F894479001FF467 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A46AC3C1F894479001FF467 /* Images.swift */; };
 		1A46AC461F895208001FF467 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A46AC441F895206001FF467 /* RxSwift.framework */; };
 		1A46AC471F895208001FF467 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A46AC451F895207001FF467 /* RxCocoa.framework */; };
+		1A46AC491F89AD9A001FF467 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A46AC481F89AD9A001FF467 /* CoreText.framework */; };
+		1A46AC4B1F89ADF2001FF467 /* CTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A46AC4A1F89ADF2001FF467 /* CTView.swift */; };
+		1A46AC4E1F89B703001FF467 /* TheoryHint.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A46AC4C1F89B703001FF467 /* TheoryHint.storyboard */; };
+		1A46AC551F89D2E1001FF467 /* MarkdownView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A46AC541F89D2E1001FF467 /* MarkdownView.framework */; };
+		1A46AC591F8A5E97001FF467 /* ListeningQuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A46AC581F8A5E97001FF467 /* ListeningQuestionController.swift */; };
+		1A46AC5B1F8A5EA5001FF467 /* NomalQuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A46AC5A1F8A5EA5001FF467 /* NomalQuestionController.swift */; };
+		1A46AC5E1F8A5FBD001FF467 /* ListeningQuestion.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A46AC5C1F8A5FBD001FF467 /* ListeningQuestion.storyboard */; };
+		1A46AC601F8A6602001FF467 /* UIViewController+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A46AC5F1F8A6602001FF467 /* UIViewController+NavigationBar.swift */; };
+		1A46AC621F8A7728001FF467 /* color.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A46AC611F8A7728001FF467 /* color.txt */; };
+		1A46AC641F8A78CC001FF467 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A46AC631F8A78CC001FF467 /* Colors.swift */; };
 		1A6520651F851D5A00E21905 /* HintCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6520641F851D5A00E21905 /* HintCell.swift */; };
 		1A65206B1F866A4200E21905 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A65206A1F866A4200E21905 /* CardView.swift */; };
 		1A65206F1F87B96500E21905 /* HintViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A65206E1F87B96500E21905 /* HintViewModel.swift */; };
-		1A6520741F87BECE00E21905 /* HintQuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6520731F87BECE00E21905 /* HintQuestionController.swift */; };
-		1A6520761F87BEE000E21905 /* HintQuestionController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A6520751F87BEE000E21905 /* HintQuestionController.storyboard */; };
-		1A6520781F87C68F00E21905 /* TheoryHintController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A6520771F87C68F00E21905 /* TheoryHintController.storyboard */; };
+		1A6520761F87BEE000E21905 /* NomalQuestion.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A6520751F87BEE000E21905 /* NomalQuestion.storyboard */; };
 		1A65207B1F87C6AE00E21905 /* TheoryHintController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A65207A1F87C6AE00E21905 /* TheoryHintController.swift */; };
 		1A65207D1F87EF7100E21905 /* HintQuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A65207C1F87EF7100E21905 /* HintQuestionModel.swift */; };
 		1A65208A1F8813D500E21905 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A6520861F8813D400E21905 /* LaunchScreen.storyboard */; };
@@ -42,11 +49,10 @@
 		1AC50CF91F6F859E007D161C /* JLPTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC50CF81F6F859E007D161C /* JLPTService.swift */; };
 		1AC50CFB1F6F8798007D161C /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC50CFA1F6F8798007D161C /* Question.swift */; };
 		1AC50CFD1F6F9481007D161C /* ApiTets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC50CFC1F6F9481007D161C /* ApiTets.swift */; };
-		1AD2FD711F80D98B00B5167D /* ListHintController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD2FD701F80D98B00B5167D /* ListHintController.storyboard */; };
+		1AD2FD711F80D98B00B5167D /* ListHint.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD2FD701F80D98B00B5167D /* ListHint.storyboard */; };
 		1AD2FD731F80D9A300B5167D /* ListHintController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD2FD721F80D9A300B5167D /* ListHintController.swift */; };
 		1AD2FD761F80D9CC00B5167D /* ListQuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD2FD751F80D9CC00B5167D /* ListQuestionController.swift */; };
-		1AD2FD791F80D9E000B5167D /* ListQuestionController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD2FD781F80D9E000B5167D /* ListQuestionController.storyboard */; };
-		1AD2FD7B1F8112AC00B5167D /* UIViewController+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD2FD7A1F8112AC00B5167D /* UIViewController+Storyboard.swift */; };
+		1AD2FD791F80D9E000B5167D /* ListJLPTQuestion.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD2FD781F80D9E000B5167D /* ListJLPTQuestion.storyboard */; };
 		1AD738641F6D3B7200A4A1B9 /* LessonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD738631F6D3B7200A4A1B9 /* LessonController.swift */; };
 		1AD738661F6D3CB400A4A1B9 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD738651F6D3CB400A4A1B9 /* TabbarController.swift */; };
 		1AD738681F6D3CC400A4A1B9 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD738671F6D3CC400A4A1B9 /* ProfileController.swift */; };
@@ -57,7 +63,6 @@
 		1AEA8B2C1F6D4986005A7FC0 /* CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA8B2B1F6D4986005A7FC0 /* CategoryViewCell.swift */; };
 		1AEA8B2E1F6D49DD005A7FC0 /* LessonViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA8B2D1F6D49DD005A7FC0 /* LessonViewCell.swift */; };
 		1AEA8B331F6D5234005A7FC0 /* CategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA8B311F6D5234005A7FC0 /* CategoryHeaderView.swift */; };
-		1AF26ACC1F76D2F80098062A /* UIView+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF26ACB1F76D2F80098062A /* UIView+Color.swift */; };
 		1AF26AD11F76D6140098062A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF26AD01F76D6140098062A /* CustomButton.swift */; };
 		1AF26ADA1F76E52F0098062A /* PaperOnboarding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF26AD91F76E52F0098062A /* PaperOnboarding.framework */; };
 		8B0CA1C45B0ECB1BA7EE1328 /* Pods_jlpt_ios_releaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C08FD44EC6F84A16E0F0DAA8 /* Pods_jlpt_ios_releaseUITests.framework */; };
@@ -85,7 +90,6 @@
 
 /* Begin PBXFileReference section */
 		1A136C3D1F6D3E7D00DF343E /* UIView+Contraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Contraints.swift"; sourceTree = "<group>"; };
-		1A136C3F1F6D3EA500DF343E /* UIStoryboard+Identifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Identifier.swift"; sourceTree = "<group>"; };
 		1A2B25CB1F512DFB00DFFD3A /* jlpt-ios-release.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "jlpt-ios-release.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2B25CE1F512DFB00DFFD3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A2B25DA1F512DFB00DFFD3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,12 +109,20 @@
 		1A46AC3C1F894479001FF467 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		1A46AC441F895206001FF467 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		1A46AC451F895207001FF467 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		1A46AC481F89AD9A001FF467 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		1A46AC4A1F89ADF2001FF467 /* CTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTView.swift; sourceTree = "<group>"; };
+		1A46AC4D1F89B703001FF467 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = TheoryHint.storyboard; sourceTree = "<group>"; };
+		1A46AC541F89D2E1001FF467 /* MarkdownView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MarkdownView.framework; path = Carthage/Build/iOS/MarkdownView.framework; sourceTree = "<group>"; };
+		1A46AC581F8A5E97001FF467 /* ListeningQuestionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeningQuestionController.swift; sourceTree = "<group>"; };
+		1A46AC5A1F8A5EA5001FF467 /* NomalQuestionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NomalQuestionController.swift; sourceTree = "<group>"; };
+		1A46AC5D1F8A5FBD001FF467 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ListeningQuestion.storyboard; sourceTree = "<group>"; };
+		1A46AC5F1F8A6602001FF467 /* UIViewController+NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavigationBar.swift"; sourceTree = "<group>"; };
+		1A46AC611F8A7728001FF467 /* color.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = color.txt; sourceTree = "<group>"; };
+		1A46AC631F8A78CC001FF467 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		1A6520641F851D5A00E21905 /* HintCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintCell.swift; sourceTree = "<group>"; };
 		1A65206A1F866A4200E21905 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		1A65206E1F87B96500E21905 /* HintViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintViewModel.swift; sourceTree = "<group>"; };
-		1A6520731F87BECE00E21905 /* HintQuestionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintQuestionController.swift; sourceTree = "<group>"; };
-		1A6520751F87BEE000E21905 /* HintQuestionController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HintQuestionController.storyboard; sourceTree = "<group>"; };
-		1A6520771F87C68F00E21905 /* TheoryHintController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TheoryHintController.storyboard; sourceTree = "<group>"; };
+		1A6520751F87BEE000E21905 /* NomalQuestion.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NomalQuestion.storyboard; sourceTree = "<group>"; };
 		1A65207A1F87C6AE00E21905 /* TheoryHintController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoryHintController.swift; sourceTree = "<group>"; };
 		1A65207C1F87EF7100E21905 /* HintQuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintQuestionModel.swift; sourceTree = "<group>"; };
 		1A6520871F8813D400E21905 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -125,11 +137,10 @@
 		1AC50CF81F6F859E007D161C /* JLPTService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLPTService.swift; sourceTree = "<group>"; };
 		1AC50CFA1F6F8798007D161C /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		1AC50CFC1F6F9481007D161C /* ApiTets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiTets.swift; sourceTree = "<group>"; };
-		1AD2FD701F80D98B00B5167D /* ListHintController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListHintController.storyboard; sourceTree = "<group>"; };
+		1AD2FD701F80D98B00B5167D /* ListHint.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListHint.storyboard; sourceTree = "<group>"; };
 		1AD2FD721F80D9A300B5167D /* ListHintController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHintController.swift; sourceTree = "<group>"; };
 		1AD2FD751F80D9CC00B5167D /* ListQuestionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListQuestionController.swift; sourceTree = "<group>"; };
-		1AD2FD781F80D9E000B5167D /* ListQuestionController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListQuestionController.storyboard; sourceTree = "<group>"; };
-		1AD2FD7A1F8112AC00B5167D /* UIViewController+Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Storyboard.swift"; sourceTree = "<group>"; };
+		1AD2FD781F80D9E000B5167D /* ListJLPTQuestion.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListJLPTQuestion.storyboard; sourceTree = "<group>"; };
 		1AD738631F6D3B7200A4A1B9 /* LessonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonController.swift; sourceTree = "<group>"; };
 		1AD738651F6D3CB400A4A1B9 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		1AD738671F6D3CC400A4A1B9 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
@@ -140,7 +151,6 @@
 		1AEA8B2B1F6D4986005A7FC0 /* CategoryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewCell.swift; sourceTree = "<group>"; };
 		1AEA8B2D1F6D49DD005A7FC0 /* LessonViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonViewCell.swift; sourceTree = "<group>"; };
 		1AEA8B311F6D5234005A7FC0 /* CategoryHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryHeaderView.swift; sourceTree = "<group>"; };
-		1AF26ACB1F76D2F80098062A /* UIView+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Color.swift"; sourceTree = "<group>"; };
 		1AF26AD01F76D6140098062A /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		1AF26AD71F76E51A0098062A /* PaperOnboarding.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = PaperOnboarding.framework.dSYM; path = Carthage/Build/iOS/PaperOnboarding.framework.dSYM; sourceTree = "<group>"; };
 		1AF26AD91F76E52F0098062A /* PaperOnboarding.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PaperOnboarding.framework; path = Carthage/Build/iOS/PaperOnboarding.framework; sourceTree = "<group>"; };
@@ -162,6 +172,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A46AC551F89D2E1001FF467 /* MarkdownView.framework in Frameworks */,
+				1A46AC491F89AD9A001FF467 /* CoreText.framework in Frameworks */,
 				1A46AC461F895208001FF467 /* RxSwift.framework in Frameworks */,
 				1A46AC471F895208001FF467 /* RxCocoa.framework in Frameworks */,
 				1AF26ADA1F76E52F0098062A /* PaperOnboarding.framework in Frameworks */,
@@ -256,6 +268,7 @@
 				1A3684A71F8001A4001FEF88 /* Assets.xcassets */,
 				1A2B25CE1F512DFB00DFFD3A /* AppDelegate.swift */,
 				1A2B25DA1F512DFB00DFFD3A /* Info.plist */,
+				1A46AC611F8A7728001FF467 /* color.txt */,
 			);
 			path = "jlpt-ios-release";
 			sourceTree = "<group>";
@@ -291,6 +304,7 @@
 			children = (
 				1A46AC381F892199001FF467 /* Storyboards.swift */,
 				1A46AC3C1F894479001FF467 /* Images.swift */,
+				1A46AC631F8A78CC001FF467 /* Colors.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -326,7 +340,8 @@
 		1A6520721F87BEAF00E21905 /* Question */ = {
 			isa = PBXGroup;
 			children = (
-				1A6520731F87BECE00E21905 /* HintQuestionController.swift */,
+				1A46AC581F8A5E97001FF467 /* ListeningQuestionController.swift */,
+				1A46AC5A1F8A5EA5001FF467 /* NomalQuestionController.swift */,
 			);
 			path = Question;
 			sourceTree = "<group>";
@@ -342,16 +357,17 @@
 		1A6520851F8813D400E21905 /* Base.lproj */ = {
 			isa = PBXGroup;
 			children = (
+				1A6520861F8813D400E21905 /* LaunchScreen.storyboard */,
+				1A46AC4C1F89B703001FF467 /* TheoryHint.storyboard */,
 				1AD738771F6D3DA200A4A1B9 /* Process.storyboard */,
 				1AD738751F6D3D8E00A4A1B9 /* Profile.storyboard */,
 				1A3684A31F7D2DFC001FEF88 /* StartApp.storyboard */,
 				1A3684A51F7D3B3B001FEF88 /* Introduction.storyboard */,
 				1A3684A91F8005BC001FEF88 /* ChildIntroduction.storyboard */,
-				1AD2FD701F80D98B00B5167D /* ListHintController.storyboard */,
-				1A6520751F87BEE000E21905 /* HintQuestionController.storyboard */,
-				1A6520771F87C68F00E21905 /* TheoryHintController.storyboard */,
-				1AD2FD781F80D9E000B5167D /* ListQuestionController.storyboard */,
-				1A6520861F8813D400E21905 /* LaunchScreen.storyboard */,
+				1AD2FD701F80D98B00B5167D /* ListHint.storyboard */,
+				1A6520751F87BEE000E21905 /* NomalQuestion.storyboard */,
+				1AD2FD781F80D9E000B5167D /* ListJLPTQuestion.storyboard */,
+				1A46AC5C1F8A5FBD001FF467 /* ListeningQuestion.storyboard */,
 			);
 			path = Base.lproj;
 			sourceTree = "<group>";
@@ -370,7 +386,6 @@
 			isa = PBXGroup;
 			children = (
 				1A6520791F87C69700E21905 /* Theory */,
-				1A6520721F87BEAF00E21905 /* Question */,
 				1A6520701F87BE8C00E21905 /* ListHint */,
 			);
 			path = Hint;
@@ -387,6 +402,7 @@
 		1AD738591F6D3B0200A4A1B9 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				1A6520721F87BEAF00E21905 /* Question */,
 				1AD2FD6F1F80D93C00B5167D /* JLPT */,
 				1AD2FD6E1F80D92400B5167D /* Hint */,
 				1AB79E2D1F769EE400C2F8AE /* IntroScreen */,
@@ -455,9 +471,7 @@
 			isa = PBXGroup;
 			children = (
 				1A136C3D1F6D3E7D00DF343E /* UIView+Contraints.swift */,
-				1A136C3F1F6D3EA500DF343E /* UIStoryboard+Identifier.swift */,
-				1AF26ACB1F76D2F80098062A /* UIView+Color.swift */,
-				1AD2FD7A1F8112AC00B5167D /* UIViewController+Storyboard.swift */,
+				1A46AC5F1F8A6602001FF467 /* UIViewController+NavigationBar.swift */,
 			);
 			path = Extenssion;
 			sourceTree = "<group>";
@@ -467,6 +481,7 @@
 			children = (
 				1AF26AD01F76D6140098062A /* CustomButton.swift */,
 				1A65206A1F866A4200E21905 /* CardView.swift */,
+				1A46AC4A1F89ADF2001FF467 /* CTView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -494,6 +509,8 @@
 		7F5454142D252C22DDB39D77 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A46AC541F89D2E1001FF467 /* MarkdownView.framework */,
+				1A46AC481F89AD9A001FF467 /* CoreText.framework */,
 				1A46AC451F895207001FF467 /* RxCocoa.framework */,
 				1A46AC441F895206001FF467 /* RxSwift.framework */,
 				1AF26AD91F76E52F0098062A /* PaperOnboarding.framework */,
@@ -631,17 +648,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AD2FD711F80D98B00B5167D /* ListHintController.storyboard in Resources */,
+				1A46AC5E1F8A5FBD001FF467 /* ListeningQuestion.storyboard in Resources */,
+				1AD2FD711F80D98B00B5167D /* ListHint.storyboard in Resources */,
+				1A46AC4E1F89B703001FF467 /* TheoryHint.storyboard in Resources */,
 				1A3684AA1F8005BC001FEF88 /* ChildIntroduction.storyboard in Resources */,
 				1AD738781F6D3DA200A4A1B9 /* Process.storyboard in Resources */,
 				1A3684A61F7D3B3B001FEF88 /* Introduction.storyboard in Resources */,
-				1AD2FD791F80D9E000B5167D /* ListQuestionController.storyboard in Resources */,
+				1AD2FD791F80D9E000B5167D /* ListJLPTQuestion.storyboard in Resources */,
 				1A3684A41F7D2DFC001FEF88 /* StartApp.storyboard in Resources */,
 				1A65208A1F8813D500E21905 /* LaunchScreen.storyboard in Resources */,
-				1A6520781F87C68F00E21905 /* TheoryHintController.storyboard in Resources */,
 				1A3684A81F8001A4001FEF88 /* Assets.xcassets in Resources */,
 				1AD738761F6D3D8E00A4A1B9 /* Profile.storyboard in Resources */,
-				1A6520761F87BEE000E21905 /* HintQuestionController.storyboard in Resources */,
+				1A6520761F87BEE000E21905 /* NomalQuestion.storyboard in Resources */,
+				1A46AC621F8A7728001FF467 /* color.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -801,6 +820,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/PaperOnboarding.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/MarkdownView.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -863,25 +883,26 @@
 				1AC50CF71F6E69B8007D161C /* JLPTResponse.swift in Sources */,
 				1AC50CF91F6F859E007D161C /* JLPTService.swift in Sources */,
 				1A46AC3D1F894479001FF467 /* Images.swift in Sources */,
-				1A136C401F6D3EA500DF343E /* UIStoryboard+Identifier.swift in Sources */,
+				1A46AC4B1F89ADF2001FF467 /* CTView.swift in Sources */,
 				1A65206F1F87B96500E21905 /* HintViewModel.swift in Sources */,
 				1AD2FD761F80D9CC00B5167D /* ListQuestionController.swift in Sources */,
 				1A46AC391F892199001FF467 /* Storyboards.swift in Sources */,
+				1A46AC591F8A5E97001FF467 /* ListeningQuestionController.swift in Sources */,
 				1AEA8B2C1F6D4986005A7FC0 /* CategoryViewCell.swift in Sources */,
 				1AEA8B2E1F6D49DD005A7FC0 /* LessonViewCell.swift in Sources */,
 				1A3684A21F7D2611001FEF88 /* StartAppController.swift in Sources */,
 				1AB79E2F1F769F1200C2F8AE /* IntroductionController.swift in Sources */,
-				1AF26ACC1F76D2F80098062A /* UIView+Color.swift in Sources */,
+				1A46AC5B1F8A5EA5001FF467 /* NomalQuestionController.swift in Sources */,
 				1AC50CF11F6E5DB0007D161C /* ApiError.swift in Sources */,
 				1AD738661F6D3CB400A4A1B9 /* TabbarController.swift in Sources */,
 				1AC50CEF1F6E5A69007D161C /* ApiClient.swift in Sources */,
 				1AD7386A1F6D3CD300A4A1B9 /* ProcessController.swift in Sources */,
 				1AC50CF31F6E5E1A007D161C /* RequestError.swift in Sources */,
 				1AF26AD11F76D6140098062A /* CustomButton.swift in Sources */,
+				1A46AC641F8A78CC001FF467 /* Colors.swift in Sources */,
 				1AD738641F6D3B7200A4A1B9 /* LessonController.swift in Sources */,
-				1AD2FD7B1F8112AC00B5167D /* UIViewController+Storyboard.swift in Sources */,
 				1AEA8B2A1F6D4967005A7FC0 /* BaseViewCell.swift in Sources */,
-				1A6520741F87BECE00E21905 /* HintQuestionController.swift in Sources */,
+				1A46AC601F8A6602001FF467 /* UIViewController+NavigationBar.swift in Sources */,
 				1A2B25CF1F512DFB00DFFD3A /* AppDelegate.swift in Sources */,
 				1A65207D1F87EF7100E21905 /* HintQuestionModel.swift in Sources */,
 				1A36849E1F7752E9001FEF88 /* ChildIntroductionController.swift in Sources */,
@@ -920,6 +941,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		1A46AC4C1F89B703001FF467 /* TheoryHint.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1A46AC4D1F89B703001FF467 /* Base */,
+			);
+			name = TheoryHint.storyboard;
+			sourceTree = "<group>";
+		};
+		1A46AC5C1F8A5FBD001FF467 /* ListeningQuestion.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1A46AC5D1F8A5FBD001FF467 /* Base */,
+			);
+			name = ListeningQuestion.storyboard;
+			sourceTree = "<group>";
+		};
 		1A6520861F8813D400E21905 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
