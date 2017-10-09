@@ -17,7 +17,7 @@ struct HintViewModel {
     let isPassed: Bool
     
     /// - Initialized code here
-    init(response: JLPTHintResponse) {
+    init(response: HintItemResponse) {
         self.hintTitle = response.title
         self.hintContent = response.content
         self.unit = response.unit

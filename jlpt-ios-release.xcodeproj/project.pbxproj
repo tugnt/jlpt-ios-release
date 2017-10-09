@@ -17,6 +17,8 @@
 		1A3684A61F7D3B3B001FEF88 /* Introduction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A3684A51F7D3B3B001FEF88 /* Introduction.storyboard */; };
 		1A3684A81F8001A4001FEF88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A3684A71F8001A4001FEF88 /* Assets.xcassets */; };
 		1A3684AA1F8005BC001FEF88 /* ChildIntroduction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A3684A91F8005BC001FEF88 /* ChildIntroduction.storyboard */; };
+		1A3E516C1F8B1C9B0025F4E2 /* TDRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3E516B1F8B1C9B0025F4E2 /* TDRadioButton.swift */; };
+		1A3E51701F8B44550025F4E2 /* NomalQuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3E516F1F8B44550025F4E2 /* NomalQuestionCell.swift */; };
 		1A46AC391F892199001FF467 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A46AC381F892199001FF467 /* Storyboards.swift */; };
 		1A46AC3D1F894479001FF467 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A46AC3C1F894479001FF467 /* Images.swift */; };
 		1A46AC461F895208001FF467 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A46AC441F895206001FF467 /* RxSwift.framework */; };
@@ -105,6 +107,8 @@
 		1A3684A51F7D3B3B001FEF88 /* Introduction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Introduction.storyboard; sourceTree = "<group>"; };
 		1A3684A71F8001A4001FEF88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A3684A91F8005BC001FEF88 /* ChildIntroduction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChildIntroduction.storyboard; sourceTree = "<group>"; };
+		1A3E516B1F8B1C9B0025F4E2 /* TDRadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDRadioButton.swift; sourceTree = "<group>"; };
+		1A3E516F1F8B44550025F4E2 /* NomalQuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NomalQuestionCell.swift; sourceTree = "<group>"; };
 		1A46AC381F892199001FF467 /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		1A46AC3C1F894479001FF467 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		1A46AC441F895206001FF467 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
@@ -329,14 +333,6 @@
 			path = Api;
 			sourceTree = "<group>";
 		};
-		1A6520701F87BE8C00E21905 /* ListHint */ = {
-			isa = PBXGroup;
-			children = (
-				1AD2FD721F80D9A300B5167D /* ListHintController.swift */,
-			);
-			path = ListHint;
-			sourceTree = "<group>";
-		};
 		1A6520721F87BEAF00E21905 /* Question */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,14 +340,6 @@
 				1A46AC5A1F8A5EA5001FF467 /* NomalQuestionController.swift */,
 			);
 			path = Question;
-			sourceTree = "<group>";
-		};
-		1A6520791F87C69700E21905 /* Theory */ = {
-			isa = PBXGroup;
-			children = (
-				1A65207A1F87C6AE00E21905 /* TheoryHintController.swift */,
-			);
-			path = Theory;
 			sourceTree = "<group>";
 		};
 		1A6520851F8813D400E21905 /* Base.lproj */ = {
@@ -385,8 +373,8 @@
 		1AD2FD6E1F80D92400B5167D /* Hint */ = {
 			isa = PBXGroup;
 			children = (
-				1A6520791F87C69700E21905 /* Theory */,
-				1A6520701F87BE8C00E21905 /* ListHint */,
+				1A65207A1F87C6AE00E21905 /* TheoryHintController.swift */,
+				1AD2FD721F80D9A300B5167D /* ListHintController.swift */,
 			);
 			path = Hint;
 			sourceTree = "<group>";
@@ -463,6 +451,7 @@
 				1AEA8B2B1F6D4986005A7FC0 /* CategoryViewCell.swift */,
 				1AEA8B2D1F6D49DD005A7FC0 /* LessonViewCell.swift */,
 				1AEA8B311F6D5234005A7FC0 /* CategoryHeaderView.swift */,
+				1A3E516F1F8B44550025F4E2 /* NomalQuestionCell.swift */,
 			);
 			path = ViewCell;
 			sourceTree = "<group>";
@@ -482,6 +471,7 @@
 				1AF26AD01F76D6140098062A /* CustomButton.swift */,
 				1A65206A1F866A4200E21905 /* CardView.swift */,
 				1A46AC4A1F89ADF2001FF467 /* CTView.swift */,
+				1A3E516B1F8B1C9B0025F4E2 /* TDRadioButton.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -888,8 +878,10 @@
 				1AD2FD761F80D9CC00B5167D /* ListQuestionController.swift in Sources */,
 				1A46AC391F892199001FF467 /* Storyboards.swift in Sources */,
 				1A46AC591F8A5E97001FF467 /* ListeningQuestionController.swift in Sources */,
+				1A3E516C1F8B1C9B0025F4E2 /* TDRadioButton.swift in Sources */,
 				1AEA8B2C1F6D4986005A7FC0 /* CategoryViewCell.swift in Sources */,
 				1AEA8B2E1F6D49DD005A7FC0 /* LessonViewCell.swift in Sources */,
+				1A3E51701F8B44550025F4E2 /* NomalQuestionCell.swift in Sources */,
 				1A3684A21F7D2611001FEF88 /* StartAppController.swift in Sources */,
 				1AB79E2F1F769F1200C2F8AE /* IntroductionController.swift in Sources */,
 				1A46AC5B1F8A5EA5001FF467 /* NomalQuestionController.swift in Sources */,

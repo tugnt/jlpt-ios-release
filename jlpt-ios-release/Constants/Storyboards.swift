@@ -3,6 +3,7 @@
 // swiftlint:disable sorted_imports
 import Foundation
 import UIKit
+import jlpt_ios_release
 
 // swiftlint:disable file_length
 
@@ -81,6 +82,8 @@ enum StoryboardScene {
   }
   enum NomalQuestion: StoryboardType {
     static let storyboardName = "NomalQuestion"
+
+    static let nomalQuestionController = SceneType<jlpt_ios_release.NomalQuestionController>(storyboard: NomalQuestion.self, identifier: "NomalQuestionController")
   }
   enum Process: StoryboardType {
     static let storyboardName = "Process"

@@ -98,9 +98,10 @@ class LessonController: UICollectionViewController, UICollectionViewDelegateFlow
             /// - Move to list question of JLPT
         } else {
             /// - Move to list hint screen
-            let type = cell.lessonItem?.typeJLPT
-            let vc = StoryboardScene.ListHint.listHintController.instantiate()
-            vc.type = type
+            //let type = cell.lessonItem?.typeJLPT
+            //let vc = StoryboardScene.ListHint.listHintController.instantiate()
+            let vc = StoryboardScene.NomalQuestion.nomalQuestionController.instantiate()
+            //vc.type = type
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
         }

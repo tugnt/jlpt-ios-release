@@ -28,9 +28,9 @@ struct ColorName {
   let rgbaValue: UInt32
   var color: Color { return Color(named: self) }
 
-  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#00d2ff"></span>
-  /// Alpha: 100% <br/> (0x00d2ffff)
-  static let navBackground = ColorName(rgbaValue: 0x00d2ffff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#2895ff"></span>
+  /// Alpha: 100% <br/> (0x2895ffff)
+  static let navBackground = ColorName(rgbaValue: 0x2895ffff)
 }
 // swiftlint:enable identifier_name line_length type_body_length
 
