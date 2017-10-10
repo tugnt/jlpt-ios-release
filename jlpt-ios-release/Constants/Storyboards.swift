@@ -79,6 +79,8 @@ enum StoryboardScene {
   }
   enum ListeningQuestion: StoryboardType {
     static let storyboardName = "ListeningQuestion"
+
+    static let listeningQuestionController = SceneType<jlpt_ios_release.ListeningQuestionController>(storyboard: ListeningQuestion.self, identifier: "ListeningQuestionController")
   }
   enum NomalQuestion: StoryboardType {
     static let storyboardName = "NomalQuestion"
