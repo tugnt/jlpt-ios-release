@@ -19,6 +19,13 @@ struct HintRequest: JLPTRequest {
 }
 
 struct JLPTHintResponse: JLPTResponse {
+    let hints: [HintItemResponse]
+    static func decode(_ e: Extractor) throws -> JLPTHintResponse {
+        return try JLPTHintResponse(hints: e <|| "tips")
+    }
+}
+
+struct HintItemResponse: JLPTResponse {
     let title: String
     let type: String
     let unit: String
@@ -26,8 +33,8 @@ struct JLPTHintResponse: JLPTResponse {
     let questions: [HintQuestion]
     
     /// - Throws: DecodeError or an arbitrary ErrorType
-    static func decode(_ e: Extractor) throws -> JLPTHintResponse {
-        return try JLPTHintResponse(title:       e <| "title",
+    static func decode(_ e: Extractor) throws -> HintItemResponse {
+        return try HintItemResponse(title:       e <| "title",
                                     type:        e <| "type",
                                     unit:        e <| "unit",
                                     content:     e <| "content",

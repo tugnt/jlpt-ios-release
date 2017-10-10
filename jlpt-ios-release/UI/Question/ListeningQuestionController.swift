@@ -9,27 +9,30 @@
 import UIKit
 
 class ListeningQuestionController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBOutlet weak var questionLb: UILabel! {
+        didSet {
+            questionLb.text = """
+            藤原竜也 × 伊藤英明
+            😲すべての国民が、この男に狂わされる❗殺人告白本📚から事件が始まる新感覚サスペンス・アクション大作❗❗
+            『22年目の告白－私が殺人犯です－』ブルーレイ&DVD好評発売中/デジタル好評配信中
+            """
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBOutlet weak var answerALb: UILabel! {
+        didSet {
+            answerALb.text = """
+                            藤原竜也 × 伊藤英明
+                            😲すべての国民が、この男に狂わされる❗殺人告白本📚から事件が始まる新感覚サスペンス・アクション大作❗❗
+                            『22年目の告白－私が殺人犯です－』ブルーレイ&DVD好評発売中/デジタル好評配信中
+                            """
+        }
     }
-    */
-
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 }

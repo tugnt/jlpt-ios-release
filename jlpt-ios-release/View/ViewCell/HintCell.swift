@@ -16,9 +16,19 @@ class HintCell: UITableViewCell {
     
     @IBOutlet weak var hintNumberQuestionLabel: UILabel!
     
-    @IBOutlet weak var startButton: UIButton!
-    
     @IBOutlet weak var imagePassOrFailed: UIImageView!
+    
+    @IBOutlet weak var pointLabel: UILabel!
+    
+    var hintItem: HintViewModel? {
+        didSet {
+            guard let item = hintItem else { return }
+            hintTitleLabel.text = item.hintTitle
+            hintDescriptionLabel.text = item.hintContent
+            hintNumberQuestionLabel.text = "\(item.numberQuestion)"
+            pointLabel.text = "\(item.point)"
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

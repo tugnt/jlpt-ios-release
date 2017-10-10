@@ -8,17 +8,28 @@
 
 import UIKit
 
+struct HintTableData {
+    let listHint: [HintViewModel]
+    init(response: JLPTHintResponse) {
+        var tmpArr: [HintViewModel] = []
+        for item in response.hints {
+            tmpArr.append(HintViewModel(response: item))
+        }
+        self.listHint = tmpArr
+    }
+}
 class ListHintController: UIViewController {
     var type: TypeJLPT?
     let cellId = "cellHint"
     @IBOutlet weak var tableView: UITableView!
+    var listHint: [HintViewModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorColor = .clear
-        fetchHintData()
+        //fetchHintData()
     }
 
     func fetchHintData(){
@@ -26,10 +37,15 @@ class ListHintController: UIViewController {
         let request = HintRequest(type: type)
         ApiClient.instance.request(request: request, completion: { (result) in
             switch result {
-            case .success(let value):
-                print(value)
-                break
+            case .success(let response):
+                let tableData = HintTableData(response: response)
+                self.listHint = tableData.listHint
+                print(self.listHint.count)
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
             case .failure:
+                // Send error and show image empty
                 break
             }
         })
@@ -50,6 +66,7 @@ extension ListHintController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         cell.selectionStyle = .none
+        //cell.hintItem = listHint[indexPath.row]
         return cell 
     }
     
