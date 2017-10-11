@@ -30,6 +30,7 @@ class LessonController: UICollectionViewController, UICollectionViewDelegateFlow
         return [sectionTip]
     }()
     
+    
     let galazyImageView = UIImageView()
     
     override func viewDidLoad() {
