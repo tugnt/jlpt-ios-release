@@ -66,11 +66,12 @@
 		1AEA8B2E1F6D49DD005A7FC0 /* LessonViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA8B2D1F6D49DD005A7FC0 /* LessonViewCell.swift */; };
 		1AEA8B331F6D5234005A7FC0 /* CategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA8B311F6D5234005A7FC0 /* CategoryHeaderView.swift */; };
 		1AF26AD11F76D6140098062A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF26AD01F76D6140098062A /* CustomButton.swift */; };
-		1AF26ADA1F76E52F0098062A /* PaperOnboarding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF26AD91F76E52F0098062A /* PaperOnboarding.framework */; };
 		8B0CA1C45B0ECB1BA7EE1328 /* Pods_jlpt_ios_releaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C08FD44EC6F84A16E0F0DAA8 /* Pods_jlpt_ios_releaseUITests.framework */; };
 		938DA3C645C6A3C03128E4F2 /* Pods_jlpt_ios_releaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F47A53587C0DC2615FF3BBD7 /* Pods_jlpt_ios_releaseTests.framework */; };
 		DF4C22EF1F74B6C300B2CCC5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF4C22EE1F74B6C300B2CCC5 /* Alamofire.framework */; };
 		DF4C22F21F74CA7E00B2CCC5 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4C22F11F74CA7E00B2CCC5 /* Result.swift */; };
+		DFCCB9B71F8F6E2000123170 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFCCB9B61F8F6E2000123170 /* Realm.framework */; };
+		DFCCB9B91F8F6E5000123170 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFCCB9B81F8F6E5000123170 /* Charts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +168,8 @@
 		DF4C22EE1F74B6C300B2CCC5 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		DF4C22F11F74CA7E00B2CCC5 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		DF50CD572125A82AE1988C65 /* Pods-jlpt-ios-releaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jlpt-ios-releaseTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jlpt-ios-releaseTests/Pods-jlpt-ios-releaseTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DFCCB9B61F8F6E2000123170 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		DFCCB9B81F8F6E5000123170 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
 		F3735D0CC6B88E0BABF48E98 /* Pods-jlpt-ios-releaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jlpt-ios-releaseTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-jlpt-ios-releaseTests/Pods-jlpt-ios-releaseTests.release.xcconfig"; sourceTree = "<group>"; };
 		F47A53587C0DC2615FF3BBD7 /* Pods_jlpt_ios_releaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jlpt_ios_releaseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -176,11 +179,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFCCB9B91F8F6E5000123170 /* Charts.framework in Frameworks */,
+				DFCCB9B71F8F6E2000123170 /* Realm.framework in Frameworks */,
 				1A46AC551F89D2E1001FF467 /* MarkdownView.framework in Frameworks */,
 				1A46AC491F89AD9A001FF467 /* CoreText.framework in Frameworks */,
 				1A46AC461F895208001FF467 /* RxSwift.framework in Frameworks */,
 				1A46AC471F895208001FF467 /* RxCocoa.framework in Frameworks */,
-				1AF26ADA1F76E52F0098062A /* PaperOnboarding.framework in Frameworks */,
 				1ABBE6B51F76B98300A23796 /* Lottie.framework in Frameworks */,
 				DF4C22EF1F74B6C300B2CCC5 /* Alamofire.framework in Frameworks */,
 				015EE0821FC6BED4EE298993 /* Pods_jlpt_ios_release.framework in Frameworks */,
@@ -499,6 +503,8 @@
 		7F5454142D252C22DDB39D77 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DFCCB9B81F8F6E5000123170 /* Charts.framework */,
+				DFCCB9B61F8F6E2000123170 /* Realm.framework */,
 				1A46AC541F89D2E1001FF467 /* MarkdownView.framework */,
 				1A46AC481F89AD9A001FF467 /* CoreText.framework */,
 				1A46AC451F895207001FF467 /* RxCocoa.framework */,
@@ -807,10 +813,11 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Lottie.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/PaperOnboarding.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/MarkdownView.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Charts.framework",
 			);
 			name = Carthage;
 			outputPaths = (
