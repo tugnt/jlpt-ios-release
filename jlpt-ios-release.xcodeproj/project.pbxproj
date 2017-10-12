@@ -72,6 +72,7 @@
 		DF4C22F21F74CA7E00B2CCC5 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4C22F11F74CA7E00B2CCC5 /* Result.swift */; };
 		DFCCB9B71F8F6E2000123170 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFCCB9B61F8F6E2000123170 /* Realm.framework */; };
 		DFCCB9B91F8F6E5000123170 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFCCB9B81F8F6E5000123170 /* Charts.framework */; };
+		DFCCB9E51F8F7A6300123170 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFCCB9E41F8F7A6300123170 /* SnapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +171,7 @@
 		DF50CD572125A82AE1988C65 /* Pods-jlpt-ios-releaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jlpt-ios-releaseTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jlpt-ios-releaseTests/Pods-jlpt-ios-releaseTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DFCCB9B61F8F6E2000123170 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		DFCCB9B81F8F6E5000123170 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
+		DFCCB9E41F8F7A6300123170 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		F3735D0CC6B88E0BABF48E98 /* Pods-jlpt-ios-releaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jlpt-ios-releaseTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-jlpt-ios-releaseTests/Pods-jlpt-ios-releaseTests.release.xcconfig"; sourceTree = "<group>"; };
 		F47A53587C0DC2615FF3BBD7 /* Pods_jlpt_ios_releaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jlpt_ios_releaseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -179,6 +181,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFCCB9E51F8F7A6300123170 /* SnapKit.framework in Frameworks */,
 				DFCCB9B91F8F6E5000123170 /* Charts.framework in Frameworks */,
 				DFCCB9B71F8F6E2000123170 /* Realm.framework in Frameworks */,
 				1A46AC551F89D2E1001FF467 /* MarkdownView.framework in Frameworks */,
@@ -503,6 +506,7 @@
 		7F5454142D252C22DDB39D77 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DFCCB9E41F8F7A6300123170 /* SnapKit.framework */,
 				DFCCB9B81F8F6E5000123170 /* Charts.framework */,
 				DFCCB9B61F8F6E2000123170 /* Realm.framework */,
 				1A46AC541F89D2E1001FF467 /* MarkdownView.framework */,
@@ -818,6 +822,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/MarkdownView.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Charts.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Snapkit.framework",
 			);
 			name = Carthage;
 			outputPaths = (
