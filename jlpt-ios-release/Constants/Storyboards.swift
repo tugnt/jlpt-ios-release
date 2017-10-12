@@ -3,7 +3,6 @@
 // swiftlint:disable sorted_imports
 import Foundation
 import UIKit
-import jlpt_ios_release
 
 // swiftlint:disable file_length
 
