@@ -1,2 +1,2 @@
 NavBackground: 2895FF
-
+LogoutBtn: F5F5F5
