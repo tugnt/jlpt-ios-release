@@ -17,13 +17,35 @@
                     <view key="view" contentMode="scaleToFill" id="T5m-Vn-HpS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="m8j-90-QDu">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellDocument" rowHeight="70" id="NbP-xX-aQE">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NbP-xX-aQE" id="7VR-Dm-cXt">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gZb-QW-Xef" firstAttribute="bottom" secondItem="m8j-90-QDu" secondAttribute="bottom" id="2DU-gm-hOl"/>
+                            <constraint firstItem="m8j-90-QDu" firstAttribute="trailing" secondItem="gZb-QW-Xef" secondAttribute="trailing" id="9fw-7D-7zP"/>
+                            <constraint firstItem="m8j-90-QDu" firstAttribute="leading" secondItem="gZb-QW-Xef" secondAttribute="leading" id="ikr-BB-kSl"/>
+                            <constraint firstItem="m8j-90-QDu" firstAttribute="top" secondItem="gZb-QW-Xef" secondAttribute="top" id="jNU-eC-tv0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gZb-QW-Xef"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FLx-9t-kYP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-135" y="236"/>
+            <point key="canvasLocation" x="-135.19999999999999" y="235.23238380809596"/>
         </scene>
     </scenes>
 </document>
