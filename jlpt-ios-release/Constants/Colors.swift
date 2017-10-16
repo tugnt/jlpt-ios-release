@@ -34,6 +34,30 @@ struct ColorName {
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#2895ff"></span>
   /// Alpha: 100% <br/> (0x2895ffff)
   static let navBackground = ColorName(rgbaValue: 0x2895ffff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#f5f5f5"></span>
+  /// Alpha: 100% <br/> (0xf5f5f5ff)
+  static let acceptBtnBg = ColorName(rgbaValue: 0xf5f5f5ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#3d9fff"></span>
+  /// Alpha: 100% <br/> (0x3d9fffff)
+  static let acceptBtnBgSelected = ColorName(rgbaValue: 0x3d9fffff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#fafafa"></span>
+  /// Alpha: 100% <br/> (0xfafafaff)
+  static let acceptTitle = ColorName(rgbaValue: 0xfafafaff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#fafafa"></span>
+  /// Alpha: 100% <br/> (0xfafafaff)
+  static let acceptTitleSelected = ColorName(rgbaValue: 0xfafafaff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#f5f5f5"></span>
+  /// Alpha: 100% <br/> (0xf5f5f5ff)
+  static let cancelBtnBg = ColorName(rgbaValue: 0xf5f5f5ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#f5f5f5"></span>
+  /// Alpha: 100% <br/> (0xf5f5f5ff)
+  static let cancelBtnBgSelected = ColorName(rgbaValue: 0xf5f5f5ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#d50000"></span>
+  /// Alpha: 100% <br/> (0xd50000ff)
+  static let cancelTitle = ColorName(rgbaValue: 0xd50000ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#ff1744"></span>
+  /// Alpha: 100% <br/> (0xff1744ff)
+  static let cancelTitleSelected = ColorName(rgbaValue: 0xff1744ff)
 }
 // swiftlint:enable identifier_name line_length type_body_length
 
