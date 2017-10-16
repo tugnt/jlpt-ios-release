@@ -1,2 +1,14 @@
 NavBackground: 2895FF
 LogoutBtn: F5F5F5
+
+/// - Cancel button
+cancelBtnBg: F5F5F5
+cancelBtnBgSelected: F5F5F5
+cancelTitle: d50000
+cancelTitleSelected: ff1744
+
+/// - Accept button
+acceptBtnBg: F5F5F5
+acceptBtnBgSelected: 3d9fff
+acceptTitle: FAFAFA
+acceptTitleSelected: FAFAFA
