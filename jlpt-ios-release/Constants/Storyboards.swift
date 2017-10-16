@@ -3,6 +3,7 @@
 // swiftlint:disable sorted_imports
 import Foundation
 import UIKit
+import jlpt_ios_release
 
 // swiftlint:disable file_length
 
@@ -49,10 +50,30 @@ extension UIViewController {
 
 // swiftlint:disable explicit_type_interface identifier_name line_length type_body_length type_name
 enum StoryboardScene {
+  enum ChatRoom: StoryboardType {
+    static let storyboardName = "ChatRoom"
+
+    static let chatRoomController = SceneType<jlpt_ios_release.ChatRoomController>(storyboard: ChatRoom.self, identifier: "ChatRoomController")
+  }
   enum ChildIntroduction: StoryboardType {
     static let storyboardName = "ChildIntroduction"
 
     static let childIntroductionController = SceneType<jlpt_ios_release.ChildIntroductionController>(storyboard: ChildIntroduction.self, identifier: "ChildIntroductionController")
+  }
+  enum Documents: StoryboardType {
+    static let storyboardName = "Documents"
+
+    static let documentController = SceneType<jlpt_ios_release.DocumentController>(storyboard: Documents.self, identifier: "DocumentController")
+  }
+  enum EditProfile: StoryboardType {
+    static let storyboardName = "EditProfile"
+
+    static let editProfileController = SceneType<jlpt_ios_release.EditProfileController>(storyboard: EditProfile.self, identifier: "EditProfileController")
+  }
+  enum FeedBack: StoryboardType {
+    static let storyboardName = "FeedBack"
+
+    static let feedbackController = SceneType<jlpt_ios_release.FeedbackController>(storyboard: FeedBack.self, identifier: "FeedbackController")
   }
   enum Introduction: StoryboardType {
     static let storyboardName = "Introduction"
@@ -85,6 +106,16 @@ enum StoryboardScene {
     static let storyboardName = "NomalQuestion"
 
     static let nomalQuestionController = SceneType<jlpt_ios_release.NomalQuestionController>(storyboard: NomalQuestion.self, identifier: "NomalQuestionController")
+  }
+  enum Notification: StoryboardType {
+    static let storyboardName = "Notification"
+
+    static let notificationController = SceneType<jlpt_ios_release.NotificationController>(storyboard: Notification.self, identifier: "NotificationController")
+  }
+  enum PrivacyPolicy: StoryboardType {
+    static let storyboardName = "PrivacyPolicy"
+
+    static let privacyPolicyController = SceneType<jlpt_ios_release.PrivacyPolicyController>(storyboard: PrivacyPolicy.self, identifier: "PrivacyPolicyController")
   }
   enum Process: StoryboardType {
     static let storyboardName = "Process"

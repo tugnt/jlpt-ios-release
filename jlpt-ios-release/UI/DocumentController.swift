@@ -1,18 +1,18 @@
 //
-//  ProcessController.swift
+//  DocumentController.swift
 //  jlpt-ios-release
 //
-//  Created by Nguyen Trong Tung on 2017/09/16.
+//  Created by Nguyen Trong Tung on 2017/10/14.
 //  Copyright © 2017 Nguyen Trong Tung. All rights reserved.
 //
 
 import UIKit
 
-class ProcessController: UIViewController {
+class DocumentController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Tiến độ"
+        self.title = "Tài liệu"
         // Do any additional setup after loading the view.
     }
 
