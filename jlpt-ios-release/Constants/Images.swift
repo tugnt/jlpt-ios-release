@@ -44,8 +44,11 @@ struct ColorAsset {
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 enum Asset {
   static let background = ImageAsset(name: "background")
+  static let download = ImageAsset(name: "download")
+  static let downloadDone = ImageAsset(name: "download_done")
   static let galaxyBackground = ImageAsset(name: "galaxy_background")
-  static let lesson = ImageAsset(name: "lesson")
+  static let grammar = ImageAsset(name: "grammar")
+  static let kanji = ImageAsset(name: "kanji")
   static let lesson1 = ImageAsset(name: "lesson_1")
   static let lesson10 = ImageAsset(name: "lesson_10")
   static let lesson11 = ImageAsset(name: "lesson_11")
@@ -67,14 +70,21 @@ enum Asset {
   static let lesson7 = ImageAsset(name: "lesson_7")
   static let lesson8 = ImageAsset(name: "lesson_8")
   static let lesson9 = ImageAsset(name: "lesson_9")
+  static let listening = ImageAsset(name: "listening")
   static let loading0 = ImageAsset(name: "loading_0")
   static let loading1 = ImageAsset(name: "loading_1")
   static let loading2 = ImageAsset(name: "loading_2")
   static let loading3 = ImageAsset(name: "loading_3")
+  static let n1 = ImageAsset(name: "n1")
+  static let n2 = ImageAsset(name: "n2")
+  static let n3 = ImageAsset(name: "n3")
+  static let n4 = ImageAsset(name: "n4")
+  static let n5 = ImageAsset(name: "n5")
   static let navbarBackground = ImageAsset(name: "navbar_background")
   static let nextButton = ImageAsset(name: "next_button")
   static let process = ImageAsset(name: "process")
   static let profile = ImageAsset(name: "profile")
+  static let reading = ImageAsset(name: "reading")
   static let skipButton = ImageAsset(name: "skip_button")
   static let startButton = ImageAsset(name: "start_button")
   static let startButton1 = ImageAsset(name: "start_button1")
@@ -89,8 +99,11 @@ enum Asset {
   ]
   static let allImages: [ImageAsset] = [
     background,
+    download,
+    downloadDone,
     galaxyBackground,
-    lesson,
+    grammar,
+    kanji,
     lesson1,
     lesson10,
     lesson11,
@@ -112,14 +125,21 @@ enum Asset {
     lesson7,
     lesson8,
     lesson9,
+    listening,
     loading0,
     loading1,
     loading2,
     loading3,
+    n1,
+    n2,
+    n3,
+    n4,
+    n5,
     navbarBackground,
     nextButton,
     process,
     profile,
+    reading,
     skipButton,
     startButton,
     startButton1,

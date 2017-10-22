@@ -24,33 +24,8 @@ class StartAppController: UIViewController {
         let imageBackground = UIImage(named: "background")
         self.imageBackground.image = imageBackground
         // - Load JLPT animation
-        jlptAnimation()
     }
     
-    func jlptAnimation() {
-        // - List array url animation json. This include 4 words J, L, P, T
-        let urlArray: [String] = ["https://raw.githubusercontent.com/airbnb/lottie-ios/master/Example/Tests/TypeFace/J.json",
-                                  "https://raw.githubusercontent.com/airbnb/lottie-ios/master/Example/Tests/TypeFace/L.json",
-                                  "https://raw.githubusercontent.com/airbnb/lottie-ios/master/Example/Tests/TypeFace/P.json",
-                                  "https://raw.githubusercontent.com/airbnb/lottie-ios/master/Example/Tests/TypeFace/T.json"]
-        var animations: [LOTAnimationView] = []
-        
-        for url in urlArray {
-            let animation = LOTAnimationView(contentsOf: URL(string: url)!)
-            animations.append(animation)
-            view.addSubview(animation)
-        }
-        
-        let widthScreen = view.bounds.width
-        let withText: CGFloat = 60
-        let padding = Int((widthScreen - ( withText * 4 )) / 2 )
-        for (index, aniView) in animations.enumerated() {
-            view.translatesAutoresizingMaskIntoConstraints = false
-            view.addConstraintsWithFormat("H:|-\(index * Int(withText) + padding)-[v0(\(withText))]-|", views: aniView)
-            view.addConstraintsWithFormat("V:|-300-[v0(60)]|", views: aniView)
-            aniView.play()
-        }
-    }
     
     @objc func startApp() {
         let vc = StoryboardScene.Introduction.introductionController.instantiate()

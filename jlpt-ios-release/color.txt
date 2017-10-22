@@ -12,3 +12,10 @@ acceptBtnBg: F5F5F5
 acceptBtnBgSelected: 3d9fff
 acceptTitle: FAFAFA
 acceptTitleSelected: FAFAFA
+
+//  Document header color bg
+n1ColorBg: 50D2C2
+n2ColorBg: D667CD
+n3ColorBg: FC3768
+n4ColorBg: FFC000
+n5ColorBg: 00B9FF

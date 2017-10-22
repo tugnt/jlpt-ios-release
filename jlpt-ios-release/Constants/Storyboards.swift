@@ -86,6 +86,11 @@ enum StoryboardScene {
 
     static let initialScene = InitialSceneType<UIViewController>(storyboard: LaunchScreen.self)
   }
+  enum ListDocumentOfType: StoryboardType {
+    static let storyboardName = "ListDocumentOfType"
+
+    static let listDocumentOfTypeController = SceneType<jlpt_ios_release.ListDocumentOfTypeController>(storyboard: ListDocumentOfType.self, identifier: "ListDocumentOfTypeController")
+  }
   enum ListHint: StoryboardType {
     static let storyboardName = "ListHint"
 

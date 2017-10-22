@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="KGk-i7-Jjw" customClass="DocumentTypeCell" customModule="jlpt_ios_release" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="373" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="373" height="99.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="l3f-5U-eMk">
+                        <rect key="frame" x="10" y="5" width="353" height="89.5"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PPh-KD-Fbx" userLabel="Reading" customClass="CardView" customModule="jlpt_ios_release" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="81" height="89.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFS-Zk-CW2">
+                                        <rect key="frame" x="15.5" y="10" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="ta4-6T-Q9o"/>
+                                            <constraint firstAttribute="height" constant="50" id="zHc-0x-dxr"/>
+                                        </constraints>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đọc hiểu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNf-2i-J4C">
+                                        <rect key="frame" x="15.5" y="65" width="50" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="hFS-Zk-CW2" firstAttribute="top" secondItem="PPh-KD-Fbx" secondAttribute="top" constant="10" id="k98-hj-rHw"/>
+                                    <constraint firstItem="gNf-2i-J4C" firstAttribute="centerX" secondItem="PPh-KD-Fbx" secondAttribute="centerX" id="mmi-H7-Jdv"/>
+                                    <constraint firstAttribute="height" constant="89.5" id="pkb-po-xMa"/>
+                                    <constraint firstItem="hFS-Zk-CW2" firstAttribute="centerX" secondItem="PPh-KD-Fbx" secondAttribute="centerX" id="tGl-cH-wSh"/>
+                                    <constraint firstItem="gNf-2i-J4C" firstAttribute="top" secondItem="hFS-Zk-CW2" secondAttribute="bottom" constant="5" id="vF1-Yy-oLJ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SNT-q5-Vqm" userLabel="Reading" customClass="CardView" customModule="jlpt_ios_release" customModuleProvider="target">
+                                <rect key="frame" x="91" y="0.0" width="80.5" height="89.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Dx-9F-f28">
+                                        <rect key="frame" x="15" y="10" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Aul-XI-NFW"/>
+                                            <constraint firstAttribute="width" constant="50" id="fYr-eQ-qJX"/>
+                                        </constraints>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ngữ pháp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFb-aw-r5t">
+                                        <rect key="frame" x="12" y="65" width="56" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="eFb-aw-r5t" firstAttribute="top" secondItem="7Dx-9F-f28" secondAttribute="bottom" constant="5" id="MOQ-gc-vxh"/>
+                                    <constraint firstItem="7Dx-9F-f28" firstAttribute="centerX" secondItem="SNT-q5-Vqm" secondAttribute="centerX" id="OwE-Cv-E5m"/>
+                                    <constraint firstItem="7Dx-9F-f28" firstAttribute="top" secondItem="SNT-q5-Vqm" secondAttribute="top" constant="10" id="W7o-s6-BMa"/>
+                                    <constraint firstItem="eFb-aw-r5t" firstAttribute="centerX" secondItem="SNT-q5-Vqm" secondAttribute="centerX" id="yLn-zK-51S"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vXz-Us-19D" userLabel="Reading" customClass="CardView" customModule="jlpt_ios_release" customModuleProvider="target">
+                                <rect key="frame" x="181.5" y="0.0" width="81" height="89.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yL8-DL-15N">
+                                        <rect key="frame" x="16" y="10" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="9ep-tp-IKQ"/>
+                                            <constraint firstAttribute="height" constant="50" id="Egb-4w-sFE"/>
+                                        </constraints>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Từ vựng" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ogx-0d-wpl">
+                                        <rect key="frame" x="17" y="65" width="46.5" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="yL8-DL-15N" firstAttribute="centerX" secondItem="vXz-Us-19D" secondAttribute="centerX" id="5mC-D3-pi2"/>
+                                    <constraint firstItem="Ogx-0d-wpl" firstAttribute="centerX" secondItem="vXz-Us-19D" secondAttribute="centerX" id="HOg-Q5-2cu"/>
+                                    <constraint firstItem="yL8-DL-15N" firstAttribute="top" secondItem="vXz-Us-19D" secondAttribute="top" constant="10" id="VNI-u3-ZMr"/>
+                                    <constraint firstItem="Ogx-0d-wpl" firstAttribute="top" secondItem="yL8-DL-15N" secondAttribute="bottom" constant="5" id="ypl-Tq-s5F"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="16s-r5-UIJ" userLabel="Reading" customClass="CardView" customModule="jlpt_ios_release" customModuleProvider="target">
+                                <rect key="frame" x="272.5" y="0.0" width="80.5" height="89.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94J-2J-gtc">
+                                        <rect key="frame" x="15.5" y="10" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="U90-3b-6mL"/>
+                                            <constraint firstAttribute="height" constant="50" id="dK6-BU-7bC"/>
+                                        </constraints>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nghe hiểu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bX4-Va-hBO">
+                                        <rect key="frame" x="11" y="65" width="58" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="94J-2J-gtc" firstAttribute="centerX" secondItem="16s-r5-UIJ" secondAttribute="centerX" id="4dK-Eg-Ziw"/>
+                                    <constraint firstItem="bX4-Va-hBO" firstAttribute="centerX" secondItem="16s-r5-UIJ" secondAttribute="centerX" id="hHh-gI-lGT"/>
+                                    <constraint firstItem="bX4-Va-hBO" firstAttribute="top" secondItem="94J-2J-gtc" secondAttribute="bottom" constant="5" id="heL-fw-s95"/>
+                                    <constraint firstItem="94J-2J-gtc" firstAttribute="top" secondItem="16s-r5-UIJ" secondAttribute="top" constant="10" id="hwK-NM-szx"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="vXz-Us-19D" firstAttribute="top" secondItem="l3f-5U-eMk" secondAttribute="top" id="7IA-hu-gOJ"/>
+                            <constraint firstAttribute="bottom" secondItem="vXz-Us-19D" secondAttribute="bottom" id="egO-tF-3D5"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="l3f-5U-eMk" secondAttribute="bottom" constant="5" id="BAO-RI-f5z"/>
+                    <constraint firstAttribute="trailing" secondItem="l3f-5U-eMk" secondAttribute="trailing" constant="10" id="GT4-m4-0Nt"/>
+                    <constraint firstItem="l3f-5U-eMk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="H55-6H-TQn"/>
+                    <constraint firstItem="l3f-5U-eMk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="HJ4-jL-eIr"/>
+                    <constraint firstAttribute="bottom" secondItem="l3f-5U-eMk" secondAttribute="bottom" constant="5" id="VOa-3k-JuE"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="grammaLb" destination="eFb-aw-r5t" id="6zL-Fs-bOJ"/>
+                <outlet property="grammarBtn" destination="7Dx-9F-f28" id="hPW-to-ima"/>
+                <outlet property="listeningBtn" destination="94J-2J-gtc" id="Cmv-yK-6H7"/>
+                <outlet property="listeningLb" destination="bX4-Va-hBO" id="3Ec-xc-Lp9"/>
+                <outlet property="readingBtn" destination="hFS-Zk-CW2" id="BUb-36-GGA"/>
+                <outlet property="readingLb" destination="gNf-2i-J4C" id="YxE-So-KeO"/>
+                <outlet property="vocabularyBtn" destination="yL8-DL-15N" id="1Z8-ac-bz7"/>
+                <outlet property="vocabularyLb" destination="Ogx-0d-wpl" id="jng-Y9-bWp"/>
+            </connections>
+            <point key="canvasLocation" x="60.5" y="82"/>
+        </tableViewCell>
+    </objects>
+</document>
