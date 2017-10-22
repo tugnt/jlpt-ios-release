@@ -8,13 +8,14 @@ import UIKit
 private let ActiveInactiveTransitionStep: CGFloat = 0.05
 private let ColorTransitionStep: Float = 0.002
 // Dải màu chuyển đổi của sóng chín h
-private let PrimaryWaveActiveColors = []
+private let PrimaryWaveActiveColors = [ColorName.n1ColorBg.color, ColorName.n2ColorBg.color,
+                                       ColorName.n3ColorBg.color, ColorName.n4ColorBg.color, ColorName.n5ColorBg.color]
 
 // Số làn sóng
 private let PrimaryWaveColorCount = PrimaryWaveActiveColors.count
-private let PrimaryWaveInactiveColor = UIColor.gray
+private let PrimaryWaveInactiveColor = UIColor.white
 /// Màu của sóng phía sau
-private let SecondaryWaveColor = UIColor.gray
+private let SecondaryWaveColor = UIColor.white
 private let WaveLevel: CGFloat = 0.8
 // Tần số dao động của sóng
 private let PrimaryWaveFrequency: CGFloat = 1.2
@@ -38,7 +39,7 @@ class WaveView: UIView {
         backWaveView.primaryWaveLineWidth = 0.5
         backWaveView.primaryWaveColor = PrimaryWaveInactiveColor
         backWaveView.secondaryWaveLineWidth = 0.5
-        backWaveView.secondaryWaveColor = UIColor.darkGray
+        backWaveView.secondaryWaveColor = UIColor.white
         backWaveView.update(withLevel: 0)
         addSubview(backWaveView)
     
@@ -100,3 +101,5 @@ class WaveView: UIView {
         backWaveView.frequency = SecondaryWaveFrequency * freqMultiplier
     }
 }
+
+

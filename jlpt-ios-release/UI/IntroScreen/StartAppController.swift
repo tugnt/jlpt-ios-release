@@ -8,27 +8,54 @@
 
 import UIKit
 import Lottie
+import SnapKit
 
 class StartAppController: UIViewController {
     @IBOutlet weak var imageBackground: UIImageView!
-    @IBOutlet weak var startButton: UIButton! {
-        didSet {
-            startButton.setBackgroundImage(UIImage(named: "start_button"), for: .normal)
-            startButton.addTarget(self, action: #selector(startApp), for: .touchUpInside)
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // - Set up image background
-        let imageBackground = UIImage(named: "background")
-        self.imageBackground.image = imageBackground
-        // - Load JLPT animation
+        view.backgroundColor = ColorName.navBackground.color
+        // - Set up wave view
+        let wave = WaveView()
+        view.addSubview(wave)
+        wave.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(view)
+            make.height.equalTo(200)
+            make.top.equalToSuperview().offset(150)
+        }
+        
+        /// Setup start button
+        let button = UIButton()
+        button.setTitle("Bắt đầu", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = UIColor(white: 1, alpha: 0.2)
+        button.titleEdgeInsets = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+        button.layer.borderWidth = 1
+        button.layer.cornerRadius = 3
+        button.layer.borderColor = UIColor(white: 1, alpha: 0.3).cgColor
+        view.addSubview(button)
+        
+        let margin = 8
+        let maxWidth = 315
+        button.snp.makeConstraints { make in
+            make.bottom.equalTo(view).offset(-30)
+            make.centerX.equalTo(view)
+            make.width.lessThanOrEqualTo(maxWidth)
+            make.width.lessThanOrEqualTo(view).inset(margin)
+            make.width.equalTo(view).priority(500)
+            make.height.equalTo(50)
+        }
+        button.addTarget(self, action: #selector(startApplication), for: .touchUpInside)
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
-    @objc func startApp() {
-        let vc = StoryboardScene.Introduction.introductionController.instantiate()
-        self.navigationController?.pushViewController(vc, animated: true)
+    @objc func startApplication() {
+        let vc = StoryboardScene.Introduction.initialScene.instantiate()
+        vc.modalPresentationStyle = .overCurrentContext
+        self.present(vc, animated: true, completion: nil)
     }
 }
