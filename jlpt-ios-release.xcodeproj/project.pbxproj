@@ -13,6 +13,10 @@
 		1A23C22D1F9CBCF8003181AA /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A23C22C1F9CBCF8003181AA /* UIColorExtension.swift */; };
 		1A2B25CF1F512DFB00DFFD3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B25CE1F512DFB00DFFD3A /* AppDelegate.swift */; };
 		1A2B25EF1F512DFB00DFFD3A /* jlpt_ios_releaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B25EE1F512DFB00DFFD3A /* jlpt_ios_releaseUITests.swift */; };
+		1A2D07041F9E24CB00CB3864 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D07031F9E24CB00CB3864 /* LoginViewController.swift */; };
+		1A2D07071F9E27BA00CB3864 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A2D07051F9E27BA00CB3864 /* Login.storyboard */; };
+		1A2D070A1F9F706E00CB3864 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A2D07081F9F706E00CB3864 /* Register.storyboard */; };
+		1A2D070C1F9F75AC00CB3864 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D070B1F9F75AC00CB3864 /* RegisterViewController.swift */; };
 		1A36849E1F7752E9001FEF88 /* ChildIntroductionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A36849D1F7752E9001FEF88 /* ChildIntroductionController.swift */; };
 		1A3684A21F7D2611001FEF88 /* StartAppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3684A11F7D2611001FEF88 /* StartAppController.swift */; };
 		1A3684A41F7D2DFC001FEF88 /* StartApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A3684A31F7D2DFC001FEF88 /* StartApp.storyboard */; };
@@ -132,6 +136,10 @@
 		1A2B25EA1F512DFB00DFFD3A /* jlpt-ios-releaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "jlpt-ios-releaseUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2B25EE1F512DFB00DFFD3A /* jlpt_ios_releaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jlpt_ios_releaseUITests.swift; sourceTree = "<group>"; };
 		1A2B25F01F512DFB00DFFD3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A2D07031F9E24CB00CB3864 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1A2D07061F9E27BA00CB3864 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Login.storyboard; sourceTree = "<group>"; };
+		1A2D07091F9F706E00CB3864 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Register.storyboard; sourceTree = "<group>"; };
+		1A2D070B1F9F75AC00CB3864 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		1A3684981F76E8D6001FEF88 /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Light.ttf"; sourceTree = "<group>"; };
 		1A36849D1F7752E9001FEF88 /* ChildIntroductionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildIntroductionController.swift; sourceTree = "<group>"; };
 		1A3684A11F7D2611001FEF88 /* StartAppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartAppController.swift; sourceTree = "<group>"; };
@@ -368,6 +376,15 @@
 			path = "jlpt-ios-releaseUITests";
 			sourceTree = "<group>";
 		};
+		1A2D06FF1F9E21E700CB3864 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1A2D07031F9E24CB00CB3864 /* LoginViewController.swift */,
+				1A2D070B1F9F75AC00CB3864 /* RegisterViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		1A3684971F76E8AD001FEF88 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -437,6 +454,8 @@
 				1A3684A31F7D2DFC001FEF88 /* StartApp.storyboard */,
 				1A46AC4C1F89B703001FF467 /* TheoryHint.storyboard */,
 				1ABECC921F9C4DD5005056A5 /* ListDocumentOfType.storyboard */,
+				1A2D07051F9E27BA00CB3864 /* Login.storyboard */,
+				1A2D07081F9F706E00CB3864 /* Register.storyboard */,
 			);
 			path = Base.lproj;
 			sourceTree = "<group>";
@@ -480,6 +499,7 @@
 		1AD738591F6D3B0200A4A1B9 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				1A2D06FF1F9E21E700CB3864 /* Login */,
 				1AD2FD6E1F80D92400B5167D /* Hint */,
 				1AB79E2D1F769EE400C2F8AE /* IntroScreen */,
 				1AD2FD6F1F80D93C00B5167D /* JLPT */,
@@ -770,7 +790,9 @@
 				1ABECC8A1F97B734005056A5 /* DocumentExpandHeaderView.xib in Resources */,
 				1A46AC621F8A7728001FF467 /* color.txt in Resources */,
 				1A9133A01F92167C007A6CF2 /* Notification.storyboard in Resources */,
+				1A2D07071F9E27BA00CB3864 /* Login.storyboard in Resources */,
 				1A9133961F92017F007A6CF2 /* FeedBack.storyboard in Resources */,
+				1A2D070A1F9F706E00CB3864 /* Register.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1014,8 +1036,10 @@
 				1A3E51701F8B44550025F4E2 /* NomalQuestionCell.swift in Sources */,
 				1A91339D1F9215F6007A6CF2 /* EditProfileController.swift in Sources */,
 				1A3684A21F7D2611001FEF88 /* StartAppController.swift in Sources */,
+				1A2D07041F9E24CB00CB3864 /* LoginViewController.swift in Sources */,
 				1AB79E2F1F769F1200C2F8AE /* IntroductionController.swift in Sources */,
 				1A46AC5B1F8A5EA5001FF467 /* NomalQuestionController.swift in Sources */,
+				1A2D070C1F9F75AC00CB3864 /* RegisterViewController.swift in Sources */,
 				1AC50CF11F6E5DB0007D161C /* ApiError.swift in Sources */,
 				1AD738661F6D3CB400A4A1B9 /* TabbarController.swift in Sources */,
 				1A9133AB1F92426B007A6CF2 /* ChatRoomController.swift in Sources */,
@@ -1072,6 +1096,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		1A2D07051F9E27BA00CB3864 /* Login.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1A2D07061F9E27BA00CB3864 /* Base */,
+			);
+			name = Login.storyboard;
+			sourceTree = "<group>";
+		};
+		1A2D07081F9F706E00CB3864 /* Register.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1A2D07091F9F706E00CB3864 /* Base */,
+			);
+			name = Register.storyboard;
+			sourceTree = "<group>";
+		};
 		1A46AC4C1F89B703001FF467 /* TheoryHint.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

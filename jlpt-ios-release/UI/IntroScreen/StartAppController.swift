@@ -54,8 +54,9 @@ class StartAppController: UIViewController {
     }
     
     @objc func startApplication() {
-        let vc = StoryboardScene.Introduction.initialScene.instantiate()
-        vc.modalPresentationStyle = .overCurrentContext
-        self.present(vc, animated: true, completion: nil)
+        //let vc = TabbarController()
+        let vc = StoryboardScene.Login.loginViewController.instantiate()
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        appDelegate.window?.rootViewController = vc
     }
 }

@@ -46,7 +46,9 @@ enum Asset {
   static let background = ImageAsset(name: "background")
   static let download = ImageAsset(name: "download")
   static let downloadDone = ImageAsset(name: "download_done")
+  static let facebook = ImageAsset(name: "facebook")
   static let galaxyBackground = ImageAsset(name: "galaxy_background")
+  static let google = ImageAsset(name: "google")
   static let grammar = ImageAsset(name: "grammar")
   static let kanji = ImageAsset(name: "kanji")
   static let lesson1 = ImageAsset(name: "lesson_1")
@@ -101,7 +103,9 @@ enum Asset {
     background,
     download,
     downloadDone,
+    facebook,
     galaxyBackground,
+    google,
     grammar,
     kanji,
     lesson1,
