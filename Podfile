@@ -19,4 +19,8 @@ target 'jlpt-ios-release' do
   pod 'Fabric'
   pod 'Crashlytics'
   pod 'Himotoki'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
 end
