@@ -19,7 +19,10 @@ n2ColorBg: D667CD
 n3ColorBg: FC3768
 n4ColorBg: FFC000
 n5ColorBg: 00B9FF
+tipsColorBg: 6563A4
 
 // Login
 textFieldColor = F5F5F5
 
+/// - LessonControler
+bottomHeaderLine: F5F5F5

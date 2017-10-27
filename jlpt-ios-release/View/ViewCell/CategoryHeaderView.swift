@@ -7,13 +7,43 @@
 //
 
 import UIKit
+import SnapKit
+
+struct CategoryHeader {
+    let sectionColor: UIColor
+    let title: String
+    let detailDescription: String
+    let sectionImage: UIImage
+    var isExpanded: Bool
+    init(sectionColor: UIColor, title: String, detailDescription: String, sectionImage: UIImage, isExpanded: Bool) {
+        self.sectionColor = sectionColor
+        self.title = title
+        self.detailDescription = detailDescription
+        self.sectionImage = sectionImage
+        self.isExpanded = isExpanded
+    }
+}
+
+protocol CategoryHeaderViewDelegate: class {
+    func header(_ header: CategoryHeaderView, section: Int)
+}
 
 class CategoryHeaderView: UICollectionReusableView {
-
-    let label = UILabel()
+    let titleLabel = UILabel()
+    let descriptionLabel = UILabel()
+    let levelImage = UIImageView()
+    let bottomLine = UIView()
+    var section: Int = 0
+    weak var delegate: CategoryHeaderViewDelegate?
+    static var identifier:String { return String(describing: self) }
     
-    static var identifier:String {
-        return String(describing: self)
+    var headerItem: CategoryHeader? {
+        didSet {
+            guard let item = headerItem else { return }
+            titleLabel.text = item.title
+            descriptionLabel.text = item.detailDescription
+            levelImage.image = item.sectionImage
+        }
     }
     
     override init(frame: CGRect) {
@@ -21,17 +51,54 @@ class CategoryHeaderView: UICollectionReusableView {
         setUpHeader()
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func setUpHeader(){
+        addSubview(titleLabel)
+        addSubview(levelImage)
+        addSubview(descriptionLabel)
+        addSubview(bottomLine)
+        
+        levelImage.snp.makeConstraints { make in
+            make.height.width.equalTo(60)
+            make.centerY.equalToSuperview()
+            make.left.equalToSuperview().offset(10)
+        }
+        
+        /// - TODO: set font for label
+        titleLabel.textColor = .gray
+        titleLabel.font = UIFont.systemFont(ofSize: 18)
+        titleLabel.snp.makeConstraints { make in
+            make.left.equalTo(levelImage.snp.right).offset(10)
+            make.top.equalTo(levelImage.snp.top).offset(5)
+        }
+        
+        /// - TODO: set font for description label
+        descriptionLabel.font = UIFont.systemFont(ofSize: 13)
+        descriptionLabel.numberOfLines = 0
+        descriptionLabel.snp.makeConstraints { make in
+            make.left.equalTo(titleLabel)
+            make.top.equalTo(titleLabel.snp.bottom).offset(5)
+            make.right.equalToSuperview().offset(-10)
+        }
+        
+        bottomLine.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+            make.height.equalTo(0.5 )
+            make.bottom.equalToSuperview()
+        }
+        bottomLine.backgroundColor = ColorName.bottomHeaderLine.color
+        let headerTap = UITapGestureRecognizer(target: self, action: #selector(expandLessonSection))
+        headerTap.numberOfTapsRequired = 1
+        headerTap.numberOfTouchesRequired = 1
+        self.addGestureRecognizer(headerTap)
+        self.isUserInteractionEnabled = true
     }
     
-    func setUpHeader(){
-        addSubview(label)
-        translatesAutoresizingMaskIntoConstraints = false
-        addConstraintsWithFormat("V:|-5-[v0]-5-|", views: label)
-        label.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        
-        /// - Set up attribute label header
-        label.textColor = .white
+    @objc func expandLessonSection () {
+        print("Nao click")
+        delegate?.header(self, section: section)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

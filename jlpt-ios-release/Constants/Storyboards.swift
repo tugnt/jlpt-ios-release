@@ -3,7 +3,6 @@
 // swiftlint:disable sorted_imports
 import Foundation
 import UIKit
-import jlpt_ios_release
 
 // swiftlint:disable file_length
 
@@ -136,6 +135,11 @@ enum StoryboardScene {
     static let storyboardName = "Profile"
 
     static let profileController = SceneType<jlpt_ios_release.ProfileController>(storyboard: Profile.self, identifier: "ProfileController")
+  }
+  enum Register: StoryboardType {
+    static let storyboardName = "Register"
+
+    static let registerViewController = SceneType<jlpt_ios_release.RegisterViewController>(storyboard: Register.self, identifier: "RegisterViewController")
   }
   enum StartApp: StoryboardType {
     static let storyboardName = "StartApp"

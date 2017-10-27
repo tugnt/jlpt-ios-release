@@ -49,7 +49,12 @@ class LoginViewController: UIViewController {
         skipLogginBtn.addTarget(self, action: #selector(skipLoggin), for: .touchUpInside)
     }
     
-    @objc func moveRegisterScreen() { }
+    @objc func moveRegisterScreen() {
+        self.navigationController?.pushViewController(StoryboardScene.Register.registerViewController.instantiate(), animated: true)
+    }
     
-    @objc func skipLoggin() {}
+    @objc func skipLoggin() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        appDelegate.window?.rootViewController = TabbarController()
+    }
 }

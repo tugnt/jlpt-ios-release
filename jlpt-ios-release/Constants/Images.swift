@@ -47,7 +47,6 @@ enum Asset {
   static let download = ImageAsset(name: "download")
   static let downloadDone = ImageAsset(name: "download_done")
   static let facebook = ImageAsset(name: "facebook")
-  static let galaxyBackground = ImageAsset(name: "galaxy_background")
   static let google = ImageAsset(name: "google")
   static let grammar = ImageAsset(name: "grammar")
   static let kanji = ImageAsset(name: "kanji")
@@ -84,17 +83,15 @@ enum Asset {
   static let n5 = ImageAsset(name: "n5")
   static let navbarBackground = ImageAsset(name: "navbar_background")
   static let nextButton = ImageAsset(name: "next_button")
-  static let process = ImageAsset(name: "process")
   static let profile = ImageAsset(name: "profile")
   static let reading = ImageAsset(name: "reading")
-  static let skipButton = ImageAsset(name: "skip_button")
-  static let startButton = ImageAsset(name: "start_button")
-  static let startButton1 = ImageAsset(name: "start_button1")
   static let tabChat = ImageAsset(name: "tab_chat")
   static let tabDocument = ImageAsset(name: "tab_document")
   static let tabLesson = ImageAsset(name: "tab_lesson")
   static let tabProfile = ImageAsset(name: "tab_profile")
   static let tabProgress = ImageAsset(name: "tab_progress")
+  static let tips1 = ImageAsset(name: "tips-1")
+  static let tips = ImageAsset(name: "tips")
 
   // swiftlint:disable trailing_comma
   static let allColors: [ColorAsset] = [
@@ -104,7 +101,6 @@ enum Asset {
     download,
     downloadDone,
     facebook,
-    galaxyBackground,
     google,
     grammar,
     kanji,
@@ -141,17 +137,15 @@ enum Asset {
     n5,
     navbarBackground,
     nextButton,
-    process,
     profile,
     reading,
-    skipButton,
-    startButton,
-    startButton1,
     tabChat,
     tabDocument,
     tabLesson,
     tabProfile,
     tabProgress,
+    tips1,
+    tips,
   ]
   // swiftlint:enable trailing_comma
   @available(*, deprecated, renamed: "allImages")

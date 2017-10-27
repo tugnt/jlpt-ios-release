@@ -18,6 +18,5 @@ class BaseViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setUpView() {
-    }
+    func setUpView() {}
 }

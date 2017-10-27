@@ -98,6 +98,8 @@
 		1AEA8B2C1F6D4986005A7FC0 /* CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA8B2B1F6D4986005A7FC0 /* CategoryViewCell.swift */; };
 		1AEA8B2E1F6D49DD005A7FC0 /* LessonViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA8B2D1F6D49DD005A7FC0 /* LessonViewCell.swift */; };
 		1AEA8B331F6D5234005A7FC0 /* CategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA8B311F6D5234005A7FC0 /* CategoryHeaderView.swift */; };
+		1AEA8FD21FA245EB009E67D1 /* LessonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA8FD11FA245EB009E67D1 /* LessonModel.swift */; };
+		1AEA8FD41FA254A6009E67D1 /* DashedCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA8FD31FA254A6009E67D1 /* DashedCircleView.swift */; };
 		8B0CA1C45B0ECB1BA7EE1328 /* Pods_jlpt_ios_releaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C08FD44EC6F84A16E0F0DAA8 /* Pods_jlpt_ios_releaseUITests.framework */; };
 		938DA3C645C6A3C03128E4F2 /* Pods_jlpt_ios_releaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F47A53587C0DC2615FF3BBD7 /* Pods_jlpt_ios_releaseTests.framework */; };
 		DF4C22EF1F74B6C300B2CCC5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF4C22EE1F74B6C300B2CCC5 /* Alamofire.framework */; };
@@ -222,6 +224,8 @@
 		1AEA8B2B1F6D4986005A7FC0 /* CategoryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewCell.swift; sourceTree = "<group>"; };
 		1AEA8B2D1F6D49DD005A7FC0 /* LessonViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonViewCell.swift; sourceTree = "<group>"; };
 		1AEA8B311F6D5234005A7FC0 /* CategoryHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryHeaderView.swift; sourceTree = "<group>"; };
+		1AEA8FD11FA245EB009E67D1 /* LessonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonModel.swift; sourceTree = "<group>"; };
+		1AEA8FD31FA254A6009E67D1 /* DashedCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashedCircleView.swift; sourceTree = "<group>"; };
 		1AF26AD71F76E51A0098062A /* PaperOnboarding.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = PaperOnboarding.framework.dSYM; path = Carthage/Build/iOS/PaperOnboarding.framework.dSYM; sourceTree = "<group>"; };
 		1AF26AD91F76E52F0098062A /* PaperOnboarding.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PaperOnboarding.framework; path = Carthage/Build/iOS/PaperOnboarding.framework; sourceTree = "<group>"; };
 		1BC5676FCE3B13CAA3A4C05D /* Pods-jlpt-ios-releaseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jlpt-ios-releaseUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-jlpt-ios-releaseUITests/Pods-jlpt-ios-releaseUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -408,6 +412,7 @@
 			children = (
 				1A65206E1F87B96500E21905 /* HintViewModel.swift */,
 				1A65207C1F87EF7100E21905 /* HintQuestionModel.swift */,
+				1AEA8FD11FA245EB009E67D1 /* LessonModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -598,6 +603,7 @@
 				1A46AC4A1F89ADF2001FF467 /* CTView.swift */,
 				1A3E516B1F8B1C9B0025F4E2 /* TDRadioButton.swift */,
 				1ABECC7A1F938168005056A5 /* EditProfileView.swift */,
+				1AEA8FD31FA254A6009E67D1 /* DashedCircleView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -1027,6 +1033,7 @@
 				1A65206B1F866A4200E21905 /* CardView.swift in Sources */,
 				1ABECC8D1F9BB778005056A5 /* DocumentTypeCell.swift in Sources */,
 				1AC50CF71F6E69B8007D161C /* JLPTResponse.swift in Sources */,
+				1AEA8FD21FA245EB009E67D1 /* LessonModel.swift in Sources */,
 				1AC50CF91F6F859E007D161C /* JLPTService.swift in Sources */,
 				1A9133B21F926D54007A6CF2 /* UIViewControlelr+Alert.swift in Sources */,
 				1A46AC3D1F894479001FF467 /* Images.swift in Sources */,
@@ -1039,6 +1046,7 @@
 				1A46AC591F8A5E97001FF467 /* ListeningQuestionController.swift in Sources */,
 				1A3E516C1F8B1C9B0025F4E2 /* TDRadioButton.swift in Sources */,
 				1AEA8B2C1F6D4986005A7FC0 /* CategoryViewCell.swift in Sources */,
+				1AEA8FD41FA254A6009E67D1 /* DashedCircleView.swift in Sources */,
 				1AEA8B2E1F6D49DD005A7FC0 /* LessonViewCell.swift in Sources */,
 				1ABECC761F9343F9005056A5 /* UIViewController+UIView.swift in Sources */,
 				1A3E51701F8B44550025F4E2 /* NomalQuestionCell.swift in Sources */,

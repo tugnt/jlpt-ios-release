@@ -9,9 +9,9 @@
 import UIKit
 
 struct Section {
-    let header: String
+    var header: CategoryHeader
     let categories: [LessonCategory]
-    init(header: String, categories: [LessonCategory]) {
+    init(header: CategoryHeader, categories: [LessonCategory]) {
         self.header = header
         self.categories = categories
     }
@@ -19,19 +19,7 @@ struct Section {
 
 class LessonController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     let categoryId = String(describing: CategoryViewCell.self)
-    lazy var sections: [Section] = {
-        let categoriesTip = [LessonCategory(itemLessons: [ItemLesson(title: "Title 1", imageName: "lesson_1", typeLesson: .tip, typeJLPT: .reading, level: nil)]),
-                             LessonCategory(itemLessons: [ItemLesson(title: "Title 1", imageName: "lesson_2", typeLesson: .tip, typeJLPT: .reading, level: nil),
-                                                          ItemLesson(title: "Title 1", imageName: "lesson_3", typeLesson: .tip, typeJLPT: .reading, level: nil)]),
-                             LessonCategory(itemLessons: [ItemLesson(title: "Title 1", imageName: "lesson_4", typeLesson: .tip, typeJLPT: .reading, level: nil),
-                                                          ItemLesson(title: "Title 1", imageName: "lesson_5", typeLesson: .tip, typeJLPT: .reading, level: nil)])]
-        let sectionTip = Section(header: "Tips", categories: categoriesTip)
-        
-        return [sectionTip]
-    }()
-    
-    
-    let galazyImageView = UIImageView()
+    var sections: [Section] = LessonModel.lessonModel
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,8 +29,6 @@ class LessonController: UICollectionViewController, UICollectionViewDelegateFlow
         collectionView?.register(CategoryViewCell.self, forCellWithReuseIdentifier: categoryId)
         collectionView?.register(CategoryHeaderView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: CategoryHeaderView.identifier)
         self.edgesForExtendedLayout = .init(rawValue: 0)
-        /// - Add galaxy image background for Lesson Screen
-        collectionView?.backgroundColor = UIColor(patternImage: UIImage(asset: Asset.galaxyBackground))
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -54,7 +40,7 @@ class LessonController: UICollectionViewController, UICollectionViewDelegateFlow
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return sections[section].categories.count
+        return sections[section].header.isExpanded ? sections[section].categories.count : 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -62,6 +48,7 @@ class LessonController: UICollectionViewController, UICollectionViewDelegateFlow
             return UICollectionViewCell()
         }
         cell.itemLesson = sections[indexPath.section].categories[indexPath.row].itemLessons
+        cell.sectionColor = sections[indexPath.section].header.sectionColor
         cell.cellLessonSelected = { (cell) in
             self.cellSecletec(cell)
         }
@@ -73,7 +60,7 @@ class LessonController: UICollectionViewController, UICollectionViewDelegateFlow
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height: 40)
+        return CGSize(width: view.frame.width, height:  80)
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -82,7 +69,9 @@ class LessonController: UICollectionViewController, UICollectionViewDelegateFlow
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader,
                                                                              withReuseIdentifier: CategoryHeaderView.identifier,
                                                                              for: indexPath) as? CategoryHeaderView
-            headerView?.label.text = sections[indexPath.section].header
+            headerView?.headerItem = sections[indexPath.section].header
+            headerView?.section = indexPath.section
+            headerView?.delegate = self
             return headerView!
         default:
             assert(false, "Unexpected element kind")
@@ -103,5 +92,13 @@ class LessonController: UICollectionViewController, UICollectionViewDelegateFlow
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
         }
+    }
+}
+
+extension LessonController: CategoryHeaderViewDelegate {
+    func header(_ header: CategoryHeaderView, section: Int) {
+        print("Clicked")
+        sections[section].header.isExpanded = !sections[section].header.isExpanded
+        collectionView?.reloadSections([section])
     }
 }
