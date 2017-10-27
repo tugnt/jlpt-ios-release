@@ -2,6 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+// swiftlint:disable identifier_name
 import Foundation
 import UIKit
 
@@ -42,7 +43,7 @@ class WaveView: UIView {
         backWaveView.secondaryWaveColor = UIColor.white
         backWaveView.update(withLevel: 0)
         addSubview(backWaveView)
-    
+
         frontWaveView.backgroundColor = UIColor.clear
         frontWaveView.phaseShift = -0.02
         frontWaveView.primaryWaveLineWidth = 2
@@ -101,5 +102,3 @@ class WaveView: UIView {
         backWaveView.frequency = SecondaryWaveFrequency * freqMultiplier
     }
 }
-
-

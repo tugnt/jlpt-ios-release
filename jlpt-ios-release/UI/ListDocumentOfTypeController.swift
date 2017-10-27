@@ -13,7 +13,7 @@ class ListDocumentOfTypeController: UIViewController {
     var type: TypeJLPT?
     fileprivate let cellId = "documentCell"
     @IBOutlet weak var tableView: UITableView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Danh sách giáo trình"
@@ -27,11 +27,11 @@ extension ListDocumentOfTypeController: UITableViewDataSource, UITableViewDelega
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? DocumentCell else {
             return UITableViewCell()

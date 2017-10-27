@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 
 extension UIViewController {
-    
+
     func showTransparentView() {
         let transparentView = UIView(frame: self.view.frame)
         transparentView.tag = 101
@@ -19,12 +19,12 @@ extension UIViewController {
         self.view.addSubview(transparentView)
         addEditView()
     }
-    
+
     func removeTransparentView() {
         guard let viewWithTag = self.view.viewWithTag(101) else { return }
         viewWithTag.removeFromSuperview()
     }
-    
+// swiftlint:disable function_body_length
     func addEditView() {
         // add parent edit view
         let editView = CardView()
@@ -38,7 +38,7 @@ extension UIViewController {
             make.right.equalToSuperview().offset(-20)
             make.height.equalTo(220)
         })
-        
+
         /// - Addbackground of title
         let backgroundTitleLabel = UIView()
         editView.addSubview(backgroundTitleLabel)
@@ -50,8 +50,7 @@ extension UIViewController {
             make.left.equalToSuperview().offset(0)
             make.right.equalToSuperview().offset(0)
         })
-        
-        
+
         /// Add title
         let titelLabel = UILabel()
         titelLabel.textColor = .black
@@ -60,8 +59,7 @@ extension UIViewController {
         titelLabel.snp.makeConstraints({ (make) in
             make.center.equalToSuperview()
         })
-        
-        
+
         /// - Add subtitle
         let subTitleLabel = UILabel()
         editView.addSubview(subTitleLabel)
@@ -73,7 +71,7 @@ extension UIViewController {
             make.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().offset(-20)
         })
-        
+
         /// Add textfield edit
         let textField = UITextField()
         textField.placeholder = "Thông tin cần điền"
@@ -85,7 +83,7 @@ extension UIViewController {
             make.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().offset(-20)
         })
-        
+
         // Add cancel button
         let cancelBtn = UIButton()
         cancelBtn.setTitle("Huỷ bỏ", for: .normal)
@@ -100,7 +98,7 @@ extension UIViewController {
             make.left.equalToSuperview().offset(20)
             make.bottom.equalToSuperview().offset(-10)
         })
-        
+
         // Add change button
         let changeBtn = UIButton()
         changeBtn.setTitle("Thay đổi", for: .normal)
@@ -115,14 +113,13 @@ extension UIViewController {
             make.bottom.equalToSuperview().offset(-10)
         })
     }
-    
+
     @objc func cancelEditInfo() {
         // Remove all sub view
         removeTransparentView()
     }
-    
+
     @objc func changeUserInfo() {
         print("Change")
     }
 }
-

@@ -20,10 +20,10 @@ class TheoryHintController: UIViewController {
         mdView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         mdView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         mdView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor).isActive = true
-        guard let url = URL(string: "https://raw.githubusercontent.com/keitaoouchi/MarkdownView/master/sample.md") else { return }
-        let markdown = try! String(contentsOf: url, encoding: String.Encoding.utf8)
+        guard let _ = URL(string: "https://raw.githubusercontent.com/keitaoouchi/MarkdownView/master/sample.md") else { return }
+        //let markdown = try! String(contentsOf: url, encoding: String.Encoding.utf8)
         // Load content from here
-        mdView.load(markdown: markdown, enableImage: true)
+        //mdView.load(markdown: markdown, enableImage: true)
     }
 
     override func didReceiveMemoryWarning() {

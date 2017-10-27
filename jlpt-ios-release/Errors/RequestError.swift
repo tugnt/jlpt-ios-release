@@ -10,6 +10,6 @@ import Foundation
 
 public enum RequestError: Error {
     case HTTPError(NSError)
-    case DecodeError(Error)
-    case InvalidError
+    case decodeError(Error)
+    case invalidError
 }

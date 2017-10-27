@@ -1,0 +1,22 @@
+included:
+  - jlpt-ios-release
+
+excluded:
+  - Carthage
+  - Pods
+
+
+disabled_rules:
+  - todo
+  - unused_optional_binding
+  - cyclomatic_complexity
+
+line_length: 250
+
+identifier_name:
+  min_length:
+    warning: 0
+    error: 0
+  max_length:
+    warning: 50
+    error: 50

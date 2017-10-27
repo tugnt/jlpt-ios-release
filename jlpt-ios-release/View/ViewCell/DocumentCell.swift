@@ -25,14 +25,14 @@ class DocumentCell: UITableViewCell {
             nameBookLbl.text = "Shinkanzen N2 dokkai"
         }
     }
-    
+
     @IBOutlet weak var downloadBookBtn: UIButton! {
         didSet {
             downloadBookBtn.setImage(Asset.download.image, for: .normal)
         }
     }
     @IBOutlet weak var downloadProgress: UIProgressView!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -43,7 +43,7 @@ class DocumentCell: UITableViewCell {
         // Todo: Start download and update progress here
         // Update image of button after download
     }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state

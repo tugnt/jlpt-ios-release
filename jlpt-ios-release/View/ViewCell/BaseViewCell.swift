@@ -13,10 +13,10 @@ class BaseViewCell: UICollectionViewCell {
         super.init(frame: frame)
         setUpView()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func setUpView() {}
 }

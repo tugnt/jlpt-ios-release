@@ -9,17 +9,17 @@
 import UIKit
 
 class HintCell: UITableViewCell {
-    
+
     @IBOutlet weak var hintTitleLabel: UILabel!
-    
+
     @IBOutlet weak var hintDescriptionLabel: UILabel!
-    
+
     @IBOutlet weak var hintNumberQuestionLabel: UILabel!
-    
+
     @IBOutlet weak var imagePassOrFailed: UIImageView!
-    
+
     @IBOutlet weak var pointLabel: UILabel!
-    
+
     var hintItem: HintViewModel? {
         didSet {
             guard let item = hintItem else { return }
@@ -29,11 +29,11 @@ class HintCell: UITableViewCell {
             pointLabel.text = "\(item.point)"
         }
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+
         // Initial code here
-            
+
     }
 }

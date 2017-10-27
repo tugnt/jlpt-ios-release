@@ -12,7 +12,7 @@ import SnapKit
 
 class StartAppController: UIViewController {
     @IBOutlet weak var imageBackground: UIImageView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = ColorName.navBackground.color
@@ -24,7 +24,7 @@ class StartAppController: UIViewController {
             make.height.equalTo(200)
             make.top.equalToSuperview().offset(150)
         }
-        
+
         /// Setup start button
         let button = UIButton()
         button.setTitle("Bắt đầu", for: .normal)
@@ -35,7 +35,7 @@ class StartAppController: UIViewController {
         button.layer.cornerRadius = 3
         button.layer.borderColor = UIColor(white: 1, alpha: 0.3).cgColor
         view.addSubview(button)
-        
+
         let margin = 8
         let maxWidth = 315
         button.snp.makeConstraints { make in
@@ -48,11 +48,11 @@ class StartAppController: UIViewController {
         }
         button.addTarget(self, action: #selector(startApplication), for: .touchUpInside)
     }
-    
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
+
     @objc func startApplication() {
         //let vc = TabbarController()
         let vc = StoryboardScene.Login.loginViewController.instantiate()

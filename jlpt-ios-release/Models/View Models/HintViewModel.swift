@@ -15,13 +15,13 @@ struct HintViewModel {
     let numberQuestion: Int
     let point: Int
     let isPassed: Bool
-    
+
     /// - Initialized code here
     init(response: HintItemResponse) {
         self.hintTitle = response.title
         self.hintContent = response.content
         self.unit = response.unit
-        
+
         /// Todo: count number unit here
         self.numberQuestion = response.questions.count
         self.point = 0

@@ -31,17 +31,16 @@ struct HintItemResponse: JLPTResponse {
     let unit: String
     let content: String
     let questions: [HintQuestion]
-    
+
     /// - Throws: DecodeError or an arbitrary ErrorType
     static func decode(_ e: Extractor) throws -> HintItemResponse {
-        return try HintItemResponse(title:       e <| "title",
-                                    type:        e <| "type",
-                                    unit:        e <| "unit",
-                                    content:     e <| "content",
-                                    questions:   e <|| "question")
+        return try HintItemResponse(title: e <| "title",
+                                    type: e <| "type",
+                                    unit: e <| "unit",
+                                    content: e <| "content",
+                                    questions: e <|| "question")
     }
 }
-
 
 /// - May using for hint view model
 struct HintQuestion: JLPTResponse {
@@ -54,13 +53,12 @@ struct HintQuestion: JLPTResponse {
     var linkAudio: String?
     /// - Throws: DecodeError or an arbitrary ErrorType
     static func decode(_ e: Extractor) throws -> HintQuestion {
-        return try HintQuestion(question:   e <| "question",
-                                answerA:    e <| "answerA",
-                                answerB:    e <| "answerB",
-                                answerC:    e <| "answerC",
-                                answerD:    e <| "answerD",
-                                solution:   e <| "solution",
-                                linkAudio:  e <|? "linkAudio")
+        return try HintQuestion(question: e <| "question",
+                                answerA: e <| "answerA",
+                                answerB: e <| "answerB",
+                                answerC: e <| "answerC",
+                                answerD: e <| "answerD",
+                                solution: e <| "solution",
+                                linkAudio: e <|? "linkAudio")
     }
 }
-

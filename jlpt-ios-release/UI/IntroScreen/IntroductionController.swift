@@ -20,7 +20,7 @@ class IntroductionController: UIPageViewController, UIPageViewControllerDelegate
                                               self.viewControllerAtIndex(index: 1),
                                               self.viewControllerAtIndex(index: 2),
                                               self.viewControllerAtIndex(index: 3)]
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
@@ -31,13 +31,13 @@ class IntroductionController: UIPageViewController, UIPageViewControllerDelegate
         configurePageControl()
         skipButton.addTarget(self, action: #selector(skipIntroduction), for: .touchUpInside)
         setUpSkipButton()
-        navigationController?.isNavigationBarHidden = true 
+        navigationController?.isNavigationBarHidden = true
     }
-    
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
+
     func setUpSkipButton() {
         skipButton.setTitle("Bỏ qua 〉", for: .normal)
         skipButton.setTitleColor(.white, for: .normal)
@@ -47,23 +47,23 @@ class IntroductionController: UIPageViewController, UIPageViewControllerDelegate
         skipButton.center = CGPoint(x: UIScreen.main.bounds.maxX - 60, y: UIScreen.main.bounds.maxY - 70)
         skipButton.addTarget(self, action: #selector(skipIntroduction), for: .touchUpInside)
     }
-    
+
     @objc func skipIntroduction() {
         let vc = TabbarController()
         navigationController?.pushViewController(vc, animated: true)
     }
-    
-    override init(transitionStyle style: UIPageViewControllerTransitionStyle, navigationOrientation: UIPageViewControllerNavigationOrientation, options: [String : Any]? = nil) {
+
+    override init(transitionStyle style: UIPageViewControllerTransitionStyle, navigationOrientation: UIPageViewControllerNavigationOrientation, options: [String: Any]? = nil) {
         super.init(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
     }
 }
 
 extension IntroductionController {
-    
+
     func configurePageControl() {
         pageControl = UIPageControl(frame: CGRect(x: 0, y: UIScreen.main.bounds.maxY - 100, width: UIScreen.main.bounds.width, height: 50))
         self.pageControl.numberOfPages = arrayPage.count
@@ -74,7 +74,7 @@ extension IntroductionController {
         self.pageControl.layer.position.y = self.view.frame.height - 100
         self.view.addSubview(pageControl)
     }
-    
+
     ///  - Set current page control
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         guard let pageContentViewController = pageViewController.viewControllers![0] as? ChildIntroductionController else {
@@ -84,21 +84,21 @@ extension IntroductionController {
         pageControl.currentPage = pageIndex
         skipButton.isHidden = pageIndex == arrayPage.count - 1
     }
-    
+
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let curentIndex = arrayPage.index(of: viewController) else { return nil }
         if (curentIndex == 0 ) || (curentIndex == NSNotFound) { return nil }
         let previousIndex = curentIndex - 1
         return arrayPage[previousIndex]
     }
-    
+
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         guard let curentIndex = arrayPage.index(of: viewController) else { return nil }
         if (curentIndex == arrayPage.count - 1) || (curentIndex == NSNotFound) { return nil }
         let nextIndex = curentIndex + 1
         return arrayPage[nextIndex]
     }
-    
+
     func viewControllerAtIndex(index: Int) -> UIViewController {
         let vc = StoryboardScene.ChildIntroduction.childIntroductionController.instantiate()
         vc.pageIndex = index

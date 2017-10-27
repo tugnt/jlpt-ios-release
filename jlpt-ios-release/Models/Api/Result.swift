@@ -13,18 +13,18 @@ public protocol ResultType {
      // Response' value
      */
     associatedtype Value
-    
+
     //
     // Error when request api
     //
     associatedtype Error: Swift.Error
-    
+
     init(value: Value)
     init(error: Error)
-    
+
     // When request failed is vallue = nil
     var value: Value? { get }
-    
+
     // When request success is error = nil
     var error: Error? { get }
 }
@@ -32,15 +32,15 @@ public protocol ResultType {
 public enum Result<Value, Error: Swift.Error>: ResultType {
     case success(Value)
     case failure(Error)
-    
+
     public init(error: Error) {
         self = .failure(error)
     }
-    
+
     public init(value: Value) {
         self = .success(value)
     }
-    
+
     public var value: Value? {
         switch self {
         case .success(let value):
@@ -49,7 +49,7 @@ public enum Result<Value, Error: Swift.Error>: ResultType {
             return nil
         }
     }
-    
+
     public var error: Error? {
         switch self {
         case .success:
@@ -59,4 +59,3 @@ public enum Result<Value, Error: Swift.Error>: ResultType {
         }
     }
 }
-

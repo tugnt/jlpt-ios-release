@@ -10,7 +10,7 @@
      Để sau này hiểu rõ hơn, thì phần này sẽ comment bằng tiếng Việt, nếu có thể sẽ dùng cả tiếng anh
      Link: https://www.raywenderlich.com/153591/core-text-tutorial-ios-making-magazine-app
 */
- 
+
 import UIKit
 import CoreText
 
@@ -24,12 +24,12 @@ class CTView: UIView {
         context.textMatrix = .identity
         context.translateBy(x: 0, y: bounds.height)
         context.scaleBy(x: 1.0, y: -1.0)
-        
+
         // - Tạo path xung quanh screen
         let path = CGMutablePath()
         // - Trong trường hợp này là toàn bộ màn hình
         path.addRect(bounds)
-        
+
         // - Trong context bạn sẽ phải sử dụng NSAttribuedString thay cho String hay NSString, vì nó sẽ lưu dữ các thuộc tính mà bạn sẽ phải thiết đặt
         let arrString = NSAttributedString(string: "Hello world")
         // - frameSetter chủ yếu sẽ quản lý Font và render ra khung hình
@@ -39,6 +39,5 @@ class CTView: UIView {
         // - Vẽ frame và truyền vào một context
         CTFrameDraw(frame, context)
     }
-    
 
 }

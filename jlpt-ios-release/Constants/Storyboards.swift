@@ -4,8 +4,6 @@
 import Foundation
 import UIKit
 
-// swiftlint:disable file_length
-
 protocol StoryboardType {
   static var storyboardName: String { get }
 }
@@ -47,7 +45,6 @@ extension UIViewController {
   }
 }
 
-// swiftlint:disable explicit_type_interface identifier_name line_length type_body_length type_name
 enum StoryboardScene {
   enum ChatRoom: StoryboardType {
     static let storyboardName = "ChatRoom"

@@ -20,7 +20,7 @@ struct Section {
 class LessonController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     let categoryId = String(describing: CategoryViewCell.self)
     var sections: [Section] = LessonModel.lessonModel
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView?.backgroundColor = .white
@@ -30,19 +30,19 @@ class LessonController: UICollectionViewController, UICollectionViewDelegateFlow
         collectionView?.register(CategoryHeaderView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: CategoryHeaderView.identifier)
         self.edgesForExtendedLayout = .init(rawValue: 0)
     }
-    
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
+
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return sections.count
     }
-    
+
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return sections[section].header.isExpanded ? sections[section].categories.count : 0
     }
-    
+
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: categoryId, for: indexPath) as? CategoryViewCell else {
             return UICollectionViewCell()
@@ -54,15 +54,15 @@ class LessonController: UICollectionViewController, UICollectionViewDelegateFlow
         }
         return cell
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: 100)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height:  80)
+        return CGSize(width: view.frame.width, height: 80)
     }
-    
+
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionElementKindSectionHeader:
@@ -77,12 +77,12 @@ class LessonController: UICollectionViewController, UICollectionViewDelegateFlow
             assert(false, "Unexpected element kind")
         }
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         /// - Fix lỗi có khoảng trắng giữa navigation bar và colleciton view
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
-    
+
     func cellSecletec(_ cell: LessonViewCell) {
         if cell.lessonItem?.level != nil {
             /// - Move to list question of JLPT

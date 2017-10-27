@@ -11,26 +11,26 @@ import Lottie
 
 class ChildIntroductionController: UIViewController {
     var pageIndex: Int = 0
-    
+
     @IBOutlet weak var loadingImage: UIImageView! {
         didSet {
             let image = UIImage(named: "loading_\(pageIndex)")
             loadingImage.image = image
         }
     }
-    
+
     @IBOutlet weak var startButton: UIButton! {
         didSet {
             startButton.setBackgroundImage(UIImage(named: "start_button"), for: .normal)
             startButton.isHidden = pageIndex != 3
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         startButton.addTarget(self, action: #selector(startNow), for: .touchUpInside)
     }
-    
+
     @objc func  startNow() {
         let vc = TabbarController()
         navigationController?.pushViewController(vc, animated: true)
