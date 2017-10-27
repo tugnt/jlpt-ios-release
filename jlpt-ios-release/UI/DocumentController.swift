@@ -9,27 +9,78 @@
 import UIKit
 
 class DocumentController: UIViewController {
-
+    fileprivate let cellId = "cellDocument"
+    @IBOutlet weak var tableView: UITableView!
+    
+    lazy var headerSection: [DocumentHeader] = {
+        let headerN1 = DocumentHeader(color: ColorName.n1ColorBg.color, image: Asset.n1.image, title: "JLPT N1", titleNumberDocument: "", isExpanded: true, level: .N1)
+        let headerN2 = DocumentHeader(color: ColorName.n2ColorBg.color, image: Asset.n2.image, title: "JLPT N2", titleNumberDocument: "", isExpanded: false, level: .N2)
+        let headerN3 = DocumentHeader(color: ColorName.n3ColorBg.color, image: Asset.n3.image, title: "JLPT N3", titleNumberDocument: "", isExpanded: false, level: .N3)
+        let headerN4 = DocumentHeader(color: ColorName.n4ColorBg.color, image: Asset.n4.image, title: "JLPT N4", titleNumberDocument: "", isExpanded: false, level: .N4)
+        let headerN5 = DocumentHeader(color: ColorName.n5ColorBg.color, image: Asset.n5.image, title: "JLPT N5", titleNumberDocument: "", isExpanded: false, level: .N5)
+        return [headerN1, headerN2, headerN3, headerN4, headerN5]
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Tài liệu"
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.allowsSelection = false
+        tableView.tableFooterView = UIView()
+        tableView.register(DocumentExpandHeaderView.nib, forHeaderFooterViewReuseIdentifier: DocumentExpandHeaderView.identifier)
+        tableView.register(DocumentTypeCell.nib, forCellReuseIdentifier: DocumentTypeCell.identifier)
     }
     
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension DocumentController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return headerSection.count
     }
-    */
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return headerSection[section].isExpanded ? 1 : 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: DocumentTypeCell.identifier, for: indexPath) as! DocumentTypeCell
+        cell.documentItem = headerSection[indexPath.section]
+        cell.delegate = self
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 100
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: DocumentExpandHeaderView.identifier) as? DocumentExpandHeaderView else {
+            return UIView()
+        }
+        headerView.headerItem = headerSection[section]
+        headerView.section = section
+        headerView.delegate = self
+        return headerView
+    }
+}
 
+extension DocumentController: DocumentHeaderViewDeleagate, DocumentTypeCellDelegate {
+    func cell(_ cell: DocumentTypeCell, type: TypeJLPT) {
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        let vc = StoryboardScene.ListDocumentOfType.listDocumentOfTypeController.instantiate()
+        vc.type = type
+        vc.level = headerSection[indexPath.section].level
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func header(didSelected header: DocumentExpandHeaderView, section: Int) {
+        // Change status of header and reload data
+        headerSection[section].isExpanded = !headerSection[section].isExpanded
+        /// -  Reload section
+        tableView.beginUpdates()
+        tableView.reloadSections([section], with: .fade)
+        tableView.endUpdates()
+    }
 }

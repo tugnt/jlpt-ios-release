@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Register View Controller-->
+        <scene sceneID="O5R-Vy-qhp">
+            <objects>
+                <viewController storyboardIdentifier="RegisterViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SZZ-2w-0pR" customClass="RegisterViewController" customModule="jlpt_ios_release" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cfm-PE-GNk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vpB-GF-Jx3">
+                                <rect key="frame" x="0.0" y="216" width="375" height="255"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vVO-Hn-dTb">
+                                        <rect key="frame" x="30" y="0.0" width="315" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="sOV-bz-c4D"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập mật khẩu" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Wu-lh-5Pv">
+                                        <rect key="frame" x="30" y="60" width="315" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="M4x-30-I9p"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Xác nhận mật khẩu" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0MP-j4-sv7">
+                                        <rect key="frame" x="30" y="120" width="315" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Hod-Qx-DX4"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TbY-xd-FpG">
+                                        <rect key="frame" x="30" y="190" width="315" height="46"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="jTB-2r-f7h"/>
+                                        </constraints>
+                                        <state key="normal" title="ĐĂNG KÝ">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="vVO-Hn-dTb" firstAttribute="top" secondItem="vpB-GF-Jx3" secondAttribute="top" id="4Y7-Pm-Ns7"/>
+                                    <constraint firstAttribute="height" constant="255" id="7ne-3E-ARP"/>
+                                    <constraint firstItem="2Wu-lh-5Pv" firstAttribute="centerX" secondItem="vpB-GF-Jx3" secondAttribute="centerX" id="8E0-UQ-diw"/>
+                                    <constraint firstItem="TbY-xd-FpG" firstAttribute="top" secondItem="0MP-j4-sv7" secondAttribute="bottom" constant="30" id="9TY-Nb-4Am"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0MP-j4-sv7" secondAttribute="trailing" id="BQg-em-LLW"/>
+                                    <constraint firstItem="0MP-j4-sv7" firstAttribute="leading" secondItem="vpB-GF-Jx3" secondAttribute="leading" constant="30" id="Cc1-mk-kJC"/>
+                                    <constraint firstItem="2Wu-lh-5Pv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vpB-GF-Jx3" secondAttribute="leading" id="EKg-1x-PTB"/>
+                                    <constraint firstItem="2Wu-lh-5Pv" firstAttribute="top" secondItem="vVO-Hn-dTb" secondAttribute="bottom" constant="20" id="MIa-U0-gJq"/>
+                                    <constraint firstItem="vVO-Hn-dTb" firstAttribute="leading" secondItem="vpB-GF-Jx3" secondAttribute="leading" constant="30" id="SHP-da-Yof"/>
+                                    <constraint firstItem="TbY-xd-FpG" firstAttribute="leading" secondItem="vpB-GF-Jx3" secondAttribute="leading" constant="30" id="X4G-WO-Whv"/>
+                                    <constraint firstItem="TbY-xd-FpG" firstAttribute="centerX" secondItem="vpB-GF-Jx3" secondAttribute="centerX" id="buT-dQ-UFs"/>
+                                    <constraint firstAttribute="trailing" secondItem="2Wu-lh-5Pv" secondAttribute="trailing" constant="30" id="h1d-rW-lZG"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TbY-xd-FpG" secondAttribute="trailing" id="sUm-lx-75F"/>
+                                    <constraint firstItem="0MP-j4-sv7" firstAttribute="top" secondItem="2Wu-lh-5Pv" secondAttribute="bottom" constant="20" id="vRZ-iF-XIr"/>
+                                    <constraint firstItem="0MP-j4-sv7" firstAttribute="centerX" secondItem="vpB-GF-Jx3" secondAttribute="centerX" id="wGp-gL-Bic"/>
+                                    <constraint firstItem="vVO-Hn-dTb" firstAttribute="centerX" secondItem="vpB-GF-Jx3" secondAttribute="centerX" id="zwC-XH-cGx"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đăng ký tài khoản" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSh-Ta-Ovm">
+                                <rect key="frame" x="106.5" y="160.5" width="162.5" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dJW-xG-dXJ" firstAttribute="trailing" secondItem="vpB-GF-Jx3" secondAttribute="trailing" id="8Xn-Ab-pIb"/>
+                            <constraint firstItem="vpB-GF-Jx3" firstAttribute="centerY" secondItem="dJW-xG-dXJ" secondAttribute="centerY" id="bmf-0f-RIu"/>
+                            <constraint firstItem="vpB-GF-Jx3" firstAttribute="top" secondItem="VSh-Ta-Ovm" secondAttribute="bottom" constant="30" id="pa0-WF-xB7"/>
+                            <constraint firstItem="VSh-Ta-Ovm" firstAttribute="centerX" secondItem="dJW-xG-dXJ" secondAttribute="centerX" id="uSW-FS-B6L"/>
+                            <constraint firstItem="vpB-GF-Jx3" firstAttribute="leading" secondItem="dJW-xG-dXJ" secondAttribute="leading" id="yUI-lC-vgf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dJW-xG-dXJ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jZy-He-QRa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="93.599999999999994" y="164.16791604197903"/>
+        </scene>
+    </scenes>
+</document>

@@ -86,6 +86,11 @@ enum StoryboardScene {
 
     static let initialScene = InitialSceneType<UIViewController>(storyboard: LaunchScreen.self)
   }
+  enum ListDocumentOfType: StoryboardType {
+    static let storyboardName = "ListDocumentOfType"
+
+    static let listDocumentOfTypeController = SceneType<jlpt_ios_release.ListDocumentOfTypeController>(storyboard: ListDocumentOfType.self, identifier: "ListDocumentOfTypeController")
+  }
   enum ListHint: StoryboardType {
     static let storyboardName = "ListHint"
 
@@ -100,6 +105,11 @@ enum StoryboardScene {
     static let storyboardName = "ListeningQuestion"
 
     static let listeningQuestionController = SceneType<jlpt_ios_release.ListeningQuestionController>(storyboard: ListeningQuestion.self, identifier: "ListeningQuestionController")
+  }
+  enum Login: StoryboardType {
+    static let storyboardName = "Login"
+
+    static let loginViewController = SceneType<jlpt_ios_release.LoginViewController>(storyboard: Login.self, identifier: "LoginViewController")
   }
   enum NomalQuestion: StoryboardType {
     static let storyboardName = "NomalQuestion"
@@ -125,6 +135,11 @@ enum StoryboardScene {
     static let storyboardName = "Profile"
 
     static let profileController = SceneType<jlpt_ios_release.ProfileController>(storyboard: Profile.self, identifier: "ProfileController")
+  }
+  enum Register: StoryboardType {
+    static let storyboardName = "Register"
+
+    static let registerViewController = SceneType<jlpt_ios_release.RegisterViewController>(storyboard: Register.self, identifier: "RegisterViewController")
   }
   enum StartApp: StoryboardType {
     static let storyboardName = "StartApp"

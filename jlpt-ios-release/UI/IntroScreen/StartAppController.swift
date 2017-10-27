@@ -8,52 +8,55 @@
 
 import UIKit
 import Lottie
+import SnapKit
 
 class StartAppController: UIViewController {
     @IBOutlet weak var imageBackground: UIImageView!
-    @IBOutlet weak var startButton: UIButton! {
-        didSet {
-            startButton.setBackgroundImage(UIImage(named: "start_button"), for: .normal)
-            startButton.addTarget(self, action: #selector(startApp), for: .touchUpInside)
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // - Set up image background
-        let imageBackground = UIImage(named: "background")
-        self.imageBackground.image = imageBackground
-        // - Load JLPT animation
-        jlptAnimation()
-    }
-    
-    func jlptAnimation() {
-        // - List array url animation json. This include 4 words J, L, P, T
-        let urlArray: [String] = ["https://raw.githubusercontent.com/airbnb/lottie-ios/master/Example/Tests/TypeFace/J.json",
-                                  "https://raw.githubusercontent.com/airbnb/lottie-ios/master/Example/Tests/TypeFace/L.json",
-                                  "https://raw.githubusercontent.com/airbnb/lottie-ios/master/Example/Tests/TypeFace/P.json",
-                                  "https://raw.githubusercontent.com/airbnb/lottie-ios/master/Example/Tests/TypeFace/T.json"]
-        var animations: [LOTAnimationView] = []
-        
-        for url in urlArray {
-            let animation = LOTAnimationView(contentsOf: URL(string: url)!)
-            animations.append(animation)
-            view.addSubview(animation)
+        view.backgroundColor = ColorName.navBackground.color
+        // - Set up wave view
+        let wave = WaveView()
+        view.addSubview(wave)
+        wave.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(view)
+            make.height.equalTo(200)
+            make.top.equalToSuperview().offset(150)
         }
         
-        let widthScreen = view.bounds.width
-        let withText: CGFloat = 60
-        let padding = Int((widthScreen - ( withText * 4 )) / 2 )
-        for (index, aniView) in animations.enumerated() {
-            view.translatesAutoresizingMaskIntoConstraints = false
-            view.addConstraintsWithFormat("H:|-\(index * Int(withText) + padding)-[v0(\(withText))]-|", views: aniView)
-            view.addConstraintsWithFormat("V:|-300-[v0(60)]|", views: aniView)
-            aniView.play()
+        /// Setup start button
+        let button = UIButton()
+        button.setTitle("Bắt đầu", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = UIColor(white: 1, alpha: 0.2)
+        button.titleEdgeInsets = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+        button.layer.borderWidth = 1
+        button.layer.cornerRadius = 3
+        button.layer.borderColor = UIColor(white: 1, alpha: 0.3).cgColor
+        view.addSubview(button)
+        
+        let margin = 8
+        let maxWidth = 315
+        button.snp.makeConstraints { make in
+            make.bottom.equalTo(view).offset(-30)
+            make.centerX.equalTo(view)
+            make.width.lessThanOrEqualTo(maxWidth)
+            make.width.lessThanOrEqualTo(view).inset(margin)
+            make.width.equalTo(view).priority(500)
+            make.height.equalTo(50)
         }
+        button.addTarget(self, action: #selector(startApplication), for: .touchUpInside)
     }
     
-    @objc func startApp() {
-        let vc = StoryboardScene.Introduction.introductionController.instantiate()
-        self.navigationController?.pushViewController(vc, animated: true)
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    @objc func startApplication() {
+        //let vc = TabbarController()
+        let vc = StoryboardScene.Login.loginViewController.instantiate()
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        appDelegate.window?.rootViewController = vc
     }
 }

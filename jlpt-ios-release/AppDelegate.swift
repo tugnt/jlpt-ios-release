@@ -27,9 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.statusBarStyle = .lightContent
         
         /// - Set root controller
-        let vc = StoryboardScene.Introduction.initialScene.instantiate()
-        let navigationController = UINavigationController(rootViewController: vc)
-        window?.rootViewController = navigationController
+        window?.rootViewController = StoryboardScene.StartApp.startAppController.instantiate()
         return true
     }
     

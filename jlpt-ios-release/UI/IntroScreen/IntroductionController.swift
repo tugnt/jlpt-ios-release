@@ -34,6 +34,10 @@ class IntroductionController: UIPageViewController, UIPageViewControllerDelegate
         navigationController?.isNavigationBarHidden = true 
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     func setUpSkipButton() {
         skipButton.setTitle("Bỏ qua 〉", for: .normal)
         skipButton.setTitleColor(.white, for: .normal)
