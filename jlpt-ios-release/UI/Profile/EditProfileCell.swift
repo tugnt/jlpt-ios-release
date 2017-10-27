@@ -11,7 +11,7 @@ import UIKit
 class EditProfileCell: UITableViewCell {
     @IBOutlet weak var titleTypeSetting: UILabel!
     @IBOutlet weak var contentTypeSetting: UILabel!
-    
+
     var editItem: EditProfileItem? {
         didSet {
             guard let item = editItem else { return }

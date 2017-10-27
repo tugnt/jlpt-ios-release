@@ -15,7 +15,7 @@ struct DocumentHeader {
     let titleNumberDocument: String
     var isExpanded: Bool
     let level: LevelJLPT
-    init(color: UIColor, image: UIImage ,title: String, titleNumberDocument: String, isExpanded: Bool, level: LevelJLPT) {
+    init(color: UIColor, image: UIImage, title: String, titleNumberDocument: String, isExpanded: Bool, level: LevelJLPT) {
         self.color = color
         self.image = image
         self.title = title
@@ -39,13 +39,13 @@ class DocumentExpandHeaderView: UITableViewHeaderFooterView {
     static var identifier: String {
         return String(describing: self)
     }
-    
+
     static var nib: UINib {
         return UINib(nibName: identifier, bundle: nil)
     }
-    
+
     weak var delegate: DocumentHeaderViewDeleagate?
-    
+
     var headerItem: DocumentHeader? {
         didSet {
             guard let header = headerItem else { return }
@@ -57,7 +57,7 @@ class DocumentExpandHeaderView: UITableViewHeaderFooterView {
             isHeaderSelected = header.isExpanded
         }
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundColor = .red
@@ -67,7 +67,7 @@ class DocumentExpandHeaderView: UITableViewHeaderFooterView {
         self.addGestureRecognizer(headerTap)
         self.isUserInteractionEnabled = true
     }
-    
+
     @objc func expandHeaderDocument() {
         delegate?.header(didSelected: self, section: section!)
     }

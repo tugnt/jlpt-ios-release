@@ -12,10 +12,10 @@ import Himotoki
 
 class ApiClient {
     static var instance = ApiClient()
-    
-    func request<Request: JLPTRequest> (request: Request,
-                 completion: @escaping  ((Result<Request.Response, RequestError>) -> (Void))){
-        
+
+    func request<Request: JLPTRequest> (request: Request, g
+                 completion: @escaping  ((Result<Request.Response, RequestError>) -> Void)) {
+
         Alamofire.request(request.url,
                           method: request.method,
                           parameters: request.parameter,

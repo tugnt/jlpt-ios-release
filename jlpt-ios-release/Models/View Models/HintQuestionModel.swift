@@ -17,8 +17,7 @@ struct HintQuestionModel {
     let solution: String
     /// - If type of hint is listening. It will have link audio
     var linkAudio: String?
-    
-    
+
     /// - Initial code here
     init?(response: HintQuestion) {
         self.question = response.question

@@ -37,7 +37,7 @@ class CategoryViewCell: BaseViewCell, UICollectionViewDataSource, UICollectionVi
         return collectionView
     }()
     var cellLessonSelected: ((LessonViewCell) -> Void)?
-    
+
     override func setUpView() {
         addSubview(collectionView)
         translatesAutoresizingMaskIntoConstraints = false
@@ -49,15 +49,15 @@ class CategoryViewCell: BaseViewCell, UICollectionViewDataSource, UICollectionVi
         collectionView.dataSource = self
         collectionView.register(LessonViewCell.self, forCellWithReuseIdentifier: LessonViewCell.identifier)
     }
-    
+
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return itemLesson.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LessonViewCell.identifier, for: indexPath) as? LessonViewCell else { return UICollectionViewCell ()}
         cell.lessonItem = itemLesson[indexPath.row]
@@ -67,7 +67,7 @@ class CategoryViewCell: BaseViewCell, UICollectionViewDataSource, UICollectionVi
         }
         return cell
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         let totalCellWidth = width * CGFloat(itemLesson.count)
         let totalSpaceWidth: CGFloat = 10 * CGFloat((itemLesson.count) - 1)

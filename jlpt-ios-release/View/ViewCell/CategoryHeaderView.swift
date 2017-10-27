@@ -35,8 +35,8 @@ class CategoryHeaderView: UICollectionReusableView {
     let bottomLine = UIView()
     var section: Int = 0
     weak var delegate: CategoryHeaderViewDelegate?
-    static var identifier:String { return String(describing: self) }
-    
+    static var identifier: String { return String(describing: self) }
+
     var headerItem: CategoryHeader? {
         didSet {
             guard let item = headerItem else { return }
@@ -45,24 +45,24 @@ class CategoryHeaderView: UICollectionReusableView {
             levelImage.image = item.sectionImage
         }
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUpHeader()
     }
-    
-    func setUpHeader(){
+
+    func setUpHeader() {
         addSubview(titleLabel)
         addSubview(levelImage)
         addSubview(descriptionLabel)
         addSubview(bottomLine)
-        
+
         levelImage.snp.makeConstraints { make in
             make.height.width.equalTo(60)
             make.centerY.equalToSuperview()
             make.left.equalToSuperview().offset(10)
         }
-        
+
         /// - TODO: set font for label
         titleLabel.textColor = .gray
         titleLabel.font = UIFont.systemFont(ofSize: 18)
@@ -70,7 +70,7 @@ class CategoryHeaderView: UICollectionReusableView {
             make.left.equalTo(levelImage.snp.right).offset(10)
             make.top.equalTo(levelImage.snp.top).offset(5)
         }
-        
+
         /// - TODO: set font for description label
         descriptionLabel.font = UIFont.systemFont(ofSize: 13)
         descriptionLabel.numberOfLines = 0
@@ -79,7 +79,7 @@ class CategoryHeaderView: UICollectionReusableView {
             make.top.equalTo(titleLabel.snp.bottom).offset(5)
             make.right.equalToSuperview().offset(-10)
         }
-        
+
         bottomLine.snp.makeConstraints { make in
             make.width.equalToSuperview()
             make.height.equalTo(0.5 )
@@ -92,12 +92,12 @@ class CategoryHeaderView: UICollectionReusableView {
         self.addGestureRecognizer(headerTap)
         self.isUserInteractionEnabled = true
     }
-    
+
     @objc func expandLessonSection () {
         print("Nao click")
         delegate?.header(self, section: section)
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

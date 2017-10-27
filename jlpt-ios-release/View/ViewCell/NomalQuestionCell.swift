@@ -23,7 +23,7 @@ class NomalQuestionCell: UITableViewCell {
     @IBOutlet weak var answerBLabel: UILabel!
     @IBOutlet weak var answerCLabel: UILabel!
     @IBOutlet weak var answerDLabel: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

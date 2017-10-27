@@ -11,16 +11,16 @@ import UIKit
 class DocumentController: UIViewController {
     fileprivate let cellId = "cellDocument"
     @IBOutlet weak var tableView: UITableView!
-    
+
     lazy var headerSection: [DocumentHeader] = {
-        let headerN1 = DocumentHeader(color: ColorName.n1ColorBg.color, image: Asset.n1.image, title: "JLPT N1", titleNumberDocument: "", isExpanded: true, level: .N1)
-        let headerN2 = DocumentHeader(color: ColorName.n2ColorBg.color, image: Asset.n2.image, title: "JLPT N2", titleNumberDocument: "", isExpanded: false, level: .N2)
-        let headerN3 = DocumentHeader(color: ColorName.n3ColorBg.color, image: Asset.n3.image, title: "JLPT N3", titleNumberDocument: "", isExpanded: false, level: .N3)
-        let headerN4 = DocumentHeader(color: ColorName.n4ColorBg.color, image: Asset.n4.image, title: "JLPT N4", titleNumberDocument: "", isExpanded: false, level: .N4)
-        let headerN5 = DocumentHeader(color: ColorName.n5ColorBg.color, image: Asset.n5.image, title: "JLPT N5", titleNumberDocument: "", isExpanded: false, level: .N5)
+        let headerN1 = DocumentHeader(color: ColorName.n1ColorBg.color, image: Asset.n1.image, title: "JLPT N1", titleNumberDocument: "", isExpanded: true, level: .n1)
+        let headerN2 = DocumentHeader(color: ColorName.n2ColorBg.color, image: Asset.n2.image, title: "JLPT N2", titleNumberDocument: "", isExpanded: false, level: .n2)
+        let headerN3 = DocumentHeader(color: ColorName.n3ColorBg.color, image: Asset.n3.image, title: "JLPT N3", titleNumberDocument: "", isExpanded: false, level: .n3)
+        let headerN4 = DocumentHeader(color: ColorName.n4ColorBg.color, image: Asset.n4.image, title: "JLPT N4", titleNumberDocument: "", isExpanded: false, level: .n4)
+        let headerN5 = DocumentHeader(color: ColorName.n5ColorBg.color, image: Asset.n5.image, title: "JLPT N5", titleNumberDocument: "", isExpanded: false, level: .n5)
         return [headerN1, headerN2, headerN3, headerN4, headerN5]
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Tài liệu"
@@ -31,29 +31,31 @@ class DocumentController: UIViewController {
         tableView.register(DocumentExpandHeaderView.nib, forHeaderFooterViewReuseIdentifier: DocumentExpandHeaderView.identifier)
         tableView.register(DocumentTypeCell.nib, forCellReuseIdentifier: DocumentTypeCell.identifier)
     }
-    
+
 }
 
 extension DocumentController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return headerSection.count
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return headerSection[section].isExpanded ? 1 : 0
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: DocumentTypeCell.identifier, for: indexPath) as! DocumentTypeCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: DocumentTypeCell.identifier, for: indexPath) as? DocumentTypeCell else {
+            return UITableViewCell()
+        }
         cell.documentItem = headerSection[indexPath.section]
         cell.delegate = self
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 100
     }
-    
+
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: DocumentExpandHeaderView.identifier) as? DocumentExpandHeaderView else {
             return UIView()
@@ -74,7 +76,7 @@ extension DocumentController: DocumentHeaderViewDeleagate, DocumentTypeCellDeleg
         vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }
-    
+
     func header(didSelected header: DocumentExpandHeaderView, section: Int) {
         // Change status of header and reload data
         headerSection[section].isExpanded = !headerSection[section].isExpanded

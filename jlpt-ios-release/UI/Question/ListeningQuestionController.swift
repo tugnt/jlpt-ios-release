@@ -9,7 +9,7 @@
 import UIKit
 
 class ListeningQuestionController: UIViewController {
-    
+
     @IBOutlet weak var questionLb: UILabel! {
         didSet {
             questionLb.text = """
@@ -19,7 +19,7 @@ class ListeningQuestionController: UIViewController {
             """
         }
     }
-    
+
     @IBOutlet weak var answerALb: UILabel! {
         didSet {
             answerALb.text = """
@@ -29,9 +29,7 @@ class ListeningQuestionController: UIViewController {
                             """
         }
     }
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }

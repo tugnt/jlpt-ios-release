@@ -31,25 +31,25 @@ struct QuestionResponse: JLPTResponse {
     let answerD: String
     let solution: String
     var linkAudio: String?
-    
+
     /// - Throws: DecodeError or an arbitrary ErrorType
     static func decode(_ e: Extractor) throws -> QuestionResponse {
-        return try QuestionResponse(unit:       e <| "unit",
-                                    type:       e <| "type",
-                                    level:      e <| "level",
-                                    question:   e <| "question",
-                                    answerA:    e <| "answerA",
-                                    answerB:    e <| "answerB",
-                                    answerC:    e <| "answerC",
-                                    answerD:    e <| "answerD",
-                                    solution:   e <| "solution",
-                                    linkAudio:  e <|? "linkAudio")
+        return try QuestionResponse(unit: e <| "unit",
+                                    type: e <| "type",
+                                    level: e <| "level",
+                                    question: e <| "question",
+                                    answerA: e <| "answerA",
+                                    answerB: e <| "answerB",
+                                    answerC: e <| "answerC",
+                                    answerD: e <| "answerD",
+                                    solution: e <| "solution",
+                                    linkAudio: e <|? "linkAudio")
     }
 }
 
 struct JLPTQuestionResponse: JLPTResponse {
-    let jlptQuestion : [QuestionResponse]
-    
+    let jlptQuestion: [QuestionResponse]
+
     static func decode(_ e: Extractor) throws -> JLPTQuestionResponse {
         return try JLPTQuestionResponse(jlptQuestion: e <|| "jlpt_question")
     }

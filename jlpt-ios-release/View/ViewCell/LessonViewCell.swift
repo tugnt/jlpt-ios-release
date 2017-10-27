@@ -45,11 +45,11 @@ enum TypeJLPT: String {
 }
 
 enum LevelJLPT: String {
-    case N1 = "1"
-    case N2 = "2"
-    case N3 = "3"
-    case N4 = "4"
-    case N5 = "5"
+    case n1 = "1"
+    case n2 = "2"
+    case n3 = "3"
+    case n4 = "4"
+    case n5 = "5"
 }
 
 protocol LessonCellDelegate:class {
@@ -60,15 +60,15 @@ class LessonViewCell: BaseViewCell {
     static var identifier: String {
         return String(describing: self)
     }
-    
+
     private let title: UILabel  = UILabel()
     private let imageView: UIImageView = UIImageView()
     private let circleView = UIView()
     private let leftBrigeLine = UIView()
     private let rightBrigeLine = UIView()
-    
+
     var lesson: ItemLesson?
-    var cellSelected: ((LessonViewCell) -> ())?
+    var cellSelected: ((LessonViewCell) -> Void)?
     var sectionColor: UIColor = .gray {
         didSet {
             leftBrigeLine.backgroundColor = sectionColor
@@ -78,7 +78,7 @@ class LessonViewCell: BaseViewCell {
             imageView.tintColor = sectionColor
         }
     }
-    
+
     var lessonItem: ItemLesson? {
         didSet {
             guard let item = lessonItem else { return }
@@ -92,7 +92,7 @@ class LessonViewCell: BaseViewCell {
     private let circleRadius: CGFloat = 60
     private let circlePadding: CGFloat = 5
     private let itemHeight: CGFloat = 70
-    
+
     /// - Setup view here
     override func setUpView() {
         addSubview(title)
@@ -100,20 +100,20 @@ class LessonViewCell: BaseViewCell {
         addSubview(leftBrigeLine)
         addSubview(rightBrigeLine)
         circleView.addSubview(imageView)
-        
+
         leftBrigeLine.snp.makeConstraints { make in
             make.top.equalToSuperview().offset((circleRadius + circlePadding) / 2)
             make.height.equalTo(3)
             make.width.equalTo((itemHeight - circleRadius) / 2)
         }
-        
+
         rightBrigeLine.snp.makeConstraints { make in
             make.top.equalToSuperview().offset((circleRadius + circlePadding) / 2)
             make.height.equalTo(3)
             make.width.equalTo((itemHeight - circleRadius) / 2)
             make.right.equalToSuperview()
         }
-        
+
         circleView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(5)
             make.height.width.equalTo(circleRadius)
@@ -122,13 +122,13 @@ class LessonViewCell: BaseViewCell {
         circleView.clipsToBounds = true
         circleView.layer.cornerRadius = circleRadius / 2
         circleView.layer.borderWidth = 2
-        
+
         imageView.snp.makeConstraints { make in
             make.center.equalToSuperview()
             make.height.width.equalTo(30)
         }
         imageView.contentMode = .scaleAspectFill
-        
+
         title.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(circleView.snp.bottom)
@@ -140,7 +140,7 @@ class LessonViewCell: BaseViewCell {
         let tap = UITapGestureRecognizer(target: self, action: #selector(lessonSelected))
         addGestureRecognizer(tap)
     }
-    
+
     @objc func lessonSelected() {
         cellSelected!(self)
     }

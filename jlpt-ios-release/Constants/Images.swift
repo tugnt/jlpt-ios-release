@@ -10,8 +10,6 @@
   typealias Image = UIImage
 #endif
 
-// swiftlint:disable file_length
-
 @available(*, deprecated, renamed: "ImageAsset")
 typealias AssetType = ImageAsset
 
@@ -41,7 +39,6 @@ struct ColorAsset {
   }
 }
 
-// swiftlint:disable identifier_name line_length nesting type_body_length type_name
 enum Asset {
   static let background = ImageAsset(name: "background")
   static let download = ImageAsset(name: "download")
@@ -151,7 +148,6 @@ enum Asset {
   @available(*, deprecated, renamed: "allImages")
   static let allValues: [AssetType] = allImages
 }
-// swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
 extension Image {
   @available(iOS 1.0, tvOS 1.0, watchOS 1.0, *)

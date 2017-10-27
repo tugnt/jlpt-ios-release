@@ -31,7 +31,7 @@ protocol JLPTService {
 
 extension JLPTService {
     var parameter: Parameters? { return nil }
-    
+
     var parameterEncoding: ParameterEncoding {
         switch method {
         case .get:

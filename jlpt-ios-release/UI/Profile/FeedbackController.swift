@@ -11,14 +11,13 @@ import UIKit
 class FeedbackController: UIViewController {
     @IBOutlet weak var titleFeedback: UITextField!
     @IBOutlet weak var contentFeedback: UITextField!
-    
+
     @IBOutlet weak var sendFeedbackBtn: UIButton! {
         didSet {
             sendFeedbackBtn.setUpJLPTButton()
         }
     }
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

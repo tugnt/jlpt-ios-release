@@ -40,7 +40,7 @@ class EditProfileController: UIViewController {
                                       EditProfileItem(titleProfile: .name, contentProfile: "Tung Nguyen"),
                                       EditProfileItem(titleProfile: .email, contentProfile: "tungnguyenlee2t@gmail.com"),
                                       EditProfileItem(titleProfile: .password, contentProfile: "**************")]
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -53,11 +53,11 @@ extension EditProfileController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return editItems.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? EditProfileCell else {
             return UITableViewCell()
@@ -66,7 +66,7 @@ extension EditProfileController: UITableViewDelegate, UITableViewDataSource {
         cell.editItem = editItems[indexPath.row]
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.showTransparentView()
 //        showInputDialog(title: "Test", message: "Test", okButton: "OK", cancelButton: "Cancel", okAction: {
