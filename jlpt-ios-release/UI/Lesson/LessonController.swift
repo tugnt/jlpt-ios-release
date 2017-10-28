@@ -49,8 +49,8 @@ class LessonController: UICollectionViewController, UICollectionViewDelegateFlow
         }
         cell.itemLesson = sections[indexPath.section].categories[indexPath.row].itemLessons
         cell.sectionColor = sections[indexPath.section].header.sectionColor
-        cell.cellLessonSelected = { (cell) in
-            self.cellSecletec(cell)
+        cell.cellLessonSelected = { (level, type) in
+            self.cellSelected(level, type)
         }
         return cell
     }
@@ -83,12 +83,12 @@ class LessonController: UICollectionViewController, UICollectionViewDelegateFlow
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
 
-    func cellSecletec(_ cell: LessonViewCell) {
-        if cell.lessonItem?.level != nil {
-            /// - Move to list question of JLPT
+    func cellSelected(_ level: LevelJLPT?, _ type: TypeJLPT?) {
+        if level != nil {
+            // TODO: Move to list question of JLPT
         } else {
-            /// - Move to list hint screen
-            let vc = StoryboardScene.ListeningQuestion.listeningQuestionController.instantiate()
+            let vc = StoryboardScene.ListHint.listHintController.instantiate()
+            vc.type = type
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
         }
@@ -97,7 +97,6 @@ class LessonController: UICollectionViewController, UICollectionViewDelegateFlow
 
 extension LessonController: CategoryHeaderViewDelegate {
     func header(_ header: CategoryHeaderView, section: Int) {
-        print("Clicked")
         sections[section].header.isExpanded = !sections[section].header.isExpanded
         collectionView?.reloadSections([section])
     }

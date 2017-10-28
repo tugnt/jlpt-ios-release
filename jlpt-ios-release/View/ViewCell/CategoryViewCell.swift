@@ -36,7 +36,7 @@ class CategoryViewCell: BaseViewCell, UICollectionViewDataSource, UICollectionVi
         collectionView.backgroundColor = .clear
         return collectionView
     }()
-    var cellLessonSelected: ((LessonViewCell) -> Void)?
+    var cellLessonSelected: ((LevelJLPT?, TypeJLPT?) -> Void)?
 
     override func setUpView() {
         addSubview(collectionView)
@@ -62,8 +62,8 @@ class CategoryViewCell: BaseViewCell, UICollectionViewDataSource, UICollectionVi
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LessonViewCell.identifier, for: indexPath) as? LessonViewCell else { return UICollectionViewCell ()}
         cell.lessonItem = itemLesson[indexPath.row]
         cell.sectionColor = self.sectionColor!
-        cell.cellSelected = { (cell) in
-            self.cellLessonSelected?(cell)
+        cell.cellSelected = { (level, type) in
+            self.cellLessonSelected?(level, type)
         }
         return cell
     }
