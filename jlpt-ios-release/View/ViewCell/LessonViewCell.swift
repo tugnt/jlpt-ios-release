@@ -53,22 +53,21 @@ enum LevelJLPT: String {
 }
 
 protocol LessonCellDelegate:class {
-    func cellDidSelected(_ cell: LessonViewCell)
+    func cellDidSelected(level: LevelJLPT, type: TypeJLPT)
 }
 
 class LessonViewCell: BaseViewCell {
-    static var identifier: String {
-        return String(describing: self)
-    }
+    static var identifier: String { return String(describing: self) }
 
     private let title: UILabel  = UILabel()
     private let imageView: UIImageView = UIImageView()
     private let circleView = UIView()
     private let leftBrigeLine = UIView()
     private let rightBrigeLine = UIView()
-
+    private var level: LevelJLPT?
+    private var type: TypeJLPT?
+    var cellSelected: ((LevelJLPT?, TypeJLPT?) -> Void)?
     var lesson: ItemLesson?
-    var cellSelected: ((LessonViewCell) -> Void)?
     var sectionColor: UIColor = .gray {
         didSet {
             leftBrigeLine.backgroundColor = sectionColor
@@ -87,6 +86,8 @@ class LessonViewCell: BaseViewCell {
             imageView.image = imageTint
             leftBrigeLine.isHidden = !item.isHaveLeftLine
             rightBrigeLine.isHidden = !item.isHaveRightLine
+            level = item.level
+            type = item.typeJLPT
         }
     }
     private let circleRadius: CGFloat = 60
@@ -142,6 +143,6 @@ class LessonViewCell: BaseViewCell {
     }
 
     @objc func lessonSelected() {
-        cellSelected!(self)
+        self.cellSelected?(level, type)
     }
 }

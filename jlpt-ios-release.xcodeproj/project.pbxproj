@@ -104,7 +104,6 @@
 		938DA3C645C6A3C03128E4F2 /* Pods_jlpt_ios_releaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F47A53587C0DC2615FF3BBD7 /* Pods_jlpt_ios_releaseTests.framework */; };
 		DF4C22EF1F74B6C300B2CCC5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF4C22EE1F74B6C300B2CCC5 /* Alamofire.framework */; };
 		DF4C22F21F74CA7E00B2CCC5 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4C22F11F74CA7E00B2CCC5 /* Result.swift */; };
-		DFCCB9B71F8F6E2000123170 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFCCB9B61F8F6E2000123170 /* Realm.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -250,7 +249,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1ABECC791F937AEB005056A5 /* SnapKit.framework in Frameworks */,
-				DFCCB9B71F8F6E2000123170 /* Realm.framework in Frameworks */,
 				1A46AC551F89D2E1001FF467 /* MarkdownView.framework in Frameworks */,
 				1A46AC491F89AD9A001FF467 /* CoreText.framework in Frameworks */,
 				1A46AC461F895208001FF467 /* RxSwift.framework in Frameworks */,
@@ -973,7 +971,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/MarkdownView.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 			);
 			name = Carthage;
@@ -1341,7 +1338,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "jlpt-ios-release/jlpt-ios-release-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -1362,7 +1359,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xxthaodan.jlpt-ios-release";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "jlpt-ios-release/jlpt-ios-release-Bridging-Header.h";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
