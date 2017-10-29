@@ -23,7 +23,7 @@ class ListHintController: UIViewController {
     fileprivate let cellId = "cellHint"
     @IBOutlet weak var tableView: UITableView!
     var listHint: [HintViewModel] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let title = setUpTitle(type: type)
@@ -33,7 +33,7 @@ class ListHintController: UIViewController {
         tableView.separatorColor = .clear
         fetchHintData()
     }
-
+    
     func fetchHintData() {
         guard let type = self.type else { return }
         let request = HintRequest(type: type)
@@ -42,12 +42,16 @@ class ListHintController: UIViewController {
             case .success(let response):
                 let tableData = HintTableData(response: response)
                 self.listHint = tableData.listHint
+                if self.listHint.count == 0 {
+                    self.tableView.isHidden = true
+                    self.addEmptyStateView()
+                }
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
             case .failure:
-                // TODO: Show data empty view
-                break
+                self.tableView.isHidden = true
+                self.addEmptyStateView()
             }
         })
     }
@@ -57,11 +61,11 @@ extension ListHintController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listHint.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? HintCell else {
             return UITableViewCell()
@@ -70,11 +74,9 @@ extension ListHintController: UITableViewDelegate, UITableViewDataSource {
         cell.hintItem = listHint[indexPath.row]
         return cell
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = StoryboardScene.TheoryHint.theoryHintController.instantiate()
         navigationController?.pushViewController(vc, animated: true)
     }
 }
-
-

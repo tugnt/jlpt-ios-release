@@ -38,8 +38,9 @@
 		1A46AC601F8A6602001FF467 /* UIViewController+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A46AC5F1F8A6602001FF467 /* UIViewController+NavigationBar.swift */; };
 		1A46AC621F8A7728001FF467 /* color.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A46AC611F8A7728001FF467 /* color.txt */; };
 		1A46AC641F8A78CC001FF467 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A46AC631F8A78CC001FF467 /* Colors.swift */; };
-		1A565F0B1FA574C500AAC7C8 /* DataEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A565F0A1FA574C500AAC7C8 /* DataEmptyView.swift */; };
+		1A565F0B1FA574C500AAC7C8 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A565F0A1FA574C500AAC7C8 /* EmptyStateView.swift */; };
 		1A565F0D1FA5779900AAC7C8 /* UIViewController+NavTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A565F0C1FA5779900AAC7C8 /* UIViewController+NavTitle.swift */; };
+		1A565F0F1FA59B9700AAC7C8 /* UIViewController+EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A565F0E1FA59B9700AAC7C8 /* UIViewController+EmptyState.swift */; };
 		1A5AA4561F9CB6F1005393FE /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5AA4551F9CB6F1005393FE /* WaveView.swift */; };
 		1A6520651F851D5A00E21905 /* HintCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6520641F851D5A00E21905 /* HintCell.swift */; };
 		1A65206B1F866A4200E21905 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A65206A1F866A4200E21905 /* CardView.swift */; };
@@ -165,8 +166,9 @@
 		1A46AC5F1F8A6602001FF467 /* UIViewController+NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavigationBar.swift"; sourceTree = "<group>"; };
 		1A46AC611F8A7728001FF467 /* color.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = color.txt; sourceTree = "<group>"; };
 		1A46AC631F8A78CC001FF467 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		1A565F0A1FA574C500AAC7C8 /* DataEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEmptyView.swift; sourceTree = "<group>"; };
+		1A565F0A1FA574C500AAC7C8 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		1A565F0C1FA5779900AAC7C8 /* UIViewController+NavTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavTitle.swift"; sourceTree = "<group>"; };
+		1A565F0E1FA59B9700AAC7C8 /* UIViewController+EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+EmptyState.swift"; sourceTree = "<group>"; };
 		1A5AA4551F9CB6F1005393FE /* WaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
 		1A6520641F851D5A00E21905 /* HintCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintCell.swift; sourceTree = "<group>"; };
 		1A65206A1F866A4200E21905 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -594,6 +596,7 @@
 				1ABECC7C1F94EFA6005056A5 /* UIViewController+UIButton.swift */,
 				1A23C22C1F9CBCF8003181AA /* UIColorExtension.swift */,
 				1A565F0C1FA5779900AAC7C8 /* UIViewController+NavTitle.swift */,
+				1A565F0E1FA59B9700AAC7C8 /* UIViewController+EmptyState.swift */,
 			);
 			path = Extenssion;
 			sourceTree = "<group>";
@@ -607,7 +610,7 @@
 				1A3E516B1F8B1C9B0025F4E2 /* TDRadioButton.swift */,
 				1ABECC7A1F938168005056A5 /* EditProfileView.swift */,
 				1AEA8FD31FA254A6009E67D1 /* DashedCircleView.swift */,
-				1A565F0A1FA574C500AAC7C8 /* DataEmptyView.swift */,
+				1A565F0A1FA574C500AAC7C8 /* EmptyStateView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -1070,7 +1073,7 @@
 				1A3E51701F8B44550025F4E2 /* NomalQuestionCell.swift in Sources */,
 				1A91339D1F9215F6007A6CF2 /* EditProfileController.swift in Sources */,
 				1A3684A21F7D2611001FEF88 /* StartAppController.swift in Sources */,
-				1A565F0B1FA574C500AAC7C8 /* DataEmptyView.swift in Sources */,
+				1A565F0B1FA574C500AAC7C8 /* EmptyStateView.swift in Sources */,
 				1A2D07041F9E24CB00CB3864 /* LoginViewController.swift in Sources */,
 				1AB79E2F1F769F1200C2F8AE /* IntroductionController.swift in Sources */,
 				1A565F0D1FA5779900AAC7C8 /* UIViewController+NavTitle.swift in Sources */,
@@ -1094,6 +1097,7 @@
 				1A9133931F920096007A6CF2 /* PrivacyPolicyController.swift in Sources */,
 				1A65207D1F87EF7100E21905 /* HintQuestionModel.swift in Sources */,
 				1ABECC911F9C4758005056A5 /* ListDocumentOfTypeController.swift in Sources */,
+				1A565F0F1FA59B9700AAC7C8 /* UIViewController+EmptyState.swift in Sources */,
 				1A36849E1F7752E9001FEF88 /* ChildIntroductionController.swift in Sources */,
 				1A1C969F1F9CA9D000A19C7B /* SCSiriWaveformView.m in Sources */,
 				1A9133A41F922911007A6CF2 /* EditProfileCell.swift in Sources */,
