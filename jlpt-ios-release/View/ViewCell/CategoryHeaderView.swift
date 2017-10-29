@@ -94,7 +94,6 @@ class CategoryHeaderView: UICollectionReusableView {
     }
 
     @objc func expandLessonSection () {
-        print("Nao click")
         delegate?.header(self, section: section)
     }
 
