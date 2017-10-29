@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIViewController {
-    func setUpTitle(type: TypeJLPT?) -> String{
+    func setUpTitle(type: TypeJLPT?) -> String {
         guard let type = type else { return ""}
         var title: String = ""
         switch type {
