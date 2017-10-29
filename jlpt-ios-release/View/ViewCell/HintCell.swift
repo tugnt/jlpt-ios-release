@@ -9,31 +9,24 @@
 import UIKit
 
 class HintCell: UITableViewCell {
-
     @IBOutlet weak var hintTitleLabel: UILabel!
-
     @IBOutlet weak var hintDescriptionLabel: UILabel!
-
     @IBOutlet weak var hintNumberQuestionLabel: UILabel!
-
-    @IBOutlet weak var imagePassOrFailed: UIImageView!
-
     @IBOutlet weak var pointLabel: UILabel!
+    @IBOutlet weak var pinButton: UIButton!
 
     var hintItem: HintViewModel? {
         didSet {
             guard let item = hintItem else { return }
             hintTitleLabel.text = item.hintTitle
             hintDescriptionLabel.text = item.hintContent
-            hintNumberQuestionLabel.text = "\(item.numberQuestion)"
-            pointLabel.text = "\(item.point)"
+            hintNumberQuestionLabel.text = "Số câu hỏi \(item.numberQuestion)"
+            pointLabel.text = "Điểm số \(item.point) / 100"
         }
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
-
         // Initial code here
-
     }
 }

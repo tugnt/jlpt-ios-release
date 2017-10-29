@@ -13,7 +13,6 @@ class ChatRoomController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Phòng trò chuyện"
-        print("Đã vào phòng trò chuyện")
     }
 
     override func didReceiveMemoryWarning() {

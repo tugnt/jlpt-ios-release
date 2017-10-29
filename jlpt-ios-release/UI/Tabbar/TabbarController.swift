@@ -39,8 +39,6 @@ class TabbarController: UITabBarController, UITabBarControllerDelegate {
 
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         let index = tabBarController.selectedIndex
-        if index == 3 {
-            print("Chuẩn bị vào phòng trò chuyện")
-        }
+        if index == 3 { }
     }
 }

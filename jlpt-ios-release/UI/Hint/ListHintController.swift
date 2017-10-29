@@ -20,35 +20,36 @@ struct HintTableData {
 }
 class ListHintController: UIViewController {
     var type: TypeJLPT?
-    let cellId = "cellHint"
+    fileprivate let cellId = "cellHint"
     @IBOutlet weak var tableView: UITableView!
     var listHint: [HintViewModel] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let title = setUpTitle(type: type)
+        self.title = "Mẹo luyện thi \(title)"
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorColor = .clear
-        //fetchHintData()
+        fetchHintData()
     }
 
     func fetchHintData() {
         guard let type = self.type else { return }
-        _ = HintRequest(type: type)
-//        ApiClient.instance.request(request: request, g: { (result) in
-//            switch result {
-//            case .success(let response):
-//                let tableData = HintTableData(response: response)
-//                self.listHint = tableData.listHint
-//                print(self.listHint.count)
-//                DispatchQueue.main.async {
-//                    self.tableView.reloadData()
-//                }
-//            case .failure:
-//                // Send error and show image empty
-//                break
-//            }
-//        })
+        let request = HintRequest(type: type)
+        ApiClient.instance.request(request: request, completion: { (result) in
+            switch result {
+            case .success(let response):
+                let tableData = HintTableData(response: response)
+                self.listHint = tableData.listHint
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            case .failure:
+                // TODO: Show data empty view
+                break
+            }
+        })
     }
 }
 
@@ -58,7 +59,7 @@ extension ListHintController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return listHint.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -66,7 +67,7 @@ extension ListHintController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         cell.selectionStyle = .none
-        //cell.hintItem = listHint[indexPath.row]
+        cell.hintItem = listHint[indexPath.row]
         return cell
     }
 
@@ -75,3 +76,5 @@ extension ListHintController: UITableViewDelegate, UITableViewDataSource {
         navigationController?.pushViewController(vc, animated: true)
     }
 }
+
+

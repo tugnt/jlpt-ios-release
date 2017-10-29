@@ -120,6 +120,5 @@ extension UIViewController {
     }
 
     @objc func changeUserInfo() {
-        print("Change")
     }
 }

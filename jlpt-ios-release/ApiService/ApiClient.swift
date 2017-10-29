@@ -13,17 +13,14 @@ import Himotoki
 class ApiClient {
     static var instance = ApiClient()
 
-    func request<Request: JLPTRequest> (request: Request, g
-                 completion: @escaping  ((Result<Request.Response, RequestError>) -> Void)) {
+    func request<Request: JLPTRequest> (request: Request, completion: @escaping  ((Result<Request.Response, RequestError>) -> Void)) {
 
         Alamofire.request(request.url,
                           method: request.method,
                           parameters: request.parameter,
                           encoding: JSONEncoding.default,
                           headers: nil)
-            .responseString(completionHandler: { (responseString) in
-                print("Response String:\(responseString)")
-            })
+            .responseString(completionHandler: { (_) in })
             .responseJSON(completionHandler: { (responseJSON) in
                 switch responseJSON.result {
                 case .success(let response):
@@ -32,7 +29,7 @@ class ApiClient {
                         completion(Result(value: model))
                     } catch let DecodeError.missingKeyPath(keyPath) {
                         // catch error here
-                        let msgError = "key: \(keyPath.components)"
+                        let msgError = "Miss \(keyPath.components) in response"
                         print(msgError)
                     } catch let DecodeError.typeMismatch(expected: expected, actual: actual, keyPath: keyPath) {
                         let msgError = "description: Failed to convert JSON value to model's property."
