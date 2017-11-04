@@ -34,6 +34,7 @@ class EmptyStateView: UIView {
         messageLabel.textColor = .lightGray
         messageLabel.numberOfLines = 0
         messageLabel.textAlignment = .center
+        messageLabel.font = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.light)
         messageLabel.text = "Hiện tại chưa có dữ liệu về phần này. Chúng tôi sẽ cập nhật trong thời gian sớm nhất"
     }
 

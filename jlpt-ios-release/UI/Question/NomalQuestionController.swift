@@ -9,6 +9,7 @@
 import UIKit
 
 class NomalQuestionController: UIViewController {
+    var questions: [HintQuestionModel] = []
     @IBOutlet weak var tableView: UITableView!
     let cellId = "cellQuestion"
     override func viewDidLoad() {

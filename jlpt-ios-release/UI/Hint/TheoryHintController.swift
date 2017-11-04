@@ -10,23 +10,41 @@ import UIKit
 import MarkdownView
 
 class TheoryHintController: UIViewController {
+    var content: String?
+    var questions: [HintQuestionModel] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Lý thuyết"
         let mdView = MarkdownView()
         view.addSubview(mdView)
         mdView.translatesAutoresizingMaskIntoConstraints = false
-        mdView.topAnchor.constraint(equalTo: topLayoutGuide.topAnchor).isActive = true
-        mdView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        mdView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        mdView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor).isActive = true
-        guard let _ = URL(string: "https://raw.githubusercontent.com/keitaoouchi/MarkdownView/master/sample.md") else { return }
-        //let markdown = try! String(contentsOf: url, encoding: String.Encoding.utf8)
-        // Load content from here
-        //mdView.load(markdown: markdown, enableImage: true)
+        mdView.snp.makeConstraints { make in
+            make.leading.trailing.top.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-50)
+        }
+        guard let content = self.content else {
+            addEmptyStateView()
+            return
+        }
+        mdView.load(markdown: content, enableImage: true)
+
+        let transitionButton = UIButton()
+        view.addSubview(transitionButton)
+        transitionButton.snp.makeConstraints { make in
+            make.width.equalTo(view.snp.width).offset(-50)
+            make.height.equalTo(42)
+            make.bottom.equalToSuperview().offset(-5)
+            make.centerX.equalToSuperview()
+        }
+        transitionButton.setTitle("Luyện tập", for: .normal)
+        transitionButton.setUpPrimaryButton()
+        transitionButton.addTarget(self, action: #selector(moveQuestionScreen), for: .touchUpInside)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    @objc func moveQuestionScreen() {
+        let vc = StoryboardScene.NomalQuestion.nomalQuestionController.instantiate()
+        vc.questions = questions
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
