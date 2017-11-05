@@ -124,7 +124,34 @@
 			remoteGlobalIDString = 1A2B25CA1F512DFB00DFFD3A;
 			remoteInfo = "jlpt-ios-release";
 		};
+		1A4431421FAF014500574954 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A44313C1FAF014500574954 /* TDPopUp.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1A44307F1FAEA10C00574954;
+			remoteInfo = TDPopUp;
+		};
+		1A4431441FAF014500574954 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A44313C1FAF014500574954 /* TDPopUp.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1A4430881FAEA10C00574954;
+			remoteInfo = TDPopUpTests;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1A4430EC1FAEE1EB00574954 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1A136C3D1F6D3E7D00DF343E /* UIView+Contraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Contraints.swift"; sourceTree = "<group>"; };
@@ -152,6 +179,7 @@
 		1A3684A91F8005BC001FEF88 /* ChildIntroduction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChildIntroduction.storyboard; sourceTree = "<group>"; };
 		1A3E516B1F8B1C9B0025F4E2 /* TDRadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDRadioButton.swift; sourceTree = "<group>"; };
 		1A3E516F1F8B44550025F4E2 /* NomalQuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NomalQuestionCell.swift; sourceTree = "<group>"; };
+		1A44313C1FAF014500574954 /* TDPopUp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TDPopUp.xcodeproj; path = ../../TDPopUp/TDPopUp.xcodeproj; sourceTree = "<group>"; };
 		1A46AC381F892199001FF467 /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		1A46AC3C1F894479001FF467 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		1A46AC441F895206001FF467 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
@@ -324,6 +352,7 @@
 		1A2B25C21F512DFB00DFFD3A = {
 			isa = PBXGroup;
 			children = (
+				1A4430DE1FAEDEA200574954 /* ThirdParty */,
 				1A2B25CD1F512DFB00DFFD3A /* jlpt-ios-release */,
 				1A2B25E21F512DFB00DFFD3A /* jlpt-ios-releaseTests */,
 				1A2B25ED1F512DFB00DFFD3A /* jlpt-ios-releaseUITests */,
@@ -399,6 +428,23 @@
 				1A3684981F76E8D6001FEF88 /* Nunito-Light.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		1A4430DE1FAEDEA200574954 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				1A44313C1FAF014500574954 /* TDPopUp.xcodeproj */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		1A44313D1FAF014500574954 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1A4431431FAF014500574954 /* TDPopUp.framework */,
+				1A4431451FAF014500574954 /* TDPopUpTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		1A46AC371F892183001FF467 /* Constants */ = {
@@ -674,6 +720,7 @@
 				1A2B25FC1F513B0100DFFD3A /* Fabric */,
 				DF4C22F01F74B6D800B2CCC5 /* Carthage */,
 				1A39672D1FA355C9004F8F72 /* Swiftlint */,
+				1A4430EC1FAEE1EB00574954 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -769,6 +816,12 @@
 			mainGroup = 1A2B25C21F512DFB00DFFD3A;
 			productRefGroup = 1A2B25CC1F512DFB00DFFD3A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 1A44313D1FAF014500574954 /* Products */;
+					ProjectRef = 1A44313C1FAF014500574954 /* TDPopUp.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1A2B25CA1F512DFB00DFFD3A /* jlpt-ios-release */,
@@ -777,6 +830,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		1A4431431FAF014500574954 /* TDPopUp.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = TDPopUp.framework;
+			remoteRef = 1A4431421FAF014500574954 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1A4431451FAF014500574954 /* TDPopUpTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = TDPopUpTests.xctest;
+			remoteRef = 1A4431441FAF014500574954 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1A2B25C91F512DFB00DFFD3A /* Resources */ = {
@@ -1336,6 +1406,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 41E79A404AD484EE7A15F425 /* Pods-jlpt-ios-release.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1359,6 +1430,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4FDD19180E51CA77065E9CFA /* Pods-jlpt-ios-release.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 2327GHP7NU;
