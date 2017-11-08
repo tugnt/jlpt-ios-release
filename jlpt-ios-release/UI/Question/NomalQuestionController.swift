@@ -9,7 +9,7 @@
 import UIKit
 
 class NomalQuestionController: UIViewController {
-    var questions: [HintQuestionModel] = []
+    var questions: [NormalQuestionViewModel] = []
     @IBOutlet weak var tableView: UITableView!
     let cellId = "cellQuestion"
     override func viewDidLoad() {
@@ -18,12 +18,6 @@ class NomalQuestionController: UIViewController {
         tableView.dataSource = self
         tableView.separatorColor = .clear
         tableView.allowsSelection = false
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
 
@@ -33,13 +27,14 @@ extension NomalQuestionController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return questions.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? NomalQuestionCell else {
             return UITableViewCell()
         }
+        cell.normalQuestion = questions[indexPath.row]
         return cell
     }
 

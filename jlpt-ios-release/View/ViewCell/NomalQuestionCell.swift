@@ -8,30 +8,42 @@
 
 import UIKit
 
-class NomalQuestionCell: UITableViewCell {
+protocol NormalQuestionCellDelegate: class {
+    func radioClicked(_ index: Int)
+}
 
-    @IBOutlet weak var questionLabel: UILabel! {
-        didSet {
-            questionLabel.text = "なお、本作のメガホンをとったのは、前作『#ブレードランナー』を監督したリドリー・スコットの息子ルーク・スコット。35年の時を超え、奇跡の親子共演が実現しました"
-        }
-    }
-    @IBOutlet weak var answerALabel: UILabel! {
-        didSet {
-            answerALabel.text = "なお、本作のメガホンをとったのは、前作『#ブレードランナー』を監督したリドリー・スコットの息子ルーク・スコット。35年の時を超え、奇跡の親子共演が実現しました"
-        }
-    }
+class NomalQuestionCell: UITableViewCell {
+    var isShowSolution: Bool = false
+    @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var answerALabel: UILabel!
     @IBOutlet weak var answerBLabel: UILabel!
     @IBOutlet weak var answerCLabel: UILabel!
     @IBOutlet weak var answerDLabel: UILabel!
+    @IBOutlet var arrayRadioButton: [TDRadioButton]!
+    weak var delegate: NormalQuestionCellDelegate?
+    var normalQuestion: NormalQuestionViewModel? {
+        didSet {
+            guard let question = normalQuestion else { return }
+            questionLabel.text = question.question
+            answerALabel.text = question.answerA
+            answerBLabel.text = question.answerB
+            answerCLabel.text = question.answerC
+            answerDLabel.text = question.answerD
+        }
+    }
+
+    @IBAction func radioClicked(_ sender: TDRadioButton) {
+        for (index, button) in self.arrayRadioButton.enumerated() {
+            if button == sender {
+                button.isClicked = true
+                delegate?.radioClicked(index)
+            } else {
+                button.isClicked = false
+            }
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
-    }
-
 }
