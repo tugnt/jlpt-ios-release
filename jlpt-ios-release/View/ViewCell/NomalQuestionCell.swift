@@ -9,11 +9,18 @@
 import UIKit
 
 protocol NormalQuestionCellDelegate: class {
-    func radioClicked(_ index: Int)
+    func radioClicked(_ indexButton: Int, didSelected cell: NomalQuestionCell)
 }
 
 class NomalQuestionCell: UITableViewCell {
-    var isShowSolution: Bool = false
+    var isShowSolution: Bool = false {
+        didSet {
+            solutionLabelHeightConstraints.constant = isShowSolution == true ? 0 : 16
+            self.layoutIfNeeded()
+        }
+    }
+    @IBOutlet weak var solutionLabelHeightConstraints: NSLayoutConstraint!
+    @IBOutlet weak var solutionLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var answerALabel: UILabel!
     @IBOutlet weak var answerBLabel: UILabel!
@@ -29,6 +36,7 @@ class NomalQuestionCell: UITableViewCell {
             answerBLabel.text = question.answerB
             answerCLabel.text = question.answerC
             answerDLabel.text = question.answerD
+            solutionLabel.text = "Đáp án \(question.solution)"
         }
     }
 
@@ -36,7 +44,7 @@ class NomalQuestionCell: UITableViewCell {
         for (index, button) in self.arrayRadioButton.enumerated() {
             if button == sender {
                 button.isClicked = true
-                delegate?.radioClicked(index)
+                delegate?.radioClicked(index, didSelected: self)
             } else {
                 button.isClicked = false
             }

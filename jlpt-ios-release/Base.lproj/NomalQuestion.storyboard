@@ -111,8 +111,11 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5z1-ea-qkT">
-                                                            <rect key="frame" x="328.5" y="126" width="26.5" height="12"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                            <rect key="frame" x="322" y="126" width="33" height="16"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="16" id="8ry-iD-Tbi"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -121,7 +124,6 @@
                                                     <constraints>
                                                         <constraint firstItem="PUI-Kl-0X1" firstAttribute="top" secondItem="2w5-Qo-VV0" secondAttribute="bottom" constant="10" id="2kc-al-cmo"/>
                                                         <constraint firstItem="89J-wW-9Eh" firstAttribute="centerY" secondItem="95f-pf-pqB" secondAttribute="centerY" id="4kM-ci-Ge9"/>
-                                                        <constraint firstAttribute="bottom" secondItem="5z1-ea-qkT" secondAttribute="bottom" constant="8.5" id="Cns-aM-zHh"/>
                                                         <constraint firstItem="qil-Jj-9Jt" firstAttribute="leading" secondItem="KiW-51-xho" secondAttribute="leading" constant="10" id="FTN-gu-OCj"/>
                                                         <constraint firstItem="2w5-Qo-VV0" firstAttribute="trailing" secondItem="9VS-vk-I0r" secondAttribute="trailing" id="Fip-tG-Fai"/>
                                                         <constraint firstItem="CBd-18-7y0" firstAttribute="leading" secondItem="KiW-51-xho" secondAttribute="leading" constant="10" id="HB8-Lo-Z0b"/>
@@ -148,6 +150,7 @@
                                                         <constraint firstItem="qil-Jj-9Jt" firstAttribute="centerY" secondItem="PUI-Kl-0X1" secondAttribute="centerY" id="o7a-9P-hue"/>
                                                         <constraint firstItem="9VS-vk-I0r" firstAttribute="leading" secondItem="aF7-vp-GbH" secondAttribute="trailing" constant="10" id="ojA-Rl-3xi"/>
                                                         <constraint firstItem="PUI-Kl-0X1" firstAttribute="trailing" secondItem="2w5-Qo-VV0" secondAttribute="trailing" id="r3b-7a-N2m"/>
+                                                        <constraint firstAttribute="bottom" secondItem="5z1-ea-qkT" secondAttribute="bottom" constant="4.5" id="rna-hs-Fd1"/>
                                                         <constraint firstItem="95f-pf-pqB" firstAttribute="trailing" secondItem="dGo-Uk-FYG" secondAttribute="trailing" id="sKU-ab-u4h"/>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2w5-Qo-VV0" secondAttribute="trailing" id="z2e-Rb-oyi"/>
                                                         <constraint firstItem="CBd-18-7y0" firstAttribute="centerY" secondItem="2w5-Qo-VV0" secondAttribute="centerY" id="zxT-9M-iDs"/>
@@ -168,6 +171,8 @@
                                             <outlet property="answerCLabel" destination="2w5-Qo-VV0" id="ICT-ml-Xvb"/>
                                             <outlet property="answerDLabel" destination="PUI-Kl-0X1" id="4Lc-ed-PuK"/>
                                             <outlet property="questionLabel" destination="dGo-Uk-FYG" id="4yv-Ku-d6J"/>
+                                            <outlet property="solutionLabel" destination="5z1-ea-qkT" id="1dm-37-X4N"/>
+                                            <outlet property="solutionLabelHeightConstraints" destination="8ry-iD-Tbi" id="C3x-JC-Guw"/>
                                             <outletCollection property="arrayRadioButton" destination="89J-wW-9Eh" collectionClass="NSMutableArray" id="IAc-2c-9Bb"/>
                                             <outletCollection property="arrayRadioButton" destination="aF7-vp-GbH" collectionClass="NSMutableArray" id="y3L-6C-FhS"/>
                                             <outletCollection property="arrayRadioButton" destination="CBd-18-7y0" collectionClass="NSMutableArray" id="Ojy-7z-WjK"/>

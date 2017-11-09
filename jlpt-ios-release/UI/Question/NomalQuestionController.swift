@@ -12,8 +12,11 @@ class NomalQuestionController: UIViewController {
     var questions: [NormalQuestionViewModel] = []
     @IBOutlet weak var tableView: UITableView!
     let cellId = "cellQuestion"
+    var isShowSolution: Bool = true
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Luyện tập"
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorColor = .clear
@@ -21,7 +24,7 @@ class NomalQuestionController: UIViewController {
     }
 }
 
-extension NomalQuestionController: UITableViewDelegate, UITableViewDataSource {
+extension NomalQuestionController: UITableViewDelegate, UITableViewDataSource, NormalQuestionCellDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -34,8 +37,13 @@ extension NomalQuestionController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? NomalQuestionCell else {
             return UITableViewCell()
         }
+        cell.delegate = self
+        cell.isShowSolution = isShowSolution
         cell.normalQuestion = questions[indexPath.row]
         return cell
     }
 
+    func radioClicked(_ indexButton: Int, didSelected: NomalQuestionCell) {
+        let _ = tableView.indexPath(for: didSelected)
+    }
 }
