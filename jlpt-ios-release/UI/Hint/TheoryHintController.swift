@@ -44,7 +44,17 @@ class TheoryHintController: UIViewController {
 
     @objc func moveQuestionScreen() {
         let vc = StoryboardScene.NomalQuestion.nomalQuestionController.instantiate()
-        vc.questions = questions
+        var normalQuestions: [NormalQuestionViewModel] = []
+        for item in questions {
+            normalQuestions.append(NormalQuestionViewModel(question: item.question,
+                                                          answerA: item.answerA,
+                                                          answerB: item.answerB,
+                                                          answerC: item.answerC,
+                                                          answerD: item.answerD,
+                                                          solution: item.solution,
+                                                          linkAudio: item.linkAudio))
+        }
+        vc.questions = normalQuestions
         navigationController?.pushViewController(vc, animated: true)
     }
 }
