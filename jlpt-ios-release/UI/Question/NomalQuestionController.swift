@@ -44,6 +44,6 @@ extension NomalQuestionController: UITableViewDelegate, UITableViewDataSource, N
     }
 
     func radioClicked(_ indexButton: Int, didSelected: NomalQuestionCell) {
-        let _ = tableView.indexPath(for: didSelected)
+        _ = tableView.indexPath(for: didSelected)
     }
 }
