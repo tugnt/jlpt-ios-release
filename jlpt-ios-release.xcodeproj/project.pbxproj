@@ -730,6 +730,7 @@
 				DF4C22F01F74B6D800B2CCC5 /* Carthage */,
 				1A39672D1FA355C9004F8F72 /* Swiftlint */,
 				1A4430EC1FAEE1EB00574954 /* Embed Frameworks */,
+				1A44315A1FB607B800574954 /* SwiftGen */,
 			);
 			buildRules = (
 			);
@@ -934,6 +935,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		1A44315A1FB607B800574954 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftgen >/dev/null; then\n    swiftgen xcassets \"${PROJECT_DIR}/jlpt-ios-release/Assets.xcassets\" --output \"${PROJECT_DIR}/jlpt-ios-release/Constants/Images.swift\" --template swift4\n    swiftgen storyboards \"${PROJECT_DIR}/jlpt-ios-release/Base.lproj\" --output \"${PROJECT_DIR}/jlpt-ios-release/Constants/Storyboards.swift\" -template swift4\n    swiftgen colors \"${PROJECT_DIR}/jlpt-ios-release/color.txt\"  --output \"${PROJECT_DIR}/jlpt-ios-release/Constants/Colors.swift\" -template swift4\nelse\n    echo \"warning: SwiftGen not installed, download it from https://github.com/AliSoftware/SwiftGen\"\nfi";
 		};
 		2BF1B70450A59E3E2322D57D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1362,6 +1377,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1410,6 +1426,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

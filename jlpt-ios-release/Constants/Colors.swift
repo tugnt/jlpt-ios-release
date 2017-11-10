@@ -8,6 +8,8 @@
   typealias Color = UIColor
 #endif
 
+// swiftlint:disable file_length
+
 // swiftlint:disable operator_usage_whitespace
 extension Color {
   convenience init(rgbaValue: UInt32) {
@@ -21,6 +23,7 @@ extension Color {
 }
 // swiftlint:enable operator_usage_whitespace
 
+// swiftlint:disable identifier_name line_length type_body_length
 struct ColorName {
   let rgbaValue: UInt32
   var color: Color { return Color(named: self) }

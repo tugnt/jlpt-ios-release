@@ -16,6 +16,8 @@ target 'jlpt-ios-release' do
     inherit! :search_paths
     # Pods for testing
   end
+
+  pod 'SwiftGen'
   pod 'Fabric'
   pod 'Crashlytics'
   pod 'Himotoki'
