@@ -25,6 +25,14 @@ extension UIButton {
         addTarget(self, action: #selector(didTouchUpDismiss), for: [.touchDragExit, .touchUpInside, .touchUpOutside])
     }
 
+    func setUpDangerButton() {
+        clipsToBounds = true
+        layer.cornerRadius = 3
+        backgroundColor = ColorName.cancelBtnBg.color
+        addTarget(self, action: #selector(didTouchDismiss), for: [.touchDown, .touchDragEnter])
+        addTarget(self, action: #selector(didTouchUpDismiss), for: [.touchDragExit, .touchUpInside, .touchUpOutside])
+    }
+
     @objc func didTouchDismiss() {
         UIView.animate(withDuration: 0.1) {
             self.alpha = 0.5
