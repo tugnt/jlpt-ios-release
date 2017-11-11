@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import RxSwift
 import RxCocoa
+import RxSwift
 
 class ProfileController: UIViewController {
     fileprivate let cellId = "cellSetting"
