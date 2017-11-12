@@ -13,9 +13,10 @@ protocol NormalQuestionCellDelegate: class {
 }
 
 class NomalQuestionCell: UITableViewCell {
+    var solution: String = ""
     var isShowSolution: Bool = false {
         didSet {
-            solutionLabelHeightConstraints.constant = isShowSolution == true ? 0 : 16
+            solutionLabelHeightConstraints.constant = isShowSolution == true ? 16 : 0
             self.layoutIfNeeded()
         }
     }
@@ -36,7 +37,19 @@ class NomalQuestionCell: UITableViewCell {
             answerBLabel.text = question.answerB
             answerCLabel.text = question.answerC
             answerDLabel.text = question.answerD
-            solutionLabel.text = "Đáp án \(question.solution)"
+            switch question.solution {
+            case "0":
+                solution = "A"
+            case "1":
+                solution = "B"
+            case "2":
+                solution = "C"
+            case "3":
+                solution = "D"
+            default:
+                break
+            }
+            solutionLabel.text = "Đáp án \(solution)"
         }
     }
 

@@ -12,15 +12,43 @@ class NomalQuestionController: UIViewController {
     var questions: [NormalQuestionViewModel] = []
     @IBOutlet weak var tableView: UITableView!
     let cellId = "cellQuestion"
-    var isShowSolution: Bool = true
+    var isShowSolution: Bool = false
+    var solutionOfUser: [Int] = []
+    var point: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Luyện tập"
+        addRightBarButton()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorColor = .clear
         tableView.allowsSelection = false
+        // - Init array solution
+        for _ in questions { solutionOfUser.append(5) }
+    }
+
+    func addRightBarButton() {
+        let rightBarButton = UIBarButtonItem(title: "Hoàn thành", style: .done, target: self, action: #selector(checkAnswer))
+        navigationItem.rightBarButtonItem = rightBarButton
+    }
+
+    @objc func checkAnswer() {
+        for index in 0..<questions.count {
+            if Int(questions[index].solution) == solutionOfUser[index] {
+                point += 1
+            }
+        }
+        let confirmDialog = TDConfirmDialog(frame: view.bounds)
+        confirmDialog.set(title: "Kết quả")
+        confirmDialog.set(message: "Bạn trả lời đúng \(point) / \(questions.count) câu hỏi.")
+        confirmDialog.cancelButtonTitle = "Huỷ"
+        confirmDialog.confirmButtonTitle = "Xem kết quả"
+        view.addSubview(confirmDialog)
+        confirmDialog.confirmDidSelected = {
+            self.isShowSolution = true
+            self.tableView.reloadData()
+        }
     }
 }
 
@@ -44,6 +72,7 @@ extension NomalQuestionController: UITableViewDelegate, UITableViewDataSource, N
     }
 
     func radioClicked(_ indexButton: Int, didSelected: NomalQuestionCell) {
-        _ = tableView.indexPath(for: didSelected)
+        guard let indexPath = tableView.indexPath(for: didSelected) else { return }
+        solutionOfUser[indexPath.row] = indexButton
     }
 }
