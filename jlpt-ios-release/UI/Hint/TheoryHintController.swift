@@ -27,8 +27,8 @@ class TheoryHintController: UIViewController {
             addEmptyStateView()
             return
         }
+        startAnimationLoading()
         mdView.load(markdown: content, enableImage: true)
-
         let transitionButton = UIButton()
         view.addSubview(transitionButton)
         transitionButton.snp.makeConstraints { make in
@@ -40,6 +40,9 @@ class TheoryHintController: UIViewController {
         transitionButton.setTitle("Luyện tập", for: .normal)
         transitionButton.setUpPrimaryButton()
         transitionButton.addTarget(self, action: #selector(moveQuestionScreen), for: .touchUpInside)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
+            self.stopAnimationLoading()
+        })
     }
 
     @objc func moveQuestionScreen() {
