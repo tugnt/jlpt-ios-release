@@ -11,10 +11,10 @@
 		1A136C3E1F6D3E7D00DF343E /* UIView+Contraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A136C3D1F6D3E7D00DF343E /* UIView+Contraints.swift */; };
 		1A1C969F1F9CA9D000A19C7B /* SCSiriWaveformView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C969E1F9CA9D000A19C7B /* SCSiriWaveformView.m */; };
 		1A20D5651FB68F2600B6002D /* TDIndicator.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A20D5641FB68F2600B6002D /* TDIndicator.xib */; };
-		1A23C22D1F9CBCF8003181AA /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A23C22C1F9CBCF8003181AA /* UIColorExtension.swift */; };
 		1A2667291FB6A50500C9CFFB /* TDIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2667281FB6A50500C9CFFB /* TDIndicator.swift */; };
 		1A2667321FB6AFC400C9CFFB /* loader_ring.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A2667311FB6AFC400C9CFFB /* loader_ring.json */; };
 		1A2667361FB814B300C9CFFB /* UIViewController+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2667351FB814B300C9CFFB /* UIViewController+Loading.swift */; };
+		1A2667421FB87E6600C9CFFB /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2667411FB87E6600C9CFFB /* UIColorExtension.swift */; };
 		1A2B25CF1F512DFB00DFFD3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B25CE1F512DFB00DFFD3A /* AppDelegate.swift */; };
 		1A2B25EF1F512DFB00DFFD3A /* jlpt_ios_releaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B25EE1F512DFB00DFFD3A /* jlpt_ios_releaseUITests.swift */; };
 		1A2D07041F9E24CB00CB3864 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D07031F9E24CB00CB3864 /* LoginViewController.swift */; };
@@ -166,10 +166,10 @@
 		1A1C969D1F9CA9D000A19C7B /* SCSiriWaveformView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSiriWaveformView.h; sourceTree = "<group>"; };
 		1A1C969E1F9CA9D000A19C7B /* SCSiriWaveformView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSiriWaveformView.m; sourceTree = "<group>"; };
 		1A20D5641FB68F2600B6002D /* TDIndicator.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TDIndicator.xib; sourceTree = "<group>"; };
-		1A23C22C1F9CBCF8003181AA /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		1A2667281FB6A50500C9CFFB /* TDIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDIndicator.swift; sourceTree = "<group>"; };
 		1A2667311FB6AFC400C9CFFB /* loader_ring.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = loader_ring.json; sourceTree = "<group>"; };
 		1A2667351FB814B300C9CFFB /* UIViewController+Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Loading.swift"; sourceTree = "<group>"; };
+		1A2667411FB87E6600C9CFFB /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		1A2B25CB1F512DFB00DFFD3A /* jlpt-ios-release.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "jlpt-ios-release.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2B25CE1F512DFB00DFFD3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A2B25DA1F512DFB00DFFD3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -653,12 +653,12 @@
 		1AD738621F6D3B4A00A4A1B9 /* Extenssion */ = {
 			isa = PBXGroup;
 			children = (
+				1A2667411FB87E6600C9CFFB /* UIColorExtension.swift */,
 				1A136C3D1F6D3E7D00DF343E /* UIView+Contraints.swift */,
 				1A46AC5F1F8A6602001FF467 /* UIViewController+NavigationBar.swift */,
 				1A9133B11F926D54007A6CF2 /* UIViewControlelr+Alert.swift */,
 				1ABECC751F9343F9005056A5 /* UIViewController+UIView.swift */,
 				1ABECC7C1F94EFA6005056A5 /* UIViewController+UIButton.swift */,
-				1A23C22C1F9CBCF8003181AA /* UIColorExtension.swift */,
 				1A565F0C1FA5779900AAC7C8 /* UIViewController+NavTitle.swift */,
 				1A565F0E1FA59B9700AAC7C8 /* UIViewController+EmptyState.swift */,
 				1A2667351FB814B300C9CFFB /* UIViewController+Loading.swift */,
@@ -1170,7 +1170,6 @@
 				1A46AC4B1F89ADF2001FF467 /* CTView.swift in Sources */,
 				1A65206F1F87B96500E21905 /* HintViewModel.swift in Sources */,
 				1AD2FD761F80D9CC00B5167D /* ListQuestionController.swift in Sources */,
-				1A23C22D1F9CBCF8003181AA /* UIColorExtension.swift in Sources */,
 				1A5AA4561F9CB6F1005393FE /* WaveView.swift in Sources */,
 				1A2667291FB6A50500C9CFFB /* TDIndicator.swift in Sources */,
 				1A46AC391F892199001FF467 /* Storyboards.swift in Sources */,
@@ -1198,6 +1197,7 @@
 				1AD7386A1F6D3CD300A4A1B9 /* ProcessController.swift in Sources */,
 				1AC50CF31F6E5E1A007D161C /* RequestError.swift in Sources */,
 				1A46AC641F8A78CC001FF467 /* Colors.swift in Sources */,
+				1A2667421FB87E6600C9CFFB /* UIColorExtension.swift in Sources */,
 				1AD738641F6D3B7200A4A1B9 /* LessonController.swift in Sources */,
 				1ABECC7B1F938168005056A5 /* EditProfileView.swift in Sources */,
 				1AEA8B2A1F6D4967005A7FC0 /* BaseViewCell.swift in Sources */,

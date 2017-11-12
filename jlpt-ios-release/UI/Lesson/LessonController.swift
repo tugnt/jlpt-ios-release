@@ -23,6 +23,7 @@ class LessonController: UICollectionViewController, UICollectionViewDelegateFlow
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpNavBar()
         collectionView?.backgroundColor = .white
         navigationItem.title = "Bài học"
         collectionView?.alwaysBounceVertical = true

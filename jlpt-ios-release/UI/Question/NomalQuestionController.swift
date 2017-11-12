@@ -18,6 +18,7 @@ class NomalQuestionController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpNavBar()
         self.title = "Luyện tập"
         addRightBarButton()
         tableView.delegate = self
