@@ -15,6 +15,7 @@ class TheoryHintController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpNavBar()
         self.title = "Lý thuyết"
         let mdView = MarkdownView()
         view.addSubview(mdView)

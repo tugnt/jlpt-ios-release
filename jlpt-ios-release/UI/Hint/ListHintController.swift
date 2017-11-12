@@ -26,6 +26,7 @@ class ListHintController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpNavBar()
         let title = setUpTitle(type: type)
         self.title = "Mẹo luyện thi \(title)"
         tableView.delegate = self
