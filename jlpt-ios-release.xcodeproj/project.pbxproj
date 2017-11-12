@@ -10,7 +10,10 @@
 		015EE0821FC6BED4EE298993 /* Pods_jlpt_ios_release.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8801B0FB1C671067D045E0C /* Pods_jlpt_ios_release.framework */; };
 		1A136C3E1F6D3E7D00DF343E /* UIView+Contraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A136C3D1F6D3E7D00DF343E /* UIView+Contraints.swift */; };
 		1A1C969F1F9CA9D000A19C7B /* SCSiriWaveformView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C969E1F9CA9D000A19C7B /* SCSiriWaveformView.m */; };
+		1A20D5651FB68F2600B6002D /* TDIndicator.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A20D5641FB68F2600B6002D /* TDIndicator.xib */; };
 		1A23C22D1F9CBCF8003181AA /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A23C22C1F9CBCF8003181AA /* UIColorExtension.swift */; };
+		1A2667291FB6A50500C9CFFB /* TDIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2667281FB6A50500C9CFFB /* TDIndicator.swift */; };
+		1A2667321FB6AFC400C9CFFB /* loader_ring.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A2667311FB6AFC400C9CFFB /* loader_ring.json */; };
 		1A2B25CF1F512DFB00DFFD3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B25CE1F512DFB00DFFD3A /* AppDelegate.swift */; };
 		1A2B25EF1F512DFB00DFFD3A /* jlpt_ios_releaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B25EE1F512DFB00DFFD3A /* jlpt_ios_releaseUITests.swift */; };
 		1A2D07041F9E24CB00CB3864 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D07031F9E24CB00CB3864 /* LoginViewController.swift */; };
@@ -161,7 +164,10 @@
 		1A1C96981F9C965D00A19C7B /* jlpt-ios-release-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "jlpt-ios-release-Bridging-Header.h"; sourceTree = "<group>"; };
 		1A1C969D1F9CA9D000A19C7B /* SCSiriWaveformView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSiriWaveformView.h; sourceTree = "<group>"; };
 		1A1C969E1F9CA9D000A19C7B /* SCSiriWaveformView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSiriWaveformView.m; sourceTree = "<group>"; };
+		1A20D5641FB68F2600B6002D /* TDIndicator.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TDIndicator.xib; sourceTree = "<group>"; };
 		1A23C22C1F9CBCF8003181AA /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		1A2667281FB6A50500C9CFFB /* TDIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDIndicator.swift; sourceTree = "<group>"; };
+		1A2667311FB6AFC400C9CFFB /* loader_ring.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = loader_ring.json; sourceTree = "<group>"; };
 		1A2B25CB1F512DFB00DFFD3A /* jlpt-ios-release.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "jlpt-ios-release.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2B25CE1F512DFB00DFFD3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A2B25DA1F512DFB00DFFD3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -393,6 +399,7 @@
 				1AD738591F6D3B0200A4A1B9 /* UI */,
 				1A6520851F8813D400E21905 /* Base.lproj */,
 				1A2B25CE1F512DFB00DFFD3A /* AppDelegate.swift */,
+				1A2667311FB6AFC400C9CFFB /* loader_ring.json */,
 				1A9133AF1F92566F007A6CF2 /* Assets.xcassets */,
 				1A2B25DA1F512DFB00DFFD3A /* Info.plist */,
 				1A46AC611F8A7728001FF467 /* color.txt */,
@@ -538,6 +545,7 @@
 				1ABECC8C1F9BB778005056A5 /* DocumentTypeCell.xib */,
 				1ABECC881F97B734005056A5 /* DocumentExpandHeaderView.xib */,
 				1A4431561FB4B22300574954 /* TDConfirmDialog.xib */,
+				1A20D5641FB68F2600B6002D /* TDIndicator.xib */,
 			);
 			path = xib;
 			sourceTree = "<group>";
@@ -666,6 +674,7 @@
 				1AEA8FD31FA254A6009E67D1 /* DashedCircleView.swift */,
 				1A565F0A1FA574C500AAC7C8 /* EmptyStateView.swift */,
 				1A4431521FB4B20700574954 /* TDConfirmDialog.swift */,
+				1A2667281FB6A50500C9CFFB /* TDIndicator.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -863,6 +872,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A2667321FB6AFC400C9CFFB /* loader_ring.json in Resources */,
 				1A46AC5E1F8A5FBD001FF467 /* ListeningQuestion.storyboard in Resources */,
 				1A4431571FB4B22300574954 /* TDConfirmDialog.xib in Resources */,
 				1A9133A71F924120007A6CF2 /* Documents.storyboard in Resources */,
@@ -874,6 +884,7 @@
 				1A46AC4E1F89B703001FF467 /* TheoryHint.storyboard in Resources */,
 				1A91339B1F9215C6007A6CF2 /* EditProfile.storyboard in Resources */,
 				1A3684AA1F8005BC001FEF88 /* ChildIntroduction.storyboard in Resources */,
+				1A20D5651FB68F2600B6002D /* TDIndicator.xib in Resources */,
 				1AD738781F6D3DA200A4A1B9 /* Process.storyboard in Resources */,
 				1A3684A61F7D3B3B001FEF88 /* Introduction.storyboard in Resources */,
 				1AD2FD791F80D9E000B5167D /* ListJLPTQuestion.storyboard in Resources */,
@@ -1158,6 +1169,7 @@
 				1AD2FD761F80D9CC00B5167D /* ListQuestionController.swift in Sources */,
 				1A23C22D1F9CBCF8003181AA /* UIColorExtension.swift in Sources */,
 				1A5AA4561F9CB6F1005393FE /* WaveView.swift in Sources */,
+				1A2667291FB6A50500C9CFFB /* TDIndicator.swift in Sources */,
 				1A46AC391F892199001FF467 /* Storyboards.swift in Sources */,
 				1A46AC591F8A5E97001FF467 /* ListeningQuestionController.swift in Sources */,
 				1A44314D1FB32DB200574954 /* NormalQuestionViewModel.swift in Sources */,
