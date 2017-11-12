@@ -54,4 +54,12 @@ class TDIndicator: UIView {
             self.parentIndicatorView.layer.cornerRadius = 5
         })
     }
+
+    public func stopIndicatorLoading() {
+        UIView.animate(withDuration: 0.15, animations: {
+            self.contentView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+            self.contentView.alpha = 0.0
+            self.removeFromSuperview()
+        })
+    }
 }

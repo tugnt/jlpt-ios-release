@@ -35,6 +35,7 @@ class ListHintController: UIViewController {
     }
 
     func fetchHintData() {
+        startAnimationLoading()
         guard let type = self.type else { return }
         let request = HintRequest(type: type)
         ApiClient.instance.request(request: request, completion: { (result) in
@@ -53,6 +54,7 @@ class ListHintController: UIViewController {
                 self.tableView.isHidden = true
                 self.addEmptyStateView()
             }
+            self.stopAnimationLoading()
         })
     }
 }

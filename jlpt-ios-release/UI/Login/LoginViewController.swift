@@ -53,9 +53,7 @@ class LoginViewController: UIViewController {
     }
 
     @objc func skipLoggin() {
-//        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-//        appDelegate.window?.rootViewController = TabbarController()
-        let indicator = TDIndicator(frame: view.bounds)
-        view.addSubview(indicator)
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        appDelegate.window?.rootViewController = TabbarController()
     }
 }
