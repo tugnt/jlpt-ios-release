@@ -15,6 +15,8 @@
 		1A2667321FB6AFC400C9CFFB /* loader_ring.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A2667311FB6AFC400C9CFFB /* loader_ring.json */; };
 		1A2667361FB814B300C9CFFB /* UIViewController+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2667351FB814B300C9CFFB /* UIViewController+Loading.swift */; };
 		1A2667421FB87E6600C9CFFB /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2667411FB87E6600C9CFFB /* UIColorExtension.swift */; };
+		1A26674B1FB9D17F00C9CFFB /* JLPTUnitCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2667491FB9D17F00C9CFFB /* JLPTUnitCellCollectionViewCell.swift */; };
+		1A26674C1FB9D17F00C9CFFB /* JLPTUnitCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A26674A1FB9D17F00C9CFFB /* JLPTUnitCellCollectionViewCell.xib */; };
 		1A2B25CF1F512DFB00DFFD3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B25CE1F512DFB00DFFD3A /* AppDelegate.swift */; };
 		1A2B25EF1F512DFB00DFFD3A /* jlpt_ios_releaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B25EE1F512DFB00DFFD3A /* jlpt_ios_releaseUITests.swift */; };
 		1A2D07041F9E24CB00CB3864 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D07031F9E24CB00CB3864 /* LoginViewController.swift */; };
@@ -170,6 +172,8 @@
 		1A2667311FB6AFC400C9CFFB /* loader_ring.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = loader_ring.json; sourceTree = "<group>"; };
 		1A2667351FB814B300C9CFFB /* UIViewController+Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Loading.swift"; sourceTree = "<group>"; };
 		1A2667411FB87E6600C9CFFB /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		1A2667491FB9D17F00C9CFFB /* JLPTUnitCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLPTUnitCellCollectionViewCell.swift; sourceTree = "<group>"; };
+		1A26674A1FB9D17F00C9CFFB /* JLPTUnitCellCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JLPTUnitCellCollectionViewCell.xib; sourceTree = "<group>"; };
 		1A2B25CB1F512DFB00DFFD3A /* jlpt-ios-release.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "jlpt-ios-release.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2B25CE1F512DFB00DFFD3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A2B25DA1F512DFB00DFFD3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -544,6 +548,7 @@
 		1ABECC8F1F9C313B005056A5 /* xib */ = {
 			isa = PBXGroup;
 			children = (
+				1A26674A1FB9D17F00C9CFFB /* JLPTUnitCellCollectionViewCell.xib */,
 				1ABECC8C1F9BB778005056A5 /* DocumentTypeCell.xib */,
 				1ABECC881F97B734005056A5 /* DocumentExpandHeaderView.xib */,
 				1A4431561FB4B22300574954 /* TDConfirmDialog.xib */,
@@ -646,6 +651,7 @@
 				1ABECC7E1F97A3D8005056A5 /* DocumentExpandHeaderView.swift */,
 				1ABECC8B1F9BB778005056A5 /* DocumentTypeCell.swift */,
 				1ABECC951F9C670A005056A5 /* DocumentCell.swift */,
+				1A2667491FB9D17F00C9CFFB /* JLPTUnitCellCollectionViewCell.swift */,
 			);
 			path = ViewCell;
 			sourceTree = "<group>";
@@ -887,6 +893,7 @@
 				1A46AC4E1F89B703001FF467 /* TheoryHint.storyboard in Resources */,
 				1A91339B1F9215C6007A6CF2 /* EditProfile.storyboard in Resources */,
 				1A3684AA1F8005BC001FEF88 /* ChildIntroduction.storyboard in Resources */,
+				1A26674C1FB9D17F00C9CFFB /* JLPTUnitCellCollectionViewCell.xib in Resources */,
 				1A20D5651FB68F2600B6002D /* TDIndicator.xib in Resources */,
 				1AD738781F6D3DA200A4A1B9 /* Process.storyboard in Resources */,
 				1A3684A61F7D3B3B001FEF88 /* Introduction.storyboard in Resources */,
@@ -1152,6 +1159,7 @@
 				1AEA8B331F6D5234005A7FC0 /* CategoryHeaderView.swift in Sources */,
 				1AD2FD731F80D9A300B5167D /* ListHintController.swift in Sources */,
 				1ABECC721F928DF8005056A5 /* Account.swift in Sources */,
+				1A26674B1FB9D17F00C9CFFB /* JLPTUnitCellCollectionViewCell.swift in Sources */,
 				1ABECC961F9C670A005056A5 /* DocumentCell.swift in Sources */,
 				1AB04DBB1F76384500E5AC27 /* Unit.swift in Sources */,
 				DF4C22F21F74CA7E00B2CCC5 /* Result.swift in Sources */,

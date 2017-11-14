@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Helvetica.ttc">
+            <string>Helvetica-Light</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="JLPTUnitCellCollectionViewCell" customModule="jlpt_ios_release" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="96" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="96" height="100"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SVC-QD-vKD">
+                        <rect key="frame" x="0.0" y="0.0" width="96" height="100"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle_n1" translatesAutoresizingMaskIntoConstraints="NO" id="5jS-xP-sgU">
+                                <rect key="frame" x="5" y="5" width="86" height="90"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4o-c8-DeH">
+                                <rect key="frame" x="43" y="40" width="9.5" height="20"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="w4o-c8-DeH" firstAttribute="centerX" secondItem="SVC-QD-vKD" secondAttribute="centerX" id="6Fe-0O-bVx"/>
+                            <constraint firstItem="5jS-xP-sgU" firstAttribute="top" secondItem="SVC-QD-vKD" secondAttribute="top" constant="5" id="A1h-Bc-erW"/>
+                            <constraint firstAttribute="trailing" secondItem="5jS-xP-sgU" secondAttribute="trailing" constant="5" id="BbI-2y-snK"/>
+                            <constraint firstAttribute="bottom" secondItem="5jS-xP-sgU" secondAttribute="bottom" constant="5" id="J8R-bF-n6Y"/>
+                            <constraint firstItem="5jS-xP-sgU" firstAttribute="leading" secondItem="SVC-QD-vKD" secondAttribute="leading" constant="5" id="jnW-zz-A4f"/>
+                            <constraint firstItem="w4o-c8-DeH" firstAttribute="centerY" secondItem="SVC-QD-vKD" secondAttribute="centerY" id="ra9-oF-QCJ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="SVC-QD-vKD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="7Dz-fP-CWh"/>
+                <constraint firstItem="SVC-QD-vKD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ASo-gx-SQg"/>
+                <constraint firstAttribute="bottom" secondItem="SVC-QD-vKD" secondAttribute="bottom" id="cEl-Yh-hcP"/>
+                <constraint firstAttribute="trailing" secondItem="SVC-QD-vKD" secondAttribute="trailing" id="lVM-Cr-hcC"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="96" height="100"/>
+            <connections>
+                <outlet property="circleImage" destination="5jS-xP-sgU" id="kSU-4M-zSO"/>
+                <outlet property="unitLabel" destination="w4o-c8-DeH" id="CJn-g8-WA6"/>
+            </connections>
+            <point key="canvasLocation" x="57" y="145"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="circle_n1" width="200" height="200"/>
+    </resources>
+</document>

@@ -12,7 +12,7 @@ import Himotoki
 struct UnitRequest: JLPTRequest {
     typealias Response = UnitResponse
     var endPoint: String {
-        return "/question/\(level.rawValue)/\(type.rawValue)"
+        return "/questions/\(level.rawValue)/\(type.rawValue)"
     }
     var method: HTTPMethod = .get
     let level: LevelJLPT

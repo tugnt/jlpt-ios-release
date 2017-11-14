@@ -9,26 +9,67 @@
 import UIKit
 
 class ListQuestionController: UIViewController {
+    @IBOutlet weak var collectionView: UICollectionView!
+    var level: LevelJLPT!
+    var type: TypeJLPT!
+    var units: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.title = "Danh sách đề thi"
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        setUpCollectionLayout()
+        fetchUnitData()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func setUpCollectionLayout() {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 10
+        let numberItemInRow = UIScreen.main.bounds.width <= 320 ? 3 : 4
+        let itemWidth = (UIScreen.main.bounds.width - 20 - 30) / CGFloat(numberItemInRow)
+        layout.itemSize = CGSize(width: itemWidth, height: itemWidth)
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10)
+        collectionView.collectionViewLayout = layout
+        collectionView.register(JLPTUnitCellCollectionViewCell.nib, forCellWithReuseIdentifier: JLPTUnitCellCollectionViewCell.identifier)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func fetchUnitData() {
+        startAnimationLoading()
+        let request = UnitRequest(method: .get, level: level, type: type)
+        ApiClient.instance.request(request: request, completion: { (result) in
+            switch result {
+            case .failure:
+                self.collectionView.isHidden = true
+                self.addEmptyStateView()
+            case .success(let value):
+                self.units = value.units
+                if self.units.count == 0 {
+                    self.collectionView.isHidden = true
+                    self.addEmptyStateView()
+                }
+                self.collectionView.reloadData()
+            }
+            self.stopAnimationLoading()
+        })
     }
-    */
+}
 
+extension ListQuestionController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return units.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: JLPTUnitCellCollectionViewCell.identifier, for: indexPath) as? JLPTUnitCellCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        cell.unit = units[indexPath.row]
+        cell.levelJLPT = level
+        return cell
+    }
 }

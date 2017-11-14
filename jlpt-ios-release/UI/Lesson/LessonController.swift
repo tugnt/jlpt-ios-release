@@ -86,7 +86,11 @@ class LessonController: UICollectionViewController, UICollectionViewDelegateFlow
 
     func cellSelected(_ level: LevelJLPT?, _ type: TypeJLPT?) {
         if level != nil {
-            // TODO: Move to list question of JLPT
+            let vc = StoryboardScene.ListJLPTQuestion.listQuestionController.instantiate()
+            vc.type = type
+            vc.level = level
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
         } else {
             let vc = StoryboardScene.ListHint.listHintController.instantiate()
             vc.type = type
