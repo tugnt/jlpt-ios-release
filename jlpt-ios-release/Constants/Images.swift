@@ -44,6 +44,11 @@ struct ColorAsset {
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 enum Asset {
   static let background = ImageAsset(name: "background")
+  static let circleN1 = ImageAsset(name: "circle_n1")
+  static let circleN2 = ImageAsset(name: "circle_n2")
+  static let circleN3 = ImageAsset(name: "circle_n3")
+  static let circleN4 = ImageAsset(name: "circle_n4")
+  static let circleN5 = ImageAsset(name: "circle_n5")
   static let download = ImageAsset(name: "download")
   static let downloadDone = ImageAsset(name: "download_done")
   static let emptyStatePlaceholder = ImageAsset(name: "empty_state_placeholder")
@@ -77,6 +82,11 @@ enum Asset {
   ]
   static let allImages: [ImageAsset] = [
     background,
+    circleN1,
+    circleN2,
+    circleN3,
+    circleN4,
+    circleN5,
     download,
     downloadDone,
     emptyStatePlaceholder,
