@@ -8,8 +8,7 @@
 
 import UIKit
 
-class ChatRoomController: UIViewController {
-    @IBOutlet weak var collectionView: UICollectionView!
+class ChatRoomController: UICollectionViewController {
     var bottomConstraint: NSLayoutConstraint = NSLayoutConstraint()
     /// IphoneX 対応
     lazy var bottomAreaHeight: CGFloat = {
@@ -19,6 +18,8 @@ class ChatRoomController: UIViewController {
         return 0
     }()
     let inputAreaHeight: CGFloat = 48
+    var keyboardHeight: CGFloat = 0
+    var isKeyboardShowing: Bool = false
     /// - Input area component
     let inputAreaView: UIView = {
         let view = UIView()
@@ -29,7 +30,9 @@ class ChatRoomController: UIViewController {
     let sendButton: UIButton = {
         let button = UIButton()
         button.setTitle("Gửi", for: .normal)
-        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(ColorName.navBackground.color, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
         return button
     }()
 
@@ -48,18 +51,18 @@ class ChatRoomController: UIViewController {
         return inputTv
     }()
 
-    let tmpData: [Message] = SampleMessageData.messages
+    var tmpData: [Message] = SampleMessageData.messages
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Phòng trò chuyện"
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(MessageTextViewCell.self, forCellWithReuseIdentifier: MessageTextViewCell.identifier)
-        setCollectionViewLayout()
+        collectionView?.delegate = self
+        collectionView?.dataSource = self
+        collectionView?.register(MessageTextViewCell.self, forCellWithReuseIdentifier: MessageTextViewCell.identifier)
+        setcollectionViewLayout()
         setUpInputArea()
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboard(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboard(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-
+        // Todo: validate text input
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -67,45 +70,13 @@ class ChatRoomController: UIViewController {
         tabBarController?.tabBar.isHidden = true
     }
 
-    func setCollectionViewLayout() {
+    func setcollectionViewLayout() {
         let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 48, right: 0)
         layout.scrollDirection = .vertical
-        collectionView.alwaysBounceVertical = true
-        collectionView.collectionViewLayout = layout
-    }
-
-}
-
-extension ChatRoomController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return tmpData.count
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MessageTextViewCell.identifier, for: indexPath) as? MessageTextViewCell else {
-            return UICollectionViewCell()
-        }
-        cell.messageLabel.text = tmpData[indexPath.row].message
-        let sender = tmpData[indexPath.row].isSender
-        sender ? updateRightMessage(index: indexPath.row, cell: cell) : updateLeftMessage(index: indexPath.row, cell: cell)
-        return cell
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        // - Estimate cell height and width
-        let estimatedFrame = estimatedTextFrame(textMessage: tmpData[indexPath.row].message)
-        let estimatedTimeViewHeight: CGFloat = ((indexPath.row - 1 >= 0) &&
-            (tmpData[indexPath.row - 1].isSender) == tmpData[indexPath.row].isSender) ? 0 : 20
-        return CGSize(width: view.frame.width, height: estimatedFrame.height + 20 + estimatedTimeViewHeight)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        inputTextView.endEditing(true)
+        layout.minimumLineSpacing = 1
+        collectionView?.alwaysBounceVertical = true
+        collectionView?.collectionViewLayout = layout
     }
 
     func setUpInputArea() {
@@ -148,25 +119,72 @@ extension ChatRoomController: UICollectionViewDelegate, UICollectionViewDelegate
         }
     }
 
+    @objc func sendMessage() {
+        let newMessage = Message(message: inputTextView.text!, time: "now", isSender: true)
+        tmpData.append(newMessage)
+        let indexPath = IndexPath(item: tmpData.count - 1, section: 0)
+        collectionView?.insertItems(at: [indexPath])
+        collectionView?.scrollToItem(at: indexPath, at: .top, animated: true)
+        UIView.animate(withDuration: 0, delay: 0, options: [], animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
+
     @objc func handleKeyboard(notification: NSNotification) {
         if let userInfo = notification.userInfo {
             guard let keyboadFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue else { return }
-            let keyboardHeight = keyboadFrame.cgRectValue.height
-            let keyboardAndInputHeight = keyboadFrame.cgRectValue.height + inputAreaHeight
-            let isKeyboardShowing = notification.name == NSNotification.Name.UIKeyboardWillShow
-            bottomConstraint.constant = isKeyboardShowing ? -keyboardHeight : 0
-            /// - Animation collection view when keyboard appear
-            let contentSizeHeight = collectionView.contentSize.height
-            var contentOffsetY = contentSizeHeight - (UIScreen.main.bounds.height - keyboardAndInputHeight) + 20 + bottomAreaHeight
-            contentOffsetY = isKeyboardShowing ? contentOffsetY : contentSizeHeight - (UIScreen.main.bounds.height - inputAreaHeight) + 20 + bottomAreaHeight
-            DispatchQueue.main.async {
-                let topOffest: CGPoint = CGPoint(x: 0, y: contentOffsetY)
-                self.collectionView.setContentOffset(topOffest, animated: true)
-            }
-            UIView.animate(withDuration: 0, delay: 0, options: [.curveEaseOut], animations: {
-                self.view.layoutIfNeeded()
-            }, completion: nil)
+            keyboardHeight = keyboadFrame.cgRectValue.height
+            isKeyboardShowing = notification.name == NSNotification.Name.UIKeyboardWillShow
+            adjustCollectionOffset()
         }
+    }
+
+    private func adjustCollectionOffset() {
+        let keyboardAndInputHeight = keyboardHeight + inputAreaHeight
+        bottomConstraint.constant = isKeyboardShowing ? -keyboardHeight : 0
+        /// - Animation collection view when keyboard appear
+        let contentSizeHeight = collectionView?.contentSize.height
+        var contentOffsetY = contentSizeHeight! - (UIScreen.main.bounds.height - keyboardAndInputHeight) + 20 + bottomAreaHeight
+        contentOffsetY = isKeyboardShowing ? contentOffsetY : contentSizeHeight! - (UIScreen.main.bounds.height - inputAreaHeight) + 20 + bottomAreaHeight
+        DispatchQueue.main.async {
+            let topOffest: CGPoint = CGPoint(x: 0, y: contentOffsetY)
+            self.collectionView?.setContentOffset(topOffest, animated: true)
+        }
+        UIView.animate(withDuration: 0, delay: 0, options: [], animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
+}
+
+extension ChatRoomController: UICollectionViewDelegateFlowLayout {
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return tmpData.count
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MessageTextViewCell.identifier, for: indexPath) as? MessageTextViewCell else {
+            return UICollectionViewCell()
+        }
+        cell.messageLabel.text = tmpData[indexPath.row].message
+        let sender = tmpData[indexPath.row].isSender
+        sender ? updateRightMessage(index: indexPath.row, cell: cell) : updateLeftMessage(index: indexPath.row, cell: cell)
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // - Estimate cell height and width
+        let estimatedFrame = estimatedTextFrame(textMessage: tmpData[indexPath.row].message)
+        let estimatedTimeViewHeight: CGFloat = ((indexPath.row - 1 >= 0) &&
+            (tmpData[indexPath.row - 1].isSender) == tmpData[indexPath.row].isSender) ? 0 : 20
+        return CGSize(width: view.frame.width, height: estimatedFrame.height + 20 + estimatedTimeViewHeight)
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        inputTextView.endEditing(true)
     }
 }
 
@@ -186,9 +204,7 @@ extension ChatRoomController {
         let heightTimeView = getHeightTimeView(index: index, cell: cell)
         cell.messageLabel.frame = CGRect(x: 20, y: 0, width: estimatedFrame.width + 10, height: estimatedFrame.height + 20)
         cell.containerTextView.frame = CGRect(x: 40, y: heightTimeView, width: estimatedFrame.width + 40, height: estimatedFrame.height + 20)
-        // If mutiple mess has same side will hidden profile image
         if (index + 1 < tmpData.count) && (tmpData[index].isSender == tmpData[index + 1].isSender) {
-            // TODO: Will be not show bubble with tails
             cell.profileImage.isHidden = true
         }
     }

@@ -20,6 +20,7 @@ class TabbarController: UITabBarController, UITabBarControllerDelegate {
 
         let profileController = StoryboardScene.Profile.profileController.instantiate()
         let progressController = StoryboardScene.Process.processController.instantiate()
+        //let chatRoomController = ChatRoomController()
         let chatRoomController = StoryboardScene.ChatRoom.chatRoomController.instantiate()
         let documentController = StoryboardScene.Documents.documentController.instantiate()
 
