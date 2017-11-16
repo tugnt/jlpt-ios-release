@@ -1,0 +1,10 @@
+
+language: objective-c
+osx_image: xcode9.0
+xcode_project: jlpt-ios-release.xcodeproj
+xcode_scheme: TDPopUp
+xcode_sdk: iphonesimulator10.3
+script: xcodebuild -project release.xcodeproj.xcodeproj -scheme release.xcodeproj -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+
+notifications:
+  email: false
