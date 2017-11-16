@@ -46,6 +46,7 @@ enum Asset {
   static let background = ImageAsset(name: "background")
   static let bubbleBlue = ImageAsset(name: "bubble_blue")
   static let bubbleGray = ImageAsset(name: "bubble_gray")
+  static let cameraBtn = ImageAsset(name: "camera_btn")
   static let circleN1 = ImageAsset(name: "circle_n1")
   static let circleN2 = ImageAsset(name: "circle_n2")
   static let circleN3 = ImageAsset(name: "circle_n3")
@@ -86,6 +87,7 @@ enum Asset {
     background,
     bubbleBlue,
     bubbleGray,
+    cameraBtn,
     circleN1,
     circleN2,
     circleN3,

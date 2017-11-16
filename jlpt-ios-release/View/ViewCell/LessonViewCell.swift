@@ -52,7 +52,7 @@ enum LevelJLPT: String {
     case n5 = "5"
 }
 
-protocol LessonCellDelegate:class {
+protocol LessonCellDelegate: class {
     func cellDidSelected(level: LevelJLPT, type: TypeJLPT)
 }
 

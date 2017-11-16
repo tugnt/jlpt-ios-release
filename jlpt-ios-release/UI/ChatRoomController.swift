@@ -10,14 +10,61 @@ import UIKit
 
 class ChatRoomController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
+    var bottomConstraint: NSLayoutConstraint = NSLayoutConstraint()
+    /// IphoneX 対応
+    lazy var bottomAreaHeight: CGFloat = {
+        if #available(iOS 11.0, *) {
+            return self.view.safeAreaInsets.bottom
+        }
+        return 0
+    }()
+    let inputAreaHeight: CGFloat = 48
+    /// - Input area component
+    let inputAreaView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        return view
+    }()
+
+    let sendButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Gửi", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        return button
+    }()
+
+    let cameraButton: UIButton = {
+        let button = UIButton()
+        button.setImage(Asset.cameraBtn.image, for: .normal)
+        return button
+    }()
+
+    let inputTextView: UITextView = {
+        let inputTv = UITextView()
+        inputTv.text = "Nhập tin nhắn"
+        inputTv.textColor = .lightGray
+        inputTv.isEditable = true
+        inputTv.font = UIFont.systemFont(ofSize: 16)
+        return inputTv
+    }()
+
     let tmpData: [Message] = SampleMessageData.messages
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Chat room"
+        self.title = "Phòng trò chuyện"
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(MessageTextViewCell.self, forCellWithReuseIdentifier: MessageTextViewCell.identifier)
         setCollectionViewLayout()
+        setUpInputArea()
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboard(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboard(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = true
     }
 
     func setCollectionViewLayout() {
@@ -27,6 +74,7 @@ class ChatRoomController: UIViewController {
         collectionView.alwaysBounceVertical = true
         collectionView.collectionViewLayout = layout
     }
+
 }
 
 extension ChatRoomController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
@@ -44,13 +92,7 @@ extension ChatRoomController: UICollectionViewDelegate, UICollectionViewDelegate
         }
         cell.messageLabel.text = tmpData[indexPath.row].message
         let sender = tmpData[indexPath.row].isSender
-        if sender {
-            // Show right side
-            updateRightMessage(index: indexPath.row, cell: cell)
-        } else {
-            // Show left side
-            updateLeftMessage(index: indexPath.row, cell: cell)
-        }
+        sender ? updateRightMessage(index: indexPath.row, cell: cell) : updateLeftMessage(index: indexPath.row, cell: cell)
         return cell
     }
 
@@ -60,6 +102,71 @@ extension ChatRoomController: UICollectionViewDelegate, UICollectionViewDelegate
         let estimatedTimeViewHeight: CGFloat = ((indexPath.row - 1 >= 0) &&
             (tmpData[indexPath.row - 1].isSender) == tmpData[indexPath.row].isSender) ? 0 : 20
         return CGSize(width: view.frame.width, height: estimatedFrame.height + 20 + estimatedTimeViewHeight)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        inputTextView.endEditing(true)
+    }
+
+    func setUpInputArea() {
+        view.addSubview(inputAreaView)
+        // Working not perfect with swift 3.2
+        view.addConstraintsWithFormat("H:|[v0]|", views: inputAreaView)
+        view.addConstraintsWithFormat("V:[v0(48)]", views: inputAreaView)
+        bottomConstraint = NSLayoutConstraint(item: inputAreaView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0)
+        view.addConstraint(bottomConstraint)
+
+        inputAreaView.addSubview(cameraButton)
+        cameraButton.snp.makeConstraints { make in
+            make.width.height.equalTo(40)
+            make.leading.equalToSuperview().offset(5)
+            make.centerY.equalToSuperview()
+        }
+
+        inputAreaView.addSubview(inputTextView)
+        inputTextView.delegate = self
+        inputTextView.snp.makeConstraints({ make in
+            make.leading.equalTo(cameraButton.snp.trailing).offset(5)
+            make.width.equalTo(UIScreen.main.bounds.width - 120)
+            make.bottom.equalToSuperview()
+            make.height.equalToSuperview()
+        })
+
+        inputAreaView.addSubview(sendButton)
+        sendButton.snp.makeConstraints { make in
+            make.height.centerY.equalToSuperview()
+            make.width.equalTo(50)
+            make.leading.equalTo(inputTextView.snp.trailing).offset(5)
+        }
+
+        let didivingView = UIView()
+        inputAreaView.addSubview(didivingView)
+        didivingView.backgroundColor = .lightGray
+        didivingView.snp.makeConstraints { make in
+            make.width.top.leading.equalToSuperview()
+            make.height.equalTo(1)
+        }
+    }
+
+    @objc func handleKeyboard(notification: NSNotification) {
+        if let userInfo = notification.userInfo {
+            guard let keyboadFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue else { return }
+            let keyboardHeight = keyboadFrame.cgRectValue.height
+            let keyboardAndInputHeight = keyboadFrame.cgRectValue.height + inputAreaHeight
+            let isKeyboardShowing = notification.name == NSNotification.Name.UIKeyboardWillShow
+            bottomConstraint.constant = isKeyboardShowing ? -keyboardHeight : 0
+            /// - Animation collection view when keyboard appear
+            let contentSizeHeight = collectionView.contentSize.height
+            var contentOffsetY = contentSizeHeight - (UIScreen.main.bounds.height - keyboardAndInputHeight) + 20 + bottomAreaHeight
+            contentOffsetY = isKeyboardShowing ? contentOffsetY : contentSizeHeight - (UIScreen.main.bounds.height - inputAreaHeight) + 20 + bottomAreaHeight
+            DispatchQueue.main.async {
+                let topOffest: CGPoint = CGPoint(x: 0, y: contentOffsetY)
+                self.collectionView.setContentOffset(topOffest, animated: true)
+            }
+            UIView.animate(withDuration: 0, delay: 0, options: [.curveEaseOut], animations: {
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+        }
     }
 }
 
@@ -103,5 +210,21 @@ extension ChatRoomController {
             heightTimeView = 0
         }
         return heightTimeView
+    }
+}
+
+extension ChatRoomController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if inputTextView.textColor == .lightGray {
+            inputTextView.text = ""
+            inputTextView.textColor = .black
+        }
+    }
+
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if inputTextView.textColor == .black && inputTextView.text.isEmpty {
+            inputTextView.text = "Nhập tin nhắn"
+            inputTextView.textColor = .lightGray
+        }
     }
 }
