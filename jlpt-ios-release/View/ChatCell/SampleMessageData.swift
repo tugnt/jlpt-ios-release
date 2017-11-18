@@ -7,24 +7,14 @@
 //
 
 import UIKit
-
-import Foundation
-
-struct Message {
-    let message: String
-    let time: String
-    let isSender: Bool
-}
+typealias TextCellConfig = CollectionViewCellConfigurator<MessageTextViewCell, MessageTextModel>
+typealias ImageCellConfig = CollectionViewCellConfigurator<MessageImageViewCell, MessageImageModel>
 
 class SampleMessageData {
-    static var messages: [Message] = {
-        let messages = [Message(message: "While none of this is what we are looking for, “initWithPickerView:title:subtitle:", time: "8 days ago", isSender: false),
-                        Message(message: "A lightweight framework to build chat applications, made in Swift", time: "2 years ago", isSender: false),
-                        Message(message: "A lightweight framework to build chat applications, made in Swift", time: "2 years ago", isSender: true),
-                        Message(message: "A lightweight framework to build chat applications, made in Swift", time: "2 years ago", isSender: true),
-                        Message(message: "A lightweight framework to build chat applications, made in Swift", time: "2 years ago", isSender: true),
-                        Message(message: "While none of this is what we are looking for, “initWithPickerView:title:subtitle:", time: "8 days ago", isSender: false),
-                        Message(message: "A lightweight framework to build chat applications, made in Swift", time: "2 years ago", isSender: false)]
-        return messages
-    }()
+    static var messages: [CellConfigurator] = [
+        TextCellConfig.init(item: MessageTextModel(message: "UICollectionView, introduced in iOS 6, has become one of the most popular UI elements among iOS developers.", timeCreated: "Today", senderId: "")),
+        TextCellConfig.init(item: MessageTextModel(message: "The layout is then responsible for determining the placement and visual attributes of the views.", timeCreated: "Today", senderId: "")),
+        TextCellConfig.init(item: MessageTextModel(message: "CollectionViewCellConfigurator", timeCreated: "Today", senderId: "")),
+        TextCellConfig.init(item: MessageTextModel(message: "In this UICollectionView custom layout tutorial, you’ll create a layout inspired by the popular Pinterest app.", timeCreated: "Today", senderId: "")),
+        TextCellConfig.init(item: MessageTextModel(message: "UICollectionView Tutorial Part 1: Getting Started", timeCreated: "Today", senderId: "tung"))]
 }
