@@ -12,6 +12,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var rePasswordTextField: UITextField!
+    @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var registerFbButton: UIButton!
     @IBOutlet weak var registerGoogleButton: UIButton!
@@ -27,6 +28,7 @@ class RegisterViewController: UIViewController {
         emailTextField.setUpLoginTextField()
         passwordTextField.setUpLoginTextField()
         rePasswordTextField.setUpLoginTextField()
+        userNameTextField.setUpLoginTextField()
     }
 
     func addDismissButton() {
