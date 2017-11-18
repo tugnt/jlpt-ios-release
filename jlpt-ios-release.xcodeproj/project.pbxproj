@@ -122,6 +122,7 @@
 		1AF6E5921FC07FBF005A2B16 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1AF6E5911FC07FBF005A2B16 /* GoogleService-Info.plist */; };
 		1AF6E5D51FC0A149005A2B16 /* TDModalStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AF6E5D31FC0A149005A2B16 /* TDModalStatusView.xib */; };
 		1AF6E5D61FC0A149005A2B16 /* TDModalStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF6E5D41FC0A149005A2B16 /* TDModalStatusView.swift */; };
+		1AF6E59D1FC09357005A2B16 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF6E59C1FC09357005A2B16 /* Validation.swift */; };
 		8B0CA1C45B0ECB1BA7EE1328 /* Pods_jlpt_ios_releaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C08FD44EC6F84A16E0F0DAA8 /* Pods_jlpt_ios_releaseUITests.framework */; };
 		938DA3C645C6A3C03128E4F2 /* Pods_jlpt_ios_releaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F47A53587C0DC2615FF3BBD7 /* Pods_jlpt_ios_releaseTests.framework */; };
 		DF4C22EF1F74B6C300B2CCC5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF4C22EE1F74B6C300B2CCC5 /* Alamofire.framework */; };
@@ -241,7 +242,7 @@
 		1AB04DBA1F76384500E5AC27 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		1AB79E2E1F769F1200C2F8AE /* IntroductionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionController.swift; sourceTree = "<group>"; };
 		1ABBE6B41F76B98300A23796 /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lottie.framework; path = Carthage/Build/iOS/Lottie.framework; sourceTree = "<group>"; };
-		1ABECC711F928DF8005056A5 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Account.swift; path = "jlpt-ios-release/Extenssion/Account.swift"; sourceTree = SOURCE_ROOT; };
+		1ABECC711F928DF8005056A5 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Account.swift; path = "jlpt-ios-release/Utils/Account.swift"; sourceTree = SOURCE_ROOT; };
 		1ABECC751F9343F9005056A5 /* UIViewController+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UIView.swift"; sourceTree = "<group>"; };
 		1ABECC781F9379BB005056A5 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ABECC7A1F938168005056A5 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
@@ -284,6 +285,19 @@
 		1AF6E5911FC07FBF005A2B16 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1AF6E5D31FC0A149005A2B16 /* TDModalStatusView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDModalStatusView.xib; sourceTree = "<group>"; };
 		1AF6E5D41FC0A149005A2B16 /* TDModalStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDModalStatusView.swift; sourceTree = "<group>"; };
+		1AF6E59C1FC09357005A2B16 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		1AF6E59F1FC09FEC005A2B16 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		1AF6E5A01FC09FEC005A2B16 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
+		1AF6E5A11FC09FEC005A2B16 /* .travis.yml.swp */ = {isa = PBXFileReference; lastKnownFileType = file; path = .travis.yml.swp; sourceTree = "<group>"; };
+		1AF6E5A21FC09FEC005A2B16 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		1AF6E5A31FC09FEC005A2B16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1AF6E5A51FC09FEC005A2B16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AF6E5A61FC09FEC005A2B16 /* TDModalStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDModalStatusView.swift; sourceTree = "<group>"; };
+		1AF6E5A71FC09FEC005A2B16 /* TDModalStatusView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TDModalStatusView.xib; sourceTree = "<group>"; };
+		1AF6E5A81FC09FEC005A2B16 /* TDPopUp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDPopUp.h; sourceTree = "<group>"; };
+		1AF6E5A91FC09FEC005A2B16 /* TDPopUp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = TDPopUp.xcodeproj; sourceTree = "<group>"; };
+		1AF6E5AD1FC09FEC005A2B16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AF6E5AE1FC09FEC005A2B16 /* TDPopUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDPopUpTests.swift; sourceTree = "<group>"; };
 		1BC5676FCE3B13CAA3A4C05D /* Pods-jlpt-ios-releaseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jlpt-ios-releaseUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-jlpt-ios-releaseUITests/Pods-jlpt-ios-releaseUITests.release.xcconfig"; sourceTree = "<group>"; };
 		41E79A404AD484EE7A15F425 /* Pods-jlpt-ios-release.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jlpt-ios-release.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jlpt-ios-release/Pods-jlpt-ios-release.debug.xcconfig"; sourceTree = "<group>"; };
 		4FDD19180E51CA77065E9CFA /* Pods-jlpt-ios-release.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jlpt-ios-release.release.xcconfig"; path = "Pods/Target Support Files/Pods-jlpt-ios-release/Pods-jlpt-ios-release.release.xcconfig"; sourceTree = "<group>"; };
@@ -408,10 +422,10 @@
 		1A2B25CD1F512DFB00DFFD3A /* jlpt-ios-release */ = {
 			isa = PBXGroup;
 			children = (
+				1AF6E59B1FC09347005A2B16 /* Utils */,
 				1A1C969C1F9CA9D000A19C7B /* SCSiriWaveformView */,
 				1A46AC371F892183001FF467 /* Constants */,
 				1A3684971F76E8AD001FEF88 /* Fonts */,
-				1AF26AD21F76D65E0098062A /* Utils */,
 				1A23E61F1F6F84EB004BB9FF /* Errors */,
 				1A23E61D1F6F84DB004BB9FF /* ApiService */,
 				1A23E61C1F6F84C8004BB9FF /* Models */,
@@ -701,12 +715,57 @@
 			path = CustomView;
 			sourceTree = "<group>";
 		};
-		1AF26AD21F76D65E0098062A /* Utils */ = {
+		1AF6E59B1FC09347005A2B16 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				1ABECC711F928DF8005056A5 /* Account.swift */,
+				1AF6E59C1FC09357005A2B16 /* Validation.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		1AF6E59E1FC09FEC005A2B16 /* TDPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				1AF6E59F1FC09FEC005A2B16 /* .gitignore */,
+				1AF6E5A01FC09FEC005A2B16 /* .travis.yml */,
+				1AF6E5A11FC09FEC005A2B16 /* .travis.yml.swp */,
+				1AF6E5A21FC09FEC005A2B16 /* LICENSE */,
+				1AF6E5A31FC09FEC005A2B16 /* README.md */,
+				1AF6E5A41FC09FEC005A2B16 /* TDPopUp */,
+				1AF6E5A91FC09FEC005A2B16 /* TDPopUp.xcodeproj */,
+				1AF6E5AC1FC09FEC005A2B16 /* TDPopUpTests */,
+			);
+			path = TDPopUp;
+			sourceTree = "<group>";
+		};
+		1AF6E5A41FC09FEC005A2B16 /* TDPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				1AF6E5A51FC09FEC005A2B16 /* Info.plist */,
+				1AF6E5A61FC09FEC005A2B16 /* TDModalStatusView.swift */,
+				1AF6E5A71FC09FEC005A2B16 /* TDModalStatusView.xib */,
+				1AF6E5A81FC09FEC005A2B16 /* TDPopUp.h */,
+			);
+			path = TDPopUp;
+			sourceTree = "<group>";
+		};
+		1AF6E5AA1FC09FEC005A2B16 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1AF6E5B21FC09FEC005A2B16 /* TDPopUp.framework */,
+				1AF6E5B41FC09FEC005A2B16 /* TDPopUpTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1AF6E5AC1FC09FEC005A2B16 /* TDPopUpTests */ = {
+			isa = PBXGroup;
+			children = (
+				1AF6E5AD1FC09FEC005A2B16 /* Info.plist */,
+				1AF6E5AE1FC09FEC005A2B16 /* TDPopUpTests.swift */,
+			);
+			path = TDPopUpTests;
 			sourceTree = "<group>";
 		};
 		2AD522E25D24A8875F36EEF9 /* Pods */ = {
@@ -1158,6 +1217,7 @@
 				1AB04DBB1F76384500E5AC27 /* Unit.swift in Sources */,
 				DF4C22F21F74CA7E00B2CCC5 /* Result.swift in Sources */,
 				1A136C3E1F6D3E7D00DF343E /* UIView+Contraints.swift in Sources */,
+				1AF6E59D1FC09357005A2B16 /* Validation.swift in Sources */,
 				1A9133A91F92414F007A6CF2 /* DocumentController.swift in Sources */,
 				1AC50CFB1F6F8798007D161C /* Question.swift in Sources */,
 				1ABECC7F1F97A3D8005056A5 /* DocumentExpandHeaderView.swift in Sources */,

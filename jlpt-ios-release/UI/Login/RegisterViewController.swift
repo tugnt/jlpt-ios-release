@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+import RxCocoa
+import RxSwift
 
 class RegisterViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
@@ -14,13 +17,22 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var rePasswordTextField: UITextField!
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
-    @IBOutlet weak var registerFbButton: UIButton!
+    @IBOutlet weak var registerFbButton: UIButton! {
+        didSet {
+            registerButton.clipsToBounds = true
+            registerButton.layer.cornerRadius = 3.0
+        }
+    }
     @IBOutlet weak var registerGoogleButton: UIButton!
+    @IBOutlet weak var alertLabel: UILabel!
+    private let disposeBag = DisposeBag()
+    private var ref: DatabaseReference!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         addDismissButton()
+        validateRegister()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -29,9 +41,11 @@ class RegisterViewController: UIViewController {
         passwordTextField.setUpLoginTextField()
         rePasswordTextField.setUpLoginTextField()
         userNameTextField.setUpLoginTextField()
+        alertLabel.isHidden = true
+        alertLabel.text = "Thông tin chưa chính xác. \n Vui lòng kiểm tra lại "
     }
 
-    func addDismissButton() {
+    private func addDismissButton() {
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
@@ -47,7 +61,56 @@ class RegisterViewController: UIViewController {
         }
     }
 
-    @objc func dismissRegister() {
+    @objc private func dismissRegister() {
         self.dismiss(animated: true, completion: nil)
+    }
+
+    @objc private func registerEmail() {
+        startAnimationLoading()
+        Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
+            self.stopAnimationLoading()
+            if error != nil {
+                /// - Todo: Show alert here
+                self.showRegisterAlert()
+            } else {
+                /// Save to Firebase
+                guard let userInfo = user else { return }
+                self.ref = Database.database().reference()
+                self.ref.child("users").child(userInfo.uid).setValue(["email": userInfo.email, "name": self.userNameTextField.text!], withCompletionBlock: { (err, _) in
+                    if err != nil {
+                        self.showRegisterAlert()
+                    }
+                    /// Todo: Save data of user and move home screen
+                    /// Move to home screen
+                })
+            }
+        })
+    }
+
+    private func validateRegister() {
+        registerButton.addTarget(self, action: #selector(registerEmail), for: .touchUpInside)
+        let emailValid = emailTextField.rx.text.orEmpty.map({ _ in
+            Validation.init(.emailRex).validateString(inputString: self.emailTextField.text!)
+        }).share()
+        let userNameValid = userNameTextField.rx.text.orEmpty.map({ _ in
+            return !self.userNameTextField.text!.isEmpty
+        }).share()
+        let passwordValid = passwordTextField.rx.text.orEmpty.map({ _ in
+            Validation.init(.emailPassRex).validateString(inputString: self.passwordTextField.text!)
+        }).share()
+        let rePasswordValid = rePasswordTextField.rx.text.orEmpty.map({ _ in
+            return (self.passwordTextField.text!) == (self.rePasswordTextField.text!)
+        }).share()
+        let allValid = Observable.combineLatest(emailValid, userNameValid, passwordValid, rePasswordValid) { $0 && $1 && $2 && $3 }
+        allValid.bind(to: registerButton.rx.isEnabled).disposed(by: disposeBag)
+        allValid.bind(to: alertLabel.rx.isHidden).disposed(by: disposeBag)
+    }
+
+    private func showRegisterAlert() {
+        let alertModal = TDModalStatusView(frame: view.bounds)
+        alertModal.setStatusImage(image: Asset.notificationIcon.image)
+        alertModal.setTitleLabel(title: "Thông báo")
+        alertModal.setSubTitleLabel(subTitle: "Đăng ký thất bại. \n Vui lòng thử lại sau")
+        view.addSubview(alertModal)
     }
 }

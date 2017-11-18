@@ -71,6 +71,7 @@ enum Asset {
   static let n3 = ImageAsset(name: "n3")
   static let n4 = ImageAsset(name: "n4")
   static let n5 = ImageAsset(name: "n5")
+  static let notificationIcon = ImageAsset(name: "notification_icon")
   static let pin = ImageAsset(name: "pin")
   static let profile = ImageAsset(name: "profile")
   static let reading = ImageAsset(name: "reading")
@@ -114,6 +115,7 @@ enum Asset {
     n3,
     n4,
     n5,
+    notificationIcon,
     pin,
     profile,
     reading,
