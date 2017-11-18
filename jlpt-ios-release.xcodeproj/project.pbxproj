@@ -118,6 +118,7 @@
 		1AEA8B331F6D5234005A7FC0 /* CategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA8B311F6D5234005A7FC0 /* CategoryHeaderView.swift */; };
 		1AEA8FD21FA245EB009E67D1 /* LessonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA8FD11FA245EB009E67D1 /* LessonModel.swift */; };
 		1AEA8FD41FA254A6009E67D1 /* DashedCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA8FD31FA254A6009E67D1 /* DashedCircleView.swift */; };
+		1AF6E58E1FBFF767005A2B16 /* UITextField+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF6E58D1FBFF767005A2B16 /* UITextField+Login.swift */; };
 		8B0CA1C45B0ECB1BA7EE1328 /* Pods_jlpt_ios_releaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C08FD44EC6F84A16E0F0DAA8 /* Pods_jlpt_ios_releaseUITests.framework */; };
 		938DA3C645C6A3C03128E4F2 /* Pods_jlpt_ios_releaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F47A53587C0DC2615FF3BBD7 /* Pods_jlpt_ios_releaseTests.framework */; };
 		DF4C22EF1F74B6C300B2CCC5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF4C22EE1F74B6C300B2CCC5 /* Alamofire.framework */; };
@@ -291,6 +292,7 @@
 		1AEA8FD31FA254A6009E67D1 /* DashedCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashedCircleView.swift; sourceTree = "<group>"; };
 		1AF26AD71F76E51A0098062A /* PaperOnboarding.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = PaperOnboarding.framework.dSYM; path = Carthage/Build/iOS/PaperOnboarding.framework.dSYM; sourceTree = "<group>"; };
 		1AF26AD91F76E52F0098062A /* PaperOnboarding.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PaperOnboarding.framework; path = Carthage/Build/iOS/PaperOnboarding.framework; sourceTree = "<group>"; };
+		1AF6E58D1FBFF767005A2B16 /* UITextField+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Login.swift"; sourceTree = "<group>"; };
 		1BC5676FCE3B13CAA3A4C05D /* Pods-jlpt-ios-releaseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jlpt-ios-releaseUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-jlpt-ios-releaseUITests/Pods-jlpt-ios-releaseUITests.release.xcconfig"; sourceTree = "<group>"; };
 		41E79A404AD484EE7A15F425 /* Pods-jlpt-ios-release.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jlpt-ios-release.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jlpt-ios-release/Pods-jlpt-ios-release.debug.xcconfig"; sourceTree = "<group>"; };
 		4FDD19180E51CA77065E9CFA /* Pods-jlpt-ios-release.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jlpt-ios-release.release.xcconfig"; path = "Pods/Target Support Files/Pods-jlpt-ios-release/Pods-jlpt-ios-release.release.xcconfig"; sourceTree = "<group>"; };
@@ -701,6 +703,7 @@
 				1A565F0C1FA5779900AAC7C8 /* UIViewController+NavTitle.swift */,
 				1A565F0E1FA59B9700AAC7C8 /* UIViewController+EmptyState.swift */,
 				1A2667351FB814B300C9CFFB /* UIViewController+Loading.swift */,
+				1AF6E58D1FBFF767005A2B16 /* UITextField+Login.swift */,
 			);
 			path = Extenssion;
 			sourceTree = "<group>";
@@ -1256,6 +1259,7 @@
 				1A9133931F920096007A6CF2 /* PrivacyPolicyController.swift in Sources */,
 				1A65207D1F87EF7100E21905 /* HintQuestionModel.swift in Sources */,
 				1ABECC911F9C4758005056A5 /* ListDocumentOfTypeController.swift in Sources */,
+				1AF6E58E1FBFF767005A2B16 /* UITextField+Login.swift in Sources */,
 				1A565F0F1FA59B9700AAC7C8 /* UIViewController+EmptyState.swift in Sources */,
 				1A73C6B41FBF232D008C70AC /* ChatMessageModel.swift in Sources */,
 				1A2667551FBB28FB00C9CFFB /* MessageTextViewCell.swift in Sources */,

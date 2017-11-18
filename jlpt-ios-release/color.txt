@@ -23,6 +23,7 @@ tipsColorBg: 6563A4
 
 // Login
 textFieldColor = F5F5F5
+borderTextFieldColor: D8D8D8
 
 /// - LessonControler
 bottomHeaderLine: F5F5F5

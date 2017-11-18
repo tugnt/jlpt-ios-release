@@ -13,12 +13,16 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField! {
         didSet {
-            emailTextField.layer.cornerRadius = 3.0
+            emailTextField.setUpLoginTextField()
             emailTextField.clipsToBounds = true
         }
     }
 
-    @IBOutlet weak var passTextField: UITextField!
+    @IBOutlet weak var passTextField: UITextField! {
+        didSet {
+            passTextField.setUpLoginTextField()
+        }
+    }
 
     @IBOutlet weak var facebookBtn: UIButton! {
         didSet {
@@ -49,7 +53,9 @@ class LoginViewController: UIViewController {
     }
 
     @objc func moveRegisterScreen() {
-        self.navigationController?.pushViewController(StoryboardScene.Register.registerViewController.instantiate(), animated: true)
+        let vc: RegisterViewController = StoryboardScene.Register.registerViewController.instantiate()
+        vc.modalPresentationStyle = .overCurrentContext
+        self.present(vc, animated: true, completion: nil)
     }
 
     @objc func skipLoggin() {
