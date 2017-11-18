@@ -9,6 +9,7 @@
 import UIKit
 import Fabric
 import Crashlytics
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,9 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = ColorName.navBackground.color
         UINavigationBar.appearance().tintColor = .white
         UIApplication.shared.statusBarStyle = .lightContent
-
         /// - Set root controller
         window?.rootViewController = StoryboardScene.StartApp.startAppController.instantiate()
+
+        /// - Firebase
+        FirebaseApp.configure()
         return true
     }
 
