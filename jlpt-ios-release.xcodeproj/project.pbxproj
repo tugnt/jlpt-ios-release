@@ -119,6 +119,7 @@
 		1AEA8FD21FA245EB009E67D1 /* LessonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA8FD11FA245EB009E67D1 /* LessonModel.swift */; };
 		1AEA8FD41FA254A6009E67D1 /* DashedCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA8FD31FA254A6009E67D1 /* DashedCircleView.swift */; };
 		1AF6E58E1FBFF767005A2B16 /* UITextField+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF6E58D1FBFF767005A2B16 /* UITextField+Login.swift */; };
+		1AF6E5921FC07FBF005A2B16 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1AF6E5911FC07FBF005A2B16 /* GoogleService-Info.plist */; };
 		8B0CA1C45B0ECB1BA7EE1328 /* Pods_jlpt_ios_releaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C08FD44EC6F84A16E0F0DAA8 /* Pods_jlpt_ios_releaseUITests.framework */; };
 		938DA3C645C6A3C03128E4F2 /* Pods_jlpt_ios_releaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F47A53587C0DC2615FF3BBD7 /* Pods_jlpt_ios_releaseTests.framework */; };
 		DF4C22EF1F74B6C300B2CCC5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF4C22EE1F74B6C300B2CCC5 /* Alamofire.framework */; };
@@ -293,6 +294,7 @@
 		1AF26AD71F76E51A0098062A /* PaperOnboarding.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = PaperOnboarding.framework.dSYM; path = Carthage/Build/iOS/PaperOnboarding.framework.dSYM; sourceTree = "<group>"; };
 		1AF26AD91F76E52F0098062A /* PaperOnboarding.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PaperOnboarding.framework; path = Carthage/Build/iOS/PaperOnboarding.framework; sourceTree = "<group>"; };
 		1AF6E58D1FBFF767005A2B16 /* UITextField+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Login.swift"; sourceTree = "<group>"; };
+		1AF6E5911FC07FBF005A2B16 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1BC5676FCE3B13CAA3A4C05D /* Pods-jlpt-ios-releaseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jlpt-ios-releaseUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-jlpt-ios-releaseUITests/Pods-jlpt-ios-releaseUITests.release.xcconfig"; sourceTree = "<group>"; };
 		41E79A404AD484EE7A15F425 /* Pods-jlpt-ios-release.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jlpt-ios-release.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jlpt-ios-release/Pods-jlpt-ios-release.debug.xcconfig"; sourceTree = "<group>"; };
 		4FDD19180E51CA77065E9CFA /* Pods-jlpt-ios-release.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jlpt-ios-release.release.xcconfig"; path = "Pods/Target Support Files/Pods-jlpt-ios-release/Pods-jlpt-ios-release.release.xcconfig"; sourceTree = "<group>"; };
@@ -433,6 +435,7 @@
 				1A2667311FB6AFC400C9CFFB /* loader_ring.json */,
 				1A9133AF1F92566F007A6CF2 /* Assets.xcassets */,
 				1A2B25DA1F512DFB00DFFD3A /* Info.plist */,
+				1AF6E5911FC07FBF005A2B16 /* GoogleService-Info.plist */,
 				1A46AC611F8A7728001FF467 /* color.txt */,
 				1A1C96981F9C965D00A19C7B /* jlpt-ios-release-Bridging-Header.h */,
 			);
@@ -922,6 +925,7 @@
 				1A46AC5E1F8A5FBD001FF467 /* ListeningQuestion.storyboard in Resources */,
 				1A4431571FB4B22300574954 /* TDConfirmDialog.xib in Resources */,
 				1A9133A71F924120007A6CF2 /* Documents.storyboard in Resources */,
+				1AF6E5921FC07FBF005A2B16 /* GoogleService-Info.plist in Resources */,
 				1AD2FD711F80D98B00B5167D /* ListHint.storyboard in Resources */,
 				1A9133B01F925670007A6CF2 /* Assets.xcassets in Resources */,
 				1ABECC8E1F9BB778005056A5 /* DocumentTypeCell.xib in Resources */,
