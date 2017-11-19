@@ -77,6 +77,11 @@ enum StoryboardScene {
 
     static let feedbackController = SceneType<jlpt_ios_release.FeedbackController>(storyboard: FeedBack.self, identifier: "FeedbackController")
   }
+  enum GroupChatViewController: StoryboardType {
+    static let storyboardName = "GroupChatViewController"
+
+    static let groupChatViewController = SceneType<jlpt_ios_release.GroupChatViewController>(storyboard: GroupChatViewController.self, identifier: "GroupChatViewController")
+  }
   enum Introduction: StoryboardType {
     static let storyboardName = "Introduction"
 

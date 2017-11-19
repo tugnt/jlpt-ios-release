@@ -48,6 +48,10 @@
 		1A46AC601F8A6602001FF467 /* UIViewController+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A46AC5F1F8A6602001FF467 /* UIViewController+NavigationBar.swift */; };
 		1A46AC621F8A7728001FF467 /* color.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A46AC611F8A7728001FF467 /* color.txt */; };
 		1A46AC641F8A78CC001FF467 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A46AC631F8A78CC001FF467 /* Colors.swift */; };
+		1A4E45F41FC1756B004FE155 /* GroupChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E45F31FC1756B004FE155 /* GroupChatViewController.swift */; };
+		1A4E45F71FC17579004FE155 /* GroupChatViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A4E45F51FC17579004FE155 /* GroupChatViewController.storyboard */; };
+		1A4E45FA1FC17CF8004FE155 /* GroupChatViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E45F81FC17CF8004FE155 /* GroupChatViewCell.swift */; };
+		1A4E45FB1FC17CF8004FE155 /* GroupChatViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A4E45F91FC17CF8004FE155 /* GroupChatViewCell.xib */; };
 		1A565F0B1FA574C500AAC7C8 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A565F0A1FA574C500AAC7C8 /* EmptyStateView.swift */; };
 		1A565F0D1FA5779900AAC7C8 /* UIViewController+NavTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A565F0C1FA5779900AAC7C8 /* UIViewController+NavTitle.swift */; };
 		1A565F0F1FA59B9700AAC7C8 /* UIViewController+EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A565F0E1FA59B9700AAC7C8 /* UIViewController+EmptyState.swift */; };
@@ -209,6 +213,10 @@
 		1A46AC5F1F8A6602001FF467 /* UIViewController+NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavigationBar.swift"; sourceTree = "<group>"; };
 		1A46AC611F8A7728001FF467 /* color.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = color.txt; sourceTree = "<group>"; };
 		1A46AC631F8A78CC001FF467 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		1A4E45F31FC1756B004FE155 /* GroupChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatViewController.swift; sourceTree = "<group>"; };
+		1A4E45F61FC17579004FE155 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = GroupChatViewController.storyboard; sourceTree = "<group>"; };
+		1A4E45F81FC17CF8004FE155 /* GroupChatViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatViewCell.swift; sourceTree = "<group>"; };
+		1A4E45F91FC17CF8004FE155 /* GroupChatViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupChatViewCell.xib; sourceTree = "<group>"; };
 		1A565F0A1FA574C500AAC7C8 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		1A565F0C1FA5779900AAC7C8 /* UIViewController+NavTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavTitle.swift"; sourceTree = "<group>"; };
 		1A565F0E1FA59B9700AAC7C8 /* UIViewController+EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+EmptyState.swift"; sourceTree = "<group>"; };
@@ -381,6 +389,7 @@
 				1ACCFAE81FBC5FD900D37E18 /* SampleMessageData.swift */,
 				1A73C6B01FBF1F91008C70AC /* CellConfigurator.swift */,
 				1A73C6B51FBF2695008C70AC /* MessageImageViewCell.swift */,
+				1A4E45F81FC17CF8004FE155 /* GroupChatViewCell.swift */,
 			);
 			path = ChatCell;
 			sourceTree = "<group>";
@@ -533,6 +542,7 @@
 				1ABECC921F9C4DD5005056A5 /* ListDocumentOfType.storyboard */,
 				1A2D07051F9E27BA00CB3864 /* Login.storyboard */,
 				1A2D07081F9F706E00CB3864 /* Register.storyboard */,
+				1A4E45F51FC17579004FE155 /* GroupChatViewController.storyboard */,
 			);
 			path = Base.lproj;
 			sourceTree = "<group>";
@@ -558,6 +568,7 @@
 		1ABECC8F1F9C313B005056A5 /* xib */ = {
 			isa = PBXGroup;
 			children = (
+				1A4E45F91FC17CF8004FE155 /* GroupChatViewCell.xib */,
 				1AF6E5D31FC0A149005A2B16 /* TDModalStatusView.xib */,
 				1A26674A1FB9D17F00C9CFFB /* JLPTUnitCellCollectionViewCell.xib */,
 				1ABECC8C1F9BB778005056A5 /* DocumentTypeCell.xib */,
@@ -600,6 +611,7 @@
 				1A9133A81F92414F007A6CF2 /* DocumentController.swift */,
 				1A9133AA1F92426B007A6CF2 /* ChatRoomController.swift */,
 				1ABECC901F9C4758005056A5 /* ListDocumentOfTypeController.swift */,
+				1A4E45F31FC1756B004FE155 /* GroupChatViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -888,10 +900,12 @@
 				1A91339B1F9215C6007A6CF2 /* EditProfile.storyboard in Resources */,
 				1A3684AA1F8005BC001FEF88 /* ChildIntroduction.storyboard in Resources */,
 				1A26674C1FB9D17F00C9CFFB /* JLPTUnitCellCollectionViewCell.xib in Resources */,
+				1A4E45FB1FC17CF8004FE155 /* GroupChatViewCell.xib in Resources */,
 				1AF6E5D51FC0A149005A2B16 /* TDModalStatusView.xib in Resources */,
 				1A20D5651FB68F2600B6002D /* TDIndicator.xib in Resources */,
 				1AD738781F6D3DA200A4A1B9 /* Process.storyboard in Resources */,
 				1A3684A61F7D3B3B001FEF88 /* Introduction.storyboard in Resources */,
+				1A4E45F71FC17579004FE155 /* GroupChatViewController.storyboard in Resources */,
 				1AD2FD791F80D9E000B5167D /* ListJLPTQuestion.storyboard in Resources */,
 				1A3684A41F7D2DFC001FEF88 /* StartApp.storyboard in Resources */,
 				1A65208A1F8813D500E21905 /* LaunchScreen.storyboard in Resources */,
@@ -1190,6 +1204,7 @@
 				1A3E516C1F8B1C9B0025F4E2 /* TDRadioButton.swift in Sources */,
 				1AEA8B2C1F6D4986005A7FC0 /* CategoryViewCell.swift in Sources */,
 				1AEA8FD41FA254A6009E67D1 /* DashedCircleView.swift in Sources */,
+				1A4E45F41FC1756B004FE155 /* GroupChatViewController.swift in Sources */,
 				1AEA8B2E1F6D49DD005A7FC0 /* LessonViewCell.swift in Sources */,
 				1ABECC761F9343F9005056A5 /* UIViewController+UIView.swift in Sources */,
 				1A3E51701F8B44550025F4E2 /* NomalQuestionCell.swift in Sources */,
@@ -1226,6 +1241,7 @@
 				1AF6E58E1FBFF767005A2B16 /* UITextField+Login.swift in Sources */,
 				1AF6E5D61FC0A149005A2B16 /* TDModalStatusView.swift in Sources */,
 				1A565F0F1FA59B9700AAC7C8 /* UIViewController+EmptyState.swift in Sources */,
+				1A4E45FA1FC17CF8004FE155 /* GroupChatViewCell.swift in Sources */,
 				1A73C6B41FBF232D008C70AC /* ChatMessageModel.swift in Sources */,
 				1A2667551FBB28FB00C9CFFB /* MessageTextViewCell.swift in Sources */,
 				1A36849E1F7752E9001FEF88 /* ChildIntroductionController.swift in Sources */,
@@ -1296,6 +1312,14 @@
 				1A46AC5D1F8A5FBD001FF467 /* Base */,
 			);
 			name = ListeningQuestion.storyboard;
+			sourceTree = "<group>";
+		};
+		1A4E45F51FC17579004FE155 /* GroupChatViewController.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1A4E45F61FC17579004FE155 /* Base */,
+			);
+			name = GroupChatViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		1A6520861F8813D400E21905 /* LaunchScreen.storyboard */ = {
