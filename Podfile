@@ -4,7 +4,7 @@
 target 'jlpt-ios-release' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-
+  xcodeproj "jlpt-ios-release.xcodeproj"
   # Pods for jlpt-ios-release
 
   target 'jlpt-ios-releaseTests' do
@@ -26,4 +26,6 @@ target 'jlpt-ios-release' do
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
+  pod 'GoogleSignIn'
+
 end

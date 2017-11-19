@@ -120,9 +120,9 @@
 		1AEA8FD41FA254A6009E67D1 /* DashedCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA8FD31FA254A6009E67D1 /* DashedCircleView.swift */; };
 		1AF6E58E1FBFF767005A2B16 /* UITextField+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF6E58D1FBFF767005A2B16 /* UITextField+Login.swift */; };
 		1AF6E5921FC07FBF005A2B16 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1AF6E5911FC07FBF005A2B16 /* GoogleService-Info.plist */; };
+		1AF6E59D1FC09357005A2B16 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF6E59C1FC09357005A2B16 /* Validation.swift */; };
 		1AF6E5D51FC0A149005A2B16 /* TDModalStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AF6E5D31FC0A149005A2B16 /* TDModalStatusView.xib */; };
 		1AF6E5D61FC0A149005A2B16 /* TDModalStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF6E5D41FC0A149005A2B16 /* TDModalStatusView.swift */; };
-		1AF6E59D1FC09357005A2B16 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF6E59C1FC09357005A2B16 /* Validation.swift */; };
 		8B0CA1C45B0ECB1BA7EE1328 /* Pods_jlpt_ios_releaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C08FD44EC6F84A16E0F0DAA8 /* Pods_jlpt_ios_releaseUITests.framework */; };
 		938DA3C645C6A3C03128E4F2 /* Pods_jlpt_ios_releaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F47A53587C0DC2615FF3BBD7 /* Pods_jlpt_ios_releaseTests.framework */; };
 		DF4C22EF1F74B6C300B2CCC5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF4C22EE1F74B6C300B2CCC5 /* Alamofire.framework */; };
@@ -283,21 +283,9 @@
 		1AF26AD91F76E52F0098062A /* PaperOnboarding.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PaperOnboarding.framework; path = Carthage/Build/iOS/PaperOnboarding.framework; sourceTree = "<group>"; };
 		1AF6E58D1FBFF767005A2B16 /* UITextField+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Login.swift"; sourceTree = "<group>"; };
 		1AF6E5911FC07FBF005A2B16 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1AF6E59C1FC09357005A2B16 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		1AF6E5D31FC0A149005A2B16 /* TDModalStatusView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDModalStatusView.xib; sourceTree = "<group>"; };
 		1AF6E5D41FC0A149005A2B16 /* TDModalStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDModalStatusView.swift; sourceTree = "<group>"; };
-		1AF6E59C1FC09357005A2B16 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
-		1AF6E59F1FC09FEC005A2B16 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		1AF6E5A01FC09FEC005A2B16 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
-		1AF6E5A11FC09FEC005A2B16 /* .travis.yml.swp */ = {isa = PBXFileReference; lastKnownFileType = file; path = .travis.yml.swp; sourceTree = "<group>"; };
-		1AF6E5A21FC09FEC005A2B16 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		1AF6E5A31FC09FEC005A2B16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		1AF6E5A51FC09FEC005A2B16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1AF6E5A61FC09FEC005A2B16 /* TDModalStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDModalStatusView.swift; sourceTree = "<group>"; };
-		1AF6E5A71FC09FEC005A2B16 /* TDModalStatusView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TDModalStatusView.xib; sourceTree = "<group>"; };
-		1AF6E5A81FC09FEC005A2B16 /* TDPopUp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDPopUp.h; sourceTree = "<group>"; };
-		1AF6E5A91FC09FEC005A2B16 /* TDPopUp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = TDPopUp.xcodeproj; sourceTree = "<group>"; };
-		1AF6E5AD1FC09FEC005A2B16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1AF6E5AE1FC09FEC005A2B16 /* TDPopUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDPopUpTests.swift; sourceTree = "<group>"; };
 		1BC5676FCE3B13CAA3A4C05D /* Pods-jlpt-ios-releaseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jlpt-ios-releaseUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-jlpt-ios-releaseUITests/Pods-jlpt-ios-releaseUITests.release.xcconfig"; sourceTree = "<group>"; };
 		41E79A404AD484EE7A15F425 /* Pods-jlpt-ios-release.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jlpt-ios-release.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jlpt-ios-release/Pods-jlpt-ios-release.debug.xcconfig"; sourceTree = "<group>"; };
 		4FDD19180E51CA77065E9CFA /* Pods-jlpt-ios-release.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jlpt-ios-release.release.xcconfig"; path = "Pods/Target Support Files/Pods-jlpt-ios-release/Pods-jlpt-ios-release.release.xcconfig"; sourceTree = "<group>"; };
@@ -724,50 +712,6 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		1AF6E59E1FC09FEC005A2B16 /* TDPopUp */ = {
-			isa = PBXGroup;
-			children = (
-				1AF6E59F1FC09FEC005A2B16 /* .gitignore */,
-				1AF6E5A01FC09FEC005A2B16 /* .travis.yml */,
-				1AF6E5A11FC09FEC005A2B16 /* .travis.yml.swp */,
-				1AF6E5A21FC09FEC005A2B16 /* LICENSE */,
-				1AF6E5A31FC09FEC005A2B16 /* README.md */,
-				1AF6E5A41FC09FEC005A2B16 /* TDPopUp */,
-				1AF6E5A91FC09FEC005A2B16 /* TDPopUp.xcodeproj */,
-				1AF6E5AC1FC09FEC005A2B16 /* TDPopUpTests */,
-			);
-			path = TDPopUp;
-			sourceTree = "<group>";
-		};
-		1AF6E5A41FC09FEC005A2B16 /* TDPopUp */ = {
-			isa = PBXGroup;
-			children = (
-				1AF6E5A51FC09FEC005A2B16 /* Info.plist */,
-				1AF6E5A61FC09FEC005A2B16 /* TDModalStatusView.swift */,
-				1AF6E5A71FC09FEC005A2B16 /* TDModalStatusView.xib */,
-				1AF6E5A81FC09FEC005A2B16 /* TDPopUp.h */,
-			);
-			path = TDPopUp;
-			sourceTree = "<group>";
-		};
-		1AF6E5AA1FC09FEC005A2B16 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				1AF6E5B21FC09FEC005A2B16 /* TDPopUp.framework */,
-				1AF6E5B41FC09FEC005A2B16 /* TDPopUpTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		1AF6E5AC1FC09FEC005A2B16 /* TDPopUpTests */ = {
-			isa = PBXGroup;
-			children = (
-				1AF6E5AD1FC09FEC005A2B16 /* Info.plist */,
-				1AF6E5AE1FC09FEC005A2B16 /* TDPopUpTests.swift */,
-			);
-			path = TDPopUpTests;
-			sourceTree = "<group>";
-		};
 		2AD522E25D24A8875F36EEF9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1094,9 +1038,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-jlpt-ios-release/Pods-jlpt-ios-release-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1163,6 +1110,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-jlpt-ios-release/Pods-jlpt-ios-release-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Himotoki/Himotoki.framework",
@@ -1171,6 +1119,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Himotoki.framework",
