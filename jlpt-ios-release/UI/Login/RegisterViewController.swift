@@ -17,13 +17,6 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var rePasswordTextField: UITextField!
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
-    @IBOutlet weak var registerFbButton: UIButton! {
-        didSet {
-            registerButton.clipsToBounds = true
-            registerButton.layer.cornerRadius = 3.0
-        }
-    }
-    @IBOutlet weak var registerGoogleButton: UIButton!
     @IBOutlet weak var alertLabel: UILabel!
     private let disposeBag = DisposeBag()
     private var ref: DatabaseReference!
@@ -43,6 +36,8 @@ class RegisterViewController: UIViewController {
         userNameTextField.setUpLoginTextField()
         alertLabel.isHidden = true
         alertLabel.text = "Thông tin chưa chính xác. \n Vui lòng kiểm tra lại "
+        registerButton.clipsToBounds = true
+        registerButton.layer.cornerRadius = 3.0
     }
 
     private func addDismissButton() {
