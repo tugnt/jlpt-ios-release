@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import RealmSwift
 
-class Account {
-    func isLogin() -> Bool {
-        // Todo: Check login here
-        return false
-    }
+class Account: Object {
+    @objc dynamic var userName: String? = ""
+    @objc dynamic var email: String? = ""
+    @objc dynamic var uid: String? = ""
+    @objc dynamic var photoUrl: String? = ""
 }

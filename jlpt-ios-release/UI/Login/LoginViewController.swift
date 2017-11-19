@@ -11,6 +11,7 @@ import SnapKit
 import GoogleSignIn
 import Firebase
 import FirebaseAuth
+import RealmSwift
 
 class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
     @IBOutlet weak var emailTextField: UITextField!
@@ -78,6 +79,19 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
                             }
                             self.stopAnimationLoading()
                             /// Todo: Save user data to local
+                            let account = Account()
+                            account.email = userInfo.email
+                            account.userName = userInfo.displayName
+                            account.uid = userInfo.uid
+                            account.photoUrl = user?.photoURL?.absoluteString
+                            let realm = try? Realm()
+                            do {
+                                try realm?.write {
+                                    realm?.add(account)
+                                }
+                            } catch let realmErr {
+                                print(realmErr)
+                            }
                             guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
                             appDelegate.window?.rootViewController = TabbarController()
                         })
