@@ -10,6 +10,7 @@ import UIKit
 import Fabric
 import Crashlytics
 import Firebase
+import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -31,16 +32,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         /// - Firebase
         FirebaseApp.configure()
+
+        /// - Google SignIn
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         return true
     }
 
-    func applicationWillResignActive(_ application: UIApplication) {}
+    @available(iOS 9.0, *)
+    func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey: Any])
+        -> Bool {
+            return GIDSignIn.sharedInstance().handle(url,
+                                                     sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
+                                                     annotation: [:])
+    }
 
-    func applicationDidEnterBackground(_ application: UIApplication) {}
+func applicationWillResignActive(_ application: UIApplication) {}
 
-    func applicationWillEnterForeground(_ application: UIApplication) {}
+func applicationDidEnterBackground(_ application: UIApplication) {}
 
-    func applicationDidBecomeActive(_ application: UIApplication) {}
+func applicationWillEnterForeground(_ application: UIApplication) {}
 
-    func applicationWillTerminate(_ application: UIApplication) {}
+func applicationDidBecomeActive(_ application: UIApplication) {}
+
+func applicationWillTerminate(_ application: UIApplication) {}
 }
