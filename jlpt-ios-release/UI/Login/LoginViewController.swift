@@ -48,6 +48,13 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
         loginBtn.layer.cornerRadius = 3.0
         loginBtn.clipsToBounds = true
         alertLabel.text = "Thông tin chưa chính xác. \n Vui lòng kiểm tra lại."
+        /// - Remove all user data from db
+        let realm = try? Realm()
+        do {
+            try realm?.write {
+                realm?.deleteAll()
+            }
+        } catch let error { print(error) }
     }
 
     private func loginValidation() {

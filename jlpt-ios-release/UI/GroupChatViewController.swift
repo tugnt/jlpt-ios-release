@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Realm
+import RealmSwift
 
 class GroupChatViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
@@ -34,6 +36,11 @@ class GroupChatViewController: UIViewController {
         collectionView.alwaysBounceVertical = true
         collectionView.collectionViewLayout = layout
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = false
+    }
 }
 
 extension GroupChatViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
@@ -55,5 +62,26 @@ extension GroupChatViewController: UICollectionViewDelegate, UICollectionViewDel
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         /// Todo: Move to group chat
+        let realm = try? Realm()
+        // Get first account
+        let accounts = realm?.objects(Account.self)
+        if accounts?.count == 0 && accounts != nil {
+            let confirmDialog = TDConfirmDialog(frame: view.bounds)
+            confirmDialog.set(title: "Thông báo")
+            confirmDialog.set(message: "Vui lòng đăng nhập để sử dụng chức năng này.")
+            confirmDialog.cancelButtonTitle = "Bỏ qua"
+            confirmDialog.confirmButtonTitle = "Đăng ký"
+            confirmDialog.confirmDidSelected = {
+                let vc = StoryboardScene.Login.loginViewController.instantiate()
+                vc.modalPresentationStyle = .overCurrentContext
+                self.tabBarController?.tabBar.isHidden = true
+                self.present(vc, animated: true, completion: nil)
+            }
+            view.addSubview(confirmDialog)
+        } else {
+            let vc = StoryboardScene.ChatRoom.chatRoomController.instantiate()
+            vc.account = accounts![0]
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
