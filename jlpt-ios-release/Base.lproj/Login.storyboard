@@ -119,12 +119,20 @@
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDG-77-DJA">
+                                            <rect key="frame" x="173" y="490.5" width="30.5" height="14.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
+                                            <color key="textColor" red="1" green="0.090196078431372548" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Voa-UP-GiL" firstAttribute="centerX" secondItem="rVL-C9-ItN" secondAttribute="centerX" id="OdG-3u-m2d"/>
                                         <constraint firstItem="rVL-C9-ItN" firstAttribute="centerY" secondItem="Gob-Fp-ang" secondAttribute="centerY" id="Okm-nz-9za"/>
                                         <constraint firstItem="rVL-C9-ItN" firstAttribute="top" secondItem="Voa-UP-GiL" secondAttribute="bottom" constant="10" id="Xnc-3h-FqQ"/>
                                         <constraint firstItem="rVL-C9-ItN" firstAttribute="centerX" secondItem="Gob-Fp-ang" secondAttribute="centerX" id="bDV-eq-Ezv"/>
+                                        <constraint firstItem="iDG-77-DJA" firstAttribute="top" secondItem="rVL-C9-ItN" secondAttribute="bottom" constant="5" id="skl-6Z-cYC"/>
+                                        <constraint firstItem="iDG-77-DJA" firstAttribute="centerX" secondItem="Gob-Fp-ang" secondAttribute="centerX" id="uDr-Ab-9sh"/>
                                     </constraints>
                                 </view>
                                 <constraints>
@@ -167,6 +175,7 @@
                         <viewLayoutGuide key="safeArea" id="yE8-ZE-SoL"/>
                     </view>
                     <connections>
+                        <outlet property="alertLabel" destination="iDG-77-DJA" id="FKw-rV-Q5L"/>
                         <outlet property="emailTextField" destination="O3h-A0-zqS" id="xp8-g6-flE"/>
                         <outlet property="facebookBtn" destination="xE9-zm-9Wh" id="7LS-lH-fPc"/>
                         <outlet property="googleBtn" destination="7Kq-ND-wZP" id="XsT-Kc-Stx"/>

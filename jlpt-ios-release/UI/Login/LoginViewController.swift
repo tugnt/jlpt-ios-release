@@ -12,6 +12,8 @@ import GoogleSignIn
 import Firebase
 import FirebaseAuth
 import RealmSwift
+import RxSwift
+import RxCocoa
 
 class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
     @IBOutlet weak var emailTextField: UITextField!
@@ -21,7 +23,9 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var notYetAccountBtn: UIButton!
     @IBOutlet weak var skipLogginBtn: UIButton!
+    @IBOutlet weak var alertLabel: UILabel!
     private var ref: DatabaseReference!
+    private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +34,8 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
         notYetAccountBtn.addTarget(self, action: #selector(moveRegisterScreen), for: .touchUpInside)
         skipLogginBtn.addTarget(self, action: #selector(skipLoggin), for: .touchUpInside)
         googleBtn.addTarget(self, action: #selector(loginViaGoogle), for: .touchUpInside)
+        loginBtn.addTarget(self, action: #selector(loginViaEmail), for: .touchUpInside)
+        loginValidation()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -41,6 +47,50 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
         googleBtn.setBackgroundImage(Asset.google.image, for: .normal)
         loginBtn.layer.cornerRadius = 3.0
         loginBtn.clipsToBounds = true
+        alertLabel.text = "Thông tin chưa chính xác. \n Vui lòng kiểm tra lại."
+    }
+
+    private func loginValidation() {
+        let emailValid = emailTextField.rx.text.orEmpty.map({ _ in
+            Validation.init(.emailRex).validateString(inputString: self.emailTextField.text!)
+        }).share()
+        let passwordValid = passTextField.rx.text.orEmpty.map({ _ in
+            Validation.init(.emailPassRex).validateString(inputString: self.passTextField.text!)
+        }).share()
+        let allValid = Observable.combineLatest(emailValid, passwordValid) { $0 && $1 }
+        allValid.bind(to: loginBtn.rx.isEnabled).disposed(by: disposeBag)
+        allValid.bind(to: alertLabel.rx.isHidden).disposed(by: disposeBag)
+    }
+
+    @objc private func loginViaEmail() {
+        startAnimationLoading()
+        Auth.auth().signIn(withEmail: emailTextField.text!, password: passTextField.text!, completion: { (user, error) in
+            if error != nil {
+                print(error.debugDescription)
+                self.stopAnimationLoading()
+                self.showLoginAlert(title: "Thông báo", description: "Đăng nhập thất bại")
+            }
+            /// - Save user and move home screen
+            if let userInfo = user {
+                let account = Account()
+                account.email = userInfo.email
+                account.userName = userInfo.displayName
+                account.uid = userInfo.uid
+                account.photoUrl = user?.photoURL?.absoluteString
+                let realm = try? Realm()
+                do {
+                    try realm?.write {
+                        realm?.add(account)
+                        self.stopAnimationLoading()
+                        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+                        appDelegate.window?.rootViewController = TabbarController()
+                    }
+                } catch {
+                    self.stopAnimationLoading()
+                    self.showLoginAlert(title: "Thông báo", description: "Đăng nhập thất bại")
+                }
+            }
+        })
     }
 
     @objc private func loginViaGoogle() {
