@@ -26,6 +26,7 @@ class RegisterViewController: UIViewController {
         // Do any additional setup after loading the view.
         addDismissButton()
         validateRegister()
+        registerButton.addTarget(self, action: #selector(registerEmail), for: .touchUpInside)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -35,7 +36,7 @@ class RegisterViewController: UIViewController {
         rePasswordTextField.setUpLoginTextField()
         userNameTextField.setUpLoginTextField()
         alertLabel.isHidden = true
-        alertLabel.text = "Thông tin chưa chính xác. \n Vui lòng kiểm tra lại "
+        alertLabel.text = "Thông tin chưa chính xác. \n Vui lòng kiểm tra lại."
         registerButton.clipsToBounds = true
         registerButton.layer.cornerRadius = 3.0
     }
@@ -83,7 +84,6 @@ class RegisterViewController: UIViewController {
     }
 
     private func validateRegister() {
-        registerButton.addTarget(self, action: #selector(registerEmail), for: .touchUpInside)
         let emailValid = emailTextField.rx.text.orEmpty.map({ _ in
             Validation.init(.emailRex).validateString(inputString: self.emailTextField.text!)
         }).share()
