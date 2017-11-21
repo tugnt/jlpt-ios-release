@@ -9,6 +9,7 @@
 import UIKit
 
 class ChatRoomController: UICollectionViewController {
+    var account: Account!
     var bottomConstraint: NSLayoutConstraint = NSLayoutConstraint()
     /// IphoneX 対応
     lazy var bottomAreaHeight: CGFloat = {
