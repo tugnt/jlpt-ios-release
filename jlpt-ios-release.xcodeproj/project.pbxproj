@@ -81,6 +81,7 @@
 		1A73C6B41FBF232D008C70AC /* ChatMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A73C6B31FBF232D008C70AC /* ChatMessageModel.swift */; };
 		1A73C6B61FBF2695008C70AC /* MessageImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A73C6B51FBF2695008C70AC /* MessageImageViewCell.swift */; };
 		1A8E2A2B1FC5E096008E17F4 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8E2A2A1FC5E096008E17F4 /* AlamofireImage.framework */; };
+		1A8E2A2D1FC5F04F008E17F4 /* GroupChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8E2A2C1FC5F04F008E17F4 /* GroupChatModel.swift */; };
 		1A9133911F92006D007A6CF2 /* FeedbackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9133901F92006D007A6CF2 /* FeedbackController.swift */; };
 		1A9133931F920096007A6CF2 /* PrivacyPolicyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9133921F920096007A6CF2 /* PrivacyPolicyController.swift */; };
 		1A9133961F92017F007A6CF2 /* FeedBack.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A9133941F92017F007A6CF2 /* FeedBack.storyboard */; };
@@ -254,6 +255,7 @@
 		1A73C6B31FBF232D008C70AC /* ChatMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageModel.swift; sourceTree = "<group>"; };
 		1A73C6B51FBF2695008C70AC /* MessageImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageImageViewCell.swift; sourceTree = "<group>"; };
 		1A8E2A2A1FC5E096008E17F4 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
+		1A8E2A2C1FC5F04F008E17F4 /* GroupChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatModel.swift; sourceTree = "<group>"; };
 		1A9133901F92006D007A6CF2 /* FeedbackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackController.swift; sourceTree = "<group>"; };
 		1A9133921F920096007A6CF2 /* PrivacyPolicyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyController.swift; sourceTree = "<group>"; };
 		1A9133951F92017F007A6CF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = FeedBack.storyboard; sourceTree = "<group>"; };
@@ -582,6 +584,7 @@
 			isa = PBXGroup;
 			children = (
 				1A73C6B31FBF232D008C70AC /* ChatMessageModel.swift */,
+				1A8E2A2C1FC5F04F008E17F4 /* GroupChatModel.swift */,
 			);
 			name = Chat;
 			sourceTree = "<group>";
@@ -1206,6 +1209,7 @@
 				1AD738681F6D3CC400A4A1B9 /* ProfileController.swift in Sources */,
 				1AB04DB61F7630F600E5AC27 /* Hint.swift in Sources */,
 				1A73C6B11FBF1F91008C70AC /* CellConfigurator.swift in Sources */,
+				1A8E2A2D1FC5F04F008E17F4 /* GroupChatModel.swift in Sources */,
 				1A6520651F851D5A00E21905 /* HintCell.swift in Sources */,
 				1AEA8B331F6D5234005A7FC0 /* CategoryHeaderView.swift in Sources */,
 				1AD2FD731F80D9A300B5167D /* ListHintController.swift in Sources */,
