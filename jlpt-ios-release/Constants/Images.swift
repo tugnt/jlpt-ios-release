@@ -58,6 +58,21 @@ enum Asset {
   static let downloadDone = ImageAsset(name: "download_done")
   static let emptyStatePlaceholder = ImageAsset(name: "empty_state_placeholder")
   static let facebook = ImageAsset(name: "facebook")
+  static let g1 = ImageAsset(name: "g1")
+  static let g10 = ImageAsset(name: "g10")
+  static let g11 = ImageAsset(name: "g11")
+  static let g12 = ImageAsset(name: "g12")
+  static let g13 = ImageAsset(name: "g13")
+  static let g14 = ImageAsset(name: "g14")
+  static let g15 = ImageAsset(name: "g15")
+  static let g2 = ImageAsset(name: "g2")
+  static let g3 = ImageAsset(name: "g3")
+  static let g4 = ImageAsset(name: "g4")
+  static let g5 = ImageAsset(name: "g5")
+  static let g6 = ImageAsset(name: "g6")
+  static let g7 = ImageAsset(name: "g7")
+  static let g8 = ImageAsset(name: "g8")
+  static let g9 = ImageAsset(name: "g9")
   static let google = ImageAsset(name: "google")
   static let grammar = ImageAsset(name: "grammar")
   static let kanji = ImageAsset(name: "kanji")
@@ -102,6 +117,21 @@ enum Asset {
     downloadDone,
     emptyStatePlaceholder,
     facebook,
+    g1,
+    g10,
+    g11,
+    g12,
+    g13,
+    g14,
+    g15,
+    g2,
+    g3,
+    g4,
+    g5,
+    g6,
+    g7,
+    g8,
+    g9,
     google,
     grammar,
     kanji,

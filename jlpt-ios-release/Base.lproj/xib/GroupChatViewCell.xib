@@ -122,13 +122,13 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="141" height="198"/>
             <connections>
+                <outlet property="bottomRightImage" destination="pEM-K5-ccX" id="7Hf-hh-ZrM"/>
                 <outlet property="containerView" destination="PT6-8U-0Bd" id="R0e-Tk-egY"/>
                 <outlet property="groupImageView" destination="N6K-Fd-oVF" id="yib-9r-eFh"/>
                 <outlet property="groupNameLabel" destination="tKP-Rw-Fn9" id="23e-jz-xWH"/>
-                <outlet property="leftImage" destination="N6K-Fd-oVF" id="hva-CN-poj"/>
+                <outlet property="leftImage" destination="6vx-tO-vjC" id="e4a-67-LHN"/>
                 <outlet property="memberNameLabel" destination="vzw-rj-RAo" id="dtO-xA-2mv"/>
-                <outlet property="rightBottomImage" destination="N6K-Fd-oVF" id="uKr-Vd-ujU"/>
-                <outlet property="rightTopImage" destination="N6K-Fd-oVF" id="6JF-vW-X9W"/>
+                <outlet property="topRightImage" destination="aYz-0P-TEJ" id="5Cs-OJ-xrL"/>
             </connections>
             <point key="canvasLocation" x="39.5" y="-6.5"/>
         </collectionViewCell>

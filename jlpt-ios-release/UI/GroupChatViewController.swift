@@ -9,9 +9,13 @@
 import UIKit
 import Realm
 import RealmSwift
+import Firebase
 
 class GroupChatViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
+    var ref: DatabaseReference!
+    var groups: [GroupChatModel] = []
+    var index = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Phòng trò chuyện"
@@ -35,11 +39,22 @@ class GroupChatViewController: UIViewController {
         layout.scrollDirection = .vertical
         collectionView.alwaysBounceVertical = true
         collectionView.collectionViewLayout = layout
+        createGroupData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = false
+    }
+
+    private func createGroupData() {
+        let n1Group = GroupChatModel(title: "Group N1", description: "Nơi trao đổi về Tiếng Nhật cấp độ N1", leftImage: Asset.g1.image, topRightImage: Asset.g2.image, bottomRightImage: Asset.g3.image)
+        let n2Group = GroupChatModel(title: "Group N2", description: "Nơi trao đổi về Tiếng Nhật cấp độ N2", leftImage: Asset.g4.image, topRightImage: Asset.g5.image, bottomRightImage: Asset.g6.image)
+        let n3Group = GroupChatModel(title: "Group N3", description: "Nơi trao đổi về Tiếng Nhật cấp độ N3", leftImage: Asset.g7.image, topRightImage: Asset.g8.image, bottomRightImage: Asset.g9.image)
+        let n4Group = GroupChatModel(title: "Group N4", description: "Nơi trao đổi về Tiếng Nhật cấp độ N4", leftImage: Asset.g12.image, topRightImage: Asset.g10.image, bottomRightImage: Asset.g11.image)
+        let n5Group = GroupChatModel(title: "Group N5", description: "Nơi trao đổi về Tiếng Nhật cấp độ N5", leftImage: Asset.g13.image, topRightImage: Asset.g14.image, bottomRightImage: Asset.g15.image)
+        groups = [n1Group, n2Group, n3Group, n4Group, n5Group]
+        collectionView.reloadData()
     }
 }
 
@@ -52,11 +67,12 @@ extension GroupChatViewController: UICollectionViewDelegate, UICollectionViewDel
         From N5 -> N1
      */
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return groups.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GroupChatViewCell.identifier, for: indexPath) as? GroupChatViewCell else { return UICollectionViewCell() }
+        cell.configure(data: groups[indexPath.row])
         return cell
     }
 
