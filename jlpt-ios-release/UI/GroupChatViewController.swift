@@ -80,7 +80,9 @@ extension GroupChatViewController: UICollectionViewDelegate, UICollectionViewDel
             view.addSubview(confirmDialog)
         } else {
             let vc = StoryboardScene.ChatRoom.chatRoomController.instantiate()
-            vc.account = accounts![0]
+            ChatRoomController.account = accounts![0]
+            let level = LevelJLPT(rawValue: "\(indexPath.row + 1)")
+            vc.roomName = level
             navigationController?.pushViewController(vc, animated: true)
         }
     }

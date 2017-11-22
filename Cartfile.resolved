@@ -1,4 +1,5 @@
 github "Alamofire/Alamofire" "4.5.1"
+github "Alamofire/AlamofireImage" "3.3.0"
 github "ReactiveX/RxSwift" "3.6.1"
 github "SnapKit/SnapKit" "4.0.0"
 github "airbnb/lottie-ios" "3b9c05ac85e7a7daf70c85bc56ae043038655679"

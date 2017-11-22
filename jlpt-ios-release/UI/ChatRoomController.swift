@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import Firebase
 
 class ChatRoomController: UICollectionViewController {
-    var account: Account!
+    static var account: Account!
+    var roomName: LevelJLPT!
     var bottomConstraint: NSLayoutConstraint = NSLayoutConstraint()
+    var tmpData: [CellConfigurator] = SampleMessageData.messages
+    var ref: DatabaseReference!
     /// IphoneX 対応
     lazy var bottomAreaHeight: CGFloat = {
         if #available(iOS 11.0, *) {
@@ -52,20 +56,18 @@ class ChatRoomController: UICollectionViewController {
         return inputTv
     }()
 
-    var tmpData: [CellConfigurator] = SampleMessageData.messages
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Phòng trò chuyện"
         collectionView?.delegate = self
         collectionView?.dataSource = self
         collectionView?.register(MessageTextViewCell.self, forCellWithReuseIdentifier: MessageTextViewCell.identifier)
-
         setcollectionViewLayout()
         setUpInputArea()
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboard(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboard(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         // Todo: validate text input
+        observeMessage()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -122,15 +124,39 @@ class ChatRoomController: UICollectionViewController {
         }
     }
 
-    @objc func sendMessage() {
-        let newMessage = TextCellConfig.init(item: MessageTextModel(message: "UICollectionView, introduced in iOS 6, has become one of the most popular UI elements among iOS developers.", timeCreated: "Today", senderId: ""))
-        tmpData.append(newMessage)
-        let indexPath = IndexPath(item: tmpData.count - 1, section: 0)
-        collectionView?.insertItems(at: [indexPath])
-        collectionView?.scrollToItem(at: indexPath, at: .top, animated: true)
+    @objc private func sendMessage() {
+        if let message = inputTextView.text {
+            ref = Database.database().reference().child("Group chat")
+            let jlptRef = ref.child("Message N\(roomName.rawValue)").childByAutoId()
+            jlptRef.setValue(["message": message, "sender": ChatRoomController.account.uid, "sender_url": ChatRoomController.account.photoUrl, "type": "Text"]) { (error, _) in
+                if error != nil { print(error.debugDescription) }
+            }
+        }
     }
 
-    @objc func handleKeyboard(notification: NSNotification) {
+    private func observeMessage() {
+        ref = Database.database().reference().child("Group chat")
+        let jlptRef = ref.child("Message N\(roomName.rawValue)")
+        jlptRef.observe(.childAdded, with: { (snapshot) in
+            if let dictionary = snapshot.value as? [String: AnyObject] {
+                guard let type = dictionary["type"] as? String else { return }
+                guard let messageType = MessageType(rawValue: type) else { return }
+                if messageType == .text {
+                    guard let message = dictionary["message"] as? String else { return }
+                    guard let senderId = dictionary["sender"] as? String else { return }
+                    guard let senderUrl = dictionary["sender_url"] as? String else { return }
+                    let messageModel = MessageTextModel(message: message, senderUrl: senderUrl, senderId: senderId, messageType: messageType)
+                    print(messageModel)
+                    self.tmpData.append(TextCellConfig.init(item: messageModel))
+                    let indexPath = IndexPath(item: self.tmpData.count - 1, section: 0)
+                    self.collectionView?.insertItems(at: [indexPath])
+                    self.collectionView?.scrollToItem(at: indexPath, at: .top, animated: true)
+                }
+            }
+        }, withCancel: nil)
+    }
+
+    @objc private func handleKeyboard(notification: NSNotification) {
         if let userInfo = notification.userInfo {
             guard let keyboadFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue else { return }
             keyboardHeight = keyboadFrame.cgRectValue.height
@@ -174,7 +200,6 @@ extension ChatRoomController: UICollectionViewDelegateFlowLayout {
         let item = tmpData[indexPath.row]
         let message = item.estimatedHeight()
         let estimatedFrame = estimatedTextFrame(textMessage: message)
-        print(message)
         return CGSize(width: UIScreen.main.bounds.width, height: estimatedFrame.height + 20)
     }
 

@@ -80,6 +80,7 @@
 		1A73C6B11FBF1F91008C70AC /* CellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A73C6B01FBF1F91008C70AC /* CellConfigurator.swift */; };
 		1A73C6B41FBF232D008C70AC /* ChatMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A73C6B31FBF232D008C70AC /* ChatMessageModel.swift */; };
 		1A73C6B61FBF2695008C70AC /* MessageImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A73C6B51FBF2695008C70AC /* MessageImageViewCell.swift */; };
+		1A8E2A2B1FC5E096008E17F4 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8E2A2A1FC5E096008E17F4 /* AlamofireImage.framework */; };
 		1A9133911F92006D007A6CF2 /* FeedbackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9133901F92006D007A6CF2 /* FeedbackController.swift */; };
 		1A9133931F920096007A6CF2 /* PrivacyPolicyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9133921F920096007A6CF2 /* PrivacyPolicyController.swift */; };
 		1A9133961F92017F007A6CF2 /* FeedBack.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A9133941F92017F007A6CF2 /* FeedBack.storyboard */; };
@@ -252,6 +253,7 @@
 		1A73C6B01FBF1F91008C70AC /* CellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfigurator.swift; sourceTree = "<group>"; };
 		1A73C6B31FBF232D008C70AC /* ChatMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageModel.swift; sourceTree = "<group>"; };
 		1A73C6B51FBF2695008C70AC /* MessageImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageImageViewCell.swift; sourceTree = "<group>"; };
+		1A8E2A2A1FC5E096008E17F4 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		1A9133901F92006D007A6CF2 /* FeedbackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackController.swift; sourceTree = "<group>"; };
 		1A9133921F920096007A6CF2 /* PrivacyPolicyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyController.swift; sourceTree = "<group>"; };
 		1A9133951F92017F007A6CF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = FeedBack.storyboard; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A8E2A2B1FC5E096008E17F4 /* AlamofireImage.framework in Frameworks */,
 				1A4E460E1FC1B59F004FE155 /* Alamofire.framework in Frameworks */,
 				1A4E46021FC1B59F004FE155 /* MarkdownView.framework in Frameworks */,
 				1A4E45FC1FC1B59F004FE155 /* SnapKit.framework in Frameworks */,
@@ -768,6 +771,7 @@
 		7F5454142D252C22DDB39D77 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A8E2A2A1FC5E096008E17F4 /* AlamofireImage.framework */,
 				1ABECC781F9379BB005056A5 /* SnapKit.framework */,
 				DFCCB9E41F8F7A6300123170 /* SnapKit.framework */,
 				DFCCB9B81F8F6E5000123170 /* Charts.framework */,
@@ -1139,6 +1143,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
 			);
 			name = Carthage;
 			outputPaths = (

@@ -88,6 +88,8 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
                 do {
                     try realm?.write {
                         realm?.add(account)
+                        print("Add account")
+                        print(account)
                         self.stopAnimationLoading()
                         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
                         appDelegate.window?.rootViewController = TabbarController()
@@ -140,7 +142,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
                             account.email = userInfo.email
                             account.userName = userInfo.displayName
                             account.uid = userInfo.uid
-                            account.photoUrl = user?.photoURL?.absoluteString
+                            account.photoUrl = userInfo.photoURL == nil ? "https://lh5.googleusercontent.com/-LL8cv_YA_g8/AAAAAAAAAAI/AAAAAAAABVQ/X6R24hrLPDs/s96-c/photo.jpg" : userInfo.photoURL?.absoluteString
                             let realm = try? Realm()
                             do {
                                 try realm?.write {
