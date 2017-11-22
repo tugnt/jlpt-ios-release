@@ -6,6 +6,7 @@
 //  Copyright © 2017年 GA technologies Inc. All rights reserved.
 //
 import UIKit
+import Alamofire
 
 class MessageTextViewCell: UICollectionViewCell, ConfigurableCell {
     typealias DataType = MessageTextModel
@@ -49,7 +50,6 @@ class MessageTextViewCell: UICollectionViewCell, ConfigurableCell {
         containerTextView.layer.masksToBounds = true
 
         addSubview(profileImage)
-        profileImage.image = Asset.circleN1.image
         profileImage.snp.makeConstraints { make in
             make.width.height.equalTo(40)
             make.bottom.equalTo(containerTextView.snp.bottom)
@@ -82,7 +82,7 @@ class MessageTextViewCell: UICollectionViewCell, ConfigurableCell {
     }
 
     func updateUI(data: MessageTextModel) {
-        data.senderId.isEmpty ? updateLeftMessageView(data: data) : updateRightMessageView(data: data)
+        data.senderId != ChatRoomController.account.uid ? updateLeftMessageView(data: data) : updateRightMessageView(data: data)
         messageLabel.text = data.message
     }
 
@@ -95,6 +95,14 @@ class MessageTextViewCell: UICollectionViewCell, ConfigurableCell {
         containerTextView.frame = CGRect(x: 40, y: 0, width: estimatedFrame.width + 40, height: estimatedFrame.height + 20)
         messageLabel.frame = CGRect(x: 20, y: 0, width: estimatedFrame.width + 10, height: estimatedFrame.height + 20)
         // Todo: Show or hiden timeView
+        // Show avatar
+        // - Nếu có thể sử dụng Alamofire image sẽ tốt hơn. Alamofire đang còn một chút lỗi
+        let urlString = data.senderUrl
+        Alamofire.download(urlString).responseData(completionHandler: { response in
+            if let data = response.result.value {
+                self.profileImage.image = UIImage(data: data)
+            }
+        })
     }
 
     func updateRightMessageView(data: MessageTextModel) {

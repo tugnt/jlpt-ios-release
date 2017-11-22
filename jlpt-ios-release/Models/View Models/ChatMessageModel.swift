@@ -10,12 +10,14 @@ import Foundation
 
 struct MessageTextModel {
     let message: String
-    let timeCreated: String
+    let senderUrl: String
     let senderId: String
-    init(message: String, timeCreated: String, senderId: String) {
+    let messageType: MessageType
+    init(message: String, senderUrl: String, senderId: String, messageType: MessageType) {
         self.message = message
-        self.timeCreated = timeCreated
+        self.senderUrl = senderUrl
         self.senderId = senderId
+        self.messageType = messageType
     }
 }
 
@@ -28,4 +30,9 @@ struct MessageImageModel {
         self.timeCreated = timeCreated
         self.linkImage = linkImage
     }
+}
+
+enum MessageType: String {
+    case text = "Text"
+    case image = "Image"
 }
