@@ -7,6 +7,7 @@
 //
 import UIKit
 import Alamofire
+import AlamofireImage
 
 class MessageTextViewCell: UICollectionViewCell, ConfigurableCell {
     typealias DataType = MessageTextModel
@@ -98,11 +99,11 @@ class MessageTextViewCell: UICollectionViewCell, ConfigurableCell {
         // Show avatar
         // - Nếu có thể sử dụng Alamofire image sẽ tốt hơn. Alamofire đang còn một chút lỗi
         let urlString = data.senderUrl
-        Alamofire.download(urlString).responseData(completionHandler: { response in
-            if let data = response.result.value {
-                self.profileImage.image = UIImage(data: data)
+        Alamofire.request(urlString).responseImage { response in
+            if let image = response.result.value {
+                self.profileImage.image = image
             }
-        })
+        }
     }
 
     func updateRightMessageView(data: MessageTextModel) {

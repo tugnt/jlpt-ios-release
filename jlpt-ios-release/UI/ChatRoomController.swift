@@ -136,7 +136,7 @@ class ChatRoomController: UICollectionViewController {
 
     private func observeMessage() {
         ref = Database.database().reference().child("Group chat")
-        let jlptRef = ref.child("Message N\(roomName.rawValue)").queryLimited(toLast: 30)
+        let jlptRef = ref.child("Message N\(roomName.rawValue)")
         jlptRef.observe(.childAdded, with: { (snapshot) in
             if let dictionary = snapshot.value as? [String: AnyObject] {
                 guard let type = dictionary["type"] as? String else { return }
