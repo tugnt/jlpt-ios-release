@@ -8,13 +8,16 @@
 
 import UIKit
 import Firebase
+import RxSwift
+import RxCocoa
 
 class ChatRoomController: UICollectionViewController {
     static var account: Account!
     var roomName: LevelJLPT!
     var bottomConstraint: NSLayoutConstraint = NSLayoutConstraint()
-    var tmpData: [CellConfigurator] = SampleMessageData.messages
+    var tmpData: [CellConfigurator] = []
     var ref: DatabaseReference!
+    let disposeBag = DisposeBag()
     /// IphoneX 対応
     lazy var bottomAreaHeight: CGFloat = {
         if #available(iOS 11.0, *) {
@@ -34,9 +37,9 @@ class ChatRoomController: UICollectionViewController {
 
     let sendButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Gửi", for: .normal)
-        button.setTitleColor(ColorName.navBackground.color, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.setImage(Asset.sendNormal.image, for: .normal)
+        button.setImage(Asset.sendPressed.image, for: .selected)
+        button.setImage(Asset.sendDisable.image, for: .disabled)
         button.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
         return button
     }()
@@ -53,6 +56,10 @@ class ChatRoomController: UICollectionViewController {
         inputTv.textColor = .lightGray
         inputTv.isEditable = true
         inputTv.font = UIFont.systemFont(ofSize: 16)
+        inputTv.clipsToBounds = true
+        inputTv.layer.borderColor = ColorName.cancelBtnBg.color.cgColor
+        inputTv.layer.borderWidth = 1
+        inputTv.layer.cornerRadius = 3
         return inputTv
     }()
 
@@ -66,8 +73,12 @@ class ChatRoomController: UICollectionViewController {
         setUpInputArea()
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboard(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboard(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        // Todo: validate text input
         observeMessage()
+        // Validate text input
+        let messageValid = inputTextView.rx.text.orEmpty.map({ _ in
+            return (!self.inputTextView.text.isEmpty && self.inputTextView.textColor != .lightGray)
+        }).shareReplay(1)
+        messageValid.bind(to: sendButton.rx.isEnabled).disposed(by: disposeBag)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -104,15 +115,15 @@ class ChatRoomController: UICollectionViewController {
         inputTextView.snp.makeConstraints({ make in
             make.leading.equalTo(cameraButton.snp.trailing).offset(5)
             make.width.equalTo(UIScreen.main.bounds.width - 120)
-            make.bottom.equalToSuperview()
-            make.height.equalToSuperview()
+            make.top.equalToSuperview().offset(5)
+            make.bottom.equalToSuperview().offset(-5)
         })
 
         inputAreaView.addSubview(sendButton)
         sendButton.snp.makeConstraints { make in
-            make.height.centerY.equalToSuperview()
-            make.width.equalTo(50)
-            make.leading.equalTo(inputTextView.snp.trailing).offset(5)
+            make.centerY.equalToSuperview()
+            make.width.height.equalTo(50)
+            make.trailing.equalToSuperview().offset(-10)
         }
 
         let didivingView = UIView()
@@ -130,13 +141,14 @@ class ChatRoomController: UICollectionViewController {
             let jlptRef = ref.child("Message N\(roomName.rawValue)").childByAutoId()
             jlptRef.setValue(["message": message, "sender": ChatRoomController.account.uid, "sender_url": ChatRoomController.account.photoUrl, "type": "Text"]) { (error, _) in
                 if error != nil { print(error.debugDescription) }
+                self.inputTextView.text = ""
             }
         }
     }
 
     private func observeMessage() {
         ref = Database.database().reference().child("Group chat")
-        let jlptRef = ref.child("Message N\(roomName.rawValue)")
+        let jlptRef = ref.child("Message N\(roomName.rawValue)").queryLimited(toLast: 20)
         jlptRef.observe(.childAdded, with: { (snapshot) in
             if let dictionary = snapshot.value as? [String: AnyObject] {
                 guard let type = dictionary["type"] as? String else { return }

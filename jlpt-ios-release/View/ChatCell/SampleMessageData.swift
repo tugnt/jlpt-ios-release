@@ -12,5 +12,10 @@ typealias ImageCellConfig = CollectionViewCellConfigurator<MessageImageViewCell,
 
 class SampleMessageData {
     static var messages: [CellConfigurator] = [
-        TextCellConfig.init(item: MessageTextModel(message: "UICollectionView, introduced in iOS 6, has become one of the most popular UI elements among iOS developers.", senderUrl: "Today", senderId: "", messageType: .text))]
+        TextCellConfig.init(item: MessageTextModel(message: """
+                            Chào mừng bạn đến với phòng trò chuyện.
+                            Đây là nơi trao đổi các vấn đề về học tập tiếng Nhật cũng như các chủ đề liên quan.
+                            Các hành vi cố ý vi phạm điều khoản sẽ bị xoá tài khoản.
+                            Hãy góp phần tạo một cộng đồng tiếng Nhật văn minh. Chúc các bạn có một ngày vui vẻ
+                            """, senderUrl: "Now", senderId: "", messageType: .text))]
 }
