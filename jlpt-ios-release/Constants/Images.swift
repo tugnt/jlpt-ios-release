@@ -90,7 +90,7 @@ enum Asset {
   static let pin = ImageAsset(name: "pin")
   static let profile = ImageAsset(name: "profile")
   static let reading = ImageAsset(name: "reading")
-  static let sendMsgNormal = ImageAsset(name: "send_msg_normal")
+  static let sendDisable = ImageAsset(name: "send_disable")
   static let sendNormal = ImageAsset(name: "send_normal")
   static let sendPressed = ImageAsset(name: "send_pressed")
   static let tabChat = ImageAsset(name: "tab_chat")
@@ -152,7 +152,7 @@ enum Asset {
     pin,
     profile,
     reading,
-    sendMsgNormal,
+    sendDisable,
     sendNormal,
     sendPressed,
     tabChat,
