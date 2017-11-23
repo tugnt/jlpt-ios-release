@@ -93,11 +93,6 @@ enum Asset {
   static let sendDisable = ImageAsset(name: "send_disable")
   static let sendNormal = ImageAsset(name: "send_normal")
   static let sendPressed = ImageAsset(name: "send_pressed")
-  static let tabChat = ImageAsset(name: "tab_chat")
-  static let tabDocument = ImageAsset(name: "tab_document")
-  static let tabLesson = ImageAsset(name: "tab_lesson")
-  static let tabProfile = ImageAsset(name: "tab_profile")
-  static let tabProgress = ImageAsset(name: "tab_progress")
   static let tips1 = ImageAsset(name: "tips-1")
   static let tips = ImageAsset(name: "tips")
 
@@ -155,11 +150,6 @@ enum Asset {
     sendDisable,
     sendNormal,
     sendPressed,
-    tabChat,
-    tabDocument,
-    tabLesson,
-    tabProfile,
-    tabProgress,
     tips1,
     tips,
   ]
