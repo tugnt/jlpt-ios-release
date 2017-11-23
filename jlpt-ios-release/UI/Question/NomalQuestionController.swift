@@ -20,13 +20,22 @@ class NomalQuestionController: UIViewController {
         super.viewDidLoad()
         setUpNavBar()
         self.title = "Luyện tập"
-        addRightBarButton()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorColor = .clear
         tableView.allowsSelection = false
         // - Init array solution
         for _ in questions { solutionOfUser.append(5) }
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if questions.count == 0 {
+            tableView.isHidden = true
+            addEmptyStateView()
+        } else {
+            addRightBarButton()
+        }
     }
 
     func addRightBarButton() {
