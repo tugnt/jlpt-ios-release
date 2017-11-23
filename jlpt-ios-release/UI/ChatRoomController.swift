@@ -15,7 +15,7 @@ class ChatRoomController: UICollectionViewController {
     static var account: Account!
     var roomName: LevelJLPT!
     var bottomConstraint: NSLayoutConstraint = NSLayoutConstraint()
-    var tmpData: [CellConfigurator] = []
+    var tmpData: [CellConfigurator] = SampleMessageData.messages
     var ref: DatabaseReference!
     let disposeBag = DisposeBag()
     /// IphoneX 対応
