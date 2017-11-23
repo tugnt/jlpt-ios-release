@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FontAwesome
 
 class TabbarController: UITabBarController, UITabBarControllerDelegate {
 
@@ -23,12 +24,22 @@ class TabbarController: UITabBarController, UITabBarControllerDelegate {
         //let chatRoomController = ChatRoomController()
         let chatRoomController = StoryboardScene.GroupChatViewController.groupChatViewController.instantiate()
         let documentController = StoryboardScene.Documents.documentController.instantiate()
-
-        self.viewControllers = [createNavController("Bài học", Asset.tabLesson.image, viewController: lessionController),
-                                createNavController("Tiến độ", Asset.tabProgress.image, viewController: progressController),
-                                createNavController("Tài liệu", Asset.tabDocument.image, viewController: documentController),
-                                createNavController("Trò truyện", Asset.tabChat.image, viewController: chatRoomController),
-                                createNavController("Tài khoản", Asset.tabProfile.image, viewController: profileController)]
+        let tabIconSize = CGSize(width: 30, height: 30)
+        self.viewControllers = [createNavController("Bài học",
+                                                    UIImage.fontAwesomeIcon(name: .graduationCap, textColor: .black, size: tabIconSize),
+                                                    viewController: lessionController),
+                                createNavController("Tiến độ",
+                                                    UIImage.fontAwesomeIcon(name: .barChart, textColor: .black, size: tabIconSize),
+                                                    viewController: progressController),
+                                createNavController("Tài liệu",
+                                                    UIImage.fontAwesomeIcon(name: .fileWordO, textColor: .black, size: tabIconSize),
+                                                    viewController: documentController),
+                                createNavController("Trò truyện",
+                                                    UIImage.fontAwesomeIcon(name: .wechat, textColor: .black, size: tabIconSize),
+                                                    viewController: chatRoomController),
+                                createNavController("Tài khoản",
+                                                    UIImage.fontAwesomeIcon(name: .userCircleO, textColor: .black, size: tabIconSize),
+                                                    viewController: profileController)]
     }
 
     fileprivate func createNavController(_ title: String, _ image: Image, viewController: UIViewController) -> UINavigationController {
