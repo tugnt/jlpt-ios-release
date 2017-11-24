@@ -9,11 +9,16 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import RealmSwift
+import Realm
+import Alamofire
+import AlamofireImage
 
 class ProfileController: UIViewController {
     fileprivate let cellId = "cellSetting"
     let disposerBag = DisposeBag()
-
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView! {
         didSet {
             profileImage.clipsToBounds = true
@@ -41,6 +46,27 @@ class ProfileController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
+        setUpNavBar()
+        fetchAccountAndUpdateUI()
+    }
+
+    private func fetchAccountAndUpdateUI() {
+        let realm = try? Realm()
+        guard let accounts = realm?.objects(Account.self) else { return }
+        if accounts.count != 0 {
+            let account = accounts[0]
+            /// Update label
+            userNameLabel.text = account.userName != nil ? account.userName : "Guess"
+            emailLabel.text = account.email != nil ? account.email : "example@email.com"
+            /// - Update Image Profile
+            if let urlString = account.photoUrl {
+                Alamofire.request(urlString).responseImage { response in
+                    if let image = response.result.value {
+                        self.profileImage.image = image
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -57,6 +83,7 @@ extension ProfileController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         cell.accessoryType = .disclosureIndicator
         cell.textLabel?.text = settingItems[indexPath.row]
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 16, weight: .thin)
         return cell
     }
 

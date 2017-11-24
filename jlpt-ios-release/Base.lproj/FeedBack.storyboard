@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,23 +20,14 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write a review" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWu-35-jO8">
                                 <rect key="frame" x="20" y="25" width="335" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tiêu đề" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aQh-bp-9Wi">
-                                <rect key="frame" x="20" y="69" width="335" height="46"/>
+                                <rect key="frame" x="20" y="69" width="335" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="XJI-yc-qB2"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Nội dung" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Thv-gs-iFK">
-                                <rect key="frame" x="20" y="135" width="335" height="300"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="Bhj-0V-Ss0"/>
+                                    <constraint firstAttribute="height" constant="40" id="XJI-yc-qB2"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -52,33 +43,40 @@
                                     <color key="titleColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="C9B-6Y-8HM">
+                                <rect key="frame" x="20" y="124" width="335" height="447"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Thv-gs-iFK" firstAttribute="top" secondItem="aQh-bp-9Wi" secondAttribute="bottom" constant="20" id="3yY-ZV-2cY"/>
                             <constraint firstItem="aQh-bp-9Wi" firstAttribute="leading" secondItem="dVN-Xm-r5a" secondAttribute="leading" constant="20" id="474-7g-Tqn"/>
                             <constraint firstItem="dVN-Xm-r5a" firstAttribute="bottom" secondItem="YD7-SE-Lum" secondAttribute="bottom" constant="20" id="Fav-HD-KUg"/>
                             <constraint firstItem="YD7-SE-Lum" firstAttribute="centerX" secondItem="dVN-Xm-r5a" secondAttribute="centerX" id="FlI-bl-Ezr"/>
                             <constraint firstItem="aQh-bp-9Wi" firstAttribute="top" secondItem="EWu-35-jO8" secondAttribute="bottom" constant="10" id="IXA-vV-HW4"/>
                             <constraint firstItem="EWu-35-jO8" firstAttribute="centerX" secondItem="dVN-Xm-r5a" secondAttribute="centerX" id="Jq9-re-e9G"/>
                             <constraint firstItem="EWu-35-jO8" firstAttribute="leading" secondItem="dVN-Xm-r5a" secondAttribute="leading" constant="20" id="LZf-zh-x79"/>
-                            <constraint firstItem="Thv-gs-iFK" firstAttribute="leading" secondItem="dVN-Xm-r5a" secondAttribute="leading" constant="20" id="T4Z-2V-aQZ"/>
+                            <constraint firstItem="C9B-6Y-8HM" firstAttribute="centerX" secondItem="dVN-Xm-r5a" secondAttribute="centerX" id="Sr2-Lw-lac"/>
+                            <constraint firstItem="YD7-SE-Lum" firstAttribute="top" secondItem="C9B-6Y-8HM" secondAttribute="bottom" constant="30" id="Xg7-Yt-EYp"/>
                             <constraint firstItem="aQh-bp-9Wi" firstAttribute="centerX" secondItem="dVN-Xm-r5a" secondAttribute="centerX" id="YdY-tf-sN9"/>
                             <constraint firstItem="YD7-SE-Lum" firstAttribute="leading" secondItem="dVN-Xm-r5a" secondAttribute="leading" constant="20" id="fck-On-r3M"/>
                             <constraint firstItem="EWu-35-jO8" firstAttribute="top" secondItem="dVN-Xm-r5a" secondAttribute="top" constant="5" id="lNj-xN-sn9"/>
-                            <constraint firstItem="Thv-gs-iFK" firstAttribute="centerX" secondItem="dVN-Xm-r5a" secondAttribute="centerX" id="xA5-UE-owR"/>
+                            <constraint firstItem="C9B-6Y-8HM" firstAttribute="leading" secondItem="dVN-Xm-r5a" secondAttribute="leading" constant="20" id="vie-m2-haT"/>
+                            <constraint firstItem="C9B-6Y-8HM" firstAttribute="top" secondItem="aQh-bp-9Wi" secondAttribute="bottom" constant="15" id="wlq-Yx-RAb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dVN-Xm-r5a"/>
                     </view>
                     <connections>
-                        <outlet property="contentFeedback" destination="Thv-gs-iFK" id="grQ-Fd-Sx8"/>
+                        <outlet property="contentFeedbackTextView" destination="C9B-6Y-8HM" id="esQ-R2-6yg"/>
                         <outlet property="sendFeedbackBtn" destination="YD7-SE-Lum" id="2ed-nm-8mR"/>
                         <outlet property="titleFeedback" destination="aQh-bp-9Wi" id="le9-LC-GGH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PhH-b0-mfS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="174" y="-231"/>
+            <point key="canvasLocation" x="173.59999999999999" y="-231.63418290854574"/>
         </scene>
     </scenes>
 </document>

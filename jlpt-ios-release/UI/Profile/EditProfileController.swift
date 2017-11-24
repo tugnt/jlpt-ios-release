@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import Realm
+import RealmSwift
+import AlamofireImage
+import Alamofire
 
 struct EditProfileItem {
     let titleProfile: TypeEditProfile
@@ -36,16 +40,43 @@ class EditProfileController: UIViewController {
     @IBOutlet weak var changeProfileImgBtn: UIButton!
     @IBOutlet weak var saveChangeButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
-    let editItems: [EditProfileItem] = [EditProfileItem(titleProfile: .statusAcount, contentProfile: "Miễn phí"),
-                                      EditProfileItem(titleProfile: .name, contentProfile: "Tung Nguyen"),
-                                      EditProfileItem(titleProfile: .email, contentProfile: "tungnguyenlee2t@gmail.com"),
-                                      EditProfileItem(titleProfile: .password, contentProfile: "**************")]
+    private var editItems: [EditProfileItem] = [EditProfileItem(titleProfile: .statusAcount, contentProfile: "Miễn phí"),
+                                                EditProfileItem(titleProfile: .name, contentProfile: "Guess"),
+                                                EditProfileItem(titleProfile: .email, contentProfile: "guess@example.com"),
+                                                EditProfileItem(titleProfile: .password, contentProfile: "**************")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
+        self.title = "Chi tiết tài khoản"
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchAccountData()
+    }
+
+    private func fetchAccountData() {
+        let realm = try? Realm()
+        guard let accounts = realm?.objects(Account.self) else { return }
+        if accounts.count != 0 {
+            let account = accounts[0]
+            editItems =  [EditProfileItem(titleProfile: .statusAcount, contentProfile: "Miễn phí"),
+                          EditProfileItem(titleProfile: .name, contentProfile: account.userName ?? "Guess"),
+                          EditProfileItem(titleProfile: .email, contentProfile: account.email ?? "guess@example.com"),
+                          EditProfileItem(titleProfile: .password, contentProfile: "**************")]
+            /// - Update Image Profile
+            if let urlString = account.photoUrl {
+                Alamofire.request(urlString).responseImage { response in
+                    if let image = response.result.value {
+                        self.profileImage.image = image
+                    }
+                }
+            }
+            tableView.reloadData()
+        }
     }
 }
 
@@ -65,14 +96,5 @@ extension EditProfileController: UITableViewDelegate, UITableViewDataSource {
         cell.accessoryType = .disclosureIndicator
         cell.editItem = editItems[indexPath.row]
         return cell
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.showTransparentView()
-//        showInputDialog(title: "Test", message: "Test", okButton: "OK", cancelButton: "Cancel", okAction: {
-//            print("OK")
-//        }, cancelAction: {
-//            print("Cancel")
-//        })
     }
 }

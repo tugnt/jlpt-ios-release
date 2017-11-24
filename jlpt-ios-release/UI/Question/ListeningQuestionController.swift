@@ -74,7 +74,7 @@ class ListeningQuestionController: UIViewController {
             audioPlayer.pause()
         }
     }
-    
+
     private func playAudioFromUrl(url: String) {
         do {
             guard let url = URL(string: url) else { return }
