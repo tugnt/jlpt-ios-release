@@ -13,6 +13,7 @@ import RealmSwift
 import Realm
 import Alamofire
 import AlamofireImage
+import Firebase
 
 class ProfileController: UIViewController {
     fileprivate let cellId = "cellSetting"
@@ -25,16 +26,14 @@ class ProfileController: UIViewController {
             profileImage.layer.cornerRadius = CGFloat(40)
         }
     }
-
     @IBOutlet weak var logoutBtn: UIButton! {
         didSet {
             logoutBtn.backgroundColor = ColorName.logoutBtn.color
             logoutBtn.layer.cornerRadius = CGFloat(5)
         }
     }
-
+    @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
-
     let settingItems: [String] = ["Cài đặt tài khoản",
                                   "Phản hồi và chia sẻ",
                                   "Thông báo",
@@ -48,6 +47,7 @@ class ProfileController: UIViewController {
         tableView.tableFooterView = UIView()
         setUpNavBar()
         fetchAccountAndUpdateUI()
+        logoutBtn.addTarget(self, action: #selector(logoutHandle), for: .touchUpInside)
     }
 
     private func fetchAccountAndUpdateUI() {
@@ -66,6 +66,22 @@ class ProfileController: UIViewController {
                     }
                 }
             }
+        }
+    }
+
+    @objc private func logoutHandle() {
+        do {
+            try Auth.auth().signOut()
+            let vc = StoryboardScene.Login.loginViewController.instantiate()
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+            appDelegate.window?.rootViewController = vc
+        } catch let logoutError {
+            print(logoutError.localizedDescription)
+            let alertModalView = TDModalStatusView(frame: view.bounds)
+            alertModalView.setTitleLabel(title: "Thông báo")
+            alertModalView.setSubTitleLabel(subTitle: "Đăng xuất thất bại")
+            alertModalView.setStatusImage(image: Asset.notificationIcon.image)
+            view.addSubview(alertModalView)
         }
     }
 }

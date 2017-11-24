@@ -74,7 +74,6 @@ class StartAppController: UIViewController {
     }
 
     @objc func startApplication() {
-        //let vc = TabbarController()
         let vc = StoryboardScene.Login.loginViewController.instantiate()
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         appDelegate.window?.rootViewController = vc

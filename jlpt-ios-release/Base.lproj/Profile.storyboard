@@ -95,6 +95,7 @@
                     <connections>
                         <outlet property="emailLabel" destination="B8u-1T-72k" id="Cfg-ZY-JDr"/>
                         <outlet property="logoutBtn" destination="Mn6-dj-N3V" id="apC-H4-2w7"/>
+                        <outlet property="logoutButton" destination="Mn6-dj-N3V" id="l7I-sZ-7Ay"/>
                         <outlet property="profileImage" destination="6bl-xH-Zyb" id="s3n-G5-4ct"/>
                         <outlet property="tableView" destination="jMh-Rg-ccf" id="fB8-Ma-xNq"/>
                         <outlet property="userNameLabel" destination="Gbn-DY-Eww" id="bk5-mc-hFc"/>
