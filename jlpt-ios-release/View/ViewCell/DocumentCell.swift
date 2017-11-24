@@ -28,7 +28,7 @@ class DocumentCell: UITableViewCell {
 
     @IBOutlet weak var downloadBookBtn: UIButton! {
         didSet {
-            downloadBookBtn.setImage(Asset.download.image, for: .normal)
+            downloadBookBtn.setImage(UIImage.fontAwesomeIcon(name: .cloudDownload, textColor: .lightGray, size: CGSize(width: downloadBookBtn.bounds.width, height: downloadBookBtn.bounds.height)), for: .normal)
         }
     }
     @IBOutlet weak var downloadProgress: UIProgressView!

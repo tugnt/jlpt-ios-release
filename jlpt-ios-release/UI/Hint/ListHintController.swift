@@ -82,6 +82,7 @@ extension ListHintController: UITableViewDelegate, UITableViewDataSource {
         let vc = StoryboardScene.TheoryHint.theoryHintController.instantiate()
         vc.content = listHint[indexPath.row].hintContent
         vc.questions = listHint[indexPath.row].questions
+        vc.type = type!
         navigationController?.pushViewController(vc, animated: true)
     }
 }

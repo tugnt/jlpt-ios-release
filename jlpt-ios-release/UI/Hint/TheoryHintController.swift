@@ -10,6 +10,7 @@ import UIKit
 import MarkdownView
 
 class TheoryHintController: UIViewController {
+    var type: TypeJLPT!
     var content: String?
     var questions: [HintQuestionModel] = []
 
@@ -46,8 +47,7 @@ class TheoryHintController: UIViewController {
         })
     }
 
-    @objc func moveQuestionScreen() {
-        let vc = StoryboardScene.NomalQuestion.nomalQuestionController.instantiate()
+    @objc private func moveQuestionScreen() {
         var normalQuestions: [NormalQuestionViewModel] = []
         for item in questions {
             normalQuestions.append(NormalQuestionViewModel(question: item.question,
@@ -58,7 +58,14 @@ class TheoryHintController: UIViewController {
                                                           solution: item.solution,
                                                           linkAudio: item.linkAudio))
         }
-        vc.questions = normalQuestions
-        navigationController?.pushViewController(vc, animated: true)
+        if type == .listening {
+            let vc = StoryboardScene.ListeningQuestion.listeningQuestionController.instantiate()
+            vc.questions = normalQuestions
+            navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let vc = StoryboardScene.NomalQuestion.nomalQuestionController.instantiate()
+            vc.questions = normalQuestions
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,86 +25,91 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n6s-eX-zLc">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="307"/>
+                                                <rect key="frame" x="0.0" y="28" width="375" height="0.0"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="307" id="8rr-la-67S"/>
+                                                    <constraint firstAttribute="height" id="8rr-la-67S"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4z5-do-IxO">
-                                                <rect key="frame" x="10" y="343" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
-                                            </button>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eDn-qX-T9K">
-                                                <rect key="frame" x="76" y="357" width="269" height="2"/>
+                                                <rect key="frame" x="70" y="208" width="275" height="2"/>
                                             </progressView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brU-79-26r">
-                                                <rect key="frame" x="10" y="383" width="355" height="17"/>
+                                                <rect key="frame" x="10" y="58" width="355" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOn-0B-wEA">
-                                                <rect key="frame" x="40" y="410" width="325" height="17"/>
+                                                <rect key="frame" x="40" y="85" width="325" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POd-NX-mXF">
-                                                <rect key="frame" x="40" y="437" width="325" height="17"/>
+                                                <rect key="frame" x="40" y="112" width="325" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdU-xs-NLj">
-                                                <rect key="frame" x="40" y="464" width="325" height="17"/>
+                                                <rect key="frame" x="40" y="139" width="325" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30K-Qu-p91">
-                                                <rect key="frame" x="10" y="410" width="20" height="20"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30K-Qu-p91" customClass="TDRadioButton" customModule="jlpt_ios_release" customModuleProvider="target">
+                                                <rect key="frame" x="10" y="85" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="20" id="TqN-NX-c7y"/>
                                                     <constraint firstAttribute="height" constant="20" id="n8Z-bt-UIH"/>
                                                 </constraints>
+                                                <state key="normal">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJb-DX-9np">
-                                                <rect key="frame" x="10" y="437" width="20" height="20"/>
-                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJb-DX-9np" customClass="TDRadioButton" customModule="jlpt_ios_release" customModuleProvider="target">
+                                                <rect key="frame" x="10" y="112" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="CbO-yt-TBL"/>
                                                     <constraint firstAttribute="width" constant="20" id="UnW-w3-tz4"/>
                                                 </constraints>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="thR-ZK-zSg">
-                                                <rect key="frame" x="10" y="464" width="20" height="20"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="thR-ZK-zSg" customClass="TDRadioButton" customModule="jlpt_ios_release" customModuleProvider="target">
+                                                <rect key="frame" x="10" y="139" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="NSn-5w-2WK"/>
                                                     <constraint firstAttribute="width" constant="20" id="x8N-1e-iZp"/>
                                                 </constraints>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H2w-yR-k7e">
-                                                <rect key="frame" x="10" y="491" width="20" height="20"/>
-                                                <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H2w-yR-k7e" customClass="TDRadioButton" customModule="jlpt_ios_release" customModuleProvider="target">
+                                                <rect key="frame" x="10" y="166" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="20" id="Fe3-ab-89B"/>
                                                     <constraint firstAttribute="height" constant="20" id="bfR-XZ-5yc"/>
                                                 </constraints>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzf-5E-bdC">
-                                                <rect key="frame" x="40" y="491" width="325" height="17"/>
+                                                <rect key="frame" x="40" y="166" width="325" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4z5-do-IxO">
+                                                <rect key="frame" x="20" y="194" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="9Ng-b9-9SB"/>
+                                                    <constraint firstAttribute="width" constant="30" id="tXU-V0-wxP"/>
+                                                </constraints>
+                                                <state key="normal">
+                                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="4z5-do-IxO" firstAttribute="top" secondItem="n6s-eX-zLc" secondAttribute="bottom" constant="8" symbolic="YES" id="0TE-Fu-HpX"/>
                                             <constraint firstItem="thR-ZK-zSg" firstAttribute="top" secondItem="wdU-xs-NLj" secondAttribute="top" id="11z-XE-JU0"/>
                                             <constraint firstItem="bOn-0B-wEA" firstAttribute="top" secondItem="brU-79-26r" secondAttribute="bottom" constant="10" id="1jo-Iw-5In"/>
+                                            <constraint firstItem="4z5-do-IxO" firstAttribute="top" secondItem="H2w-yR-k7e" secondAttribute="bottom" constant="8" id="5Og-Rl-CUf"/>
                                             <constraint firstAttribute="trailing" secondItem="bOn-0B-wEA" secondAttribute="trailing" constant="10" id="60p-19-dzG"/>
                                             <constraint firstItem="n6s-eX-zLc" firstAttribute="leading" secondItem="i2c-Hg-Oow" secondAttribute="leading" id="9Wy-rT-k1Z"/>
                                             <constraint firstItem="thR-ZK-zSg" firstAttribute="leading" secondItem="i2c-Hg-Oow" secondAttribute="leading" constant="10" id="A8q-J2-0bt"/>
@@ -112,8 +117,8 @@
                                             <constraint firstItem="NJb-DX-9np" firstAttribute="leading" secondItem="i2c-Hg-Oow" secondAttribute="leading" constant="10" id="Fvu-TS-M3r"/>
                                             <constraint firstItem="n6s-eX-zLc" firstAttribute="top" secondItem="i2c-Hg-Oow" secondAttribute="top" constant="28" id="HA0-JI-uCh"/>
                                             <constraint firstAttribute="trailing" secondItem="bzf-5E-bdC" secondAttribute="trailing" constant="10" id="Hrr-OK-mht"/>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4z5-do-IxO" secondAttribute="trailing" constant="20" symbolic="YES" id="Kmz-ii-E78"/>
-                                            <constraint firstItem="eDn-qX-T9K" firstAttribute="leading" secondItem="i2c-Hg-Oow" secondAttribute="leading" constant="76" id="MES-cu-wqm"/>
+                                            <constraint firstItem="4z5-do-IxO" firstAttribute="leading" secondItem="i2c-Hg-Oow" secondAttribute="leading" constant="20" id="KgG-lG-7HU"/>
+                                            <constraint firstItem="eDn-qX-T9K" firstAttribute="centerY" secondItem="4z5-do-IxO" secondAttribute="centerY" id="LWN-QL-FMW"/>
                                             <constraint firstItem="bzf-5E-bdC" firstAttribute="top" secondItem="wdU-xs-NLj" secondAttribute="bottom" constant="10" id="Qad-GN-HDQ"/>
                                             <constraint firstItem="wdU-xs-NLj" firstAttribute="top" secondItem="POd-NX-mXF" secondAttribute="bottom" constant="10" id="SoB-Fr-vyD"/>
                                             <constraint firstItem="POd-NX-mXF" firstAttribute="leading" secondItem="NJb-DX-9np" secondAttribute="trailing" constant="10" id="SrP-VG-hzU"/>
@@ -122,18 +127,17 @@
                                             <constraint firstItem="POd-NX-mXF" firstAttribute="top" secondItem="bOn-0B-wEA" secondAttribute="bottom" constant="10" id="arw-nf-YyZ"/>
                                             <constraint firstItem="30K-Qu-p91" firstAttribute="top" secondItem="bOn-0B-wEA" secondAttribute="top" id="bOa-59-5Nu"/>
                                             <constraint firstAttribute="trailing" secondItem="n6s-eX-zLc" secondAttribute="trailing" id="cNU-Tj-4nL"/>
-                                            <constraint firstItem="brU-79-26r" firstAttribute="top" secondItem="4z5-do-IxO" secondAttribute="bottom" constant="10" id="cgI-PU-VNI"/>
                                             <constraint firstAttribute="trailing" secondItem="POd-NX-mXF" secondAttribute="trailing" constant="10" id="cpy-2v-zym"/>
                                             <constraint firstItem="brU-79-26r" firstAttribute="leading" secondItem="i2c-Hg-Oow" secondAttribute="leading" constant="10" id="dR2-QN-MDy"/>
                                             <constraint firstItem="brU-79-26r" firstAttribute="centerX" secondItem="i2c-Hg-Oow" secondAttribute="centerX" id="jDw-WO-8DZ"/>
                                             <constraint firstItem="30K-Qu-p91" firstAttribute="leading" secondItem="i2c-Hg-Oow" secondAttribute="leading" constant="10" id="jfE-sg-nVh"/>
                                             <constraint firstItem="H2w-yR-k7e" firstAttribute="top" secondItem="bzf-5E-bdC" secondAttribute="top" id="m6K-Nm-4i1"/>
+                                            <constraint firstItem="eDn-qX-T9K" firstAttribute="leading" secondItem="4z5-do-IxO" secondAttribute="leading" constant="50" id="oeX-Vf-BSq"/>
                                             <constraint firstItem="n6s-eX-zLc" firstAttribute="centerX" secondItem="brU-79-26r" secondAttribute="centerX" id="oug-Ii-Y7d"/>
-                                            <constraint firstItem="4z5-do-IxO" firstAttribute="leading" secondItem="i2c-Hg-Oow" secondAttribute="leading" constant="10" id="qaZ-fc-URN"/>
                                             <constraint firstItem="NJb-DX-9np" firstAttribute="top" secondItem="POd-NX-mXF" secondAttribute="top" id="tLJ-ND-9T5"/>
+                                            <constraint firstItem="brU-79-26r" firstAttribute="top" secondItem="n6s-eX-zLc" secondAttribute="bottom" constant="30" id="tnL-ne-8kI"/>
                                             <constraint firstItem="wdU-xs-NLj" firstAttribute="leading" secondItem="thR-ZK-zSg" secondAttribute="trailing" constant="10" id="ueT-ll-jE1"/>
                                             <constraint firstItem="bzf-5E-bdC" firstAttribute="leading" secondItem="H2w-yR-k7e" secondAttribute="trailing" constant="10" id="wPv-tb-Vqt"/>
-                                            <constraint firstItem="eDn-qX-T9K" firstAttribute="top" secondItem="n6s-eX-zLc" secondAttribute="bottom" constant="22" id="yaZ-oX-QOL"/>
                                             <constraint firstAttribute="trailing" secondItem="wdU-xs-NLj" secondAttribute="trailing" constant="10" id="z5t-pk-AuJ"/>
                                         </constraints>
                                     </view>
@@ -172,7 +176,18 @@
                     </view>
                     <connections>
                         <outlet property="answerALb" destination="bOn-0B-wEA" id="Vp7-ty-94Y"/>
+                        <outlet property="answerBLb" destination="POd-NX-mXF" id="DbS-Eb-Yme"/>
+                        <outlet property="answerCLb" destination="wdU-xs-NLj" id="FoB-Eg-Fqy"/>
+                        <outlet property="answerDLb" destination="bzf-5E-bdC" id="KSO-Ae-fjh"/>
+                        <outlet property="audioProgressBar" destination="eDn-qX-T9K" id="KWb-gG-nn5"/>
+                        <outlet property="checkAnswerButton" destination="o98-RR-Pvq" id="zao-jh-7jM"/>
+                        <outlet property="playAudioButton" destination="4z5-do-IxO" id="JtZ-64-WjA"/>
+                        <outlet property="questionImage" destination="n6s-eX-zLc" id="XEp-6I-W9X"/>
                         <outlet property="questionLb" destination="brU-79-26r" id="T7e-Uf-8np"/>
+                        <outlet property="radioButtonA" destination="30K-Qu-p91" id="HP7-Yl-N7W"/>
+                        <outlet property="radioButtonB" destination="NJb-DX-9np" id="U58-Eo-L5y"/>
+                        <outlet property="radioButtonC" destination="thR-ZK-zSg" id="e8Z-Sk-fIv"/>
+                        <outlet property="radioButtonD" destination="H2w-yR-k7e" id="lLE-Wk-5a4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1uc-av-aey" userLabel="First Responder" sceneMemberID="firstResponder"/>
