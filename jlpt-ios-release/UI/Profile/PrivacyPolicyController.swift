@@ -13,7 +13,7 @@ class PrivacyPolicyController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "Điều khoản"
         let url = URL(string: "https://medium.com/@reinman/its-reboot-time-for-operating-systems-6a516ad8e89c")
         let request = URLRequest(url: url!)
         webView.loadRequest(request)

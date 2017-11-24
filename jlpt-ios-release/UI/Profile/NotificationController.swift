@@ -9,9 +9,12 @@
 import UIKit
 
 class NotificationController: UITableViewController {
+    @IBOutlet weak var allowAppUpdateSwitch: UISwitch!
+    @IBOutlet weak var allowPushNotifiDocSwitch: UISwitch!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.title = "Cài đặt ứng dụng"
+        tableView.tableFooterView = UIView()
     }
 }

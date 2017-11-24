@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,13 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7VP-RP-rsl">
-                                <rect key="frame" x="154" y="111" width="56" height="29"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7VP-RP-rsl">
+                                <rect key="frame" x="120" y="91" width="56" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="Thay đổi"/>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5gA-bx-15Z">
-                                <rect key="frame" x="10" y="170" width="355" height="437"/>
+                                <rect key="frame" x="10" y="150" width="355" height="457"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellSettingEdit" rowHeight="60" id="l3k-4B-zpe" customClass="EditProfileCell" customModule="jlpt_ios_release" customModuleProvider="target">
@@ -35,14 +35,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7v7-4C-Dc5">
-                                                    <rect key="frame" x="18" y="8" width="26.5" height="16"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <nil key="textColor"/>
+                                                    <rect key="frame" x="18" y="8" width="26" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
+                                                    <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCd-JZ-xMc">
-                                                    <rect key="frame" x="18" y="33" width="62" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="18" y="33" width="61" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -64,15 +64,15 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GfS-ds-1no">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GfS-ds-1no">
                                 <rect key="frame" x="145" y="627" width="85" height="30"/>
                                 <state key="normal" title="Lưu thay đổi"/>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="rfw-bC-w2D">
-                                <rect key="frame" x="34" y="40" width="100" height="100"/>
+                                <rect key="frame" x="20" y="40" width="80" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="J74-yk-7xE"/>
-                                    <constraint firstAttribute="height" constant="100" id="PmJ-X5-eOl"/>
+                                    <constraint firstAttribute="width" constant="80" id="J74-yk-7xE"/>
+                                    <constraint firstAttribute="height" constant="80" id="PmJ-X5-eOl"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -82,7 +82,7 @@
                             <constraint firstItem="GfS-ds-1no" firstAttribute="centerX" secondItem="OzX-Ef-cdU" secondAttribute="centerX" id="8Oj-as-wrO"/>
                             <constraint firstItem="5gA-bx-15Z" firstAttribute="top" secondItem="rfw-bC-w2D" secondAttribute="bottom" constant="30" id="C7E-WA-vEd"/>
                             <constraint firstItem="7VP-RP-rsl" firstAttribute="leading" secondItem="rfw-bC-w2D" secondAttribute="trailing" constant="20" id="EBA-Jn-ME1"/>
-                            <constraint firstItem="rfw-bC-w2D" firstAttribute="centerX" secondItem="OzX-Ef-cdU" secondAttribute="centerX" constant="-103.5" id="INb-Lf-E4M"/>
+                            <constraint firstItem="rfw-bC-w2D" firstAttribute="leading" secondItem="OzX-Ef-cdU" secondAttribute="leading" constant="20" id="FZc-wV-546"/>
                             <constraint firstItem="5gA-bx-15Z" firstAttribute="leading" secondItem="OzX-Ef-cdU" secondAttribute="leading" constant="10" id="Jrk-Wm-Dza"/>
                             <constraint firstItem="7VP-RP-rsl" firstAttribute="bottom" secondItem="rfw-bC-w2D" secondAttribute="bottom" id="Nww-DW-OoP"/>
                             <constraint firstItem="OzX-Ef-cdU" firstAttribute="bottom" secondItem="5gA-bx-15Z" secondAttribute="bottom" constant="60" id="T3B-Bf-fMA"/>
