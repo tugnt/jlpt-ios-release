@@ -13,7 +13,11 @@ class HintCell: UITableViewCell {
     @IBOutlet weak var hintDescriptionLabel: UILabel!
     @IBOutlet weak var hintNumberQuestionLabel: UILabel!
     @IBOutlet weak var pointLabel: UILabel!
-    @IBOutlet weak var pinButton: UIButton!
+    @IBOutlet weak var pinButton: UIButton! {
+        didSet {
+            pinButton.setImage(UIImage.fontAwesomeIcon(name: .tags, textColor: .lightGray, size: CGSize(width: pinButton.bounds.width, height: pinButton.bounds.height)), for: .normal)
+        }
+    }
 
     var hintItem: HintViewModel? {
         didSet {
