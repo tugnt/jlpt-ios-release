@@ -81,7 +81,7 @@ extension GroupChatViewController: UICollectionViewDelegate, UICollectionViewDel
         let realm = try? Realm()
         // Get first account
         let accounts = realm?.objects(Account.self)
-        if accounts?.count == 0 && accounts != nil {
+        if accounts?.count == 0 || accounts == nil {
             let confirmDialog = TDConfirmDialog(frame: view.bounds)
             confirmDialog.set(title: "Thông báo")
             confirmDialog.set(message: "Vui lòng đăng nhập để sử dụng chức năng này.")
