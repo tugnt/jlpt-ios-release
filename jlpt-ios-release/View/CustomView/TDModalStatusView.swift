@@ -13,7 +13,7 @@ public class TDModalStatusView: UIView {
     let nibName = "TDModalStatusView"
     var timer: Timer?
     @IBOutlet private weak var statusImage: UIImageView!
-    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet private weak var subTitleLabel: UILabel!
 
     // MARK: Set up view use in code

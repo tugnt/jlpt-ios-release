@@ -56,11 +56,11 @@ class TheoryHintController: UIViewController {
                                                           answerC: item.answerC,
                                                           answerD: item.answerD,
                                                           solution: item.solution,
-                                                          linkAudio: item.linkAudio))
+                                                          linkAudio: item.audioUrl))
         }
         if type == .listening {
             let vc = StoryboardScene.ListeningQuestion.listeningQuestionController.instantiate()
-            vc.questions = normalQuestions
+            vc.questions = questions
             navigationController?.pushViewController(vc, animated: true)
         } else {
             let vc = StoryboardScene.NomalQuestion.nomalQuestionController.instantiate()

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -49,12 +49,6 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Điểm \n 80 / 100" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gne-f3-0cN">
-                                                            <rect key="frame" x="181.5" y="69" width="80.5" height="13"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="11"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqB-St-BbY">
                                                             <rect key="frame" x="10" y="7" width="22" height="22"/>
                                                             <constraints>
@@ -66,7 +60,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kY7-uH-cqe">
                                                             <rect key="frame" x="47" y="34" width="302" height="25"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                                            <color key="textColor" red="0.76862745098039209" green="0.76862745098039209" blue="0.76862745098039209" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -75,13 +69,12 @@
                                                         <constraint firstItem="EK5-RP-vUU" firstAttribute="top" secondItem="kY7-uH-cqe" secondAttribute="bottom" constant="10" id="2Eb-13-HFb"/>
                                                         <constraint firstItem="vqB-St-BbY" firstAttribute="leading" secondItem="krr-fw-gAN" secondAttribute="leading" constant="10" id="BQO-1E-da8"/>
                                                         <constraint firstItem="kY7-uH-cqe" firstAttribute="leading" secondItem="jqo-5f-CRg" secondAttribute="leading" id="ETM-mi-v0c"/>
-                                                        <constraint firstItem="EK5-RP-vUU" firstAttribute="leading" secondItem="gne-f3-0cN" secondAttribute="trailing" constant="15" id="Enk-La-qBf"/>
-                                                        <constraint firstAttribute="bottom" secondItem="gne-f3-0cN" secondAttribute="bottom" constant="4.5" id="LgF-O6-ne8"/>
-                                                        <constraint firstItem="gne-f3-0cN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="krr-fw-gAN" secondAttribute="leading" constant="20" symbolic="YES" id="PgL-Ou-VQo"/>
+                                                        <constraint firstAttribute="bottom" secondItem="EK5-RP-vUU" secondAttribute="bottom" constant="3.5" id="L9L-qn-a4q"/>
+                                                        <constraint firstItem="EK5-RP-vUU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="krr-fw-gAN" secondAttribute="leading" constant="20" symbolic="YES" id="NhJ-PU-rAG"/>
+                                                        <constraint firstAttribute="bottom" secondItem="EK5-RP-vUU" secondAttribute="bottom" constant="3.5" id="URX-X1-zF5"/>
                                                         <constraint firstAttribute="trailing" secondItem="EK5-RP-vUU" secondAttribute="trailing" constant="10" id="Xib-qJ-hMV"/>
                                                         <constraint firstItem="kY7-uH-cqe" firstAttribute="trailing" secondItem="jqo-5f-CRg" secondAttribute="trailing" id="Y7v-UP-FbG"/>
                                                         <constraint firstAttribute="trailing" secondItem="jqo-5f-CRg" secondAttribute="trailing" constant="10" id="ZlY-Qk-lVy"/>
-                                                        <constraint firstItem="gne-f3-0cN" firstAttribute="top" secondItem="kY7-uH-cqe" secondAttribute="bottom" constant="10" id="jTZ-UV-Tq3"/>
                                                         <constraint firstItem="vqB-St-BbY" firstAttribute="top" secondItem="jqo-5f-CRg" secondAttribute="top" id="lZN-MW-btv"/>
                                                         <constraint firstItem="jqo-5f-CRg" firstAttribute="leading" secondItem="vqB-St-BbY" secondAttribute="trailing" constant="15" id="nSL-Cm-qCI"/>
                                                         <constraint firstItem="jqo-5f-CRg" firstAttribute="top" secondItem="krr-fw-gAN" secondAttribute="top" constant="7" id="qW4-EU-ENF"/>
@@ -101,7 +94,6 @@
                                             <outlet property="hintNumberQuestionLabel" destination="EK5-RP-vUU" id="qne-Id-4Ls"/>
                                             <outlet property="hintTitleLabel" destination="jqo-5f-CRg" id="m5E-RM-v7z"/>
                                             <outlet property="pinButton" destination="vqB-St-BbY" id="RmD-ds-wPh"/>
-                                            <outlet property="pointLabel" destination="gne-f3-0cN" id="9KE-dR-eCr"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

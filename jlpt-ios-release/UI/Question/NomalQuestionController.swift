@@ -38,12 +38,12 @@ class NomalQuestionController: UIViewController {
         }
     }
 
-    func addRightBarButton() {
+    private func addRightBarButton() {
         let rightBarButton = UIBarButtonItem(title: "Hoàn thành", style: .done, target: self, action: #selector(checkAnswer))
         navigationItem.rightBarButtonItem = rightBarButton
     }
 
-    @objc func checkAnswer() {
+    @objc private func checkAnswer() {
         for index in 0..<questions.count {
             if Int(questions[index].solution) == solutionOfUser[index] {
                 point += 1
@@ -56,6 +56,7 @@ class NomalQuestionController: UIViewController {
         confirmDialog.confirmButtonTitle = "Xem kết quả"
         view.addSubview(confirmDialog)
         confirmDialog.confirmDidSelected = {
+            self.point = 0
             self.isShowSolution = true
             self.tableView.reloadData()
         }

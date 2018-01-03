@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Himotoki
 
 struct ItemLesson {
     let title: String
@@ -42,6 +43,20 @@ enum TypeJLPT: String {
     case grammar = "Grammar"
     case vocabulary = "Vocabulary"
     case kanji = "Kanji"
+    func data(_ e: Extractor) -> AnyObject? {
+        do {
+            switch self {
+            case .reading, .grammar, .vocabulary, .kanji:
+                let linkAudio: String = try e <| "linkAudio"
+                return linkAudio as AnyObject
+            case .listening:
+                let linkAudio: AudioResponseModel = try e <| "linkAudio"
+                return linkAudio as AnyObject
+            }
+        } catch let error {
+            fatalError(error.localizedDescription)
+        }
+    }
 }
 
 enum LevelJLPT: String {

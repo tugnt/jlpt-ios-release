@@ -25,7 +25,6 @@ class HintCell: UITableViewCell {
             hintTitleLabel.text = item.hintTitle
             hintDescriptionLabel.text = item.hintContent
             hintNumberQuestionLabel.text = "Số câu hỏi \(item.numberQuestion)"
-            pointLabel.text = "Điểm số \(item.point) / 100"
         }
     }
 

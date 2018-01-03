@@ -11,7 +11,7 @@ import Firebase
 import RxCocoa
 import RxSwift
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: HidenKeyboardViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var rePasswordTextField: UITextField!
@@ -64,7 +64,6 @@ class RegisterViewController: UIViewController {
     @objc private func registerEmail() {
         startAnimationLoading()
         Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
-            self.stopAnimationLoading()
             if error != nil {
                 /// - Todo: Show alert here
                 self.showRegisterAlert()
@@ -76,8 +75,10 @@ class RegisterViewController: UIViewController {
                     if err != nil {
                         self.showRegisterAlert()
                     }
-                    /// Todo: Save data of user and move home screen
                     /// Move to home screen
+                    self.stopAnimationLoading()
+                    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+                    appDelegate.window?.rootViewController = TabbarController()
                 })
             }
         })
