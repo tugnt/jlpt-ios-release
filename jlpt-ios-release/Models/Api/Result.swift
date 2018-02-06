@@ -9,23 +9,14 @@
 import Foundation
 
 public protocol ResultType {
-    /*
-     // Response' value
-     */
     associatedtype Value
-
-    //
-    // Error when request api
-    //
     associatedtype Error: Swift.Error
 
     init(value: Value)
     init(error: Error)
 
-    // When request failed is vallue = nil
     var value: Value? { get }
 
-    // When request success is error = nil
     var error: Error? { get }
 }
 

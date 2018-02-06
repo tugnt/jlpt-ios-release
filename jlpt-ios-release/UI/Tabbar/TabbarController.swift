@@ -21,7 +21,6 @@ class TabbarController: UITabBarController, UITabBarControllerDelegate {
 
         let profileController = StoryboardScene.Profile.profileController.instantiate()
         let progressController = StoryboardScene.Process.processController.instantiate()
-        //let chatRoomController = ChatRoomController()
         let chatRoomController = StoryboardScene.GroupChatViewController.groupChatViewController.instantiate()
         let documentController = StoryboardScene.Documents.documentController.instantiate()
         let tabIconSize = CGSize(width: 30, height: 30)
@@ -49,6 +48,7 @@ class TabbarController: UITabBarController, UITabBarControllerDelegate {
         return navController
     }
 
+    // NOT NEEDED
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         let index = tabBarController.selectedIndex
         if index == 3 { }

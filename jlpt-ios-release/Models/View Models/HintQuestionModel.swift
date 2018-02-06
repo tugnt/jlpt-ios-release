@@ -19,7 +19,6 @@ struct HintQuestionModel {
     var audioUrl: String?
     var imageUrl: String?
 
-    /// - Initial code here
     init?(response: HintQuestion) {
         self.question = response.question
         self.answerA = response.answerA

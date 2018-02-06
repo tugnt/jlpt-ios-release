@@ -78,9 +78,7 @@ extension DocumentController: DocumentHeaderViewDeleagate, DocumentTypeCellDeleg
     }
 
     func header(didSelected header: DocumentExpandHeaderView, section: Int) {
-        // Change status of header and reload data
         headerSection[section].isExpanded = !headerSection[section].isExpanded
-        /// -  Reload section
         tableView.beginUpdates()
         tableView.reloadSections([section], with: .fade)
         tableView.endUpdates()

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 struct DocumentItem {
     let thumnailUrl: String
@@ -20,27 +22,44 @@ protocol DocumentCellDelegate: class {
 
 class DocumentCell: UITableViewCell {
     @IBOutlet weak var thumbnailBookImage: UIImageView!
-    @IBOutlet weak var nameBookLbl: UILabel! {
+    @IBOutlet weak var nameBookLbl: UILabel!
+    @IBOutlet weak var enNameBookLabel: UILabel!
+    @IBOutlet weak var downloadDocumentButton: UIButton!
+    @IBOutlet weak var containerView: UIView!
+    weak var delegate: DocumentCellDelegate?
+    var document: DocumentReponse! {
         didSet {
-            nameBookLbl.text = "Shinkanzen N2 dokkai"
+            nameBookLbl.text = document.jpName
+            enNameBookLabel.text = document.enName
+            let urlString = document.documentImage
+            Alamofire.request(urlString).responseImage { response in
+                if let image = response.result.value {
+                    self.thumbnailBookImage.image = image
+                }
+            }
         }
     }
-
-    @IBOutlet weak var downloadBookBtn: UIButton! {
-        didSet {
-            downloadBookBtn.setImage(UIImage.fontAwesomeIcon(name: .cloudDownload, textColor: .lightGray, size: CGSize(width: downloadBookBtn.bounds.width, height: downloadBookBtn.bounds.height)), for: .normal)
-        }
-    }
-    @IBOutlet weak var downloadProgress: UIProgressView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        downloadBookBtn.addTarget(self, action: #selector(startDownloadBook), for: .touchUpInside)
+        downloadDocumentButton.addTarget(self, action: #selector(startDownloadBook), for: .touchUpInside)
+        setUpUI()
+    }
+
+    private func setUpUI() {
+        downloadDocumentButton.clipsToBounds = true
+        downloadDocumentButton.layer.cornerRadius = 2
+        /// NOT GOOD
+        downloadDocumentButton.layer.borderColor = UIColor(rgb: 0x2895FF).cgColor
+        downloadDocumentButton.layer.borderWidth = 1
+        downloadDocumentButton.addTarget(self, action: #selector(startDownloadBook), for: .touchUpInside)
+        containerView.clipsToBounds = true
+        containerView.layer.cornerRadius = 2
     }
 
     @objc func startDownloadBook() {
         // Todo: Start download and update progress here
+        delegate?.cell(self)
         // Update image of button after download
     }
 

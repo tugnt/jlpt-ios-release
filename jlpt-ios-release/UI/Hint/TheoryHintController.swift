@@ -49,23 +49,25 @@ class TheoryHintController: UIViewController {
 
     @objc private func moveQuestionScreen() {
         var normalQuestions: [NormalQuestionViewModel] = []
-        for item in questions {
-            normalQuestions.append(NormalQuestionViewModel(question: item.question,
-                                                          answerA: item.answerA,
-                                                          answerB: item.answerB,
-                                                          answerC: item.answerC,
-                                                          answerD: item.answerD,
-                                                          solution: item.solution,
-                                                          linkAudio: item.audioUrl))
-        }
-        if type == .listening {
-            let vc = StoryboardScene.ListeningQuestion.listeningQuestionController.instantiate()
-            vc.questions = questions
-            navigationController?.pushViewController(vc, animated: true)
-        } else {
-            let vc = StoryboardScene.NomalQuestion.nomalQuestionController.instantiate()
-            vc.questions = normalQuestions
-            navigationController?.pushViewController(vc, animated: true)
-        }
+        normalQuestions = questions.map { NormalQuestionViewModel(question: $0.question,
+                                                                  answerA: $0.answerA,
+                                                                  answerB: $0.answerB,
+                                                                  answerC: $0.answerC,
+                                                                  answerD: $0.answerD,
+                                                                  solution: $0.solution,
+                                                                  linkAudio: $0.audioUrl) }
+        type == .listening ? moveListeningQuestionScreen() : moveNormalQuestionScreen(normalQuestions: normalQuestions)
+    }
+
+    private func moveListeningQuestionScreen() {
+        let vc = StoryboardScene.ListeningQuestion.listeningQuestionController.instantiate()
+        vc.questions = questions
+        navigationController?.pushViewController(vc, animated: true)
+    }
+
+    private func moveNormalQuestionScreen(normalQuestions: [NormalQuestionViewModel]) {
+        let vc = StoryboardScene.NomalQuestion.nomalQuestionController.instantiate()
+        vc.questions = normalQuestions
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

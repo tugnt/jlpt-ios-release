@@ -63,17 +63,18 @@ class ListeningQuestionController: UIViewController, AVAudioPlayerDelegate {
 
     @objc private func moveNextQuestion() {
         userAnswer.append(curentUserAnswer)
-        questionNumber = questionNumber < questions.count - 1 ? questionNumber + 1 : questionNumber
-        updateQuestion(questionIndex: questionNumber)
         if questionNumber == questions.count - 1 {
-            checkAnswerButton.setTitle("Kiểm tra đáp án", for: .normal)
-            // Todo : Show đáp án here
             checkAnswer()
+        } else {
+            questionNumber = questionNumber < questions.count ? questionNumber + 1 : questionNumber
+            updateQuestion(questionIndex: questionNumber)
+            resetAllRadioButton()
         }
     }
 
     private func updateQuestion(questionIndex: Int) {
         let question = questions[questionNumber]
+        questionNumber == questions.count - 1 ? checkAnswerButton.setTitle("Kiểm tra đáp án", for: .normal) : ()
         questionLb.text = "Câu \(questionIndex + 1): \(question.question)"
         guard let imageUrl = question.imageUrl else { return }
         Alamofire.request(imageUrl).responseImage { response in
@@ -85,6 +86,13 @@ class ListeningQuestionController: UIViewController, AVAudioPlayerDelegate {
         answerBLb.text = question.answerB
         answerCLb.text = question.answerC
         answerDLb.text = question.answerD
+        checkAnswerButton.isEnabled = false
+    }
+
+    private func resetAllRadioButton() {
+        for radioButton in arrayRadioButton {
+            radioButton.isClicked = false
+        }
     }
 
     @objc private func playAudio() {
@@ -116,7 +124,6 @@ class ListeningQuestionController: UIViewController, AVAudioPlayerDelegate {
 
     private var timer: Timer!
     private func startCountdown() {
-        // Time is total time of audio file
         timer?.invalidate()
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimeCoundownUI), userInfo: nil, repeats: true)
     }
@@ -128,7 +135,6 @@ class ListeningQuestionController: UIViewController, AVAudioPlayerDelegate {
         let miniute = Int(curentTime / 60)
         let second = Int(curentTime.truncatingRemainder(dividingBy: 60))
         timeCountdownLabel.text = "\(miniute):\(second)/\(originMiniute):\(originSecond)"
-        // Update progress bar
         audioProgressBar.progress = Float(curentTime / audioPlayer.duration)
     }
 
@@ -138,14 +144,41 @@ class ListeningQuestionController: UIViewController, AVAudioPlayerDelegate {
         audioProgressBar.progress = 1.0
         playAudioButton.setImage(UIImage.fontAwesomeIcon(name: .play, textColor: .black, size: CGSize(width: 30, height: 30)), for: .normal)
     }
-    
+
     private func checkAnswer() {
         var result = 0
-//        for (index, _) in questions {
-//            result += userAnswer[index] == Int(questions[index].solution) ? 1 : 0
-//        }
-        print(result)
-        let tdAlertView = TDModalStatusView(frame: view.bounds)
-        view.addSubview(tdAlertView)
+        print(questions.count)
+        print(userAnswer.count)
+        for index in questions.indices {
+            result += userAnswer[index] == Int(questions[index].solution) ? 1 : 0
+        }
+        let tdConfirmDialog = TDConfirmDialog(frame: view.bounds)
+        tdConfirmDialog.set(title: "Kết quả")
+        tdConfirmDialog.set(message: "Bạn đã trả lời đúng \(result) / \(questions.count) câu.")
+        tdConfirmDialog.cancelButtonTitle = "Trở về"
+        tdConfirmDialog.confirmButtonTitle = "Xem đáp án"
+        tdConfirmDialog.cancelDidSelected = {
+            self.navigationController?.popViewController(animated: true)
+        }
+        tdConfirmDialog.confirmDidSelected = {
+            self.moveShowSolutionScreen()
+        }
+        view.addSubview(tdConfirmDialog)
+    }
+
+    private func moveShowSolutionScreen() {
+        let vc = StoryboardScene.NomalQuestion.nomalQuestionController.instantiate()
+        vc.questions = convertHintQuestionToNormalQuestion()
+        vc.isShowSolution = true
+        vc.isHasDoneButton = false
+        navigationController?.pushViewController(vc, animated: true)
+    }
+
+    private func convertHintQuestionToNormalQuestion() -> [NormalQuestionViewModel] {
+        var normalQuestions: [NormalQuestionViewModel] = []
+        normalQuestions = questions.map { NormalQuestionViewModel(question: $0.question, answerA: $0.answerA, answerB: $0.answerB,
+                                                                  answerC: $0.answerC, answerD: $0.answerD, solution: $0.solution,
+                                                                  linkAudio: $0.audioUrl) }
+        return normalQuestions
     }
 }

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		015EE0821FC6BED4EE298993 /* Pods_jlpt_ios_release.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8801B0FB1C671067D045E0C /* Pods_jlpt_ios_release.framework */; };
+		1A079BA4200B43F30064C186 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A079BA3200B43F30064C186 /* Document.swift */; };
+		1A079BA6200BA59F0064C186 /* ShowDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A079BA5200BA59F0064C186 /* ShowDocumentViewController.swift */; };
+		1A079BA9200BA5BB0064C186 /* ShowDocumentViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A079BA7200BA5BB0064C186 /* ShowDocumentViewController.storyboard */; };
 		1A136C3E1F6D3E7D00DF343E /* UIView+Contraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A136C3D1F6D3E7D00DF343E /* UIView+Contraints.swift */; };
 		1A1C969F1F9CA9D000A19C7B /* SCSiriWaveformView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C969E1F9CA9D000A19C7B /* SCSiriWaveformView.m */; };
 		1A20D5651FB68F2600B6002D /* TDIndicator.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A20D5641FB68F2600B6002D /* TDIndicator.xib */; };
@@ -29,6 +32,7 @@
 		1A3684A41F7D2DFC001FEF88 /* StartApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A3684A31F7D2DFC001FEF88 /* StartApp.storyboard */; };
 		1A3684A61F7D3B3B001FEF88 /* Introduction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A3684A51F7D3B3B001FEF88 /* Introduction.storyboard */; };
 		1A3684AA1F8005BC001FEF88 /* ChildIntroduction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A3684A91F8005BC001FEF88 /* ChildIntroduction.storyboard */; };
+		1A37ED0B20124F9F007361D1 /* DownloadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A37ED0A20124F9F007361D1 /* DownloadHelper.swift */; };
 		1A3E516C1F8B1C9B0025F4E2 /* TDRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3E516B1F8B1C9B0025F4E2 /* TDRadioButton.swift */; };
 		1A3E51701F8B44550025F4E2 /* NomalQuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3E516F1F8B44550025F4E2 /* NomalQuestionCell.swift */; };
 		1A44314D1FB32DB200574954 /* NormalQuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A44314C1FB32DB200574954 /* NormalQuestionViewModel.swift */; };
@@ -184,6 +188,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A079BA3200B43F30064C186 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		1A079BA5200BA59F0064C186 /* ShowDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDocumentViewController.swift; sourceTree = "<group>"; };
+		1A079BA8200BA5BB0064C186 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ShowDocumentViewController.storyboard; sourceTree = "<group>"; };
 		1A136C3D1F6D3E7D00DF343E /* UIView+Contraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Contraints.swift"; sourceTree = "<group>"; };
 		1A1C96981F9C965D00A19C7B /* jlpt-ios-release-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "jlpt-ios-release-Bridging-Header.h"; sourceTree = "<group>"; };
 		1A1C969D1F9CA9D000A19C7B /* SCSiriWaveformView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSiriWaveformView.h; sourceTree = "<group>"; };
@@ -214,6 +221,7 @@
 		1A3684A31F7D2DFC001FEF88 /* StartApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartApp.storyboard; sourceTree = "<group>"; };
 		1A3684A51F7D3B3B001FEF88 /* Introduction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Introduction.storyboard; sourceTree = "<group>"; };
 		1A3684A91F8005BC001FEF88 /* ChildIntroduction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChildIntroduction.storyboard; sourceTree = "<group>"; };
+		1A37ED0A20124F9F007361D1 /* DownloadHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadHelper.swift; sourceTree = "<group>"; };
 		1A3E516B1F8B1C9B0025F4E2 /* TDRadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDRadioButton.swift; sourceTree = "<group>"; };
 		1A3E516F1F8B44550025F4E2 /* NomalQuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NomalQuestionCell.swift; sourceTree = "<group>"; };
 		1A44314C1FB32DB200574954 /* NormalQuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalQuestionViewModel.swift; sourceTree = "<group>"; };
@@ -534,6 +542,7 @@
 				DF4C22F11F74CA7E00B2CCC5 /* Result.swift */,
 				1AB04DB51F7630F600E5AC27 /* Hint.swift */,
 				1AB04DBA1F76384500E5AC27 /* Unit.swift */,
+				1A079BA3200B43F30064C186 /* Document.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -572,6 +581,7 @@
 				1A3684A31F7D2DFC001FEF88 /* StartApp.storyboard */,
 				1A46AC4C1F89B703001FF467 /* TheoryHint.storyboard */,
 				1ABECC8F1F9C313B005056A5 /* xib */,
+				1A079BA7200BA5BB0064C186 /* ShowDocumentViewController.storyboard */,
 			);
 			path = Base.lproj;
 			sourceTree = "<group>";
@@ -643,6 +653,7 @@
 				1ABECC901F9C4758005056A5 /* ListDocumentOfTypeController.swift */,
 				1A4E45F31FC1756B004FE155 /* GroupChatViewController.swift */,
 				1AF3492B1FE55CDA008924CB /* HidenKeyboardViewController.swift */,
+				1A079BA5200BA59F0064C186 /* ShowDocumentViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -751,6 +762,7 @@
 			children = (
 				1ABECC711F928DF8005056A5 /* Account.swift */,
 				1AF6E59C1FC09357005A2B16 /* Validation.swift */,
+				1A37ED0A20124F9F007361D1 /* DownloadHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -922,6 +934,7 @@
 			files = (
 				1A2667321FB6AFC400C9CFFB /* loader_ring.json in Resources */,
 				1A46AC5E1F8A5FBD001FF467 /* ListeningQuestion.storyboard in Resources */,
+				1A079BA9200BA5BB0064C186 /* ShowDocumentViewController.storyboard in Resources */,
 				1A4431571FB4B22300574954 /* TDConfirmDialog.xib in Resources */,
 				1A9133A71F924120007A6CF2 /* Documents.storyboard in Resources */,
 				1AF6E5921FC07FBF005A2B16 /* GoogleService-Info.plist in Resources */,
@@ -1242,6 +1255,7 @@
 				1A44314D1FB32DB200574954 /* NormalQuestionViewModel.swift in Sources */,
 				1A3E516C1F8B1C9B0025F4E2 /* TDRadioButton.swift in Sources */,
 				1AEA8B2C1F6D4986005A7FC0 /* CategoryViewCell.swift in Sources */,
+				1A079BA4200B43F30064C186 /* Document.swift in Sources */,
 				1AEA8FD41FA254A6009E67D1 /* DashedCircleView.swift in Sources */,
 				1A4E45F41FC1756B004FE155 /* GroupChatViewController.swift in Sources */,
 				1AEA8B2E1F6D49DD005A7FC0 /* LessonViewCell.swift in Sources */,
@@ -1252,6 +1266,7 @@
 				1A565F0B1FA574C500AAC7C8 /* EmptyStateView.swift in Sources */,
 				1A2D07041F9E24CB00CB3864 /* LoginViewController.swift in Sources */,
 				1AF3492C1FE55CDA008924CB /* HidenKeyboardViewController.swift in Sources */,
+				1A37ED0B20124F9F007361D1 /* DownloadHelper.swift in Sources */,
 				1AB79E2F1F769F1200C2F8AE /* IntroductionController.swift in Sources */,
 				1A4431531FB4B20700574954 /* TDConfirmDialog.swift in Sources */,
 				1A565F0D1FA5779900AAC7C8 /* UIViewController+NavTitle.swift in Sources */,
@@ -1276,6 +1291,7 @@
 				1A9133A21F92168C007A6CF2 /* NotificationController.swift in Sources */,
 				1A9133911F92006D007A6CF2 /* FeedbackController.swift in Sources */,
 				1A2B25CF1F512DFB00DFFD3A /* AppDelegate.swift in Sources */,
+				1A079BA6200BA59F0064C186 /* ShowDocumentViewController.swift in Sources */,
 				1A9133931F920096007A6CF2 /* PrivacyPolicyController.swift in Sources */,
 				1A65207D1F87EF7100E21905 /* HintQuestionModel.swift in Sources */,
 				1ABECC911F9C4758005056A5 /* ListDocumentOfTypeController.swift in Sources */,
@@ -1322,6 +1338,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		1A079BA7200BA5BB0064C186 /* ShowDocumentViewController.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1A079BA8200BA5BB0064C186 /* Base */,
+			);
+			name = ShowDocumentViewController.storyboard;
+			sourceTree = "<group>";
+		};
 		1A2D07051F9E27BA00CB3864 /* Login.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

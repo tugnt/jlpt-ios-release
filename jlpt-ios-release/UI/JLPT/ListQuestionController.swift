@@ -17,6 +17,7 @@ class ListQuestionController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Danh sách đề thi"
+        setUpNavBar()
         collectionView.delegate = self
         collectionView.dataSource = self
         setUpCollectionLayout()
@@ -71,5 +72,15 @@ extension ListQuestionController: UICollectionViewDelegate, UICollectionViewData
         cell.unit = units[indexPath.row]
         cell.levelJLPT = level
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let unit = units[indexPath.row]
+        let vc = StoryboardScene.NomalQuestion.nomalQuestionController.instantiate()
+        vc.type = type
+        vc.level = level
+        vc.unit = unit
+        vc.needLoadRequest = true
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -11,7 +11,13 @@ import UIKit
 extension UIViewController {
     func addEmptyStateView() {
         let emptyStateView = EmptyStateView()
+        emptyStateView.tag = 47
         view.addSubview(emptyStateView)
         emptyStateView.frame = view.frame
+    }
+
+    func removeEmptyStateView() {
+        guard let emptyView = view.viewWithTag(47) as? EmptyStateView else { return }
+        emptyView.removeFromSuperview()
     }
 }

@@ -9,12 +9,18 @@
 import UIKit
 
 class NomalQuestionController: UIViewController {
-    var questions: [NormalQuestionViewModel] = []
+    var questions: [NormalQuestionViewModel] = [] {
+        didSet {
+            for _ in questions { solutionOfUser.append(5) }
+        }
+    }
     @IBOutlet weak var tableView: UITableView!
     let cellId = "cellQuestion"
     var isShowSolution: Bool = false
     var solutionOfUser: [Int] = []
     var point: Int = 0
+    var doneButton: UIBarButtonItem!
+    var isHasDoneButton: Bool = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +30,8 @@ class NomalQuestionController: UIViewController {
         tableView.dataSource = self
         tableView.separatorColor = .clear
         tableView.allowsSelection = false
-        // - Init array solution
         for _ in questions { solutionOfUser.append(5) }
+        // - Init array solution
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -33,14 +39,53 @@ class NomalQuestionController: UIViewController {
         if questions.count == 0 {
             tableView.isHidden = true
             addEmptyStateView()
-        } else {
-            addRightBarButton()
+        }
+        isHasDoneButton ? addBarDoneButton() : ()
+        neededLoadRequest()
+    }
+
+    var needLoadRequest: Bool = false
+    var level: LevelJLPT!
+    var unit: String!
+    var type: TypeJLPT!
+    private func neededLoadRequest() {
+        if needLoadRequest {
+            startAnimationLoading()
+            let request = QuestionRequest(type: type, level: level, unit: unit)
+            ApiClient.instance.request(request: request, completion: { (response) in
+                print(response)
+                switch response {
+                case .success(let value):
+                    let normalQuestion = self.convertViewModelObject(questions: value)
+                    self.questions = normalQuestion.reversed()
+                    self.stopAnimationLoading()
+                    if self.questions.count != 0 {
+                        self.tableView.isHidden = false
+                        self.removeEmptyStateView()
+                    }
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                case .failure:
+                    break
+                }
+            })
         }
     }
 
-    private func addRightBarButton() {
-        let rightBarButton = UIBarButtonItem(title: "Hoàn thành", style: .done, target: self, action: #selector(checkAnswer))
-        navigationItem.rightBarButtonItem = rightBarButton
+    private func convertViewModelObject(questions: JLPTQuestionResponse) -> [NormalQuestionViewModel] {
+        var normalQuestions: [NormalQuestionViewModel] = []
+        for item in questions.jlptQuestion {
+            let question = NormalQuestionViewModel(question: item.question, answerA: item.answerA, answerB: item.answerB, answerC: item.answerC,
+                                                   answerD: item.answerD, solution: item.solution, linkAudio: item.linkAudio as? String)
+            normalQuestions.append(question)
+        }
+        return normalQuestions
+    }
+
+    private func addBarDoneButton() {
+        doneButton = UIBarButtonItem(title: "Hoàn thành", style: .done, target: self, action: #selector(checkAnswer))
+        navigationItem.rightBarButtonItem = doneButton
     }
 
     @objc private func checkAnswer() {
@@ -79,6 +124,7 @@ extension NomalQuestionController: UITableViewDelegate, UITableViewDataSource, N
         cell.delegate = self
         cell.isShowSolution = isShowSolution
         cell.normalQuestion = questions[indexPath.row]
+        cell.showAnswerOfUser(ofUser: solutionOfUser[indexPath.row])
         return cell
     }
 

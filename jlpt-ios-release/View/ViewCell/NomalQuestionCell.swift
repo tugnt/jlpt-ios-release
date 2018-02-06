@@ -55,16 +55,22 @@ class NomalQuestionCell: UITableViewCell {
 
     @IBAction func radioClicked(_ sender: TDRadioButton) {
         for (index, button) in self.arrayRadioButton.enumerated() {
-            if button == sender {
-                button.isClicked = true
-                delegate?.radioClicked(index, didSelected: self)
-            } else {
-                button.isClicked = false
-            }
+            button.isClicked = button == sender
+            button == sender ? delegate?.radioClicked(index, didSelected: self) : ()
         }
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+
+    func showAnswerOfUser(ofUser answer: Int) {
+        if answer < 4 {
+            arrayRadioButton[answer].isClicked = true
+        } else {
+            for radioButton in arrayRadioButton {
+                radioButton.isClicked = false
+            }
+        }
     }
 }

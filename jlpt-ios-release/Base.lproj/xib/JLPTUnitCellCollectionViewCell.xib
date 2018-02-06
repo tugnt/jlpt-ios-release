@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,28 +24,56 @@
                 <rect key="frame" x="0.0" y="0.0" width="96" height="100"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SVC-QD-vKD">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SVC-QD-vKD" customClass="CardView" customModule="jlpt_ios_release" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="96" height="100"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle_n1" translatesAutoresizingMaskIntoConstraints="NO" id="5jS-xP-sgU">
-                                <rect key="frame" x="5" y="5" width="86" height="90"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4o-c8-DeH">
-                                <rect key="frame" x="43" y="40" width="9.5" height="20"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UKe-0I-8qb" customClass="CardView" customModule="jlpt_ios_release" customModuleProvider="target">
+                                <rect key="frame" x="2" y="2" width="92" height="96"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4o-c8-DeH">
+                                        <rect key="frame" x="10" y="39" width="72" height="18"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="w4o-c8-DeH" firstAttribute="leading" secondItem="UKe-0I-8qb" secondAttribute="leading" constant="10" id="dL7-7z-dl6"/>
+                                    <constraint firstAttribute="trailing" secondItem="w4o-c8-DeH" secondAttribute="trailing" constant="10" id="qxe-DI-kvH"/>
+                                    <constraint firstItem="w4o-c8-DeH" firstAttribute="centerY" secondItem="UKe-0I-8qb" secondAttribute="centerY" id="tnx-3p-5vG"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="w4o-c8-DeH" firstAttribute="centerX" secondItem="SVC-QD-vKD" secondAttribute="centerX" id="6Fe-0O-bVx"/>
-                            <constraint firstItem="5jS-xP-sgU" firstAttribute="top" secondItem="SVC-QD-vKD" secondAttribute="top" constant="5" id="A1h-Bc-erW"/>
-                            <constraint firstAttribute="trailing" secondItem="5jS-xP-sgU" secondAttribute="trailing" constant="5" id="BbI-2y-snK"/>
-                            <constraint firstAttribute="bottom" secondItem="5jS-xP-sgU" secondAttribute="bottom" constant="5" id="J8R-bF-n6Y"/>
-                            <constraint firstItem="5jS-xP-sgU" firstAttribute="leading" secondItem="SVC-QD-vKD" secondAttribute="leading" constant="5" id="jnW-zz-A4f"/>
-                            <constraint firstItem="w4o-c8-DeH" firstAttribute="centerY" secondItem="SVC-QD-vKD" secondAttribute="centerY" id="ra9-oF-QCJ"/>
+                            <constraint firstItem="UKe-0I-8qb" firstAttribute="leading" secondItem="SVC-QD-vKD" secondAttribute="leading" constant="2" id="FX6-Nk-wWG"/>
+                            <constraint firstItem="UKe-0I-8qb" firstAttribute="top" secondItem="SVC-QD-vKD" secondAttribute="top" constant="2" id="Kve-Zd-hyH"/>
+                            <constraint firstAttribute="bottom" secondItem="UKe-0I-8qb" secondAttribute="bottom" constant="2" id="uBc-oF-MnZ"/>
+                            <constraint firstAttribute="trailing" secondItem="UKe-0I-8qb" secondAttribute="trailing" constant="2" id="xHE-hm-Cl0"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOffSetWidth">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOffSetHeight">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
             </view>
@@ -58,13 +86,9 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="96" height="100"/>
             <connections>
-                <outlet property="circleImage" destination="5jS-xP-sgU" id="kSU-4M-zSO"/>
                 <outlet property="unitLabel" destination="w4o-c8-DeH" id="CJn-g8-WA6"/>
             </connections>
             <point key="canvasLocation" x="57" y="145"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="circle_n1" width="200" height="200"/>
-    </resources>
 </document>

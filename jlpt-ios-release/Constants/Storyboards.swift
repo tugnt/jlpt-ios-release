@@ -149,6 +149,11 @@ enum StoryboardScene {
 
     static let registerViewController = SceneType<jlpt_ios_release.RegisterViewController>(storyboard: Register.self, identifier: "RegisterViewController")
   }
+  enum ShowDocumentViewController: StoryboardType {
+    static let storyboardName = "ShowDocumentViewController"
+
+    static let showDocumentViewController = SceneType<jlpt_ios_release.ShowDocumentViewController>(storyboard: ShowDocumentViewController.self, identifier: "ShowDocumentViewController")
+  }
   enum StartApp: StoryboardType {
     static let storyboardName = "StartApp"
 
