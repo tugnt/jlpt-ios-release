@@ -39,7 +39,7 @@
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="galaxy_background" translatesAutoresizingMaskIntoConstraints="NO" id="AjZ-Xc-tqq">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="google" translatesAutoresizingMaskIntoConstraints="NO" id="AjZ-Xc-tqq">
                                                             <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="74" id="ywX-1B-2el"/>
@@ -120,6 +120,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="galaxy_background" width="375" height="667"/>
+        <image name="google" width="49" height="49"/>
     </resources>
 </document>

@@ -62,6 +62,11 @@ enum StoryboardScene {
 
     static let childIntroductionController = SceneType<jlpt_ios_release.ChildIntroductionController>(storyboard: ChildIntroduction.self, identifier: "ChildIntroductionController")
   }
+  enum DocumentDetailViewController: StoryboardType {
+    static let storyboardName = "DocumentDetailViewController"
+
+    static let documentDetailViewController = SceneType<jlpt_ios_release.DocumentDetailViewController>(storyboard: DocumentDetailViewController.self, identifier: "DocumentDetailViewController")
+  }
   enum Documents: StoryboardType {
     static let storyboardName = "Documents"
 

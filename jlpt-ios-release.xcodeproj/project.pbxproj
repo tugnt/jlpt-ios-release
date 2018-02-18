@@ -33,6 +33,8 @@
 		1A3684A61F7D3B3B001FEF88 /* Introduction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A3684A51F7D3B3B001FEF88 /* Introduction.storyboard */; };
 		1A3684AA1F8005BC001FEF88 /* ChildIntroduction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A3684A91F8005BC001FEF88 /* ChildIntroduction.storyboard */; };
 		1A37ED0B20124F9F007361D1 /* DownloadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A37ED0A20124F9F007361D1 /* DownloadHelper.swift */; };
+		1A37ED2B202A0682007361D1 /* DocumentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A37ED2A202A0682007361D1 /* DocumentDetailViewController.swift */; };
+		1A37ED4C202F58B8007361D1 /* DocumentDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A37ED4A202F58B8007361D1 /* DocumentDetailViewController.storyboard */; };
 		1A3E516C1F8B1C9B0025F4E2 /* TDRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3E516B1F8B1C9B0025F4E2 /* TDRadioButton.swift */; };
 		1A3E51701F8B44550025F4E2 /* NomalQuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3E516F1F8B44550025F4E2 /* NomalQuestionCell.swift */; };
 		1A44314D1FB32DB200574954 /* NormalQuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A44314C1FB32DB200574954 /* NormalQuestionViewModel.swift */; };
@@ -222,6 +224,8 @@
 		1A3684A51F7D3B3B001FEF88 /* Introduction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Introduction.storyboard; sourceTree = "<group>"; };
 		1A3684A91F8005BC001FEF88 /* ChildIntroduction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChildIntroduction.storyboard; sourceTree = "<group>"; };
 		1A37ED0A20124F9F007361D1 /* DownloadHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadHelper.swift; sourceTree = "<group>"; };
+		1A37ED2A202A0682007361D1 /* DocumentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentDetailViewController.swift; sourceTree = "<group>"; };
+		1A37ED4B202F58B8007361D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DocumentDetailViewController.storyboard; sourceTree = "<group>"; };
 		1A3E516B1F8B1C9B0025F4E2 /* TDRadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDRadioButton.swift; sourceTree = "<group>"; };
 		1A3E516F1F8B44550025F4E2 /* NomalQuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NomalQuestionCell.swift; sourceTree = "<group>"; };
 		1A44314C1FB32DB200574954 /* NormalQuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalQuestionViewModel.swift; sourceTree = "<group>"; };
@@ -582,6 +586,7 @@
 				1A46AC4C1F89B703001FF467 /* TheoryHint.storyboard */,
 				1ABECC8F1F9C313B005056A5 /* xib */,
 				1A079BA7200BA5BB0064C186 /* ShowDocumentViewController.storyboard */,
+				1A37ED4A202F58B8007361D1 /* DocumentDetailViewController.storyboard */,
 			);
 			path = Base.lproj;
 			sourceTree = "<group>";
@@ -678,6 +683,7 @@
 			isa = PBXGroup;
 			children = (
 				1AD738651F6D3CB400A4A1B9 /* TabbarController.swift */,
+				1A37ED2A202A0682007361D1 /* DocumentDetailViewController.swift */,
 			);
 			path = Tabbar;
 			sourceTree = "<group>";
@@ -933,6 +939,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A2667321FB6AFC400C9CFFB /* loader_ring.json in Resources */,
+				1A37ED4C202F58B8007361D1 /* DocumentDetailViewController.storyboard in Resources */,
 				1A46AC5E1F8A5FBD001FF467 /* ListeningQuestion.storyboard in Resources */,
 				1A079BA9200BA5BB0064C186 /* ShowDocumentViewController.storyboard in Resources */,
 				1A4431571FB4B22300574954 /* TDConfirmDialog.xib in Resources */,
@@ -1218,6 +1225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A37ED2B202A0682007361D1 /* DocumentDetailViewController.swift in Sources */,
 				1A73C6B61FBF2695008C70AC /* MessageImageViewCell.swift in Sources */,
 				1AD738681F6D3CC400A4A1B9 /* ProfileController.swift in Sources */,
 				1AB04DB61F7630F600E5AC27 /* Hint.swift in Sources */,
@@ -1360,6 +1368,14 @@
 				1A2D07091F9F706E00CB3864 /* Base */,
 			);
 			name = Register.storyboard;
+			sourceTree = "<group>";
+		};
+		1A37ED4A202F58B8007361D1 /* DocumentDetailViewController.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1A37ED4B202F58B8007361D1 /* Base */,
+			);
+			name = DocumentDetailViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		1A46AC4C1F89B703001FF467 /* TheoryHint.storyboard */ = {
