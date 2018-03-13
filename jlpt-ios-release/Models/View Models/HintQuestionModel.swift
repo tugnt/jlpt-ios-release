@@ -16,9 +16,9 @@ struct HintQuestionModel {
     let answerD: String
     let solution: String
     /// - If type of hint is listening. It will have link audio
-    var linkAudio: String?
+    var audioUrl: String?
+    var imageUrl: String?
 
-    /// - Initial code here
     init?(response: HintQuestion) {
         self.question = response.question
         self.answerA = response.answerA
@@ -26,6 +26,7 @@ struct HintQuestionModel {
         self.answerC = response.answerC
         self.answerD = response.answerD
         self.solution = response.solution
-        self.linkAudio = response.linkAudio
+        self.audioUrl = response.audioUrl
+        self.imageUrl = response.imageUrl
     }
 }

@@ -26,7 +26,6 @@ extension UIViewController {
     }
 // swiftlint:disable function_body_length
     func addEditView() {
-        // add parent edit view
         let editView = CardView()
         editView.backgroundColor = .white
         editView.layer.cornerRadius = CGFloat(5)
@@ -39,7 +38,6 @@ extension UIViewController {
             make.height.equalTo(220)
         })
 
-        /// - Addbackground of title
         let backgroundTitleLabel = UIView()
         editView.addSubview(backgroundTitleLabel)
         backgroundTitleLabel.backgroundColor = ColorName.logoutBtn.color
@@ -51,7 +49,6 @@ extension UIViewController {
             make.right.equalToSuperview().offset(0)
         })
 
-        /// Add title
         let titelLabel = UILabel()
         titelLabel.textColor = .black
         titelLabel.text = "Thay đổi thông tin"
@@ -60,7 +57,6 @@ extension UIViewController {
             make.center.equalToSuperview()
         })
 
-        /// - Add subtitle
         let subTitleLabel = UILabel()
         editView.addSubview(subTitleLabel)
         subTitleLabel.font = subTitleLabel.font.withSize(13)
@@ -72,7 +68,6 @@ extension UIViewController {
             make.right.equalToSuperview().offset(-20)
         })
 
-        /// Add textfield edit
         let textField = UITextField()
         textField.placeholder = "Thông tin cần điền"
         textField.borderStyle = .roundedRect
@@ -84,7 +79,6 @@ extension UIViewController {
             make.right.equalToSuperview().offset(-20)
         })
 
-        // Add cancel button
         let cancelBtn = UIButton()
         cancelBtn.setTitle("Huỷ bỏ", for: .normal)
         cancelBtn.setTitleColor(.red, for: .normal)
@@ -99,7 +93,6 @@ extension UIViewController {
             make.bottom.equalToSuperview().offset(-10)
         })
 
-        // Add change button
         let changeBtn = UIButton()
         changeBtn.setTitle("Thay đổi", for: .normal)
         changeBtn.addTarget(self, action: #selector(changeUserInfo), for: .touchUpInside)
@@ -115,7 +108,6 @@ extension UIViewController {
     }
 
     @objc func cancelEditInfo() {
-        // Remove all sub view
         removeTransparentView()
     }
 

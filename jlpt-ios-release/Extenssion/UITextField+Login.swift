@@ -15,3 +15,21 @@ extension UITextField {
         layer.cornerRadius = 3
     }
 }
+
+class LoginTextFeild: UITextField {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        settingLoginTextField()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        settingLoginTextField()
+    }
+
+    private func settingLoginTextField() {
+        layer.borderColor = ColorName.borderTextFieldColor.color.cgColor
+        layer.borderWidth = 1
+        layer.cornerRadius = 3
+    }
+}

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,40 +25,50 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n6s-eX-zLc">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="5" width="375" height="250"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" id="8rr-la-67S"/>
+                                                    <constraint firstAttribute="height" constant="250" id="8rr-la-67S"/>
                                                 </constraints>
                                             </imageView>
-                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eDn-qX-T9K">
-                                                <rect key="frame" x="70" y="208" width="275" height="2"/>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eDn-qX-T9K">
+                                                <rect key="frame" x="70" y="435" width="225" height="2"/>
                                             </progressView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:0/0:0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3sB-IJ-pTn">
+                                                <rect key="frame" x="303" y="428" width="42" height="15"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="15" id="3VL-WB-quB"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="4tR-eS-ddA"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brU-79-26r">
-                                                <rect key="frame" x="10" y="58" width="355" height="17"/>
+                                                <rect key="frame" x="10" y="285" width="355" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOn-0B-wEA">
-                                                <rect key="frame" x="40" y="85" width="325" height="17"/>
+                                                <rect key="frame" x="50" y="312" width="315" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POd-NX-mXF">
-                                                <rect key="frame" x="40" y="112" width="325" height="17"/>
+                                                <rect key="frame" x="50" y="339" width="315" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdU-xs-NLj">
-                                                <rect key="frame" x="40" y="139" width="325" height="17"/>
+                                                <rect key="frame" x="50" y="366" width="315" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30K-Qu-p91" customClass="TDRadioButton" customModule="jlpt_ios_release" customModuleProvider="target">
-                                                <rect key="frame" x="10" y="85" width="20" height="20"/>
+                                                <rect key="frame" x="20" y="312" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="20" id="TqN-NX-c7y"/>
                                                     <constraint firstAttribute="height" constant="20" id="n8Z-bt-UIH"/>
@@ -66,36 +76,48 @@
                                                 <state key="normal">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="radioButtonClicked:" destination="36a-jw-yHY" eventType="touchUpInside" id="epR-Wj-XjH"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJb-DX-9np" customClass="TDRadioButton" customModule="jlpt_ios_release" customModuleProvider="target">
-                                                <rect key="frame" x="10" y="112" width="20" height="20"/>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJb-DX-9np" customClass="TDRadioButton" customModule="jlpt_ios_release" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="339" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="CbO-yt-TBL"/>
                                                     <constraint firstAttribute="width" constant="20" id="UnW-w3-tz4"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="radioButtonClicked:" destination="36a-jw-yHY" eventType="touchUpInside" id="gIb-ZG-vs9"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="thR-ZK-zSg" customClass="TDRadioButton" customModule="jlpt_ios_release" customModuleProvider="target">
-                                                <rect key="frame" x="10" y="139" width="20" height="20"/>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="thR-ZK-zSg" customClass="TDRadioButton" customModule="jlpt_ios_release" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="366" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="NSn-5w-2WK"/>
                                                     <constraint firstAttribute="width" constant="20" id="x8N-1e-iZp"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="radioButtonClicked:" destination="36a-jw-yHY" eventType="touchUpInside" id="twy-UV-it2"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H2w-yR-k7e" customClass="TDRadioButton" customModule="jlpt_ios_release" customModuleProvider="target">
-                                                <rect key="frame" x="10" y="166" width="20" height="20"/>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H2w-yR-k7e" customClass="TDRadioButton" customModule="jlpt_ios_release" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="393" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="20" id="Fe3-ab-89B"/>
                                                     <constraint firstAttribute="height" constant="20" id="bfR-XZ-5yc"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="radioButtonClicked:" destination="36a-jw-yHY" eventType="touchUpInside" id="rqf-Go-9Em"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzf-5E-bdC">
-                                                <rect key="frame" x="40" y="166" width="325" height="17"/>
+                                                <rect key="frame" x="50" y="393" width="315" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4z5-do-IxO">
-                                                <rect key="frame" x="20" y="194" width="30" height="30"/>
+                                                <rect key="frame" x="20" y="421" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="9Ng-b9-9SB"/>
                                                     <constraint firstAttribute="width" constant="30" id="tXU-V0-wxP"/>
@@ -111,26 +133,27 @@
                                             <constraint firstItem="bOn-0B-wEA" firstAttribute="top" secondItem="brU-79-26r" secondAttribute="bottom" constant="10" id="1jo-Iw-5In"/>
                                             <constraint firstItem="4z5-do-IxO" firstAttribute="top" secondItem="H2w-yR-k7e" secondAttribute="bottom" constant="8" id="5Og-Rl-CUf"/>
                                             <constraint firstAttribute="trailing" secondItem="bOn-0B-wEA" secondAttribute="trailing" constant="10" id="60p-19-dzG"/>
+                                            <constraint firstAttribute="trailing" secondItem="3sB-IJ-pTn" secondAttribute="trailing" constant="30" id="7wg-0m-ORA"/>
                                             <constraint firstItem="n6s-eX-zLc" firstAttribute="leading" secondItem="i2c-Hg-Oow" secondAttribute="leading" id="9Wy-rT-k1Z"/>
-                                            <constraint firstItem="thR-ZK-zSg" firstAttribute="leading" secondItem="i2c-Hg-Oow" secondAttribute="leading" constant="10" id="A8q-J2-0bt"/>
+                                            <constraint firstItem="thR-ZK-zSg" firstAttribute="leading" secondItem="i2c-Hg-Oow" secondAttribute="leading" constant="20" id="A8q-J2-0bt"/>
                                             <constraint firstItem="bOn-0B-wEA" firstAttribute="leading" secondItem="30K-Qu-p91" secondAttribute="trailing" constant="10" id="EFi-Jb-asC"/>
-                                            <constraint firstItem="NJb-DX-9np" firstAttribute="leading" secondItem="i2c-Hg-Oow" secondAttribute="leading" constant="10" id="Fvu-TS-M3r"/>
-                                            <constraint firstItem="n6s-eX-zLc" firstAttribute="top" secondItem="i2c-Hg-Oow" secondAttribute="top" constant="28" id="HA0-JI-uCh"/>
+                                            <constraint firstItem="NJb-DX-9np" firstAttribute="leading" secondItem="i2c-Hg-Oow" secondAttribute="leading" constant="20" id="Fvu-TS-M3r"/>
+                                            <constraint firstItem="n6s-eX-zLc" firstAttribute="top" secondItem="i2c-Hg-Oow" secondAttribute="top" constant="5" id="HA0-JI-uCh"/>
                                             <constraint firstAttribute="trailing" secondItem="bzf-5E-bdC" secondAttribute="trailing" constant="10" id="Hrr-OK-mht"/>
                                             <constraint firstItem="4z5-do-IxO" firstAttribute="leading" secondItem="i2c-Hg-Oow" secondAttribute="leading" constant="20" id="KgG-lG-7HU"/>
                                             <constraint firstItem="eDn-qX-T9K" firstAttribute="centerY" secondItem="4z5-do-IxO" secondAttribute="centerY" id="LWN-QL-FMW"/>
                                             <constraint firstItem="bzf-5E-bdC" firstAttribute="top" secondItem="wdU-xs-NLj" secondAttribute="bottom" constant="10" id="Qad-GN-HDQ"/>
                                             <constraint firstItem="wdU-xs-NLj" firstAttribute="top" secondItem="POd-NX-mXF" secondAttribute="bottom" constant="10" id="SoB-Fr-vyD"/>
                                             <constraint firstItem="POd-NX-mXF" firstAttribute="leading" secondItem="NJb-DX-9np" secondAttribute="trailing" constant="10" id="SrP-VG-hzU"/>
-                                            <constraint firstItem="H2w-yR-k7e" firstAttribute="leading" secondItem="i2c-Hg-Oow" secondAttribute="leading" constant="10" id="Wmf-W0-nQw"/>
-                                            <constraint firstAttribute="trailing" secondItem="eDn-qX-T9K" secondAttribute="trailing" constant="30" id="ZW0-ay-WaS"/>
+                                            <constraint firstItem="H2w-yR-k7e" firstAttribute="leading" secondItem="i2c-Hg-Oow" secondAttribute="leading" constant="20" id="Wmf-W0-nQw"/>
                                             <constraint firstItem="POd-NX-mXF" firstAttribute="top" secondItem="bOn-0B-wEA" secondAttribute="bottom" constant="10" id="arw-nf-YyZ"/>
                                             <constraint firstItem="30K-Qu-p91" firstAttribute="top" secondItem="bOn-0B-wEA" secondAttribute="top" id="bOa-59-5Nu"/>
                                             <constraint firstAttribute="trailing" secondItem="n6s-eX-zLc" secondAttribute="trailing" id="cNU-Tj-4nL"/>
                                             <constraint firstAttribute="trailing" secondItem="POd-NX-mXF" secondAttribute="trailing" constant="10" id="cpy-2v-zym"/>
+                                            <constraint firstAttribute="trailing" secondItem="eDn-qX-T9K" secondAttribute="trailing" constant="80" id="cz6-5P-53X"/>
                                             <constraint firstItem="brU-79-26r" firstAttribute="leading" secondItem="i2c-Hg-Oow" secondAttribute="leading" constant="10" id="dR2-QN-MDy"/>
                                             <constraint firstItem="brU-79-26r" firstAttribute="centerX" secondItem="i2c-Hg-Oow" secondAttribute="centerX" id="jDw-WO-8DZ"/>
-                                            <constraint firstItem="30K-Qu-p91" firstAttribute="leading" secondItem="i2c-Hg-Oow" secondAttribute="leading" constant="10" id="jfE-sg-nVh"/>
+                                            <constraint firstItem="30K-Qu-p91" firstAttribute="leading" secondItem="i2c-Hg-Oow" secondAttribute="leading" constant="20" id="jfE-sg-nVh"/>
                                             <constraint firstItem="H2w-yR-k7e" firstAttribute="top" secondItem="bzf-5E-bdC" secondAttribute="top" id="m6K-Nm-4i1"/>
                                             <constraint firstItem="eDn-qX-T9K" firstAttribute="leading" secondItem="4z5-do-IxO" secondAttribute="leading" constant="50" id="oeX-Vf-BSq"/>
                                             <constraint firstItem="n6s-eX-zLc" firstAttribute="centerX" secondItem="brU-79-26r" secondAttribute="centerX" id="oug-Ii-Y7d"/>
@@ -138,6 +161,7 @@
                                             <constraint firstItem="brU-79-26r" firstAttribute="top" secondItem="n6s-eX-zLc" secondAttribute="bottom" constant="30" id="tnL-ne-8kI"/>
                                             <constraint firstItem="wdU-xs-NLj" firstAttribute="leading" secondItem="thR-ZK-zSg" secondAttribute="trailing" constant="10" id="ueT-ll-jE1"/>
                                             <constraint firstItem="bzf-5E-bdC" firstAttribute="leading" secondItem="H2w-yR-k7e" secondAttribute="trailing" constant="10" id="wPv-tb-Vqt"/>
+                                            <constraint firstItem="3sB-IJ-pTn" firstAttribute="centerY" secondItem="eDn-qX-T9K" secondAttribute="centerY" id="yfm-7z-bpm"/>
                                             <constraint firstAttribute="trailing" secondItem="wdU-xs-NLj" secondAttribute="trailing" constant="10" id="z5t-pk-AuJ"/>
                                         </constraints>
                                     </view>
@@ -152,10 +176,10 @@
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o98-RR-Pvq">
-                                <rect key="frame" x="20" y="611" width="335" height="46"/>
+                                <rect key="frame" x="30" y="617" width="315" height="40"/>
                                 <color key="backgroundColor" red="0.15686274509803921" green="0.58431372549019611" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="Fww-lm-2m4"/>
+                                    <constraint firstAttribute="height" constant="40" id="Fww-lm-2m4"/>
                                 </constraints>
                                 <state key="normal" title="Tiếp theo">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -165,7 +189,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="o98-RR-Pvq" firstAttribute="centerX" secondItem="8jN-91-bmy" secondAttribute="centerX" id="Nbj-77-87w"/>
-                            <constraint firstItem="o98-RR-Pvq" firstAttribute="leading" secondItem="8jN-91-bmy" secondAttribute="leading" constant="20" id="QjC-MG-Owa"/>
+                            <constraint firstItem="o98-RR-Pvq" firstAttribute="leading" secondItem="8jN-91-bmy" secondAttribute="leading" constant="30" id="QjC-MG-Owa"/>
                             <constraint firstAttribute="trailing" secondItem="v4n-yJ-epJ" secondAttribute="trailing" id="esy-pB-dBI"/>
                             <constraint firstItem="8jN-91-bmy" firstAttribute="bottom" secondItem="v4n-yJ-epJ" secondAttribute="bottom" constant="68" id="f1R-bE-EQr"/>
                             <constraint firstItem="v4n-yJ-epJ" firstAttribute="top" secondItem="suw-gK-u8c" secondAttribute="top" id="i08-KE-0oj"/>
@@ -184,10 +208,11 @@
                         <outlet property="playAudioButton" destination="4z5-do-IxO" id="JtZ-64-WjA"/>
                         <outlet property="questionImage" destination="n6s-eX-zLc" id="XEp-6I-W9X"/>
                         <outlet property="questionLb" destination="brU-79-26r" id="T7e-Uf-8np"/>
-                        <outlet property="radioButtonA" destination="30K-Qu-p91" id="HP7-Yl-N7W"/>
-                        <outlet property="radioButtonB" destination="NJb-DX-9np" id="U58-Eo-L5y"/>
-                        <outlet property="radioButtonC" destination="thR-ZK-zSg" id="e8Z-Sk-fIv"/>
-                        <outlet property="radioButtonD" destination="H2w-yR-k7e" id="lLE-Wk-5a4"/>
+                        <outlet property="timeCountdownLabel" destination="3sB-IJ-pTn" id="Act-wk-TeE"/>
+                        <outletCollection property="arrayRadioButton" destination="30K-Qu-p91" collectionClass="NSMutableArray" id="etq-Vi-8ax"/>
+                        <outletCollection property="arrayRadioButton" destination="NJb-DX-9np" collectionClass="NSMutableArray" id="SYf-df-ity"/>
+                        <outletCollection property="arrayRadioButton" destination="thR-ZK-zSg" collectionClass="NSMutableArray" id="wJv-vU-wj0"/>
+                        <outletCollection property="arrayRadioButton" destination="H2w-yR-k7e" collectionClass="NSMutableArray" id="6ta-WQ-fmW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1uc-av-aey" userLabel="First Responder" sceneMemberID="firstResponder"/>

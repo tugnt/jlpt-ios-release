@@ -27,15 +27,16 @@ struct JLPTHintResponse: JLPTResponse {
 
 struct HintItemResponse: JLPTResponse {
     let title: String
-    let type: String
+    let type: TypeJLPT
     let unit: String
     let content: String
     let questions: [HintQuestion]
 
     /// - Throws: DecodeError or an arbitrary ErrorType
     static func decode(_ e: Extractor) throws -> HintItemResponse {
+        guard let jlptType: String = try? e <| "type", let type = TypeJLPT(rawValue: jlptType) else { fatalError("Can decode jlpt type") }
         return try HintItemResponse(title: e <| "title",
-                                    type: e <| "type",
+                                    type: type,
                                     unit: e <| "unit",
                                     content: e <| "content",
                                     questions: e <|| "question")
@@ -50,7 +51,8 @@ struct HintQuestion: JLPTResponse {
     let answerC: String
     let answerD: String
     let solution: String
-    var linkAudio: String?
+    var imageUrl: String?
+    var audioUrl: String?
     /// - Throws: DecodeError or an arbitrary ErrorType
     static func decode(_ e: Extractor) throws -> HintQuestion {
         return try HintQuestion(question: e <| "question",
@@ -59,6 +61,7 @@ struct HintQuestion: JLPTResponse {
                                 answerC: e <| "answerC",
                                 answerD: e <| "answerD",
                                 solution: e <| "solution",
-                                linkAudio: e <|? "linkAudio")
+                                imageUrl: e <|? "image_url",
+                                audioUrl: e <|? "audio_url")
     }
 }

@@ -53,7 +53,8 @@ extension DocumentController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 100
+        let headerHeight: CGFloat = 100
+        return headerHeight
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -64,6 +65,27 @@ extension DocumentController: UITableViewDelegate, UITableViewDataSource {
         headerView.section = section
         headerView.delegate = self
         return headerView
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        showCheckDownloadDialog(indexPath: indexPath)
+    }
+
+    private func showCheckDownloadDialog(indexPath: IndexPath) {
+        let confirmDialog = TDConfirmDialog(frame: self.view.bounds)
+        confirmDialog.set(title: "Thông báo")
+        confirmDialog.set(message: "Bạn phải download tài liệu trước khi xem.")
+        confirmDialog.cancelButtonTitle = "Huỷ"
+        confirmDialog.confirmButtonTitle = "Đồng ý"
+        let vc = StoryboardScene.DocumentDetailViewController.documentDetailViewController.instantiate()
+        self.navigationController?.pushViewController(vc, animated: true)
+//        confirmDialog.cancelDidSelected = {
+//            // Todo: do nothing
+//        }
+//        confirmDialog.confirmDidSelected = {
+//            // Todo: Move to DocumentDetailViewController
+//        }
+        //self.view.addSubview(confirmDialog)
     }
 }
 
@@ -78,9 +100,7 @@ extension DocumentController: DocumentHeaderViewDeleagate, DocumentTypeCellDeleg
     }
 
     func header(didSelected header: DocumentExpandHeaderView, section: Int) {
-        // Change status of header and reload data
         headerSection[section].isExpanded = !headerSection[section].isExpanded
-        /// -  Reload section
         tableView.beginUpdates()
         tableView.reloadSections([section], with: .fade)
         tableView.endUpdates()

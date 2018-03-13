@@ -21,7 +21,6 @@ class TabbarController: UITabBarController, UITabBarControllerDelegate {
 
         let profileController = StoryboardScene.Profile.profileController.instantiate()
         let progressController = StoryboardScene.Process.processController.instantiate()
-        //let chatRoomController = ChatRoomController()
         let chatRoomController = StoryboardScene.GroupChatViewController.groupChatViewController.instantiate()
         let documentController = StoryboardScene.Documents.documentController.instantiate()
         let tabIconSize = CGSize(width: 30, height: 30)
@@ -29,10 +28,10 @@ class TabbarController: UITabBarController, UITabBarControllerDelegate {
                                                     UIImage.fontAwesomeIcon(name: .graduationCap, textColor: .black, size: tabIconSize),
                                                     viewController: lessionController),
                                 createNavController("Tiến độ",
-                                                    UIImage.fontAwesomeIcon(name: .barChart, textColor: .black, size: tabIconSize),
+                                                    UIImage.fontAwesomeIcon(name: .areaChart, textColor: .black, size: tabIconSize),
                                                     viewController: progressController),
                                 createNavController("Tài liệu",
-                                                    UIImage.fontAwesomeIcon(name: .fileWordO, textColor: .black, size: tabIconSize),
+                                                    UIImage.fontAwesomeIcon(name: .fileText, textColor: .black, size: tabIconSize),
                                                     viewController: documentController),
                                 createNavController("Trò truyện",
                                                     UIImage.fontAwesomeIcon(name: .wechat, textColor: .black, size: tabIconSize),
@@ -49,6 +48,7 @@ class TabbarController: UITabBarController, UITabBarControllerDelegate {
         return navController
     }
 
+    // NOT NEEDED
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         let index = tabBarController.selectedIndex
         if index == 3 { }

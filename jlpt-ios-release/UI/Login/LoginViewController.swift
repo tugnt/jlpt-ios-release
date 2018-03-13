@@ -15,7 +15,7 @@ import RealmSwift
 import RxSwift
 import RxCocoa
 
-class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
+class LoginViewController: HidenKeyboardViewController, GIDSignInDelegate, GIDSignInUIDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passTextField: UITextField!
     @IBOutlet weak var facebookBtn: UIButton!

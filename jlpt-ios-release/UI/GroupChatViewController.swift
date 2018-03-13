@@ -18,7 +18,6 @@ class GroupChatViewController: UIViewController {
     var index = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Phòng trò chuyện"
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(GroupChatViewCell.nib, forCellWithReuseIdentifier: GroupChatViewCell.identifier)

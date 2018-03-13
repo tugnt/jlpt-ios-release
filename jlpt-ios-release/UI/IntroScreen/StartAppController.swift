@@ -50,7 +50,7 @@ class StartAppController: UIViewController {
             make.width.lessThanOrEqualTo(maxWidth)
             make.width.lessThanOrEqualTo(view).inset(margin)
             make.width.equalTo(view).priority(500)
-            make.height.equalTo(50)
+            make.height.equalTo(46)
         }
         startButton.addTarget(self, action: #selector(startApplication), for: .touchUpInside)
     }

@@ -27,13 +27,10 @@ extension UIViewController {
         let cancelAct = UIAlertAction(title: cancelButton, style: .destructive, handler: { (_) in
             cancelAction()
         })
-
         alertController.addAction(confirmAct)
         alertController.addAction(cancelAct)
         alertController.addTextField(configurationHandler: { (_) in
-
         })
-
         self.present(alertController, animated: true, completion: nil)
     }
 

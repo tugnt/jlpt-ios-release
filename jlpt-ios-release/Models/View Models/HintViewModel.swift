@@ -16,8 +16,6 @@ struct HintViewModel {
     let point: Int
     let isPassed: Bool
     var questions: [HintQuestionModel] = []
-
-    /// - Initialized code here
     init(response: HintItemResponse) {
         self.hintTitle = response.title
         self.hintContent = response.content
