@@ -61,6 +61,12 @@ class TheoryHintController: UIViewController {
 
     private func moveListeningQuestionScreen() {
         let vc = StoryboardScene.ListeningQuestion.listeningQuestionController.instantiate()
+        // Check if question.count == 0 will be show alert and do nothing.
+        if questions.isEmpty {
+            self.showAlertDialog(title: "Thông báo", content: "Hiện chưa có câu hỏi cho phần này. Chúng tôi sẽ cập nhật sau.", titleButton: "OK", cancelAction: {
+                return
+            })
+        }
         vc.questions = questions
         navigationController?.pushViewController(vc, animated: true)
     }
