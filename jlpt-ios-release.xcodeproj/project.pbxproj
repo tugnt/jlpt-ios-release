@@ -21,6 +21,8 @@
 		1A26674B1FB9D17F00C9CFFB /* JLPTUnitCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2667491FB9D17F00C9CFFB /* JLPTUnitCellCollectionViewCell.swift */; };
 		1A26674C1FB9D17F00C9CFFB /* JLPTUnitCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A26674A1FB9D17F00C9CFFB /* JLPTUnitCellCollectionViewCell.xib */; };
 		1A2667551FBB28FB00C9CFFB /* MessageTextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2667541FBB28FB00C9CFFB /* MessageTextViewCell.swift */; };
+		1A29EE0520823890009D1068 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFCCB9B61F8F6E2000123170 /* Realm.framework */; };
+		1A29EE0620823890009D1068 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFAAFE31FE5227D00F701B7 /* RealmSwift.framework */; };
 		1A29EE082084D65F009D1068 /* StringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A29EE072084D65F009D1068 /* StringHelper.swift */; };
 		1A29EE0A20865AAC009D1068 /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A29EE0920865AAC009D1068 /* FileHelper.swift */; };
 		1A29EE0C208AC6F5009D1068 /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A29EE0B208AC6F5009D1068 /* Env.swift */; };
