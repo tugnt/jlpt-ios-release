@@ -36,8 +36,8 @@ class TDIndicator: UIView {
         contentView.autoresizingMask = []
         contentView.translatesAutoresizingMaskIntoConstraints = true
         contentView.alpha = 0.0
-        let url = URL(string: "https://gist.githubusercontent.com/tugnt/62bd906d49aad3a23ffa1f4d8e8c8a48/raw/13b752ebea992317ab171eba0e5d03d3b893fbaf/trail_loading.json")
-        let animationView = LOTAnimationView(contentsOf: url!)
+        guard let url = URL(string: Env.animationLink) else { return }
+        let animationView = LOTAnimationView(contentsOf: url)
         animationView.frame = parentIndicatorView.bounds
         animationView.contentMode = .scaleAspectFill
         animationView.loopAnimation = true
