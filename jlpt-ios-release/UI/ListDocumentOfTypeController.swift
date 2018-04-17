@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import Foundation
 
 class ListDocumentOfTypeController: UIViewController {
     var level: LevelJLPT!
@@ -45,6 +47,7 @@ class ListDocumentOfTypeController: UIViewController {
             }
         })
     }
+
 }
 
 extension ListDocumentOfTypeController: UITableViewDataSource, UITableViewDelegate {
@@ -65,9 +68,48 @@ extension ListDocumentOfTypeController: UITableViewDataSource, UITableViewDelega
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let documentUrl = documents[indexPath.row].linkDocument
-        let vc = StoryboardScene.ShowDocumentViewController.showDocumentViewController.instantiate()
-        vc.documentUrl = documentUrl
-        navigationController?.pushViewController(vc, animated: true)
+        showCheckDownloadDialog(indexPath: indexPath)
+    }
+
+    private func showCheckDownloadDialog(indexPath: IndexPath) {
+        let confirmDialog = TDConfirmDialog(frame: self.view.bounds)
+        confirmDialog.set(title: "Thông báo")
+        confirmDialog.set(message: "Bạn phải download tài liệu trước khi xem.")
+        confirmDialog.cancelButtonTitle = "Cancel"
+        confirmDialog.confirmButtonTitle = "Download"
+        confirmDialog.confirmDidSelected = {
+            self.downloadDocument(documentUrl: "https://www.rhodeshouse.ox.ac.uk/media/1002/sample-pdf-file.pdf")
+        }
+        self.view.addSubview(confirmDialog)
+    }
+
+    private func downloadDocument(documentUrl: String) {
+        let fileExits = FileHelper.checkFileExits(documentUrl: documentUrl)
+        if fileExits {
+            let fileSavePath = FileHelper.createDocumentSavePath(documentUrl: documentUrl)
+            let vc = StoryboardScene.ShowDocumentViewController.showDocumentViewController.instantiate()
+            vc.documentUrl = fileSavePath
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+                let savePath = FileHelper.createDocumentSavePath(documentUrl: documentUrl)
+                return (savePath, [.removePreviousFile, .createIntermediateDirectories])
+            }
+            Alamofire.download(documentUrl, to: destination).response { response in
+                if response.error == nil, let pdfPath = response.destinationURL {
+                    let confirmDialog = TDConfirmDialog(frame: self.view.bounds)
+                    confirmDialog.set(title: "Thông báo")
+                    confirmDialog.set(message: "Đã tải xong tài liệu.")
+                    confirmDialog.cancelButtonTitle = "Huỷ"
+                    confirmDialog.confirmButtonTitle = "Xem"
+                    confirmDialog.confirmDidSelected = {
+                        let vc = StoryboardScene.ShowDocumentViewController.showDocumentViewController.instantiate()
+                        vc.documentUrl = pdfPath
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
+                    self.view.addSubview(confirmDialog)
+                }
+            }
+        }
     }
 }

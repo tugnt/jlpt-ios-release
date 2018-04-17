@@ -23,6 +23,8 @@
 		1A2667551FBB28FB00C9CFFB /* MessageTextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2667541FBB28FB00C9CFFB /* MessageTextViewCell.swift */; };
 		1A29EE0520823890009D1068 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFCCB9B61F8F6E2000123170 /* Realm.framework */; };
 		1A29EE0620823890009D1068 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFAAFE31FE5227D00F701B7 /* RealmSwift.framework */; };
+		1A29EE082084D65F009D1068 /* StringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A29EE072084D65F009D1068 /* StringHelper.swift */; };
+		1A29EE0A20865AAC009D1068 /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A29EE0920865AAC009D1068 /* FileHelper.swift */; };
 		1A2B25CF1F512DFB00DFFD3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B25CE1F512DFB00DFFD3A /* AppDelegate.swift */; };
 		1A2B25EF1F512DFB00DFFD3A /* jlpt_ios_releaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B25EE1F512DFB00DFFD3A /* jlpt_ios_releaseUITests.swift */; };
 		1A2D07041F9E24CB00CB3864 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D07031F9E24CB00CB3864 /* LoginViewController.swift */; };
@@ -205,6 +207,8 @@
 		1A2667491FB9D17F00C9CFFB /* JLPTUnitCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLPTUnitCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		1A26674A1FB9D17F00C9CFFB /* JLPTUnitCellCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JLPTUnitCellCollectionViewCell.xib; sourceTree = "<group>"; };
 		1A2667541FBB28FB00C9CFFB /* MessageTextViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTextViewCell.swift; sourceTree = "<group>"; };
+		1A29EE072084D65F009D1068 /* StringHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelper.swift; sourceTree = "<group>"; };
+		1A29EE0920865AAC009D1068 /* FileHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHelper.swift; sourceTree = "<group>"; };
 		1A2B25CB1F512DFB00DFFD3A /* jlpt-ios-release.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "jlpt-ios-release.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2B25CE1F512DFB00DFFD3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A2B25DA1F512DFB00DFFD3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -769,6 +773,8 @@
 				1ABECC711F928DF8005056A5 /* Account.swift */,
 				1AF6E59C1FC09357005A2B16 /* Validation.swift */,
 				1A37ED0A20124F9F007361D1 /* DownloadHelper.swift */,
+				1A29EE072084D65F009D1068 /* StringHelper.swift */,
+				1A29EE0920865AAC009D1068 /* FileHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1284,6 +1290,7 @@
 				1AD738661F6D3CB400A4A1B9 /* TabbarController.swift in Sources */,
 				1A9133AB1F92426B007A6CF2 /* ChatRoomController.swift in Sources */,
 				1AC50CEF1F6E5A69007D161C /* ApiClient.swift in Sources */,
+				1A29EE0A20865AAC009D1068 /* FileHelper.swift in Sources */,
 				1AD7386A1F6D3CD300A4A1B9 /* ProcessController.swift in Sources */,
 				1A92D5171FC889740079970E /* EditProfileCell.swift in Sources */,
 				1ACCFAE91FBC5FD900D37E18 /* SampleMessageData.swift in Sources */,
@@ -1294,6 +1301,7 @@
 				1ABECC7B1F938168005056A5 /* EditProfileView.swift in Sources */,
 				1AEA8B2A1F6D4967005A7FC0 /* BaseViewCell.swift in Sources */,
 				1A46AC601F8A6602001FF467 /* UIViewController+NavigationBar.swift in Sources */,
+				1A29EE082084D65F009D1068 /* StringHelper.swift in Sources */,
 				1A2667361FB814B300C9CFFB /* UIViewController+Loading.swift in Sources */,
 				1ABECC7D1F94EFA6005056A5 /* UIViewController+UIButton.swift in Sources */,
 				1A9133A21F92168C007A6CF2 /* NotificationController.swift in Sources */,

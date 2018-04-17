@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class DocumentController: UIViewController {
     fileprivate let cellId = "cellDocument"
@@ -65,27 +66,6 @@ extension DocumentController: UITableViewDelegate, UITableViewDataSource {
         headerView.section = section
         headerView.delegate = self
         return headerView
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        showCheckDownloadDialog(indexPath: indexPath)
-    }
-
-    private func showCheckDownloadDialog(indexPath: IndexPath) {
-        let confirmDialog = TDConfirmDialog(frame: self.view.bounds)
-        confirmDialog.set(title: "Thông báo")
-        confirmDialog.set(message: "Bạn phải download tài liệu trước khi xem.")
-        confirmDialog.cancelButtonTitle = "Huỷ"
-        confirmDialog.confirmButtonTitle = "Đồng ý"
-        let vc = StoryboardScene.DocumentDetailViewController.documentDetailViewController.instantiate()
-        self.navigationController?.pushViewController(vc, animated: true)
-//        confirmDialog.cancelDidSelected = {
-//            // Todo: do nothing
-//        }
-//        confirmDialog.confirmDidSelected = {
-//            // Todo: Move to DocumentDetailViewController
-//        }
-        //self.view.addSubview(confirmDialog)
     }
 }
 
