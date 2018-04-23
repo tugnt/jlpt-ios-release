@@ -11,7 +11,7 @@ import WebKit
 
 class ShowDocumentViewController: UIViewController {
     private var webView: WKWebView!
-    var documentUrl: String!
+    var documentUrl: URL!
 
     override func loadView() {
         super.loadView()
@@ -21,9 +21,7 @@ class ShowDocumentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let url = URL(string: documentUrl) {
-            let req = URLRequest(url: url)
-            webView?.load(req)
-        }
+        let request = URLRequest(url: documentUrl)
+        webView.load(request)
     }
 }
