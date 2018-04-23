@@ -60,9 +60,7 @@
 		1A4E46011FC1B59F004FE155 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DFCCB9B61F8F6E2000123170 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A4E46021FC1B59F004FE155 /* MarkdownView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A46AC541F89D2E1001FF467 /* MarkdownView.framework */; };
 		1A4E46031FC1B59F004FE155 /* MarkdownView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A46AC541F89D2E1001FF467 /* MarkdownView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1A4E46061FC1B59F004FE155 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A46AC451F895207001FF467 /* RxCocoa.framework */; };
 		1A4E46071FC1B59F004FE155 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A46AC451F895207001FF467 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1A4E46081FC1B59F004FE155 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A46AC441F895206001FF467 /* RxSwift.framework */; };
 		1A4E46091FC1B59F004FE155 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A46AC441F895206001FF467 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A4E460D1FC1B59F004FE155 /* Lottie.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABBE6B41F76B98300A23796 /* Lottie.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A4E460E1FC1B59F004FE155 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF4C22EE1F74B6C300B2CCC5 /* Alamofire.framework */; };
@@ -150,6 +148,8 @@
 		8B0CA1C45B0ECB1BA7EE1328 /* Pods_jlpt_ios_releaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C08FD44EC6F84A16E0F0DAA8 /* Pods_jlpt_ios_releaseUITests.framework */; };
 		938DA3C645C6A3C03128E4F2 /* Pods_jlpt_ios_releaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F47A53587C0DC2615FF3BBD7 /* Pods_jlpt_ios_releaseTests.framework */; };
 		DF4C22F21F74CA7E00B2CCC5 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4C22F11F74CA7E00B2CCC5 /* Result.swift */; };
+		DFD3F3DC208DCD48008D97D0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A46AC451F895207001FF467 /* RxCocoa.framework */; };
+		DFD3F3DD208DCD48008D97D0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A46AC441F895206001FF467 /* RxSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -352,6 +352,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFD3F3DC208DCD48008D97D0 /* RxCocoa.framework in Frameworks */,
+				DFD3F3DD208DCD48008D97D0 /* RxSwift.framework in Frameworks */,
 				1AFAAFE51FE5232700F701B7 /* RealmSwift.framework in Frameworks */,
 				1AFAAFE61FE5232700F701B7 /* Realm.framework in Frameworks */,
 				1A8E2A2F1FC69426008E17F4 /* FontAwesome.framework in Frameworks */,
@@ -359,8 +361,6 @@
 				1A4E460E1FC1B59F004FE155 /* Alamofire.framework in Frameworks */,
 				1A4E46021FC1B59F004FE155 /* MarkdownView.framework in Frameworks */,
 				1A4E45FC1FC1B59F004FE155 /* SnapKit.framework in Frameworks */,
-				1A4E46061FC1B59F004FE155 /* RxCocoa.framework in Frameworks */,
-				1A4E46081FC1B59F004FE155 /* RxSwift.framework in Frameworks */,
 				1A46AC491F89AD9A001FF467 /* CoreText.framework in Frameworks */,
 				1ABBE6B51F76B98300A23796 /* Lottie.framework in Frameworks */,
 				015EE0821FC6BED4EE298993 /* Pods_jlpt_ios_release.framework in Frameworks */,
@@ -1159,14 +1159,14 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Lottie.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/MarkdownView.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/FontAwesome.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 			);
 			name = Carthage;
 			outputPaths = (
