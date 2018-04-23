@@ -29,17 +29,14 @@ class LoginViewController: HidenKeyboardViewController, GIDSignInDelegate, GIDSi
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpView()
+        addButtonAction()
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
-        notYetAccountBtn.addTarget(self, action: #selector(moveRegisterScreen), for: .touchUpInside)
-        skipLogginBtn.addTarget(self, action: #selector(skipLoggin), for: .touchUpInside)
-        googleBtn.addTarget(self, action: #selector(loginViaGoogle), for: .touchUpInside)
-        loginBtn.addTarget(self, action: #selector(loginViaEmail), for: .touchUpInside)
         loginValidation()
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    
+    private func setUpView() {
         emailTextField.setUpLoginTextField()
         emailTextField.clipsToBounds = true
         passTextField.setUpLoginTextField()
@@ -56,6 +53,13 @@ class LoginViewController: HidenKeyboardViewController, GIDSignInDelegate, GIDSi
             }
         } catch let error { print(error) }
     }
+    
+    private func addButtonAction() {
+        notYetAccountBtn.addTarget(self, action: #selector(moveRegisterScreen), for: .touchUpInside)
+        skipLogginBtn.addTarget(self, action: #selector(skipLoggin), for: .touchUpInside)
+        googleBtn.addTarget(self, action: #selector(loginViaGoogle), for: .touchUpInside)
+        loginBtn.addTarget(self, action: #selector(loginViaEmail), for: .touchUpInside)
+    }
 
     private func loginValidation() {
         let emailValid = emailTextField.rx.text.orEmpty.map({ _ in
@@ -71,11 +75,13 @@ class LoginViewController: HidenKeyboardViewController, GIDSignInDelegate, GIDSi
 
     @objc private func loginViaEmail() {
         startAnimationLoading()
-        Auth.auth().signIn(withEmail: emailTextField.text!, password: passTextField.text!, completion: { (user, error) in
+        let email = emailTextField.text ?? ""
+        let password = passTextField.text ?? ""
+        Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
             if error != nil {
                 print(error.debugDescription)
                 self.stopAnimationLoading()
-                self.showLoginAlert(title: "Thông báo", description: "Đăng nhập thất bại")
+                self.showLoginAlert()
             }
             /// - Save user and move home screen
             if let userInfo = user {
@@ -88,7 +94,6 @@ class LoginViewController: HidenKeyboardViewController, GIDSignInDelegate, GIDSi
                 do {
                     try realm?.write {
                         realm?.add(account)
-                        print("Add account")
                         print(account)
                         self.stopAnimationLoading()
                         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
@@ -96,7 +101,7 @@ class LoginViewController: HidenKeyboardViewController, GIDSignInDelegate, GIDSi
                     }
                 } catch {
                     self.stopAnimationLoading()
-                    self.showLoginAlert(title: "Thông báo", description: "Đăng nhập thất bại")
+                    self.showLoginAlert()
                 }
             }
         })
@@ -116,6 +121,10 @@ class LoginViewController: HidenKeyboardViewController, GIDSignInDelegate, GIDSi
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         appDelegate.window?.rootViewController = TabbarController()
     }
+    
+    private func showLoginAlert() {
+        self.showLoginAlert(title: "Thông báo", description: "Đăng nhập Google thất bại. \n Vui lòng thử lại sau.")
+    }
 
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         startAnimationLoading()
@@ -134,7 +143,7 @@ class LoginViewController: HidenKeyboardViewController, GIDSignInDelegate, GIDSi
                         guard let photoUrl = userInfo.photoURL?.absoluteString else { return }
                         self.ref.child("users").child(userInfo.uid).setValue(["email": userInfo.email, "name": userInfo.displayName, "photoUrl": photoUrl], withCompletionBlock: { (err, _) in
                             if err != nil {
-                                self.showLoginAlert(title: "Thông báo", description: "Đăng nhập Google thất bại. \n Vui lòng thử lại sau.")
+                                self.showLoginAlert()
                             }
                             self.stopAnimationLoading()
                             /// Todo: Save user data to local
@@ -156,7 +165,7 @@ class LoginViewController: HidenKeyboardViewController, GIDSignInDelegate, GIDSi
                         })
                     } else {
                         self.stopAnimationLoading()
-                        self.showLoginAlert(title: "Thông báo", description: "Đăng nhập Google thất bại. \n Vui lòng thử lại sau.")
+                        self.showLoginAlert()
                     }
                 })
             }
@@ -167,7 +176,7 @@ class LoginViewController: HidenKeyboardViewController, GIDSignInDelegate, GIDSi
                 case .canceled:
                     break
                 case .hasNoAuthInKeychain, .keychain, .noSignInHandlersInstalled, .unknown:
-                    showLoginAlert(title: "Thông báo", description: "Đăng nhập Google thất bại. \n Vui lòng thử lại sau.")
+                    self.showLoginAlert()
                 }
             }
             stopAnimationLoading()
