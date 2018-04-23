@@ -18,6 +18,7 @@ class GroupChatViewController: UIViewController {
     var index = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Chat room"
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(GroupChatViewCell.nib, forCellWithReuseIdentifier: GroupChatViewCell.identifier)
@@ -62,9 +63,6 @@ extension GroupChatViewController: UICollectionViewDelegate, UICollectionViewDel
         return 1
     }
 
-    /**
-        From N5 -> N1
-     */
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return groups.count
     }
@@ -78,21 +76,14 @@ extension GroupChatViewController: UICollectionViewDelegate, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         /// Todo: Move to group chat
         let realm = try? Realm()
-        // Get first account
         let accounts = realm?.objects(Account.self)
         if accounts?.count == 0 || accounts == nil {
-            let confirmDialog = TDConfirmDialog(frame: view.bounds)
-            confirmDialog.set(title: "Thông báo")
-            confirmDialog.set(message: "Vui lòng đăng nhập để sử dụng chức năng này.")
-            confirmDialog.cancelButtonTitle = "Bỏ qua"
-            confirmDialog.confirmButtonTitle = "Đăng ký"
-            confirmDialog.confirmDidSelected = {
+            self.showConfirmDialog(title: "Thông báo", message: "Vui lòng đăng nhập để sử dụng chức năng này.", confirmTitle: "Đăng ký", cancelTitle: "Bỏ qua", confirm: {
                 let vc = StoryboardScene.Login.loginViewController.instantiate()
                 vc.modalPresentationStyle = .overCurrentContext
                 self.tabBarController?.tabBar.isHidden = true
                 self.present(vc, animated: true, completion: nil)
-            }
-            view.addSubview(confirmDialog)
+            }, cancel: nil)
         } else {
             let vc = StoryboardScene.ChatRoom.chatRoomController.instantiate()
             ChatRoomController.account = accounts![0]
