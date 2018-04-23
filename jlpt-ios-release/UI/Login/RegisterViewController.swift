@@ -65,7 +65,6 @@ class RegisterViewController: HidenKeyboardViewController {
         startAnimationLoading()
         Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
             if error != nil {
-                /// - Todo: Show alert here
                 self.showRegisterAlert()
             } else {
                 /// Save to Firebase
@@ -75,7 +74,6 @@ class RegisterViewController: HidenKeyboardViewController {
                     if err != nil {
                         self.showRegisterAlert()
                     }
-                    /// Move to home screen
                     self.stopAnimationLoading()
                     guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
                     appDelegate.window?.rootViewController = TabbarController()
