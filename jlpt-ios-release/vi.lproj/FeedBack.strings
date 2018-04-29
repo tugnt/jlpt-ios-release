@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "Write a review"; ObjectID = "EWu-35-jO8"; */
+"EWu-35-jO8.text" = "Write a review";
+
+/* Class = "UIButton"; normalTitle = "Gửi đánh giá"; ObjectID = "YD7-SE-Lum"; */
+"YD7-SE-Lum.normalTitle" = "Gửi đánh giá";
+
+/* Class = "UITextField"; placeholder = "Tiêu đề"; ObjectID = "aQh-bp-9Wi"; */
+"aQh-bp-9Wi.placeholder" = "Tiêu đề";

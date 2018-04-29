@@ -127,6 +127,8 @@
 		1AC8701C208C2C4800B1F1DF /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A46AC441F895206001FF467 /* RxSwift.framework */; };
 		1AC8701D208C7F7C00B1F1DF /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFCCB9B61F8F6E2000123170 /* Realm.framework */; };
 		1AC8701E208C7F7C00B1F1DF /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFAAFE31FE5227D00F701B7 /* RealmSwift.framework */; };
+		1AC870392092476600B1F1DF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AC870372092476600B1F1DF /* Localizable.strings */; };
+		1AC8703C2092893700B1F1DF /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8703B2092893700B1F1DF /* Localizable.swift */; };
 		1ACCFAE71FBC5FB700D37E18 /* MessageTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACCFAE61FBC5FB700D37E18 /* MessageTimeView.swift */; };
 		1ACCFAE91FBC5FD900D37E18 /* SampleMessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACCFAE81FBC5FD900D37E18 /* SampleMessageData.swift */; };
 		1AD2FD711F80D98B00B5167D /* ListHint.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD2FD701F80D98B00B5167D /* ListHint.storyboard */; };
@@ -312,6 +314,15 @@
 		1AC50CF81F6F859E007D161C /* JLPTService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLPTService.swift; sourceTree = "<group>"; };
 		1AC50CFA1F6F8798007D161C /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		1AC50CFC1F6F9481007D161C /* ApiTets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiTets.swift; sourceTree = "<group>"; };
+		1AC870302092467300B1F1DF /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = ../vi.lproj/ChatRoom.strings; sourceTree = "<group>"; };
+		1AC870312092467300B1F1DF /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = ../vi.lproj/Documents.strings; sourceTree = "<group>"; };
+		1AC870322092467400B1F1DF /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = ../vi.lproj/FeedBack.strings; sourceTree = "<group>"; };
+		1AC870332092467400B1F1DF /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = ../vi.lproj/GroupChatViewController.strings; sourceTree = "<group>"; };
+		1AC870342092467400B1F1DF /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = ../vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		1AC870352092467500B1F1DF /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = ../vi.lproj/ListDocumentOfType.strings; sourceTree = "<group>"; };
+		1AC870382092476600B1F1DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1AC8703B2092893700B1F1DF /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
+		1AC8703E20955A8700B1F1DF /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1ACCFAE61FBC5FB700D37E18 /* MessageTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTimeView.swift; sourceTree = "<group>"; };
 		1ACCFAE81FBC5FD900D37E18 /* SampleMessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleMessageData.swift; sourceTree = "<group>"; };
 		1AD2FD701F80D98B00B5167D /* ListHint.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListHint.storyboard; sourceTree = "<group>"; };
@@ -487,6 +498,7 @@
 				1AF6E5911FC07FBF005A2B16 /* GoogleService-Info.plist */,
 				1A46AC611F8A7728001FF467 /* color.txt */,
 				1A1C96981F9C965D00A19C7B /* jlpt-ios-release-Bridging-Header.h */,
+				1AC870372092476600B1F1DF /* Localizable.strings */,
 			);
 			path = "jlpt-ios-release";
 			sourceTree = "<group>";
@@ -532,6 +544,7 @@
 				1A46AC381F892199001FF467 /* Storyboards.swift */,
 				1A46AC3C1F894479001FF467 /* Images.swift */,
 				1A46AC631F8A78CC001FF467 /* Colors.swift */,
+				1AC8703B2092893700B1F1DF /* Localizable.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -858,8 +871,6 @@
 				1A2B25DB1F512DFB00DFFD3A /* Sources */,
 				1A2B25DC1F512DFB00DFFD3A /* Frameworks */,
 				1A2B25DD1F512DFB00DFFD3A /* Resources */,
-				2BF1B70450A59E3E2322D57D /* [CP] Embed Pods Frameworks */,
-				F35C46F40D48EE49C9083CCD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -879,8 +890,6 @@
 				1A2B25E61F512DFB00DFFD3A /* Sources */,
 				1A2B25E71F512DFB00DFFD3A /* Frameworks */,
 				1A2B25E81F512DFB00DFFD3A /* Resources */,
-				5B1AE9D3B46B6EE22065A480 /* [CP] Embed Pods Frameworks */,
-				8FEF36E1D3158D7E2DCFC169 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -931,6 +940,7 @@
 			knownRegions = (
 				en,
 				Base,
+				vi,
 			);
 			mainGroup = 1A2B25C21F512DFB00DFFD3A;
 			productRefGroup = 1A2B25CC1F512DFB00DFFD3A /* Products */;
@@ -962,6 +972,7 @@
 				1A9133AE1F92427A007A6CF2 /* ChatRoom.storyboard in Resources */,
 				1A9133991F9203DF007A6CF2 /* PrivacyPolicy.storyboard in Resources */,
 				1A46AC4E1F89B703001FF467 /* TheoryHint.storyboard in Resources */,
+				1AC870392092476600B1F1DF /* Localizable.strings in Resources */,
 				1A91339B1F9215C6007A6CF2 /* EditProfile.storyboard in Resources */,
 				1A3684AA1F8005BC001FEF88 /* ChildIntroduction.storyboard in Resources */,
 				1A26674C1FB9D17F00C9CFFB /* JLPTUnitCellCollectionViewCell.xib in Resources */,
@@ -1030,37 +1041,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftgen >/dev/null; then\n    swiftgen xcassets \"${PROJECT_DIR}/jlpt-ios-release/Assets.xcassets\" --output \"${PROJECT_DIR}/jlpt-ios-release/Constants/Images.swift\" --template swift4\n    swiftgen storyboards \"${PROJECT_DIR}/jlpt-ios-release/Base.lproj\" --output \"${PROJECT_DIR}/jlpt-ios-release/Constants/Storyboards.swift\" -template swift4\n    swiftgen colors \"${PROJECT_DIR}/jlpt-ios-release/color.txt\"  --output \"${PROJECT_DIR}/jlpt-ios-release/Constants/Colors.swift\" -template swift4\nelse\n    echo \"warning: SwiftGen not installed, download it from https://github.com/AliSoftware/SwiftGen\"\nfi";
-		};
-		2BF1B70450A59E3E2322D57D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-jlpt-ios-releaseTests/Pods-jlpt-ios-releaseTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5B1AE9D3B46B6EE22065A480 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-jlpt-ios-releaseUITests/Pods-jlpt-ios-releaseUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "if which swiftgen >/dev/null; then\n    swiftgen xcassets \"${PROJECT_DIR}/jlpt-ios-release/Assets.xcassets\" --output \"${PROJECT_DIR}/jlpt-ios-release/Constants/Images.swift\" --template swift4\n    swiftgen storyboards \"${PROJECT_DIR}/jlpt-ios-release/Base.lproj\" --output \"${PROJECT_DIR}/jlpt-ios-release/Constants/Storyboards.swift\" -template swift4\n    swiftgen colors \"${PROJECT_DIR}/jlpt-ios-release/color.txt\"  --output \"${PROJECT_DIR}/jlpt-ios-release/Constants/Colors.swift\" -template swift4\n    swiftgen strings \"${PROJECT_DIR}/jlpt-ios-release/en.lproj/Localizable.strings\" --output \"${PROJECT_DIR}/jlpt-ios-release/Constants/Localizable.swift\" -template structured-swift4\nelse\n    echo \"warning: SwiftGen not installed, download it from https://github.com/AliSoftware/SwiftGen\"\nfi";
 		};
 		5F4CA9BE53F0F80B2729AC33 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1109,7 +1090,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1132,21 +1113,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8FEF36E1D3158D7E2DCFC169 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-jlpt-ios-releaseUITests/Pods-jlpt-ios-releaseUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DF4C22F01F74B6D800B2CCC5 /* Carthage */ = {
@@ -1199,21 +1165,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-jlpt-ios-release/Pods-jlpt-ios-release-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F35C46F40D48EE49C9083CCD /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-jlpt-ios-releaseTests/Pods-jlpt-ios-releaseTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1275,6 +1226,7 @@
 				1AF3492C1FE55CDA008924CB /* HidenKeyboardViewController.swift in Sources */,
 				1A37ED0B20124F9F007361D1 /* DownloadHelper.swift in Sources */,
 				1AB79E2F1F769F1200C2F8AE /* IntroductionController.swift in Sources */,
+				1AC8703C2092893700B1F1DF /* Localizable.swift in Sources */,
 				1A4431531FB4B20700574954 /* TDConfirmDialog.swift in Sources */,
 				1A565F0D1FA5779900AAC7C8 /* UIViewController+NavTitle.swift in Sources */,
 				1A46AC5B1F8A5EA5001FF467 /* NomalQuestionController.swift in Sources */,
@@ -1399,6 +1351,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1A4E45F61FC17579004FE155 /* Base */,
+				1AC870332092467400B1F1DF /* vi */,
 			);
 			name = GroupChatViewController.storyboard;
 			sourceTree = "<group>";
@@ -1407,6 +1360,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1A6520871F8813D400E21905 /* Base */,
+				1AC870342092467400B1F1DF /* vi */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1415,6 +1369,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1A9133951F92017F007A6CF2 /* Base */,
+				1AC870322092467400B1F1DF /* vi */,
 			);
 			name = FeedBack.storyboard;
 			sourceTree = "<group>";
@@ -1439,6 +1394,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1A9133A61F924120007A6CF2 /* Base */,
+				1AC870312092467300B1F1DF /* vi */,
 			);
 			name = Documents.storyboard;
 			sourceTree = "<group>";
@@ -1447,6 +1403,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1A9133AD1F92427A007A6CF2 /* Base */,
+				1AC870302092467300B1F1DF /* vi */,
 			);
 			name = ChatRoom.storyboard;
 			sourceTree = "<group>";
@@ -1455,8 +1412,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				1ABECC931F9C4DD5005056A5 /* Base */,
+				1AC870352092467500B1F1DF /* vi */,
 			);
 			name = ListDocumentOfType.storyboard;
+			sourceTree = "<group>";
+		};
+		1AC870372092476600B1F1DF /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1AC870382092476600B1F1DF /* Base */,
+				1AC8703E20955A8700B1F1DF /* vi */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1466,6 +1433,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1524,6 +1492,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

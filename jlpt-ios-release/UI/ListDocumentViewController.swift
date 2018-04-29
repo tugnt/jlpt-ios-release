@@ -65,7 +65,7 @@ class ListDocumentViewController: UIViewController {
             let confirmDialog = TDConfirmDialog(frame: self.view.bounds)
             confirmDialog.set(title: "Thông báo")
             confirmDialog.set(message: "Bạn phải download tài liệu trước khi xem.")
-            confirmDialog.cancelButtonTitle = "download"
+            confirmDialog.cancelButtonTitle = "Huỷ"
             confirmDialog.confirmButtonTitle = "Download"
             confirmDialog.confirmDidSelected = {
                 cell.addLoadingView()

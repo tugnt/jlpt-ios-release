@@ -5,7 +5,6 @@
 //  Created by Nguyen Trong Tung on 2017/09/28.
 //  Copyright © 2017 Nguyen Trong Tung. All rights reserved.
 //
-
 import UIKit
 import Lottie
 import SnapKit
@@ -19,11 +18,15 @@ class StartAppController: UIViewController {
             startButton.isHidden = isSigned
         }
     }
-    let startButton = UIButton()
+    private let startButton = UIButton()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = ColorName.navBackground.color
-        // - Set up wave view
+        self.setUpWaveView()
+        self.setUpStartButton()
+    }
+    
+    private func setUpWaveView() {
         let wave = WaveView()
         view.addSubview(wave)
         wave.snp.makeConstraints { make in
@@ -31,8 +34,9 @@ class StartAppController: UIViewController {
             make.height.equalTo(200)
             make.top.equalToSuperview().offset(150)
         }
-
-        /// Setup start button
+    }
+    
+    private func setUpStartButton() {
         startButton.setTitle("Bắt đầu", for: .normal)
         startButton.setTitleColor(.white, for: .normal)
         startButton.backgroundColor = UIColor(white: 1, alpha: 0.2)
@@ -41,7 +45,7 @@ class StartAppController: UIViewController {
         startButton.layer.cornerRadius = 3
         startButton.layer.borderColor = UIColor(white: 1, alpha: 0.3).cgColor
         view.addSubview(startButton)
-
+        
         let margin = 8
         let maxWidth = 315
         startButton.snp.makeConstraints { make in
@@ -54,11 +58,15 @@ class StartAppController: UIViewController {
         }
         startButton.addTarget(self, action: #selector(startApplication), for: .touchUpInside)
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let realm = try? Realm()
         // Get first account
+        /// Đây không phải là khi người dùng đăng nhập thì mới chuyển đến màn hình chính,
+        /// Mà là sau khi người dùng lần đầu tiên thì sẽ không còn hiện ra màn hình này,
+        /// Mà nếu có hiện thì nó cũng chỉ hiện ra một thời gian rồi move đến màn hình chính
+        /// Đó là màn hình lesson. Vì vậy ở đây check Account là không đúng.
         let accounts = realm?.objects(Account.self)
         if accounts?.count != 0 && accounts != nil {
             isSigned = true
@@ -68,11 +76,11 @@ class StartAppController: UIViewController {
             })
         }
     }
-
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-
+    
     @objc func startApplication() {
         let vc = StoryboardScene.Login.loginViewController.instantiate()
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }

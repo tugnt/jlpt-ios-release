@@ -1,0 +1,24 @@
+
+/* Class = "UIButton"; normalTitle = "Bạn chưa có tài khoản ?"; ObjectID = "68A-j0-Okz"; */
+"68A-j0-Okz.normalTitle" = "Bạn chưa có tài khoản ?";
+
+/* Class = "UILabel"; text = "Đăng nhập bằng tài khoản"; ObjectID = "7z8-5l-U2v"; */
+"7z8-5l-U2v.text" = "Đăng nhập bằng tài khoản";
+
+/* Class = "UITextField"; placeholder = "  email@example.com"; ObjectID = "O3h-A0-zqS"; */
+"O3h-A0-zqS.placeholder" = "  email@example.com";
+
+/* Class = "UITextField"; placeholder = "  Password"; ObjectID = "Ugl-ca-tyO"; */
+"Ugl-ca-tyO.placeholder" = "  Password";
+
+/* Class = "UILabel"; text = "Đăng nhập"; ObjectID = "Voa-UP-GiL"; */
+"Voa-UP-GiL.text" = "Đăng nhập";
+
+/* Class = "UIButton"; normalTitle = "Đăng nhập"; ObjectID = "hhM-Nd-hdS"; */
+"hhM-Nd-hdS.normalTitle" = "Đăng nhập";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "iDG-77-DJA"; */
+"iDG-77-DJA.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Đăng ký sau"; ObjectID = "mTd-uU-QCU"; */
+"mTd-uU-QCU.normalTitle" = "Đăng ký sau";
