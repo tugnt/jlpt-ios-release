@@ -11,6 +11,7 @@ import Fabric
 import Crashlytics
 import Firebase
 import GoogleSignIn
+import GoogleMobileAds
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -35,6 +36,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         /// - Google SignIn
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        
+        /// Initialize the Google Mobile Ads SDK.
+        GADMobileAds.configure(withApplicationID: Env.adsAppId)
         return true
     }
 

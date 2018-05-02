@@ -38,6 +38,8 @@
 "data.n4.description" = "Tổng hợp đề luyện thi cấp độ N4";
 "data.n5.title" = "Sơ cấp N5";
 "data.n5.description" = "Tổng hợp đề luyện thi cấp độ N5";
+// Lesson - List Hint Screen
+"hint.screen.title" = "Mẹo luyện thi";
 /// JLPT Type
 "jlpt.type.grammar" = "Ngữ pháp";
 "jlpt.type.reading" = "Đọc hiểu";
@@ -57,7 +59,6 @@
 "download.document.okbutton" = "Download";
 "download.document.cancel" = "Huỷ";
 "listdocument.screen.title" = "Danh sách giáo trình";
-
 // Profile
 
 

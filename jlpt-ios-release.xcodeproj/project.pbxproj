@@ -83,6 +83,7 @@
 		1A73C6B11FBF1F91008C70AC /* CellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A73C6B01FBF1F91008C70AC /* CellConfigurator.swift */; };
 		1A73C6B41FBF232D008C70AC /* ChatMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A73C6B31FBF232D008C70AC /* ChatMessageModel.swift */; };
 		1A73C6B61FBF2695008C70AC /* MessageImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A73C6B51FBF2695008C70AC /* MessageImageViewCell.swift */; };
+		1A8168B0209628C200FA4B66 /* BannerAd.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A8168AE209628C200FA4B66 /* BannerAd.xib */; };
 		1A8E2A2B1FC5E096008E17F4 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8E2A2A1FC5E096008E17F4 /* AlamofireImage.framework */; };
 		1A8E2A2D1FC5F04F008E17F4 /* GroupChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8E2A2C1FC5F04F008E17F4 /* GroupChatModel.swift */; };
 		1A8E2A2F1FC69426008E17F4 /* FontAwesome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8E2A2E1FC69426008E17F4 /* FontAwesome.framework */; };
@@ -273,6 +274,7 @@
 		1A73C6B01FBF1F91008C70AC /* CellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfigurator.swift; sourceTree = "<group>"; };
 		1A73C6B31FBF232D008C70AC /* ChatMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageModel.swift; sourceTree = "<group>"; };
 		1A73C6B51FBF2695008C70AC /* MessageImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageImageViewCell.swift; sourceTree = "<group>"; };
+		1A8168AF209628C200FA4B66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = BannerAd.xib; sourceTree = "<group>"; };
 		1A8E2A2A1FC5E096008E17F4 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		1A8E2A2C1FC5F04F008E17F4 /* GroupChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatModel.swift; sourceTree = "<group>"; };
 		1A8E2A2E1FC69426008E17F4 /* FontAwesome.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FontAwesome.framework; path = Carthage/Build/iOS/FontAwesome.framework; sourceTree = "<group>"; };
@@ -322,7 +324,6 @@
 		1AC870352092467500B1F1DF /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = ../vi.lproj/ListDocumentOfType.strings; sourceTree = "<group>"; };
 		1AC870382092476600B1F1DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1AC8703B2092893700B1F1DF /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
-		1AC8703E20955A8700B1F1DF /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1ACCFAE61FBC5FB700D37E18 /* MessageTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTimeView.swift; sourceTree = "<group>"; };
 		1ACCFAE81FBC5FD900D37E18 /* SampleMessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleMessageData.swift; sourceTree = "<group>"; };
 		1AD2FD701F80D98B00B5167D /* ListHint.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListHint.storyboard; sourceTree = "<group>"; };
@@ -609,6 +610,7 @@
 				1ABECC8F1F9C313B005056A5 /* xib */,
 				1A079BA7200BA5BB0064C186 /* ShowDocumentViewController.storyboard */,
 				1A37ED4A202F58B8007361D1 /* DocumentDetailViewController.storyboard */,
+				1A8168AE209628C200FA4B66 /* BannerAd.xib */,
 			);
 			path = Base.lproj;
 			sourceTree = "<group>";
@@ -970,6 +972,7 @@
 				1A9133B01F925670007A6CF2 /* Assets.xcassets in Resources */,
 				1ABECC8E1F9BB778005056A5 /* DocumentTypeCell.xib in Resources */,
 				1A9133AE1F92427A007A6CF2 /* ChatRoom.storyboard in Resources */,
+				1A8168B0209628C200FA4B66 /* BannerAd.xib in Resources */,
 				1A9133991F9203DF007A6CF2 /* PrivacyPolicy.storyboard in Resources */,
 				1A46AC4E1F89B703001FF467 /* TheoryHint.storyboard in Resources */,
 				1AC870392092476600B1F1DF /* Localizable.strings in Resources */,
@@ -1365,6 +1368,14 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		1A8168AE209628C200FA4B66 /* BannerAd.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1A8168AF209628C200FA4B66 /* Base */,
+			);
+			name = BannerAd.xib;
+			sourceTree = "<group>";
+		};
 		1A9133941F92017F007A6CF2 /* FeedBack.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1421,7 +1432,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				1AC870382092476600B1F1DF /* Base */,
-				1AC8703E20955A8700B1F1DF /* vi */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class ListQuestionController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     var level: LevelJLPT!
     var type: TypeJLPT!
-    var units: [String] = []
+    var units = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,7 @@ class ListQuestionController: UIViewController {
         fetchUnitData()
     }
 
-    func setUpCollectionLayout() {
+    private func setUpCollectionLayout() {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 10
         let numberItemInRow = UIScreen.main.bounds.width <= 320 ? 3 : 4
@@ -34,8 +35,8 @@ class ListQuestionController: UIViewController {
         collectionView.collectionViewLayout = layout
         collectionView.register(JLPTUnitCellCollectionViewCell.nib, forCellWithReuseIdentifier: JLPTUnitCellCollectionViewCell.identifier)
     }
-
-    func fetchUnitData() {
+    
+    private func fetchUnitData() {
         startAnimationLoading()
         let request = UnitRequest(method: .get, level: level, type: type)
         ApiClient.instance.request(request: request, completion: { (result) in
