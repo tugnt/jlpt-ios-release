@@ -8,9 +8,9 @@
 
 import UIKit
 import GoogleMobileAds
+import ExpandingCollection
 
-class ListQuestionController: UIViewController {
-    @IBOutlet weak var collectionView: UICollectionView!
+class ListQuestionController: ExpandingViewController {
     var level: LevelJLPT!
     var type: TypeJLPT!
     var units = [String]()
@@ -18,10 +18,13 @@ class ListQuestionController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Danh sách đề thi"
+        self.view.backgroundColor = #colorLiteral(red: 0.1570000052, green: 0.5839999914, blue: 1, alpha: 1)
         setUpNavBar()
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        setUpCollectionLayout()
+        itemSize = CGSize(width: 256, height: 460)
+        collectionView?.register(UnitQuestionCell.nib, forCellWithReuseIdentifier: UnitQuestionCell.identifier) 
+        self.collectionView?.delegate = self
+        self.collectionView?.dataSource = self
+        //setUpCollectionLayout()
         fetchUnitData()
     }
 
@@ -29,11 +32,12 @@ class ListQuestionController: UIViewController {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 10
         let numberItemInRow = UIScreen.main.bounds.width <= 320 ? 3 : 4
-        let itemWidth = (UIScreen.main.bounds.width - 20 - 30) / CGFloat(numberItemInRow)
-        layout.itemSize = CGSize(width: itemWidth, height: itemWidth)
+        let _ = (UIScreen.main.bounds.width - 20 - 30) / CGFloat(numberItemInRow)
+        layout.itemSize = CGSize(width: 300, height: 300)
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10)
-        collectionView.collectionViewLayout = layout
-        collectionView.register(JLPTUnitCellCollectionViewCell.nib, forCellWithReuseIdentifier: JLPTUnitCellCollectionViewCell.identifier)
+        layout.scrollDirection = .horizontal
+        collectionView?.collectionViewLayout = layout
+        collectionView?.register(UnitQuestionCell.nib, forCellWithReuseIdentifier: UnitQuestionCell.identifier)
     }
     
     private func fetchUnitData() {
@@ -42,39 +46,37 @@ class ListQuestionController: UIViewController {
         ApiClient.instance.request(request: request, completion: { (result) in
             switch result {
             case .failure:
-                self.collectionView.isHidden = true
+                self.collectionView?.isHidden = true
                 self.addEmptyStateView()
             case .success(let value):
                 self.units = value.units
                 if self.units.count == 0 {
-                    self.collectionView.isHidden = true
+                    self.collectionView?.isHidden = true
                     self.addEmptyStateView()
                 }
-                self.collectionView.reloadData()
+                self.collectionView?.reloadData()
             }
             self.stopAnimationLoading()
         })
     }
-}
-
-extension ListQuestionController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return units.count
     }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: JLPTUnitCellCollectionViewCell.identifier, for: indexPath) as? JLPTUnitCellCollectionViewCell else {
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UnitQuestionCell.identifier, for: indexPath) as? UnitQuestionCell else {
             return UICollectionViewCell()
         }
-        cell.unit = units[indexPath.row]
-        cell.levelJLPT = level
+//        cell.unit = units[indexPath.row]
+//        cell.levelJLPT = level
         return cell
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let unit = units[indexPath.row]
         let vc = StoryboardScene.NomalQuestion.nomalQuestionController.instantiate()

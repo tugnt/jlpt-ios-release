@@ -84,6 +84,7 @@
 		1A73C6B41FBF232D008C70AC /* ChatMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A73C6B31FBF232D008C70AC /* ChatMessageModel.swift */; };
 		1A73C6B61FBF2695008C70AC /* MessageImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A73C6B51FBF2695008C70AC /* MessageImageViewCell.swift */; };
 		1A8168B0209628C200FA4B66 /* BannerAd.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A8168AE209628C200FA4B66 /* BannerAd.xib */; };
+		1A8168BB209B197500FA4B66 /* ExpandingCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8168BA209B197400FA4B66 /* ExpandingCollection.framework */; };
 		1A8E2A2B1FC5E096008E17F4 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8E2A2A1FC5E096008E17F4 /* AlamofireImage.framework */; };
 		1A8E2A2D1FC5F04F008E17F4 /* GroupChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8E2A2C1FC5F04F008E17F4 /* GroupChatModel.swift */; };
 		1A8E2A2F1FC69426008E17F4 /* FontAwesome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8E2A2E1FC69426008E17F4 /* FontAwesome.framework */; };
@@ -154,6 +155,8 @@
 		1AF6E59D1FC09357005A2B16 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF6E59C1FC09357005A2B16 /* Validation.swift */; };
 		1AF6E5D51FC0A149005A2B16 /* TDModalStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AF6E5D31FC0A149005A2B16 /* TDModalStatusView.xib */; };
 		1AF6E5D61FC0A149005A2B16 /* TDModalStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF6E5D41FC0A149005A2B16 /* TDModalStatusView.swift */; };
+		1AFD3E73209B450400EA5969 /* UnitQuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFD3E71209B450300EA5969 /* UnitQuestionCell.swift */; };
+		1AFD3E74209B450400EA5969 /* UnitQuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AFD3E72209B450300EA5969 /* UnitQuestionCell.xib */; };
 		8B0CA1C45B0ECB1BA7EE1328 /* Pods_jlpt_ios_releaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C08FD44EC6F84A16E0F0DAA8 /* Pods_jlpt_ios_releaseUITests.framework */; };
 		938DA3C645C6A3C03128E4F2 /* Pods_jlpt_ios_releaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F47A53587C0DC2615FF3BBD7 /* Pods_jlpt_ios_releaseTests.framework */; };
 		DF4C22F21F74CA7E00B2CCC5 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4C22F11F74CA7E00B2CCC5 /* Result.swift */; };
@@ -275,6 +278,8 @@
 		1A73C6B31FBF232D008C70AC /* ChatMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageModel.swift; sourceTree = "<group>"; };
 		1A73C6B51FBF2695008C70AC /* MessageImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageImageViewCell.swift; sourceTree = "<group>"; };
 		1A8168AF209628C200FA4B66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = BannerAd.xib; sourceTree = "<group>"; };
+		1A8168B8209B195200FA4B66 /* expanding_collection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = expanding_collection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A8168BA209B197400FA4B66 /* ExpandingCollection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExpandingCollection.framework; path = Carthage/Build/iOS/ExpandingCollection.framework; sourceTree = "<group>"; };
 		1A8E2A2A1FC5E096008E17F4 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		1A8E2A2C1FC5F04F008E17F4 /* GroupChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatModel.swift; sourceTree = "<group>"; };
 		1A8E2A2E1FC69426008E17F4 /* FontAwesome.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FontAwesome.framework; path = Carthage/Build/iOS/FontAwesome.framework; sourceTree = "<group>"; };
@@ -351,6 +356,8 @@
 		1AF6E5D31FC0A149005A2B16 /* TDModalStatusView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDModalStatusView.xib; sourceTree = "<group>"; };
 		1AF6E5D41FC0A149005A2B16 /* TDModalStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDModalStatusView.swift; sourceTree = "<group>"; };
 		1AFAAFE31FE5227D00F701B7 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		1AFD3E71209B450300EA5969 /* UnitQuestionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitQuestionCell.swift; sourceTree = "<group>"; };
+		1AFD3E72209B450300EA5969 /* UnitQuestionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnitQuestionCell.xib; sourceTree = "<group>"; };
 		1BC5676FCE3B13CAA3A4C05D /* Pods-jlpt-ios-releaseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jlpt-ios-releaseUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-jlpt-ios-releaseUITests/Pods-jlpt-ios-releaseUITests.release.xcconfig"; sourceTree = "<group>"; };
 		41E79A404AD484EE7A15F425 /* Pods-jlpt-ios-release.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jlpt-ios-release.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jlpt-ios-release/Pods-jlpt-ios-release.debug.xcconfig"; sourceTree = "<group>"; };
 		4FDD19180E51CA77065E9CFA /* Pods-jlpt-ios-release.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jlpt-ios-release.release.xcconfig"; path = "Pods/Target Support Files/Pods-jlpt-ios-release/Pods-jlpt-ios-release.release.xcconfig"; sourceTree = "<group>"; };
@@ -372,6 +379,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A8168BB209B197500FA4B66 /* ExpandingCollection.framework in Frameworks */,
 				1AC8701D208C7F7C00B1F1DF /* Realm.framework in Frameworks */,
 				1AC8701E208C7F7C00B1F1DF /* RealmSwift.framework in Frameworks */,
 				1AC8701B208C2C4800B1F1DF /* RxCocoa.framework in Frameworks */,
@@ -586,6 +594,7 @@
 		1A6520851F8813D400E21905 /* Base.lproj */ = {
 			isa = PBXGroup;
 			children = (
+				1AFD3E72209B450300EA5969 /* UnitQuestionCell.xib */,
 				1A9133AC1F92427A007A6CF2 /* ChatRoom.storyboard */,
 				1A3684A91F8005BC001FEF88 /* ChildIntroduction.storyboard */,
 				1A9133A51F924120007A6CF2 /* Documents.storyboard */,
@@ -737,6 +746,7 @@
 		1AD7385F1F6D3B3500A4A1B9 /* ViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				1AFD3E71209B450300EA5969 /* UnitQuestionCell.swift */,
 				1AEA8B291F6D4967005A7FC0 /* BaseViewCell.swift */,
 				1AEA8B311F6D5234005A7FC0 /* CategoryHeaderView.swift */,
 				1AEA8B2B1F6D4986005A7FC0 /* CategoryViewCell.swift */,
@@ -816,6 +826,8 @@
 		7F5454142D252C22DDB39D77 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A8168BA209B197400FA4B66 /* ExpandingCollection.framework */,
+				1A8168B8209B195200FA4B66 /* expanding_collection.framework */,
 				1AFAAFE31FE5227D00F701B7 /* RealmSwift.framework */,
 				1A8E2A2E1FC69426008E17F4 /* FontAwesome.framework */,
 				1A8E2A2A1FC5E096008E17F4 /* AlamofireImage.framework */,
@@ -980,6 +992,7 @@
 				1A3684AA1F8005BC001FEF88 /* ChildIntroduction.storyboard in Resources */,
 				1A26674C1FB9D17F00C9CFFB /* JLPTUnitCellCollectionViewCell.xib in Resources */,
 				1A4E45FB1FC17CF8004FE155 /* GroupChatViewCell.xib in Resources */,
+				1AFD3E74209B450400EA5969 /* UnitQuestionCell.xib in Resources */,
 				1AF6E5D51FC0A149005A2B16 /* TDModalStatusView.xib in Resources */,
 				1A20D5651FB68F2600B6002D /* TDIndicator.xib in Resources */,
 				1AD738781F6D3DA200A4A1B9 /* Process.storyboard in Resources */,
@@ -1134,6 +1147,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/FontAwesome.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ExpandingCollection.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -1177,6 +1191,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AFD3E73209B450400EA5969 /* UnitQuestionCell.swift in Sources */,
 				1A37ED2B202A0682007361D1 /* DocumentDetailViewController.swift in Sources */,
 				1A73C6B61FBF2695008C70AC /* MessageImageViewCell.swift in Sources */,
 				1AD738681F6D3CC400A4A1B9 /* ProfileController.swift in Sources */,
