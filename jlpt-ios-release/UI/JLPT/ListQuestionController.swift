@@ -20,12 +20,16 @@ class ListQuestionController: ExpandingViewController {
         self.title = "Danh sách đề thi"
         self.view.backgroundColor = #colorLiteral(red: 0.1570000052, green: 0.5839999914, blue: 1, alpha: 1)
         setUpNavBar()
+        setUpExpandingCollectionView()
+        fetchUnitData()
+    }
+    
+    
+    private func setUpExpandingCollectionView() {
         itemSize = CGSize(width: 256, height: 460)
-        collectionView?.register(UnitQuestionCell.nib, forCellWithReuseIdentifier: UnitQuestionCell.identifier) 
+        collectionView?.register(UnitQuestionCell.nib, forCellWithReuseIdentifier: UnitQuestionCell.identifier)
         self.collectionView?.delegate = self
         self.collectionView?.dataSource = self
-        //setUpCollectionLayout()
-        fetchUnitData()
     }
 
     private func setUpCollectionLayout() {
@@ -50,7 +54,7 @@ class ListQuestionController: ExpandingViewController {
                 self.addEmptyStateView()
             case .success(let value):
                 self.units = value.units
-                if self.units.count == 0 {
+                if self.units.isEmpty {
                     self.collectionView?.isHidden = true
                     self.addEmptyStateView()
                 }
@@ -60,6 +64,18 @@ class ListQuestionController: ExpandingViewController {
         })
     }
     
+    private func moveDetailQuestionScreen(indexPath: IndexPath) {
+        let unit = units[indexPath.row]
+        let vc = StoryboardScene.NomalQuestion.nomalQuestionController.instantiate()
+        vc.type = type
+        vc.level = level
+        vc.unit = unit
+        vc.needLoadRequest = true
+        navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension ListQuestionController {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -72,18 +88,13 @@ class ListQuestionController: ExpandingViewController {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UnitQuestionCell.identifier, for: indexPath) as? UnitQuestionCell else {
             return UICollectionViewCell()
         }
-//        cell.unit = units[indexPath.row]
-//        cell.levelJLPT = level
+        let jlptLevelString = "LEVEL N\(level.rawValue)"
+        cell.levelLabel.text = jlptLevelString
+        cell.jlptTypeLabel.text = type.rawValue
+        cell.unitLabel.text = "Bai 1"
+        cell.detaillButtonDidSelected = {
+            self.moveDetailQuestionScreen(indexPath: indexPath)
+        }
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let unit = units[indexPath.row]
-        let vc = StoryboardScene.NomalQuestion.nomalQuestionController.instantiate()
-        vc.type = type
-        vc.level = level
-        vc.unit = unit
-        vc.needLoadRequest = true
-        navigationController?.pushViewController(vc, animated: true)
     }
 }

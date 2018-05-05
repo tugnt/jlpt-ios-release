@@ -10,11 +10,8 @@ import UIKit
 import WebKit
 
 class ShowDocumentViewController: UIViewController {
-<<<<<<< HEAD
-    private var webView: WKWebView!
-=======
+
     private var webView: UIWebView!
->>>>>>> Done download pdf document
     var documentUrl: URL!
 
     override func loadView() {
@@ -26,10 +23,6 @@ class ShowDocumentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-<<<<<<< HEAD
-        let request = URLRequest(url: documentUrl)
-        webView.load(request)
-=======
         webView.delegate = self
         let request = URLRequest(url: documentUrl)
         webView.loadRequest(request)
@@ -51,6 +44,5 @@ extension ShowDocumentViewController: UIWebViewDelegate {
         self.showAlertDialog(title: "Thông báo", content: "Không tìm thấy tập tin trên máy.", titleButton: "Trở về", cancelAction: {
             self.navigationController?.popViewController(animated: true)
         })
->>>>>>> Done download pdf document
     }
 }
