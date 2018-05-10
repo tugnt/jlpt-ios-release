@@ -34,4 +34,22 @@ extension UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
 
+    
+    func showConfirmDialog(title: String, message: String, confirmTitle: String, cancelTitle: String, confirm: @escaping () -> Void, cancel: (() -> Void)?) {
+        let confirmDialog = TDConfirmDialog(frame: view.bounds)
+        confirmDialog.set(title: title)
+        confirmDialog.set(message: message)
+        confirmDialog.cancelButtonTitle = cancelTitle
+        confirmDialog.confirmButtonTitle = confirmTitle
+        confirmDialog.confirmDidSelected = {
+            confirm()
+        }
+        confirmDialog.cancelDidSelected = {
+            cancel?()
+        }
+    }
+    
+    func showAlertDialog() {
+        
+    }
 }

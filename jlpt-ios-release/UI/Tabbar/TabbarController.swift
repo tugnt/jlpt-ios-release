@@ -20,16 +20,16 @@ class TabbarController: UITabBarController, UITabBarControllerDelegate {
         let lessionController = LessonController(collectionViewLayout: layout)
 
         let profileController = StoryboardScene.Profile.profileController.instantiate()
-        let progressController = StoryboardScene.Process.processController.instantiate()
+        let _ = StoryboardScene.Process.processController.instantiate()
         let chatRoomController = StoryboardScene.GroupChatViewController.groupChatViewController.instantiate()
         let documentController = StoryboardScene.Documents.documentController.instantiate()
+//        createNavController("Tiến độ",
+//                            UIImage.fontAwesomeIcon(name: .areaChart, textColor: .black, size: tabIconSize),
+//                            viewController: progressController),
         let tabIconSize = CGSize(width: 30, height: 30)
         self.viewControllers = [createNavController("Bài học",
                                                     UIImage.fontAwesomeIcon(name: .graduationCap, textColor: .black, size: tabIconSize),
                                                     viewController: lessionController),
-                                createNavController("Tiến độ",
-                                                    UIImage.fontAwesomeIcon(name: .areaChart, textColor: .black, size: tabIconSize),
-                                                    viewController: progressController),
                                 createNavController("Tài liệu",
                                                     UIImage.fontAwesomeIcon(name: .fileText, textColor: .black, size: tabIconSize),
                                                     viewController: documentController),

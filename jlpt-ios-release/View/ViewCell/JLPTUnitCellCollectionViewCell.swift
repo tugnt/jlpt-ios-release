@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import ExpandingCollection
 
-class JLPTUnitCellCollectionViewCell: UICollectionViewCell {
+class JLPTUnitCellCollectionViewCell: BasePageCollectionCell {
     static var identifier: String { return String(describing: self) }
     static var nib: UINib { return UINib(nibName: identifier, bundle: nil) }
 //    @IBOutlet weak var circleImage: UIImageView!

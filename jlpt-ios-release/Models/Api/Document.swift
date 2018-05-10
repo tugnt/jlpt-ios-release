@@ -32,7 +32,7 @@ struct DocumentReponse: JLPTResponse {
     static func decode(_ e: Extractor) throws -> DocumentReponse {
         return try DocumentReponse(enName: e <| "en_name",
                                    jpName: e <| "jp_name",
-                                   linkDocument: e <| "document_type",
+                                   linkDocument: e <| "link_document",
                                    documentImage: e <| "document_image")
     }
 }

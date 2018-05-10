@@ -1,0 +1,65 @@
+/* 
+  Localizable.strings
+  jlpt-ios-release
+
+  Created by Nguyen Trong Tung on 2018/04/27.
+  Copyright © 2018 Nguyen Trong Tung. All rights reserved.
+*/
+
+// Login
+"login.label.title" = "Đăng nhập";
+"login.button.title" = "Đăng nhập";
+"login.social.label" = "Đăng nhập bằng tài khoản";
+"login.noaccount.label" = "Bạn chưa có tài khoản";
+"login.skip.label" = "Đăng ký sau";
+// Register
+"register.title" = "Đăng ký tài khoản";
+"register.email.placeholder" = "Nhập email";
+"register.name.placeholder" = "Tên hiển thị";
+"register.pass.placeholder" = "Nhập mật khẩu";
+"register.repass.placeholder" = "Xác nhận mật khẩu";
+"register.button.title" = "Đăng ký";
+// Maintab
+"tab.lesson.title" = "Bài học";
+"tab.document.title" = "Tài liệu";
+"tab.chatroom.title" = "Trò chuyện";
+"tab.profile.title" = "Tài khoản";
+// Lesson
+"lesson.screen.title" = "Bài học";
+"data.hintcell.title" = "Mẹo luyện thi JLPT";
+"data.hintcell.description" = "Tổng hợp các mẹo hữu ích khi thi JLPT";
+"data.n1.title" = "Thượng cấp N1";
+"data.n1.description" = "Tổng hợp đề luyện thi cấp độ N1";
+"data.n2.title" = "Thượng cấp N2";
+"data.n2.description" = "Tổng hợp đề luyện thi cấp độ N2";
+"data.n3.title" = "Trung cấp N3";
+"data.n3.description" = "Tổng hợp đề luyện thi cấp độ N3";
+"data.n4.title" = "Sơ cấp N4";
+"data.n4.description" = "Tổng hợp đề luyện thi cấp độ N4";
+"data.n5.title" = "Sơ cấp N5";
+"data.n5.description" = "Tổng hợp đề luyện thi cấp độ N5";
+/// JLPT Type
+"jlpt.type.grammar" = "Ngữ pháp";
+"jlpt.type.reading" = "Đọc hiểu";
+"jlpt.type.listening" = "Nghe hiểu";
+"jlpt.type.vocabulary" = "Từ vựng";
+"jlpt.type.kanji" = "Hán tự";
+// JLPT Level
+"level.n1" = "JLPT N1";
+"level.n2" = "JLPT N2";
+"level.n3" = "JLPT N3";
+"level.n4" = "JLPT N4";
+"level.n5" = "JLPT N5";
+// Document
+
+
+// Profile
+
+
+// ChatRoom
+
+
+
+
+
+/// Notification

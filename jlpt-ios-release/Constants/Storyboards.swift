@@ -102,7 +102,7 @@ enum StoryboardScene {
   enum ListDocumentOfType: StoryboardType {
     static let storyboardName = "ListDocumentOfType"
 
-    static let listDocumentOfTypeController = SceneType<jlpt_ios_release.ListDocumentOfTypeController>(storyboard: ListDocumentOfType.self, identifier: "ListDocumentOfTypeController")
+    static let listDocumentViewController = SceneType<jlpt_ios_release.ListDocumentViewController>(storyboard: ListDocumentOfType.self, identifier: "ListDocumentViewController")
   }
   enum ListHint: StoryboardType {
     static let storyboardName = "ListHint"

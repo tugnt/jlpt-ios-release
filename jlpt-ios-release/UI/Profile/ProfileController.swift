@@ -34,11 +34,16 @@ class ProfileController: UIViewController {
     }
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
-    let settingItems: [String] = ["Cài đặt tài khoản",
+    private let settingItems: [String] = ["Cài đặt tài khoản",
                                   "Phản hồi và chia sẻ",
                                   "Thông báo",
                                   "Điều khoản và chính sách"]
-
+    private var isLogin: Bool! {
+        didSet {
+            self.logoutBtn.isEnabled = isLogin
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Tài khoản"
@@ -53,12 +58,11 @@ class ProfileController: UIViewController {
     private func fetchAccountAndUpdateUI() {
         let realm = try? Realm()
         guard let accounts = realm?.objects(Account.self) else { return }
+        self.isLogin = accounts.count != 0
         if accounts.count != 0 {
             let account = accounts[0]
-            /// Update label
             userNameLabel.text = account.userName != nil ? account.userName : "Guess"
             emailLabel.text = account.email != nil ? account.email : "example@email.com"
-            /// - Update Image Profile
             if let urlString = account.photoUrl {
                 Alamofire.request(urlString).responseImage { response in
                     if let image = response.result.value {
@@ -75,8 +79,7 @@ class ProfileController: UIViewController {
             let vc = StoryboardScene.Login.loginViewController.instantiate()
             guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
             appDelegate.window?.rootViewController = vc
-        } catch let logoutError {
-            print(logoutError.localizedDescription)
+        } catch {
             let alertModalView = TDModalStatusView(frame: view.bounds)
             alertModalView.setTitleLabel(title: "Thông báo")
             alertModalView.setSubTitleLabel(subTitle: "Đăng xuất thất bại")

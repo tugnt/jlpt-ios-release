@@ -10,18 +10,39 @@ import UIKit
 import WebKit
 
 class ShowDocumentViewController: UIViewController {
-    private var webView: WKWebView!
+
+    private var webView: UIWebView!
     var documentUrl: URL!
 
     override func loadView() {
         super.loadView()
-        webView = WKWebView(frame: view.bounds)
+        self.setUpNavBar()
+        webView = UIWebView(frame: view.bounds)
         view.addSubview(webView)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        webView.delegate = self
         let request = URLRequest(url: documentUrl)
-        webView.load(request)
+        webView.loadRequest(request)
+    }
+}
+
+extension ShowDocumentViewController: UIWebViewDelegate {
+    
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        self.startAnimationLoading()
+    }
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        self.stopAnimationLoading()
+    }
+    
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
+        self.stopAnimationLoading()
+        self.showAlertDialog(title: "Thông báo", content: "Không tìm thấy tập tin trên máy.", titleButton: "Trở về", cancelAction: {
+            self.navigationController?.popViewController(animated: true)
+        })
     }
 }

@@ -1,0 +1,21 @@
+
+/* Class = "UITextField"; placeholder = "  Xác nhận mật khẩu"; ObjectID = "0MP-j4-sv7"; */
+"0MP-j4-sv7.placeholder" = "  Xác nhận mật khẩu";
+
+/* Class = "UITextField"; placeholder = "  Nhập mật khẩu"; ObjectID = "2Wu-lh-5Pv"; */
+"2Wu-lh-5Pv.placeholder" = "  Nhập mật khẩu";
+
+/* Class = "UILabel"; text = "Thông tin chưa chính xác.  Vui lòng kiểm tra lại "; ObjectID = "G5b-0D-lIk"; */
+"G5b-0D-lIk.text" = "Thông tin chưa chính xác.  Vui lòng kiểm tra lại ";
+
+/* Class = "UIButton"; normalTitle = "ĐĂNG KÝ"; ObjectID = "TbY-xd-FpG"; */
+"TbY-xd-FpG.normalTitle" = "ĐĂNG KÝ";
+
+/* Class = "UILabel"; text = "Đăng ký tài khoản"; ObjectID = "VSh-Ta-Ovm"; */
+"VSh-Ta-Ovm.text" = "Đăng ký tài khoản";
+
+/* Class = "UITextField"; placeholder = "  Tên hiển thị"; ObjectID = "jnZ-Qv-Wh3"; */
+"jnZ-Qv-Wh3.placeholder" = "  Tên hiển thị";
+
+/* Class = "UITextField"; placeholder = "  Nhập email"; ObjectID = "vVO-Hn-dTb"; */
+"vVO-Hn-dTb.placeholder" = "  Nhập email";

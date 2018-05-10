@@ -25,6 +25,11 @@ class DocumentController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Tài liệu"
+        self.setUpNavBar()
+        configTableView()
+    }
+    
+    private func configTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.allowsSelection = false
@@ -32,7 +37,6 @@ class DocumentController: UIViewController {
         tableView.register(DocumentExpandHeaderView.nib, forHeaderFooterViewReuseIdentifier: DocumentExpandHeaderView.identifier)
         tableView.register(DocumentTypeCell.nib, forCellReuseIdentifier: DocumentTypeCell.identifier)
     }
-
 }
 
 extension DocumentController: UITableViewDelegate, UITableViewDataSource {
@@ -54,7 +58,7 @@ extension DocumentController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        let headerHeight: CGFloat = 100
+        let headerHeight: CGFloat = 80
         return headerHeight
     }
 
@@ -72,7 +76,7 @@ extension DocumentController: UITableViewDelegate, UITableViewDataSource {
 extension DocumentController: DocumentHeaderViewDeleagate, DocumentTypeCellDelegate {
     func cell(_ cell: DocumentTypeCell, type: TypeJLPT) {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
-        let vc = StoryboardScene.ListDocumentOfType.listDocumentOfTypeController.instantiate()
+        let vc = StoryboardScene.ListDocumentOfType.listDocumentViewController.instantiate()
         vc.type = type
         vc.level = headerSection[indexPath.section].level
         vc.hidesBottomBarWhenPushed = true

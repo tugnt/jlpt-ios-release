@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import AlamofireImage
+import Lottie
 
 struct DocumentItem {
     let thumnailUrl: String
@@ -27,6 +28,9 @@ class DocumentCell: UITableViewCell {
     @IBOutlet weak var downloadDocumentButton: UIButton!
     @IBOutlet weak var containerView: UIView!
     weak var delegate: DocumentCellDelegate?
+    var downloadDocumentProgress: (() -> Void)?
+    let animationView = LOTAnimationView(contentsOf: URL(string: Env.animationLink)!)
+
     var document: DocumentReponse! {
         didSet {
             nameBookLbl.text = document.jpName
@@ -37,34 +41,48 @@ class DocumentCell: UITableViewCell {
                     self.thumbnailBookImage.image = image
                 }
             }
+            let fileExits = FileHelper.checkFileExits(documentUrl: document.linkDocument)
+            if fileExits {
+                downloadDocumentButton.setTitle("OPEN", for: .normal)
+            }
         }
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        downloadDocumentButton.addTarget(self, action: #selector(startDownloadBook), for: .touchUpInside)
+        downloadDocumentButton.addTarget(self, action: #selector(startDownloadDocument), for: .touchUpInside)
         setUpUI()
     }
 
     private func setUpUI() {
         downloadDocumentButton.clipsToBounds = true
         downloadDocumentButton.layer.cornerRadius = 2
-        /// NOT GOOD
-        downloadDocumentButton.layer.borderColor = UIColor(rgb: 0x2895FF).cgColor
+        downloadDocumentButton.layer.borderColor = #colorLiteral(red: 0.1570000052, green: 0.5839999914, blue: 1, alpha: 1)
         downloadDocumentButton.layer.borderWidth = 1
-        downloadDocumentButton.addTarget(self, action: #selector(startDownloadBook), for: .touchUpInside)
+        downloadDocumentButton.addTarget(self, action: #selector(startDownloadDocument), for: .touchUpInside)
         containerView.clipsToBounds = true
         containerView.layer.cornerRadius = 2
     }
 
-    @objc func startDownloadBook() {
-        // Todo: Start download and update progress here
-        delegate?.cell(self)
-        // Update image of button after download
+    @objc private func startDownloadDocument() {
+        downloadDocumentProgress?()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
+    func addLoadingView() {
+        downloadDocumentButton.isHidden = true
+        addSubview(animationView)
+        animationView.snp.makeConstraints { make in
+            make.width.height.equalTo(50)
+            make.centerY.equalToSuperview()
+            make.trailing.equalToSuperview().inset(30)
+        }
+        animationView.loopAnimation = true
+        animationView.play()
+    }
+
+    func removeLoadingView() {
+        animationView.stop()
+        animationView.removeFromSuperview()
+        downloadDocumentButton.isHidden = false
     }
 }
