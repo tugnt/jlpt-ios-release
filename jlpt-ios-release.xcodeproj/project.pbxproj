@@ -141,6 +141,7 @@
 		1AD7386A1F6D3CD300A4A1B9 /* ProcessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD738691F6D3CD300A4A1B9 /* ProcessController.swift */; };
 		1AD738761F6D3D8E00A4A1B9 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD738751F6D3D8E00A4A1B9 /* Profile.storyboard */; };
 		1AD738781F6D3DA200A4A1B9 /* Process.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD738771F6D3DA200A4A1B9 /* Process.storyboard */; };
+		1AE799AC209F728500BE38AB /* AdmobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE799AB209F728500BE38AB /* AdmobsViewController.swift */; };
 		1AEA8B2A1F6D4967005A7FC0 /* BaseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA8B291F6D4967005A7FC0 /* BaseViewCell.swift */; };
 		1AEA8B2C1F6D4986005A7FC0 /* CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA8B2B1F6D4986005A7FC0 /* CategoryViewCell.swift */; };
 		1AEA8B2E1F6D49DD005A7FC0 /* LessonViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA8B2D1F6D49DD005A7FC0 /* LessonViewCell.swift */; };
@@ -343,6 +344,7 @@
 		1AD738691F6D3CD300A4A1B9 /* ProcessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessController.swift; sourceTree = "<group>"; };
 		1AD738751F6D3D8E00A4A1B9 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		1AD738771F6D3DA200A4A1B9 /* Process.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Process.storyboard; sourceTree = "<group>"; };
+		1AE799AB209F728500BE38AB /* AdmobsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobsViewController.swift; sourceTree = "<group>"; };
 		1AEA8B291F6D4967005A7FC0 /* BaseViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewCell.swift; sourceTree = "<group>"; };
 		1AEA8B2B1F6D4986005A7FC0 /* CategoryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewCell.swift; sourceTree = "<group>"; };
 		1AEA8B2D1F6D49DD005A7FC0 /* LessonViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonViewCell.swift; sourceTree = "<group>"; };
@@ -695,6 +697,7 @@
 				1A4E45F31FC1756B004FE155 /* GroupChatViewController.swift */,
 				1AF3492B1FE55CDA008924CB /* HidenKeyboardViewController.swift */,
 				1A079BA5200BA59F0064C186 /* ShowDocumentViewController.swift */,
+				1AE799AB209F728500BE38AB /* AdmobsViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1287,6 +1290,7 @@
 				1AF6E58E1FBFF767005A2B16 /* UITextField+Login.swift in Sources */,
 				1AF6E5D61FC0A149005A2B16 /* TDModalStatusView.swift in Sources */,
 				1A565F0F1FA59B9700AAC7C8 /* UIViewController+EmptyState.swift in Sources */,
+				1AE799AC209F728500BE38AB /* AdmobsViewController.swift in Sources */,
 				1A4E45FA1FC17CF8004FE155 /* GroupChatViewCell.swift in Sources */,
 				1A73C6B41FBF232D008C70AC /* ChatMessageModel.swift in Sources */,
 				1A2667551FBB28FB00C9CFFB /* MessageTextViewCell.swift in Sources */,

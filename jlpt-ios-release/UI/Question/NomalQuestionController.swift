@@ -7,20 +7,29 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class NomalQuestionController: UIViewController {
+class NomalQuestionController: AdmobsViewController {
     var questions: [NormalQuestionViewModel] = [] {
         didSet {
             for _ in questions { solutionOfUser.append(5) }
         }
     }
     @IBOutlet weak var tableView: UITableView!
-    let cellId = "cellQuestion"
+    private let cellId = "cellQuestion"
+    private var solutionOfUser: [Int] = []
+    private var point: Int = 0
+    private var doneButton: UIBarButtonItem!
     var isShowSolution: Bool = false
-    var solutionOfUser: [Int] = []
-    var point: Int = 0
-    var doneButton: UIBarButtonItem!
     var isHasDoneButton: Bool = true
+    var needLoadRequest: Bool = false
+    var level: LevelJLPT!
+    var unit: String!
+    var type: TypeJLPT!
+    // For admob
+//    /// Is an ad being loaded.
+//    private var adRequestInProgress = false
+//    private var rewardBaseVidel: GADRewardBasedVideoAd?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +40,7 @@ class NomalQuestionController: UIViewController {
         tableView.separatorColor = .clear
         tableView.allowsSelection = false
         for _ in questions { solutionOfUser.append(5) }
+        self.loadAdsVideo()
         // - Init array solution
     }
 
@@ -43,11 +53,7 @@ class NomalQuestionController: UIViewController {
         isHasDoneButton ? addBarDoneButton() : ()
         neededLoadRequest()
     }
-
-    var needLoadRequest: Bool = false
-    var level: LevelJLPT!
-    var unit: String!
-    var type: TypeJLPT!
+    
     private func neededLoadRequest() {
         if needLoadRequest {
             startAnimationLoading()
@@ -88,7 +94,14 @@ class NomalQuestionController: UIViewController {
         navigationItem.rightBarButtonItem = doneButton
     }
 
+    private var rewardBasedVideo: GADRewardBasedVideoAd?
     @objc private func checkAnswer() {
+        self.presentRewardAdVideo()
+//        if rewardBasedVideo?.isReady == true {
+//            print("Nó chạy vào đây chưa, cũng đéo biết nữa. hajjz")
+//            rewardBasedVideo?.present(fromRootViewController: self)
+//        }
+        /*
         for index in 0..<questions.count {
             if Int(questions[index].solution) == solutionOfUser[index] {
                 point += 1
@@ -104,8 +117,18 @@ class NomalQuestionController: UIViewController {
             self.point = 0
             self.isShowSolution = true
             self.tableView.reloadData()
-        }
+        }*/
     }
+    
+//    private func loadAdsVideo() {
+//        let request = GADRequest()
+//        request.testDevices = [kGADSimulatorID]
+//        if !adRequestInProgress && rewardBasedVideo?.isReady == false {
+//            rewardBasedVideo?.load(GADRequest(),
+//                                   withAdUnitID: "ca-app-pub-3940256099942544/1712485313")
+//            adRequestInProgress = true
+//        }
+//    }
 }
 
 extension NomalQuestionController: UITableViewDelegate, UITableViewDataSource, NormalQuestionCellDelegate {
