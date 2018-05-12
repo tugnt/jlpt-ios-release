@@ -23,7 +23,6 @@ class RegisterViewController: HidenKeyboardViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         addDismissButton()
         validateRegister()
         registerButton.addTarget(self, action: #selector(registerEmail), for: .touchUpInside)
@@ -63,9 +62,9 @@ class RegisterViewController: HidenKeyboardViewController {
 
     @objc private func registerEmail() {
         startAnimationLoading()
-        Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
+        guard let email = emailTextField.text ,let password = passwordTextField.text else { return }
+        Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
             if error != nil {
-                /// - Todo: Show alert here
                 self.showRegisterAlert()
             } else {
                 /// Save to Firebase

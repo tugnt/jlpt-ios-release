@@ -28,16 +28,23 @@ class ProfileController: UIViewController {
     }
     @IBOutlet weak var logoutBtn: UIButton! {
         didSet {
-            logoutBtn.backgroundColor = ColorName.logoutBtn.color
-            logoutBtn.layer.cornerRadius = CGFloat(5)
+            logoutBtn.layer.cornerRadius = 3
+            if Account.checkoutUserLogin() {
+                logoutBtn.backgroundColor = ColorName.logoutBtn.color
+            } else {
+                logoutBtn.backgroundColor = #colorLiteral(red: 0.1570000052, green: 0.5839999914, blue: 1, alpha: 1)
+                logoutBtn.setTitle("Đăng nhập", for: .normal)
+                logoutBtn.setTitleColor(.white, for: .normal)
+            }
         }
     }
+    
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     private let settingItems: [String] = ["Cài đặt tài khoản",
-                                  "Phản hồi và chia sẻ",
-                                  "Thông báo",
-                                  "Điều khoản và chính sách"]
+                                          "Phản hồi và chia sẻ",
+                                          "Cài đặt ứng dụng",
+                                          "Điều khoản và chính sách"]
     private var isLogin: Bool! {
         didSet {
             self.logoutBtn.isEnabled = isLogin
@@ -52,15 +59,12 @@ class ProfileController: UIViewController {
         tableView.tableFooterView = UIView()
         setUpNavBar()
         fetchAccountAndUpdateUI()
-        logoutBtn.addTarget(self, action: #selector(logoutHandle), for: .touchUpInside)
+        logoutBtn.addTarget(self, action: #selector(handleAuth), for: .touchUpInside)
     }
 
     private func fetchAccountAndUpdateUI() {
-        let realm = try? Realm()
-        guard let accounts = realm?.objects(Account.self) else { return }
-        self.isLogin = accounts.count != 0
-        if accounts.count != 0 {
-            let account = accounts[0]
+        if Account.checkoutUserLogin() {
+            guard let account = Account.getAccount() else { return }
             userNameLabel.text = account.userName != nil ? account.userName : "Guess"
             emailLabel.text = account.email != nil ? account.email : "example@email.com"
             if let urlString = account.photoUrl {
@@ -73,12 +77,14 @@ class ProfileController: UIViewController {
         }
     }
 
-    @objc private func logoutHandle() {
+    @objc private func handleAuth() {
+        Account.checkoutUserLogin() ? logout() : moveLoginScreen()
+    }
+    
+    private func logout() {
         do {
             try Auth.auth().signOut()
-            let vc = StoryboardScene.Login.loginViewController.instantiate()
-            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-            appDelegate.window?.rootViewController = vc
+            self.moveLoginScreen()
         } catch {
             let alertModalView = TDModalStatusView(frame: view.bounds)
             alertModalView.setTitleLabel(title: "Thông báo")
@@ -86,6 +92,12 @@ class ProfileController: UIViewController {
             alertModalView.setStatusImage(image: Asset.notificationIcon.image)
             view.addSubview(alertModalView)
         }
+    }
+    
+    private func moveLoginScreen() {
+        let vc = StoryboardScene.Login.loginViewController.instantiate()
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        appDelegate.window?.rootViewController = vc
     }
 }
 
@@ -114,6 +126,7 @@ extension ProfileController: UITableViewDelegate, UITableViewDataSource {
         case 1:
             controlller = StoryboardScene.FeedBack.feedbackController.instantiate()
         case 2:
+            // Todo: Không dùng notification controller nữa. Mà thay vào đó màn hình setting. 
             controlller = StoryboardScene.Notification.notificationController.instantiate()
         case 3:
             controlller = StoryboardScene.PrivacyPolicy.privacyPolicyController.instantiate()
