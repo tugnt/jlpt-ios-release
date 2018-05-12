@@ -30,18 +30,9 @@ enum TypeEditProfile: String {
 
 class EditProfileController: UIViewController {
     fileprivate let cellId = "cellSettingEdit"
-    @IBOutlet weak var profileImage: UIImageView! {
-        didSet {
-            profileImage.clipsToBounds = true
-            let radius = min(profileImage.bounds.width, profileImage.bounds.height) / 2
-            profileImage.layer.cornerRadius = radius
-        }
-    }
-    @IBOutlet weak var changeProfileImgBtn: UIButton!
-    @IBOutlet weak var saveChangeButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     private var editItems: [EditProfileItem] = [EditProfileItem(titleProfile: .statusAcount, contentProfile: "Miễn phí"),
-                                                EditProfileItem(titleProfile: .name, contentProfile: "Guess"),
+                                                EditProfileItem(titleProfile: .name, contentProfile: "guess"),
                                                 EditProfileItem(titleProfile: .email, contentProfile: "guess@example.com"),
                                                 EditProfileItem(titleProfile: .password, contentProfile: "**************")]
 
@@ -59,22 +50,12 @@ class EditProfileController: UIViewController {
     }
 
     private func fetchAccountData() {
-        let realm = try? Realm()
-        guard let accounts = realm?.objects(Account.self) else { return }
-        if accounts.count != 0 {
-            let account = accounts[0]
+        if Account.checkoutUserLogin() {
+            guard let account = Account.getAccount() else { return }
             editItems =  [EditProfileItem(titleProfile: .statusAcount, contentProfile: "Miễn phí"),
                           EditProfileItem(titleProfile: .name, contentProfile: account.userName ?? "Guess"),
                           EditProfileItem(titleProfile: .email, contentProfile: account.email ?? "guess@example.com"),
                           EditProfileItem(titleProfile: .password, contentProfile: "**************")]
-            /// - Update Image Profile
-            if let urlString = account.photoUrl {
-                Alamofire.request(urlString).responseImage { response in
-                    if let image = response.result.value {
-                        self.profileImage.image = image
-                    }
-                }
-            }
             tableView.reloadData()
         }
     }
@@ -94,6 +75,7 @@ extension EditProfileController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         cell.accessoryType = .disclosureIndicator
+        cell.selectionStyle = .none
         cell.editItem = editItems[indexPath.row]
         return cell
     }
