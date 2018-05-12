@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,13 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7VP-RP-rsl">
-                                <rect key="frame" x="120" y="91" width="56" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="Thay đổi"/>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5gA-bx-15Z">
-                                <rect key="frame" x="10" y="150" width="355" height="457"/>
+                                <rect key="frame" x="10" y="20" width="355" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellSettingEdit" rowHeight="60" id="l3k-4B-zpe" customClass="EditProfileCell" customModule="jlpt_ios_release" customModuleProvider="target">
@@ -64,38 +59,17 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GfS-ds-1no">
-                                <rect key="frame" x="145" y="627" width="85" height="30"/>
-                                <state key="normal" title="Lưu thay đổi"/>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="rfw-bC-w2D">
-                                <rect key="frame" x="20" y="40" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="J74-yk-7xE"/>
-                                    <constraint firstAttribute="height" constant="80" id="PmJ-X5-eOl"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7VP-RP-rsl" secondAttribute="trailing" constant="20" symbolic="YES" id="35V-31-MXu"/>
-                            <constraint firstItem="GfS-ds-1no" firstAttribute="centerX" secondItem="OzX-Ef-cdU" secondAttribute="centerX" id="8Oj-as-wrO"/>
-                            <constraint firstItem="5gA-bx-15Z" firstAttribute="top" secondItem="rfw-bC-w2D" secondAttribute="bottom" constant="30" id="C7E-WA-vEd"/>
-                            <constraint firstItem="7VP-RP-rsl" firstAttribute="leading" secondItem="rfw-bC-w2D" secondAttribute="trailing" constant="20" id="EBA-Jn-ME1"/>
-                            <constraint firstItem="rfw-bC-w2D" firstAttribute="leading" secondItem="OzX-Ef-cdU" secondAttribute="leading" constant="20" id="FZc-wV-546"/>
                             <constraint firstItem="5gA-bx-15Z" firstAttribute="leading" secondItem="OzX-Ef-cdU" secondAttribute="leading" constant="10" id="Jrk-Wm-Dza"/>
-                            <constraint firstItem="7VP-RP-rsl" firstAttribute="bottom" secondItem="rfw-bC-w2D" secondAttribute="bottom" id="Nww-DW-OoP"/>
-                            <constraint firstItem="OzX-Ef-cdU" firstAttribute="bottom" secondItem="5gA-bx-15Z" secondAttribute="bottom" constant="60" id="T3B-Bf-fMA"/>
-                            <constraint firstItem="OzX-Ef-cdU" firstAttribute="bottom" secondItem="GfS-ds-1no" secondAttribute="bottom" constant="10" id="eMb-Fq-kKj"/>
+                            <constraint firstItem="OzX-Ef-cdU" firstAttribute="bottom" secondItem="5gA-bx-15Z" secondAttribute="bottom" id="T3B-Bf-fMA"/>
                             <constraint firstItem="5gA-bx-15Z" firstAttribute="centerX" secondItem="OzX-Ef-cdU" secondAttribute="centerX" id="iFG-7z-W5W"/>
-                            <constraint firstItem="rfw-bC-w2D" firstAttribute="top" secondItem="OzX-Ef-cdU" secondAttribute="top" constant="20" id="tBJ-zm-27v"/>
+                            <constraint firstItem="5gA-bx-15Z" firstAttribute="top" secondItem="OzX-Ef-cdU" secondAttribute="top" id="yXZ-DY-zH2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OzX-Ef-cdU"/>
                     </view>
                     <connections>
-                        <outlet property="changeProfileImgBtn" destination="7VP-RP-rsl" id="ZmZ-M9-5dc"/>
-                        <outlet property="profileImage" destination="rfw-bC-w2D" id="VDW-p4-NX7"/>
-                        <outlet property="saveChangeButton" destination="GfS-ds-1no" id="3DL-9x-Jxn"/>
                         <outlet property="tableView" destination="5gA-bx-15Z" id="oIJ-Kp-MIM"/>
                     </connections>
                 </viewController>
@@ -104,7 +78,4 @@
             <point key="canvasLocation" x="376.80000000000001" y="243.32833583208398"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="background" width="375" height="667"/>
-    </resources>
 </document>
