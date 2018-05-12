@@ -18,4 +18,14 @@ struct Setting {
             UserDefaults.standard.synchronize()
         }
     }
+    
+    static var fontSize: Int {
+        get {
+            return UserDefaults.standard.integer(forKey: "fontSize")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "fontSize")
+            UserDefaults.standard.synchronize()
+        }
+    }
 }

@@ -77,9 +77,7 @@ class MessageTextViewCell: UICollectionViewCell, ConfigurableCell {
     }
 
     func configure(data: MessageTextModel) {
-        // Todo: Update UI
         updateUI(data: data)
-        // Todo: Configure data
     }
 
     func updateUI(data: MessageTextModel) {

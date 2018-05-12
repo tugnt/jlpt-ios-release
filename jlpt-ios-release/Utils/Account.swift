@@ -23,7 +23,7 @@ class Account: Object {
     }
     
     static func checkoutUserLogin() -> Bool {
-        guard let account = getAccount() else { return false }
+        guard let _ = getAccount() else { return false }
         return true
     }
 }
