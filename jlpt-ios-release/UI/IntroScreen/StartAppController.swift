@@ -39,7 +39,7 @@ class StartAppController: UIViewController {
     private func setUpStartButton() {
         startButton.setTitle("Bắt đầu", for: .normal)
         startButton.setTitleColor(.white, for: .normal)
-        startButton.backgroundColor = UIColor(white: 1, alpha: 0.2)
+        startButton.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.200000003)
         startButton.titleEdgeInsets = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
         startButton.layer.borderWidth = 1
         startButton.layer.cornerRadius = 3
@@ -62,28 +62,28 @@ class StartAppController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let realm = try? Realm()
-        // Get first account
-        /// Đây không phải là khi người dùng đăng nhập thì mới chuyển đến màn hình chính,
-        /// Mà là sau khi người dùng lần đầu tiên thì sẽ không còn hiện ra màn hình này,
-        /// Mà nếu có hiện thì nó cũng chỉ hiện ra một thời gian rồi move đến màn hình chính
-        /// Đó là màn hình lesson. Vì vậy ở đây check Account là không đúng.
         let accounts = realm?.objects(Account.self)
-        if accounts?.count != 0 && accounts != nil {
+        if (accounts?.count != 0 && accounts != nil) || Setting.firstRunApp {
             isSigned = true
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-                appDelegate.window?.rootViewController = TabbarController()
-            })
+            self.moveMainScreen()
         }
+    }
+    
+    private func moveMainScreen() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+            appDelegate.window?.rootViewController = TabbarController()
+        })
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
-    @objc func startApplication() {
+    @objc private func startApplication() {
         let vc = StoryboardScene.Login.loginViewController.instantiate()
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        Setting.firstRunApp = true
         appDelegate.window?.rootViewController = vc
     }
 }

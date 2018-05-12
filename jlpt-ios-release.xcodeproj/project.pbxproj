@@ -159,6 +159,7 @@
 		DF41C96F20A4209D00B02100 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A46AC441F895206001FF467 /* RxSwift.framework */; };
 		DF41C97020A4263600B02100 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFAAFE31FE5227D00F701B7 /* RealmSwift.framework */; };
 		DF41C97120A4264500B02100 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFCCB9E41F8F7A6300123170 /* SnapKit.framework */; };
+		DF49239520A68EA300FA57BA /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF49239420A68EA300FA57BA /* Setting.swift */; };
 		DF4C22F21F74CA7E00B2CCC5 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4C22F11F74CA7E00B2CCC5 /* Result.swift */; };
 /* End PBXBuildFile section */
 
@@ -364,6 +365,7 @@
 		BE9914B5E17E996F26F6DB4A /* Pods-jlpt-ios-releaseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jlpt-ios-releaseUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jlpt-ios-releaseUITests/Pods-jlpt-ios-releaseUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C08FD44EC6F84A16E0F0DAA8 /* Pods_jlpt_ios_releaseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jlpt_ios_releaseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8801B0FB1C671067D045E0C /* Pods_jlpt_ios_release.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jlpt_ios_release.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF49239420A68EA300FA57BA /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		DF4C22EE1F74B6C300B2CCC5 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		DF4C22F11F74CA7E00B2CCC5 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		DF50CD572125A82AE1988C65 /* Pods-jlpt-ios-releaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jlpt-ios-releaseTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jlpt-ios-releaseTests/Pods-jlpt-ios-releaseTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -488,6 +490,7 @@
 		1A2B25CD1F512DFB00DFFD3A /* jlpt-ios-release */ = {
 			isa = PBXGroup;
 			children = (
+				DF49239320A68E9600FA57BA /* Setting */,
 				1AF6E59B1FC09347005A2B16 /* Utils */,
 				1A1C969C1F9CA9D000A19C7B /* SCSiriWaveformView */,
 				1A46AC371F892183001FF467 /* Constants */,
@@ -850,6 +853,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DF49239320A68E9600FA57BA /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				DF49239420A68EA300FA57BA /* Setting.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -927,7 +938,7 @@
 				TargetAttributes = {
 					1A2B25CA1F512DFB00DFFD3A = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 2327GHP7NU;
+						DevelopmentTeam = 2SN4VSFT4Y;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
@@ -1197,6 +1208,7 @@
 				1AD738681F6D3CC400A4A1B9 /* ProfileController.swift in Sources */,
 				1AB04DB61F7630F600E5AC27 /* Hint.swift in Sources */,
 				1A73C6B11FBF1F91008C70AC /* CellConfigurator.swift in Sources */,
+				DF49239520A68EA300FA57BA /* Setting.swift in Sources */,
 				1A8E2A2D1FC5F04F008E17F4 /* GroupChatModel.swift in Sources */,
 				1A6520651F851D5A00E21905 /* HintCell.swift in Sources */,
 				1AEA8B331F6D5234005A7FC0 /* CategoryHeaderView.swift in Sources */,
@@ -1575,7 +1587,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 2327GHP7NU;
+				DEVELOPMENT_TEAM = 2SN4VSFT4Y;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1598,7 +1610,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 2327GHP7NU;
+				DEVELOPMENT_TEAM = 2SN4VSFT4Y;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
