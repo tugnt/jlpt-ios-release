@@ -35,10 +35,6 @@
                                             </progressView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:0/0:0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3sB-IJ-pTn">
                                                 <rect key="frame" x="303" y="428" width="42" height="15"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="15" id="3VL-WB-quB"/>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="4tR-eS-ddA"/>
-                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -132,9 +128,9 @@
                                             <constraint firstItem="thR-ZK-zSg" firstAttribute="top" secondItem="wdU-xs-NLj" secondAttribute="top" id="11z-XE-JU0"/>
                                             <constraint firstItem="4z5-do-IxO" firstAttribute="centerX" secondItem="H2w-yR-k7e" secondAttribute="centerX" id="179-Ly-WaH"/>
                                             <constraint firstItem="bOn-0B-wEA" firstAttribute="top" secondItem="brU-79-26r" secondAttribute="bottom" constant="10" id="1jo-Iw-5In"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3sB-IJ-pTn" secondAttribute="trailing" constant="20" symbolic="YES" id="2VV-wl-pk2"/>
                                             <constraint firstItem="4z5-do-IxO" firstAttribute="top" secondItem="H2w-yR-k7e" secondAttribute="bottom" constant="8" id="5Og-Rl-CUf"/>
                                             <constraint firstAttribute="trailing" secondItem="bOn-0B-wEA" secondAttribute="trailing" constant="10" id="60p-19-dzG"/>
-                                            <constraint firstAttribute="trailing" secondItem="3sB-IJ-pTn" secondAttribute="trailing" constant="30" id="7wg-0m-ORA"/>
                                             <constraint firstItem="n6s-eX-zLc" firstAttribute="leading" secondItem="i2c-Hg-Oow" secondAttribute="leading" id="9Wy-rT-k1Z"/>
                                             <constraint firstItem="thR-ZK-zSg" firstAttribute="leading" secondItem="i2c-Hg-Oow" secondAttribute="leading" constant="20" id="A8q-J2-0bt"/>
                                             <constraint firstItem="bOn-0B-wEA" firstAttribute="leading" secondItem="30K-Qu-p91" secondAttribute="trailing" constant="10" id="EFi-Jb-asC"/>
@@ -150,18 +146,20 @@
                                             <constraint firstItem="30K-Qu-p91" firstAttribute="top" secondItem="bOn-0B-wEA" secondAttribute="top" id="bOa-59-5Nu"/>
                                             <constraint firstAttribute="trailing" secondItem="n6s-eX-zLc" secondAttribute="trailing" id="cNU-Tj-4nL"/>
                                             <constraint firstAttribute="trailing" secondItem="POd-NX-mXF" secondAttribute="trailing" constant="10" id="cpy-2v-zym"/>
-                                            <constraint firstAttribute="trailing" secondItem="eDn-qX-T9K" secondAttribute="trailing" constant="80" id="cz6-5P-53X"/>
                                             <constraint firstItem="brU-79-26r" firstAttribute="leading" secondItem="i2c-Hg-Oow" secondAttribute="leading" constant="10" id="dR2-QN-MDy"/>
                                             <constraint firstItem="brU-79-26r" firstAttribute="centerX" secondItem="i2c-Hg-Oow" secondAttribute="centerX" id="jDw-WO-8DZ"/>
                                             <constraint firstItem="30K-Qu-p91" firstAttribute="leading" secondItem="i2c-Hg-Oow" secondAttribute="leading" constant="20" id="jfE-sg-nVh"/>
+                                            <constraint firstItem="3sB-IJ-pTn" firstAttribute="centerY" secondItem="eDn-qX-T9K" secondAttribute="centerY" id="l81-MY-pyB"/>
+                                            <constraint firstAttribute="trailing" secondItem="eDn-qX-T9K" secondAttribute="trailing" constant="80" id="lnD-bX-leT"/>
                                             <constraint firstItem="H2w-yR-k7e" firstAttribute="top" secondItem="bzf-5E-bdC" secondAttribute="top" id="m6K-Nm-4i1"/>
+                                            <constraint firstItem="3sB-IJ-pTn" firstAttribute="centerY" secondItem="i2c-Hg-Oow" secondAttribute="centerY" constant="102" id="oFV-tM-euR"/>
                                             <constraint firstItem="eDn-qX-T9K" firstAttribute="leading" secondItem="4z5-do-IxO" secondAttribute="leading" constant="50" id="oeX-Vf-BSq"/>
                                             <constraint firstItem="n6s-eX-zLc" firstAttribute="centerX" secondItem="brU-79-26r" secondAttribute="centerX" id="oug-Ii-Y7d"/>
+                                            <constraint firstItem="3sB-IJ-pTn" firstAttribute="leading" secondItem="eDn-qX-T9K" secondAttribute="trailing" constant="8" symbolic="YES" id="qay-Pd-LUH"/>
                                             <constraint firstItem="NJb-DX-9np" firstAttribute="top" secondItem="POd-NX-mXF" secondAttribute="top" id="tLJ-ND-9T5"/>
                                             <constraint firstItem="brU-79-26r" firstAttribute="top" secondItem="n6s-eX-zLc" secondAttribute="bottom" constant="30" id="tnL-ne-8kI"/>
                                             <constraint firstItem="wdU-xs-NLj" firstAttribute="leading" secondItem="thR-ZK-zSg" secondAttribute="trailing" constant="10" id="ueT-ll-jE1"/>
                                             <constraint firstItem="bzf-5E-bdC" firstAttribute="leading" secondItem="H2w-yR-k7e" secondAttribute="trailing" constant="10" id="wPv-tb-Vqt"/>
-                                            <constraint firstItem="3sB-IJ-pTn" firstAttribute="centerY" secondItem="eDn-qX-T9K" secondAttribute="centerY" id="yfm-7z-bpm"/>
                                             <constraint firstAttribute="trailing" secondItem="wdU-xs-NLj" secondAttribute="trailing" constant="10" id="z5t-pk-AuJ"/>
                                         </constraints>
                                     </view>
@@ -176,13 +174,13 @@
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o98-RR-Pvq">
-                                <rect key="frame" x="30" y="617" width="315" height="40"/>
+                                <rect key="frame" x="30" y="607" width="315" height="50"/>
                                 <color key="backgroundColor" red="0.15686274509803921" green="0.58431372549019611" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Fww-lm-2m4"/>
+                                    <constraint firstAttribute="height" constant="50" id="Fww-lm-2m4"/>
                                 </constraints>
                                 <state key="normal" title="Tiếp theo">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                         </subviews>

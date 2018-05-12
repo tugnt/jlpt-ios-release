@@ -45,15 +45,23 @@ class ListeningQuestionController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var answerBLb: UILabel!
     @IBOutlet weak var answerCLb: UILabel!
     @IBOutlet weak var answerDLb: UILabel!
-    @IBOutlet weak var checkAnswerButton: UIButton!
+    @IBOutlet weak var checkAnswerButton: UIButton! {
+        didSet {
+            checkAnswerButton.clipsToBounds = true
+            checkAnswerButton.layer.cornerRadius = 3
+        }
+    }
     @IBOutlet weak var timeCountdownLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Luyện tập"
         setUpUI()
-        playAudioButton.addTarget(self, action: #selector(playAudio), for: .touchUpInside)
-        checkAnswerButton.addTarget(self, action: #selector(moveNextQuestion), for: .touchUpInside)
-        updateQuestion(questionIndex: 0)
+        self.playAudioButton.addTarget(self, action: #selector(playAudio), for: .touchUpInside)
+        self.checkAnswerButton.addTarget(self, action: #selector(moveNextQuestion), for: .touchUpInside)
+        self.updateQuestion(questionIndex: 0)
+        self.setFontSize()
     }
 
     private func setUpUI() {
@@ -87,6 +95,16 @@ class ListeningQuestionController: UIViewController, AVAudioPlayerDelegate {
         answerCLb.text = question.answerC
         answerDLb.text = question.answerD
         checkAnswerButton.isEnabled = false
+    }
+    
+    private func setFontSize() {
+        let fontSize = CGFloat(Setting.fontSize)
+        let font = UIFont.systemFont(ofSize: fontSize, weight: .thin)
+        questionLb.font = font
+//        answerALb.font = font
+//        answerBLb.font = font
+//        answerCLb.font = font
+//        answerDLb.font = font
     }
 
     private func resetAllRadioButton() {

@@ -52,6 +52,16 @@ class NomalQuestionCell: UITableViewCell {
             solutionLabel.text = "Đáp án \(solution)"
         }
     }
+    
+    private func setFontSize() {
+        let fontSize = CGFloat(Setting.fontSize)
+        let font = UIFont.systemFont(ofSize: fontSize, weight: .thin)
+        questionLabel.font = font
+        answerALabel.font = font
+        answerBLabel.font = font
+        answerCLabel.font = font
+        answerDLabel.font = font
+    }
 
     @IBAction func radioClicked(_ sender: TDRadioButton) {
         for (index, button) in self.arrayRadioButton.enumerated() {
@@ -62,6 +72,7 @@ class NomalQuestionCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        setFontSize()
     }
 
     func showAnswerOfUser(ofUser answer: Int) {
