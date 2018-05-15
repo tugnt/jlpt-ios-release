@@ -27,9 +27,4 @@ class HintCell: UITableViewCell {
             hintNumberQuestionLabel.text = "Số câu hỏi \(item.numberQuestion)"
         }
     }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initial code here
-    }
 }

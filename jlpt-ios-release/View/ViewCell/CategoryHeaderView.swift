@@ -93,7 +93,7 @@ class CategoryHeaderView: UICollectionReusableView {
         self.isUserInteractionEnabled = true
     }
 
-    @objc func expandLessonSection () {
+    @objc private func expandLessonSection () {
         delegate?.header(self, section: section)
     }
 

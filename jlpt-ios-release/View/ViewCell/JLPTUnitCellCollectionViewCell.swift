@@ -12,24 +12,7 @@ import ExpandingCollection
 class JLPTUnitCellCollectionViewCell: BasePageCollectionCell {
     static var identifier: String { return String(describing: self) }
     static var nib: UINib { return UINib(nibName: identifier, bundle: nil) }
-//    @IBOutlet weak var circleImage: UIImageView!
-    var levelJLPT: LevelJLPT? {
-        didSet {
-//            guard let level = levelJLPT else { return }
-//            switch level {
-//            case .n1:
-//                circleImage.image = Asset.circleN1.image
-//            case .n2:
-//                circleImage.image = Asset.circleN2.image
-//            case .n3:
-//                circleImage.image = Asset.circleN3.image
-//            case .n4:
-//                circleImage.image = Asset.circleN4.image
-//            case .n5:
-//                circleImage.image = Asset.circleN5.image
-//            }
-        }
-    }
+    var levelJLPT: LevelJLPT?
     @IBOutlet weak var unitLabel: UILabel!
 
     var unit: String? {
@@ -37,9 +20,5 @@ class JLPTUnitCellCollectionViewCell: BasePageCollectionCell {
             guard let unit = unit else { return }
             unitLabel.text = "Đề số\n \(unit)"
         }
-    }
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
     }
 }

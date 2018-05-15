@@ -19,8 +19,4 @@ class EditProfileCell: UITableViewCell {
             contentTypeSetting.text = item.contentProfile
         }
     }
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
 }

@@ -49,8 +49,6 @@ class DocumentExpandHeaderView: UITableViewHeaderFooterView {
     var headerItem: DocumentHeader? {
         didSet {
             guard let header = headerItem else { return }
-            // Todo: Fix header color when selected
-            //contentHeaderView.backgroundColor = header.isExpanded ? header.color : .white
             titleLbl.text = header.title
             subTitleLbl.text = header.titleNumberDocument
             jlptImageView.image = header.image
