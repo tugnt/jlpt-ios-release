@@ -87,7 +87,7 @@ class ListeningQuestionController: UIViewController, AVAudioPlayerDelegate {
         guard let imageUrl = question.imageUrl else { return }
         Alamofire.request(imageUrl).responseImage { response in
             if let image = response.result.value {
-                self.questionImage.image = image
+                //self.questionImage.image = image
             }
         }
         answerALb.text = question.answerA
@@ -99,12 +99,14 @@ class ListeningQuestionController: UIViewController, AVAudioPlayerDelegate {
     
     private func setFontSize() {
         let fontSize = CGFloat(Setting.fontSize)
-        let font = UIFont.systemFont(ofSize: fontSize, weight: .thin)
-        questionLb.font = font
-//        answerALb.font = font
-//        answerBLb.font = font
-//        answerCLb.font = font
-//        answerDLb.font = font
+        if fontSize != 0 {
+            let font = UIFont.systemFont(ofSize: fontSize, weight: .thin)
+            questionLb.font = font
+            answerALb.font = font
+            answerBLb.font = font
+            answerCLb.font = font
+            answerDLb.font = font
+        }
     }
 
     private func resetAllRadioButton() {

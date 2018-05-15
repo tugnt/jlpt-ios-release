@@ -55,12 +55,14 @@ class NomalQuestionCell: UITableViewCell {
     
     private func setFontSize() {
         let fontSize = CGFloat(Setting.fontSize)
-        let font = UIFont.systemFont(ofSize: fontSize, weight: .thin)
-        questionLabel.font = font
-        answerALabel.font = font
-        answerBLabel.font = font
-        answerCLabel.font = font
-        answerDLabel.font = font
+        if fontSize != 0 {
+            let font = UIFont.systemFont(ofSize: fontSize, weight: .thin)
+            questionLabel.font = font
+            answerALabel.font = font
+            answerBLabel.font = font
+            answerCLabel.font = font
+            answerDLabel.font = font
+        }
     }
 
     @IBAction func radioClicked(_ sender: TDRadioButton) {
