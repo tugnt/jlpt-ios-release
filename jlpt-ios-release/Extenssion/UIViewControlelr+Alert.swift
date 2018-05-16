@@ -18,6 +18,7 @@ extension UIViewController {
         alert.addAction(cancelAction)
         self.present(alert, animated: true, completion: nil)
     }
+    
 // swiftlint:disable function_parameter_count
     func showInputDialog(title: String, message: String, okButton: String, cancelButton: String, okAction: @escaping () -> Void?, cancelAction: @escaping () -> Void? ) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -45,11 +46,9 @@ extension UIViewController {
             confirm()
         }
         confirmDialog.cancelDidSelected = {
+            confirmDialog.removeFromSuperview()
             cancel?()
         }
-    }
-    
-    func showAlertDialog() {
-        
+        self.view.addSubview(confirmDialog)
     }
 }
