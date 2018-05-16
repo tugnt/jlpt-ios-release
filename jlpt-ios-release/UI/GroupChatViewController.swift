@@ -81,16 +81,14 @@ extension GroupChatViewController: UICollectionViewDelegate, UICollectionViewDel
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        /// Todo: Move to group chat
-        let realm = try? Realm()
-        let accounts = realm?.objects(Account.self)
-        if accounts?.count == 0 || accounts == nil {
+        if !Account.checkoutUserLogin() {
             self.showConfirmDialog(title: "Thông báo", message: "Vui lòng đăng nhập để sử dụng chức năng này.", confirmTitle: "Đăng ký", cancelTitle: "Bỏ qua", confirm: {
                 self.moveLoginScreen()
             }, cancel: nil)
         } else {
             let vc = StoryboardScene.ChatRoom.chatRoomController.instantiate()
-            ChatRoomController.account = accounts![0]
+            guard let account = Account.getAccount() else { return }
+            ChatRoomController.account = account
             let level = LevelJLPT(rawValue: "\(indexPath.row + 1)")
             vc.roomName = level
             navigationController?.pushViewController(vc, animated: true)
