@@ -71,14 +71,22 @@ class ChatRoomController: UICollectionViewController {
         collectionView?.register(MessageTextViewCell.self, forCellWithReuseIdentifier: MessageTextViewCell.identifier)
         setcollectionViewLayout()
         setUpInputArea()
-        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboard(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboard(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        observerKeyboadEvent()
         observeMessage()
-        // Validate text input
+        self.validateMessage()
+    }
+    
+    private func validateMessage() {
+        
         let messageValid = inputTextView.rx.text.orEmpty.map({ _ in
             return (!self.inputTextView.text.isEmpty && self.inputTextView.textColor != .lightGray)
         }).shareReplay(1)
         messageValid.bind(to: sendButton.rx.isEnabled).disposed(by: disposeBag)
+    }
+    
+    private func observerKeyboadEvent() {
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboard(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboard(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -86,7 +94,7 @@ class ChatRoomController: UICollectionViewController {
         tabBarController?.tabBar.isHidden = true
     }
 
-    func setcollectionViewLayout() {
+    private func setcollectionViewLayout() {
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 48, right: 0)
         layout.scrollDirection = .vertical
@@ -95,7 +103,7 @@ class ChatRoomController: UICollectionViewController {
         collectionView?.collectionViewLayout = layout
     }
 
-    func setUpInputArea() {
+    private func setUpInputArea() {
         view.addSubview(inputAreaView)
         // Working not perfect with swift 3.2
         view.addConstraintsWithFormat("H:|[v0]|", views: inputAreaView)
@@ -172,7 +180,7 @@ class ChatRoomController: UICollectionViewController {
         if let userInfo = notification.userInfo {
             guard let keyboadFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue else { return }
             keyboardHeight = keyboadFrame.cgRectValue.height
-            isKeyboardShowing = notification.name == NSNotification.Name.UIKeyboardWillShow
+            isKeyboardShowing = notification.name == .UIKeyboardWillShow
             adjustCollectionOffset()
         }
     }
