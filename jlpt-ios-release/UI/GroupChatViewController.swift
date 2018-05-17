@@ -11,7 +11,7 @@ import Realm
 import RealmSwift
 import Firebase
 
-class GroupChatViewController: UIViewController {
+class GroupChatViewController: AdmobsViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     var ref: DatabaseReference!
     var groups: [GroupChatModel] = []
@@ -87,6 +87,7 @@ extension GroupChatViewController: UICollectionViewDelegate, UICollectionViewDel
             }, cancel: nil)
         } else {
             let vc = StoryboardScene.ChatRoom.chatRoomController.instantiate()
+            self.presentRewardAdVideo()
             guard let account = Account.getAccount() else { return }
             ChatRoomController.account = account
             let level = LevelJLPT(rawValue: "\(indexPath.row + 1)")

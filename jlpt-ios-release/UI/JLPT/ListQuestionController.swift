@@ -67,6 +67,7 @@ class ListQuestionController: ExpandingViewController {
     private func moveDetailQuestionScreen(indexPath: IndexPath) {
         let unit = units[indexPath.row]
         let vc = StoryboardScene.NomalQuestion.nomalQuestionController.instantiate()
+        self.reductionCoins()
         vc.type = type
         vc.level = level
         vc.unit = unit

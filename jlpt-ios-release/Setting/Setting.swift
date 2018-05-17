@@ -28,4 +28,24 @@ struct Setting {
             UserDefaults.standard.synchronize()
         }
     }
+    
+    static var coins: Int {
+        get {
+            return UserDefaults.standard.integer(forKey: "userCoins")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "userCoins")
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
+    static var isPremiumAccount: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: "isPremiumAccount")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "isPremiumAccount")
+            UserDefaults.standard.synchronize()
+        }
+    }
 }

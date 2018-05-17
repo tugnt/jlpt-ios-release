@@ -67,6 +67,9 @@ class StartAppController: UIViewController {
             isSigned = true
             self.moveMainScreen()
         }
+        if !Setting.firstRunApp {
+            Setting.coins = 5
+        }
     }
     
     private func moveMainScreen() {

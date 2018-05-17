@@ -27,9 +27,6 @@ class NomalQuestionController: AdmobsViewController {
     var unit: String!
     var type: TypeJLPT!
     // For admob
-//    /// Is an ad being loaded.
-//    private var adRequestInProgress = false
-//    private var rewardBaseVidel: GADRewardBasedVideoAd?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,10 +39,6 @@ class NomalQuestionController: AdmobsViewController {
         for _ in questions { solutionOfUser.append(5) }
         self.loadAdsVideo()
         // - Init array solution
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         if questions.count == 0 {
             tableView.isHidden = true
             addEmptyStateView()
@@ -93,15 +86,8 @@ class NomalQuestionController: AdmobsViewController {
         doneButton = UIBarButtonItem(title: "Hoàn thành", style: .done, target: self, action: #selector(checkAnswer))
         navigationItem.rightBarButtonItem = doneButton
     }
-
-    private var rewardBasedVideo: GADRewardBasedVideoAd?
+    
     @objc private func checkAnswer() {
-        self.presentRewardAdVideo()
-//        if rewardBasedVideo?.isReady == true {
-//            print("Nó chạy vào đây chưa, cũng đéo biết nữa. hajjz")
-//            rewardBasedVideo?.present(fromRootViewController: self)
-//        }
-        /*
         for index in 0..<questions.count {
             if Int(questions[index].solution) == solutionOfUser[index] {
                 point += 1
@@ -117,18 +103,12 @@ class NomalQuestionController: AdmobsViewController {
             self.point = 0
             self.isShowSolution = true
             self.tableView.reloadData()
-        }*/
+            self.presentRewardAdVideo()
+        }
+        confirmDialog.cancelDidSelected = {
+            self.presentRewardAdVideo()
+        }
     }
-    
-//    private func loadAdsVideo() {
-//        let request = GADRequest()
-//        request.testDevices = [kGADSimulatorID]
-//        if !adRequestInProgress && rewardBasedVideo?.isReady == false {
-//            rewardBasedVideo?.load(GADRequest(),
-//                                   withAdUnitID: "ca-app-pub-3940256099942544/1712485313")
-//            adRequestInProgress = true
-//        }
-//    }
 }
 
 extension NomalQuestionController: UITableViewDelegate, UITableViewDataSource, NormalQuestionCellDelegate {

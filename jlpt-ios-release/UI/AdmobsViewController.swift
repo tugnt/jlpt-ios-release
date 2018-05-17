@@ -20,14 +20,14 @@ class AdmobsViewController: UIViewController {
     private let rewardVideoUnitId = "ca-app-pub-3940256099942544/1712485313"
     private let banderUnitId = ""
     private let insterstitialUnitId = ""
-    
+    var checkCallBack: (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         rewardBasedVideo = GADRewardBasedVideoAd.sharedInstance()
         rewardBasedVideo?.delegate = self
     }
-
+    
     func loadAdsVideo() {
         let request = GADRequest()
         request.testDevices = [kGADSimulatorID]
@@ -38,7 +38,6 @@ class AdmobsViewController: UIViewController {
     }
     
     func presentRewardAdVideo() {
-        print("First load is true")
         if rewardBasedVideo?.isReady == true {
             rewardBasedVideo?.present(fromRootViewController: self)
         } else {
@@ -81,6 +80,8 @@ extension AdmobsViewController: GADRewardBasedVideoAdDelegate {
     }
     
     func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd, didRewardUserWith reward: GADAdReward) {
+        self.earnCoins()
+        self.checkCallBack?()
         print("Reward received with currency: \(reward.type), amount \(reward.amount).")
     }
 }
