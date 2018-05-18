@@ -83,6 +83,7 @@ class TheoryHintController: UIViewController {
 
     private func moveNormalQuestionScreen(normalQuestions: [NormalQuestionViewModel]) {
         let vc = StoryboardScene.NomalQuestion.nomalQuestionController.instantiate()
+        self.reductionCoins()
         vc.questions = normalQuestions
         navigationController?.pushViewController(vc, animated: true)
     }

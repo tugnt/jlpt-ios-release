@@ -31,6 +31,7 @@
 		1A2D07071F9E27BA00CB3864 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A2D07051F9E27BA00CB3864 /* Login.storyboard */; };
 		1A2D070A1F9F706E00CB3864 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A2D07081F9F706E00CB3864 /* Register.storyboard */; };
 		1A2D070C1F9F75AC00CB3864 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D070B1F9F75AC00CB3864 /* RegisterViewController.swift */; };
+		1A30115320ADB87A009CB7B0 /* UIViewController+Admob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A30115220ADB87A009CB7B0 /* UIViewController+Admob.swift */; };
 		1A36849E1F7752E9001FEF88 /* ChildIntroductionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A36849D1F7752E9001FEF88 /* ChildIntroductionController.swift */; };
 		1A3684A21F7D2611001FEF88 /* StartAppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3684A11F7D2611001FEF88 /* StartAppController.swift */; };
 		1A3684A41F7D2DFC001FEF88 /* StartApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A3684A31F7D2DFC001FEF88 /* StartApp.storyboard */; };
@@ -139,6 +140,7 @@
 		1AD7386A1F6D3CD300A4A1B9 /* ProcessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD738691F6D3CD300A4A1B9 /* ProcessController.swift */; };
 		1AD738761F6D3D8E00A4A1B9 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD738751F6D3D8E00A4A1B9 /* Profile.storyboard */; };
 		1AD738781F6D3DA200A4A1B9 /* Process.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD738771F6D3DA200A4A1B9 /* Process.storyboard */; };
+		1AE799AC209F728500BE38AB /* AdmobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE799AB209F728500BE38AB /* AdmobsViewController.swift */; };
 		1AEA8B2A1F6D4967005A7FC0 /* BaseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA8B291F6D4967005A7FC0 /* BaseViewCell.swift */; };
 		1AEA8B2C1F6D4986005A7FC0 /* CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA8B2B1F6D4986005A7FC0 /* CategoryViewCell.swift */; };
 		1AEA8B2E1F6D49DD005A7FC0 /* LessonViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA8B2D1F6D49DD005A7FC0 /* LessonViewCell.swift */; };
@@ -231,6 +233,7 @@
 		1A2D07061F9E27BA00CB3864 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Login.storyboard; sourceTree = "<group>"; };
 		1A2D07091F9F706E00CB3864 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Register.storyboard; sourceTree = "<group>"; };
 		1A2D070B1F9F75AC00CB3864 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		1A30115220ADB87A009CB7B0 /* UIViewController+Admob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Admob.swift"; sourceTree = "<group>"; };
 		1A3684981F76E8D6001FEF88 /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Light.ttf"; sourceTree = "<group>"; };
 		1A36849D1F7752E9001FEF88 /* ChildIntroductionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildIntroductionController.swift; sourceTree = "<group>"; };
 		1A3684A11F7D2611001FEF88 /* StartAppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartAppController.swift; sourceTree = "<group>"; };
@@ -341,6 +344,7 @@
 		1AD738691F6D3CD300A4A1B9 /* ProcessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessController.swift; sourceTree = "<group>"; };
 		1AD738751F6D3D8E00A4A1B9 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		1AD738771F6D3DA200A4A1B9 /* Process.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Process.storyboard; sourceTree = "<group>"; };
+		1AE799AB209F728500BE38AB /* AdmobsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobsViewController.swift; sourceTree = "<group>"; };
 		1AEA8B291F6D4967005A7FC0 /* BaseViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewCell.swift; sourceTree = "<group>"; };
 		1AEA8B2B1F6D4986005A7FC0 /* CategoryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewCell.swift; sourceTree = "<group>"; };
 		1AEA8B2D1F6D49DD005A7FC0 /* LessonViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonViewCell.swift; sourceTree = "<group>"; };
@@ -693,6 +697,7 @@
 				1A4E45F31FC1756B004FE155 /* GroupChatViewController.swift */,
 				1AF3492B1FE55CDA008924CB /* HidenKeyboardViewController.swift */,
 				1A079BA5200BA59F0064C186 /* ShowDocumentViewController.swift */,
+				1AE799AB209F728500BE38AB /* AdmobsViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -776,6 +781,7 @@
 				1A565F0E1FA59B9700AAC7C8 /* UIViewController+EmptyState.swift */,
 				1A2667351FB814B300C9CFFB /* UIViewController+Loading.swift */,
 				1AF6E58D1FBFF767005A2B16 /* UITextField+Login.swift */,
+				1A30115220ADB87A009CB7B0 /* UIViewController+Admob.swift */,
 			);
 			path = Extenssion;
 			sourceTree = "<group>";
@@ -1250,6 +1256,7 @@
 				1A565F0B1FA574C500AAC7C8 /* EmptyStateView.swift in Sources */,
 				1A2D07041F9E24CB00CB3864 /* LoginViewController.swift in Sources */,
 				1AF3492C1FE55CDA008924CB /* HidenKeyboardViewController.swift in Sources */,
+				1A30115320ADB87A009CB7B0 /* UIViewController+Admob.swift in Sources */,
 				1A37ED0B20124F9F007361D1 /* DownloadHelper.swift in Sources */,
 				1AB79E2F1F769F1200C2F8AE /* IntroductionController.swift in Sources */,
 				1AC8703C2092893700B1F1DF /* Localizable.swift in Sources */,
@@ -1285,6 +1292,7 @@
 				1AF6E58E1FBFF767005A2B16 /* UITextField+Login.swift in Sources */,
 				1AF6E5D61FC0A149005A2B16 /* TDModalStatusView.swift in Sources */,
 				1A565F0F1FA59B9700AAC7C8 /* UIViewController+EmptyState.swift in Sources */,
+				1AE799AC209F728500BE38AB /* AdmobsViewController.swift in Sources */,
 				1A4E45FA1FC17CF8004FE155 /* GroupChatViewCell.swift in Sources */,
 				1A73C6B41FBF232D008C70AC /* ChatMessageModel.swift in Sources */,
 				1A2667551FBB28FB00C9CFFB /* MessageTextViewCell.swift in Sources */,

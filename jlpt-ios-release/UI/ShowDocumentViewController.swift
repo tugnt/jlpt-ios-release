@@ -10,7 +10,6 @@ import UIKit
 import WebKit
 
 class ShowDocumentViewController: UIViewController {
-
     private var webView: UIWebView!
     var documentUrl: URL!
 

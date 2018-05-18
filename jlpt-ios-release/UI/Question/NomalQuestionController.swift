@@ -7,20 +7,26 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class NomalQuestionController: UIViewController {
+class NomalQuestionController: AdmobsViewController {
     var questions: [NormalQuestionViewModel] = [] {
         didSet {
             for _ in questions { solutionOfUser.append(5) }
         }
     }
     @IBOutlet weak var tableView: UITableView!
-    let cellId = "cellQuestion"
+    private let cellId = "cellQuestion"
+    private var solutionOfUser: [Int] = []
+    private var point: Int = 0
+    private var doneButton: UIBarButtonItem!
     var isShowSolution: Bool = false
-    var solutionOfUser: [Int] = []
-    var point: Int = 0
-    var doneButton: UIBarButtonItem!
     var isHasDoneButton: Bool = true
+    var needLoadRequest: Bool = false
+    var level: LevelJLPT!
+    var unit: String!
+    var type: TypeJLPT!
+    // For admob
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +37,8 @@ class NomalQuestionController: UIViewController {
         tableView.separatorColor = .clear
         tableView.allowsSelection = false
         for _ in questions { solutionOfUser.append(5) }
+        self.loadAdsVideo()
         // - Init array solution
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         if questions.count == 0 {
             tableView.isHidden = true
             addEmptyStateView()
@@ -43,11 +46,7 @@ class NomalQuestionController: UIViewController {
         isHasDoneButton ? addBarDoneButton() : ()
         neededLoadRequest()
     }
-
-    var needLoadRequest: Bool = false
-    var level: LevelJLPT!
-    var unit: String!
-    var type: TypeJLPT!
+    
     private func neededLoadRequest() {
         if needLoadRequest {
             startAnimationLoading()
@@ -87,7 +86,7 @@ class NomalQuestionController: UIViewController {
         doneButton = UIBarButtonItem(title: "Hoàn thành", style: .done, target: self, action: #selector(checkAnswer))
         navigationItem.rightBarButtonItem = doneButton
     }
-
+    
     @objc private func checkAnswer() {
         for index in 0..<questions.count {
             if Int(questions[index].solution) == solutionOfUser[index] {
@@ -104,6 +103,10 @@ class NomalQuestionController: UIViewController {
             self.point = 0
             self.isShowSolution = true
             self.tableView.reloadData()
+            self.presentRewardAdVideo()
+        }
+        confirmDialog.cancelDidSelected = {
+            self.presentRewardAdVideo()
         }
     }
 }
