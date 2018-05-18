@@ -12,6 +12,7 @@ import Crashlytics
 import Firebase
 import GoogleSignIn
 import GoogleMobileAds
+import Siren
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
