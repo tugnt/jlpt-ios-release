@@ -12,6 +12,7 @@ import Crashlytics
 import Firebase
 import GoogleSignIn
 import GoogleMobileAds
+import Siren
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -39,7 +40,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         /// Initialize the Google Mobile Ads SDK.
         GADMobileAds.configure(withApplicationID: Env.adsAppId)
+        configSiren()
         return true
+    }
+    
+    private func configSiren() {
+        let siren = Siren.shared
+        siren.appName = "Luyện thi JLPT"
+        siren.alertType = .force
+        siren.majorUpdateAlertType = .force
+        siren.forceLanguageLocalization = .vietnamese
+        siren.checkVersion(checkType: .immediately)
     }
 
     @available(iOS 9.0, *)
@@ -54,9 +65,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidEnterBackground(_ application: UIApplication) {}
 
-    func applicationWillEnterForeground(_ application: UIApplication) {}
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        checkVersionOnWillEnterForeground()
+    }
 
-    func applicationDidBecomeActive(_ application: UIApplication) {}
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        checkVersionOnDidBecomeActive()
+    }
 
     func applicationWillTerminate(_ application: UIApplication) {}
 }
+
+extension AppDelegate {
+    func checkVersionOnWillEnterForeground() {
+        Siren.shared.checkVersion(checkType: .immediately)
+    }
+    
+    func checkVersionOnDidBecomeActive() {
+        Siren.shared.checkVersion(checkType: .immediately)
+    }
+}
+

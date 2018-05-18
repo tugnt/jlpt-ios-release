@@ -28,5 +28,6 @@ target 'jlpt-ios-release' do
   pod 'Firebase/Storage'
   pod 'GoogleSignIn'
   pod 'Google-Mobile-Ads-SDK'
-	
+  pod 'Siren'  
+
 end
