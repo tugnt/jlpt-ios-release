@@ -78,7 +78,6 @@ class LoginViewController: HidenKeyboardViewController, GIDSignInDelegate, GIDSi
         let password = passTextField.text ?? ""
         Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
             if error != nil {
-                print(error.debugDescription)
                 self.stopAnimationLoading()
                 self.showLoginAlert()
             }
@@ -93,10 +92,9 @@ class LoginViewController: HidenKeyboardViewController, GIDSignInDelegate, GIDSi
                 do {
                     try realm?.write {
                         realm?.add(account)
-                        print(account)
                         self.stopAnimationLoading()
                         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-                        appDelegate.window?.rootViewController = TabbarController()
+                        appDelegate.window?.rootViewController = TabbarViewController()
                     }
                 } catch {
                     self.stopAnimationLoading()
@@ -111,14 +109,14 @@ class LoginViewController: HidenKeyboardViewController, GIDSignInDelegate, GIDSi
     }
     
     @objc private func moveRegisterScreen() {
-        let vc: RegisterViewController = StoryboardScene.Register.registerViewController.instantiate()
+        let vc: RegisterViewController = StoryboardScene.RegisterViewController.registerViewController.instantiate()
         vc.modalPresentationStyle = .overCurrentContext
         self.present(vc, animated: true, completion: nil)
     }
     
     @objc private func skipLoggin() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        appDelegate.window?.rootViewController = TabbarController()
+        appDelegate.window?.rootViewController = TabbarViewController()
     }
     
     private func showLoginAlert() {
@@ -160,7 +158,7 @@ class LoginViewController: HidenKeyboardViewController, GIDSignInDelegate, GIDSi
                                 print(realmErr)
                             }
                             guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-                            appDelegate.window?.rootViewController = TabbarController()
+                            appDelegate.window?.rootViewController = TabbarViewController()
                         })
                     } else {
                         self.stopAnimationLoading()
