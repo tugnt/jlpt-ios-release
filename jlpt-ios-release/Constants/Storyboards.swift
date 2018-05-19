@@ -52,124 +52,112 @@ extension UIViewController {
 
 // swiftlint:disable explicit_type_interface identifier_name line_length type_body_length type_name
 enum StoryboardScene {
-  enum ChatRoom: StoryboardType {
-    static let storyboardName = "ChatRoom"
+  enum ChatRoomViewController: StoryboardType {
+    static let storyboardName = "ChatRoomViewController"
 
-    static let chatRoomController = SceneType<jlpt_ios_release.ChatRoomController>(storyboard: ChatRoom.self, identifier: "ChatRoomController")
-  }
-  enum ChildIntroduction: StoryboardType {
-    static let storyboardName = "ChildIntroduction"
-
-    static let childIntroductionController = SceneType<jlpt_ios_release.ChildIntroductionController>(storyboard: ChildIntroduction.self, identifier: "ChildIntroductionController")
+    static let chatRoomViewController = SceneType<jlpt_ios_release.ChatRoomViewController>(storyboard: ChatRoomViewController.self, identifier: "ChatRoomViewController")
   }
   enum DocumentDetailViewController: StoryboardType {
     static let storyboardName = "DocumentDetailViewController"
 
     static let documentDetailViewController = SceneType<jlpt_ios_release.DocumentDetailViewController>(storyboard: DocumentDetailViewController.self, identifier: "DocumentDetailViewController")
   }
-  enum Documents: StoryboardType {
-    static let storyboardName = "Documents"
+  enum DocumentsViewController: StoryboardType {
+    static let storyboardName = "DocumentsViewController"
 
-    static let documentController = SceneType<jlpt_ios_release.DocumentController>(storyboard: Documents.self, identifier: "DocumentController")
+    static let documentViewController = SceneType<jlpt_ios_release.DocumentViewController>(storyboard: DocumentsViewController.self, identifier: "DocumentViewController")
   }
-  enum EditProfile: StoryboardType {
-    static let storyboardName = "EditProfile"
+  enum EditProfileViewController: StoryboardType {
+    static let storyboardName = "EditProfileViewController"
 
-    static let editProfileController = SceneType<jlpt_ios_release.EditProfileController>(storyboard: EditProfile.self, identifier: "EditProfileController")
+    static let editProfileViewController = SceneType<jlpt_ios_release.EditProfileViewController>(storyboard: EditProfileViewController.self, identifier: "EditProfileViewController")
   }
-  enum FeedBack: StoryboardType {
-    static let storyboardName = "FeedBack"
+  enum FeedBackViewController: StoryboardType {
+    static let storyboardName = "FeedBackViewController"
 
-    static let feedbackController = SceneType<jlpt_ios_release.FeedbackController>(storyboard: FeedBack.self, identifier: "FeedbackController")
+    static let feedbackViewController = SceneType<jlpt_ios_release.FeedbackViewController>(storyboard: FeedBackViewController.self, identifier: "FeedbackViewController")
   }
   enum GroupChatViewController: StoryboardType {
     static let storyboardName = "GroupChatViewController"
 
     static let groupChatViewController = SceneType<jlpt_ios_release.GroupChatViewController>(storyboard: GroupChatViewController.self, identifier: "GroupChatViewController")
   }
-  enum Introduction: StoryboardType {
-    static let storyboardName = "Introduction"
-
-    static let initialScene = InitialSceneType<jlpt_ios_release.IntroductionController>(storyboard: Introduction.self)
-
-    static let introductionController = SceneType<jlpt_ios_release.IntroductionController>(storyboard: Introduction.self, identifier: "IntroductionController")
-  }
   enum LaunchScreen: StoryboardType {
     static let storyboardName = "LaunchScreen"
 
     static let initialScene = InitialSceneType<UIViewController>(storyboard: LaunchScreen.self)
   }
-  enum ListDocumentOfType: StoryboardType {
-    static let storyboardName = "ListDocumentOfType"
+  enum ListDocumentOfTypeViewController: StoryboardType {
+    static let storyboardName = "ListDocumentOfTypeViewController"
 
-    static let listDocumentViewController = SceneType<jlpt_ios_release.ListDocumentViewController>(storyboard: ListDocumentOfType.self, identifier: "ListDocumentViewController")
+    static let listDocumentViewController = SceneType<jlpt_ios_release.ListDocumentViewController>(storyboard: ListDocumentOfTypeViewController.self, identifier: "ListDocumentViewController")
   }
-  enum ListHint: StoryboardType {
-    static let storyboardName = "ListHint"
+  enum ListHintViewController: StoryboardType {
+    static let storyboardName = "ListHintViewController"
 
-    static let listHintController = SceneType<jlpt_ios_release.ListHintController>(storyboard: ListHint.self, identifier: "ListHintController")
+    static let listHintController = SceneType<jlpt_ios_release.ListHintController>(storyboard: ListHintViewController.self, identifier: "ListHintController")
   }
-  enum ListJLPTQuestion: StoryboardType {
-    static let storyboardName = "ListJLPTQuestion"
+  enum ListJLPTQuestionViewController: StoryboardType {
+    static let storyboardName = "ListJLPTQuestionViewController"
 
-    static let listQuestionController = SceneType<jlpt_ios_release.ListQuestionController>(storyboard: ListJLPTQuestion.self, identifier: "ListQuestionController")
+    static let listQuestionViewController = SceneType<jlpt_ios_release.ListQuestionViewController>(storyboard: ListJLPTQuestionViewController.self, identifier: "ListQuestionViewController")
   }
-  enum ListeningQuestion: StoryboardType {
-    static let storyboardName = "ListeningQuestion"
+  enum ListeningQuestionViewController: StoryboardType {
+    static let storyboardName = "ListeningQuestionViewController"
 
-    static let listeningQuestionController = SceneType<jlpt_ios_release.ListeningQuestionController>(storyboard: ListeningQuestion.self, identifier: "ListeningQuestionController")
+    static let listeningQuestionViewController = SceneType<jlpt_ios_release.ListeningQuestionViewController>(storyboard: ListeningQuestionViewController.self, identifier: "ListeningQuestionViewController")
   }
-  enum Login: StoryboardType {
-    static let storyboardName = "Login"
+  enum LoginViewController: StoryboardType {
+    static let storyboardName = "LoginViewController"
 
-    static let loginViewController = SceneType<jlpt_ios_release.LoginViewController>(storyboard: Login.self, identifier: "LoginViewController")
+    static let loginViewController = SceneType<jlpt_ios_release.LoginViewController>(storyboard: LoginViewController.self, identifier: "LoginViewController")
   }
-  enum NomalQuestion: StoryboardType {
-    static let storyboardName = "NomalQuestion"
+  enum NomalQuestionViewController: StoryboardType {
+    static let storyboardName = "NomalQuestionViewController"
 
-    static let nomalQuestionController = SceneType<jlpt_ios_release.NomalQuestionController>(storyboard: NomalQuestion.self, identifier: "NomalQuestionController")
+    static let normalQuestionViewController = SceneType<jlpt_ios_release.NormalQuestionViewController>(storyboard: NomalQuestionViewController.self, identifier: "NormalQuestionViewController")
   }
-  enum Notification: StoryboardType {
-    static let storyboardName = "Notification"
+  enum NotificationViewController: StoryboardType {
+    static let storyboardName = "NotificationViewController"
 
-    static let notificationController = SceneType<jlpt_ios_release.NotificationController>(storyboard: Notification.self, identifier: "NotificationController")
+    static let notificationViewController = SceneType<jlpt_ios_release.NotificationViewController>(storyboard: NotificationViewController.self, identifier: "NotificationViewController")
   }
-  enum PrivacyPolicy: StoryboardType {
-    static let storyboardName = "PrivacyPolicy"
+  enum PrivacyPolicyViewController: StoryboardType {
+    static let storyboardName = "PrivacyPolicyViewController"
 
-    static let privacyPolicyController = SceneType<jlpt_ios_release.PrivacyPolicyController>(storyboard: PrivacyPolicy.self, identifier: "PrivacyPolicyController")
+    static let privacyPolicyViewController = SceneType<jlpt_ios_release.PrivacyPolicyViewController>(storyboard: PrivacyPolicyViewController.self, identifier: "PrivacyPolicyViewController")
   }
-  enum Process: StoryboardType {
-    static let storyboardName = "Process"
+  enum ProcessViewController: StoryboardType {
+    static let storyboardName = "ProcessViewController"
 
-    static let processController = SceneType<jlpt_ios_release.ProcessController>(storyboard: Process.self, identifier: "ProcessController")
+    static let processViewController = SceneType<jlpt_ios_release.ProcessViewController>(storyboard: ProcessViewController.self, identifier: "ProcessViewController")
   }
-  enum Profile: StoryboardType {
-    static let storyboardName = "Profile"
+  enum ProfileViewController: StoryboardType {
+    static let storyboardName = "ProfileViewController"
 
-    static let profileController = SceneType<jlpt_ios_release.ProfileController>(storyboard: Profile.self, identifier: "ProfileController")
+    static let profileViewController = SceneType<jlpt_ios_release.ProfileViewController>(storyboard: ProfileViewController.self, identifier: "ProfileViewController")
   }
-  enum Register: StoryboardType {
-    static let storyboardName = "Register"
+  enum RegisterViewController: StoryboardType {
+    static let storyboardName = "RegisterViewController"
 
-    static let registerViewController = SceneType<jlpt_ios_release.RegisterViewController>(storyboard: Register.self, identifier: "RegisterViewController")
+    static let registerViewController = SceneType<jlpt_ios_release.RegisterViewController>(storyboard: RegisterViewController.self, identifier: "RegisterViewController")
   }
   enum ShowDocumentViewController: StoryboardType {
     static let storyboardName = "ShowDocumentViewController"
 
     static let showDocumentViewController = SceneType<jlpt_ios_release.ShowDocumentViewController>(storyboard: ShowDocumentViewController.self, identifier: "ShowDocumentViewController")
   }
-  enum StartApp: StoryboardType {
-    static let storyboardName = "StartApp"
+  enum StartAppViewController: StoryboardType {
+    static let storyboardName = "StartAppViewController"
 
-    static let initialScene = InitialSceneType<jlpt_ios_release.StartAppController>(storyboard: StartApp.self)
+    static let initialScene = InitialSceneType<jlpt_ios_release.StartAppViewController>(storyboard: StartAppViewController.self)
 
-    static let startAppController = SceneType<jlpt_ios_release.StartAppController>(storyboard: StartApp.self, identifier: "StartAppController")
+    static let startAppViewController = SceneType<jlpt_ios_release.StartAppViewController>(storyboard: StartAppViewController.self, identifier: "StartAppViewController")
   }
-  enum TheoryHint: StoryboardType {
-    static let storyboardName = "TheoryHint"
+  enum TheoryHintViewController: StoryboardType {
+    static let storyboardName = "TheoryHintViewController"
 
-    static let theoryHintController = SceneType<jlpt_ios_release.TheoryHintController>(storyboard: TheoryHint.self, identifier: "TheoryHintController")
+    static let theoryHintViewController = SceneType<jlpt_ios_release.TheoryHintViewController>(storyboard: TheoryHintViewController.self, identifier: "TheoryHintViewController")
   }
 }
 

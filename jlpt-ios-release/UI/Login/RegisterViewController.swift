@@ -77,7 +77,7 @@ class RegisterViewController: HidenKeyboardViewController {
                     /// Move to home screen
                     self.stopAnimationLoading()
                     guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-                    appDelegate.window?.rootViewController = TabbarController()
+                    appDelegate.window?.rootViewController = TabbarViewController()
                 })
             }
         })

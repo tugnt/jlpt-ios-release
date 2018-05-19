@@ -81,7 +81,7 @@ class MessageTextViewCell: UICollectionViewCell, ConfigurableCell {
     }
 
     func updateUI(data: MessageTextModel) {
-        data.senderId != ChatRoomController.account.uid ? updateLeftMessageView(data: data) : updateRightMessageView(data: data)
+        data.senderId != ChatRoomViewController.account.uid ? updateLeftMessageView(data: data) : updateRightMessageView(data: data)
         messageLabel.text = data.message
     }
 
