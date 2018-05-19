@@ -87,7 +87,7 @@ class ListeningQuestionController: UIViewController, AVAudioPlayerDelegate {
         guard let imageUrl = question.imageUrl else { return }
         Alamofire.request(imageUrl).responseImage { response in
             if let image = response.result.value {
-                //self.questionImage.image = image
+                self.questionImage.image = image
             }
         }
         answerALb.text = question.answerA

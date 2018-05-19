@@ -92,7 +92,7 @@ extension ListQuestionController {
         let jlptLevelString = "LEVEL N\(level.rawValue)"
         cell.levelLabel.text = jlptLevelString
         cell.jlptTypeLabel.text = type.rawValue
-        cell.unitLabel.text = "Bai 1"
+        cell.unitLabel.text = "Bài \(indexPath.row + 1)"
         cell.detaillButtonDidSelected = {
             self.moveDetailQuestionScreen(indexPath: indexPath)
         }
