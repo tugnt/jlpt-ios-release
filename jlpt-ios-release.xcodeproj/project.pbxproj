@@ -97,7 +97,6 @@
 		1A9133A91F92414F007A6CF2 /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9133A81F92414F007A6CF2 /* DocumentViewController.swift */; };
 		1A9133AB1F92426B007A6CF2 /* ChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9133AA1F92426B007A6CF2 /* ChatRoomViewController.swift */; };
 		1A9133AE1F92427A007A6CF2 /* ChatRoomViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A9133AC1F92427A007A6CF2 /* ChatRoomViewController.storyboard */; };
-		1A9133B01F925670007A6CF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A9133AF1F92566F007A6CF2 /* Assets.xcassets */; };
 		1A9133B21F926D54007A6CF2 /* UIViewControlelr+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9133B11F926D54007A6CF2 /* UIViewControlelr+Alert.swift */; };
 		1A92D5171FC889740079970E /* EditProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A92D5161FC889730079970E /* EditProfileCell.swift */; };
 		1AB04DB61F7630F600E5AC27 /* Hint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB04DB51F7630F600E5AC27 /* Hint.swift */; };
@@ -156,6 +155,7 @@
 		DF41C96F20A4209D00B02100 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A46AC441F895206001FF467 /* RxSwift.framework */; };
 		DF41C97020A4263600B02100 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFAAFE31FE5227D00F701B7 /* RealmSwift.framework */; };
 		DF41C97120A4264500B02100 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFCCB9E41F8F7A6300123170 /* SnapKit.framework */; };
+		DF4634A120AFCD540091581D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF4634A020AFCD540091581D /* Assets.xcassets */; };
 		DF49239520A68EA300FA57BA /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF49239420A68EA300FA57BA /* Setting.swift */; };
 		DF4C22F21F74CA7E00B2CCC5 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4C22F11F74CA7E00B2CCC5 /* Result.swift */; };
 /* End PBXBuildFile section */
@@ -291,7 +291,6 @@
 		1A9133A81F92414F007A6CF2 /* DocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentViewController.swift; sourceTree = "<group>"; };
 		1A9133AA1F92426B007A6CF2 /* ChatRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController.swift; sourceTree = "<group>"; };
 		1A9133AD1F92427A007A6CF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ChatRoomViewController.storyboard; sourceTree = "<group>"; };
-		1A9133AF1F92566F007A6CF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A9133B11F926D54007A6CF2 /* UIViewControlelr+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewControlelr+Alert.swift"; sourceTree = "<group>"; };
 		1A92D5161FC889730079970E /* EditProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileCell.swift; sourceTree = "<group>"; };
 		1AB04DB51F7630F600E5AC27 /* Hint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hint.swift; sourceTree = "<group>"; };
@@ -359,6 +358,7 @@
 		BE9914B5E17E996F26F6DB4A /* Pods-jlpt-ios-releaseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jlpt-ios-releaseUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jlpt-ios-releaseUITests/Pods-jlpt-ios-releaseUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C08FD44EC6F84A16E0F0DAA8 /* Pods_jlpt_ios_releaseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jlpt_ios_releaseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8801B0FB1C671067D045E0C /* Pods_jlpt_ios_release.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jlpt_ios_release.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF4634A020AFCD540091581D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF49239420A68EA300FA57BA /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		DF4C22EE1F74B6C300B2CCC5 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		DF4C22F11F74CA7E00B2CCC5 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -498,8 +498,8 @@
 				1A6520851F8813D400E21905 /* Base.lproj */,
 				1A2B25CE1F512DFB00DFFD3A /* AppDelegate.swift */,
 				1A2667311FB6AFC400C9CFFB /* loader_ring.json */,
-				1A9133AF1F92566F007A6CF2 /* Assets.xcassets */,
 				1A29EE0D208AC897009D1068 /* Color.xcassets */,
+				DF4634A020AFCD540091581D /* Assets.xcassets */,
 				1A2B25DA1F512DFB00DFFD3A /* Info.plist */,
 				1AF6E5911FC07FBF005A2B16 /* GoogleService-Info.plist */,
 				1A46AC611F8A7728001FF467 /* color.txt */,
@@ -979,7 +979,6 @@
 				1A9133A71F924120007A6CF2 /* DocumentsViewController.storyboard in Resources */,
 				1AF6E5921FC07FBF005A2B16 /* GoogleService-Info.plist in Resources */,
 				1AD2FD711F80D98B00B5167D /* ListHintViewController.storyboard in Resources */,
-				1A9133B01F925670007A6CF2 /* Assets.xcassets in Resources */,
 				1ABECC8E1F9BB778005056A5 /* DocumentTypeCell.xib in Resources */,
 				1A9133AE1F92427A007A6CF2 /* ChatRoomViewController.storyboard in Resources */,
 				1A8168B0209628C200FA4B66 /* BannerAd.xib in Resources */,
@@ -1006,6 +1005,7 @@
 				1A2D07071F9E27BA00CB3864 /* LoginViewController.storyboard in Resources */,
 				1A29EE0E208AC897009D1068 /* Color.xcassets in Resources */,
 				1A9133961F92017F007A6CF2 /* FeedBackViewController.storyboard in Resources */,
+				DF4634A120AFCD540091581D /* Assets.xcassets in Resources */,
 				1A2D070A1F9F706E00CB3864 /* RegisterViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

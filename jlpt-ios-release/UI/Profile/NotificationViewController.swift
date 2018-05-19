@@ -36,7 +36,9 @@ class NotificationViewController: UITableViewController {
     
     private func settingLabelFontSize() {
         let fontSize = CGFloat(Setting.fontSize)
-        let font = UIFont.systemFont(ofSize: fontSize, weight: .thin)
-        fontSizeLabel.font = font
+        if Setting.fontSize != 0 {
+            let font = UIFont.systemFont(ofSize: fontSize, weight: .thin)
+            fontSizeLabel.font = font
+        }
     }
 }
