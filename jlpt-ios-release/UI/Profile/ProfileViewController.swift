@@ -41,7 +41,7 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
-    private let settingItems: [String] = ["Cài đặt tài khoản",
+    private let settingItems: [String] = ["Chi tiết tài khoản",
                                           "Phản hồi và chia sẻ",
                                           "Cài đặt ứng dụng",
                                           "Điều khoản và chính sách"]

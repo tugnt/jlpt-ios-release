@@ -77,10 +77,6 @@ enum Asset {
   static let grammar = ImageAsset(name: "grammar")
   static let kanji = ImageAsset(name: "kanji")
   static let listening = ImageAsset(name: "listening")
-  static let loading0 = ImageAsset(name: "loading_0")
-  static let loading1 = ImageAsset(name: "loading_1")
-  static let loading2 = ImageAsset(name: "loading_2")
-  static let loading3 = ImageAsset(name: "loading_3")
   static let n1 = ImageAsset(name: "n1")
   static let n2 = ImageAsset(name: "n2")
   static let n3 = ImageAsset(name: "n3")
@@ -95,6 +91,7 @@ enum Asset {
   static let sendPressed = ImageAsset(name: "send_pressed")
   static let tips1 = ImageAsset(name: "tips-1")
   static let tips = ImageAsset(name: "tips")
+  static let user = ImageAsset(name: "user")
 
   // swiftlint:disable trailing_comma
   static let allColors: [ColorAsset] = [
@@ -134,10 +131,6 @@ enum Asset {
     grammar,
     kanji,
     listening,
-    loading0,
-    loading1,
-    loading2,
-    loading3,
     n1,
     n2,
     n3,
@@ -152,6 +145,7 @@ enum Asset {
     sendPressed,
     tips1,
     tips,
+    user,
   ]
   // swiftlint:enable trailing_comma
   @available(*, deprecated, renamed: "allImages")
