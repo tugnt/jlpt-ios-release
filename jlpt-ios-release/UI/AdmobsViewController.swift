@@ -42,7 +42,7 @@ class AdmobsViewController: UIViewController {
             rewardBasedVideo?.present(fromRootViewController: self)
         } else {
             // Todo: Show alert or toast here
-            self.showAlertDialog(title: "Thông báo", content: "Error: Chưa load đc ads", titleButton: "OK", cancelAction: {
+            self.showAlertDialog(title: "Thông báo", content: "Có lỗi xảy ra. Bạn vui lòng thử lại sau.", titleButton: "OK", cancelAction: {
                 print("Show nothing")
             })
         }
