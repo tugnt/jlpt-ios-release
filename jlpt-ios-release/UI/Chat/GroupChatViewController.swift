@@ -19,6 +19,7 @@ class GroupChatViewController: AdmobsViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Chat room"
+        self.setUpNavBar()
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(GroupChatViewCell.nib, forCellWithReuseIdentifier: GroupChatViewCell.identifier)
@@ -45,6 +46,7 @@ class GroupChatViewController: AdmobsViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = false
+        self.loadAdsVideo()
     }
 
     private func createGroupData() {
