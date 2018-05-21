@@ -25,6 +25,8 @@ class ListDocumentViewController: UIViewController {
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.backgroundColor = #colorLiteral(red: 0.9219999909, green: 0.9250000119, blue: 0.9449999928, alpha: 1)
+        tableView.estimatedRowHeight = 200
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
 
     override func viewWillAppear(_ animated: Bool) {
