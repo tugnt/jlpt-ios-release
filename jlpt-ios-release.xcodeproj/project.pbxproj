@@ -75,7 +75,7 @@
 		1A65206F1F87B96500E21905 /* HintViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A65206E1F87B96500E21905 /* HintViewModel.swift */; };
 		1A6520761F87BEE000E21905 /* NomalQuestionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A6520751F87BEE000E21905 /* NomalQuestionViewController.storyboard */; };
 		1A65207B1F87C6AE00E21905 /* TheoryHintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A65207A1F87C6AE00E21905 /* TheoryHintViewController.swift */; };
-		1A65207D1F87EF7100E21905 /* HintQuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A65207C1F87EF7100E21905 /* HintQuestionModel.swift */; };
+		1A65207D1F87EF7100E21905 /* ListeningQuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A65207C1F87EF7100E21905 /* ListeningQuestionModel.swift */; };
 		1A65208A1F8813D500E21905 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A6520861F8813D400E21905 /* LaunchScreen.storyboard */; };
 		1A73C6B11FBF1F91008C70AC /* CellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A73C6B01FBF1F91008C70AC /* CellConfigurator.swift */; };
 		1A73C6B41FBF232D008C70AC /* ChatMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A73C6B31FBF232D008C70AC /* ChatMessageModel.swift */; };
@@ -268,7 +268,7 @@
 		1A65206E1F87B96500E21905 /* HintViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintViewModel.swift; sourceTree = "<group>"; };
 		1A6520751F87BEE000E21905 /* NomalQuestionViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NomalQuestionViewController.storyboard; sourceTree = "<group>"; };
 		1A65207A1F87C6AE00E21905 /* TheoryHintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoryHintViewController.swift; sourceTree = "<group>"; };
-		1A65207C1F87EF7100E21905 /* HintQuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintQuestionModel.swift; sourceTree = "<group>"; };
+		1A65207C1F87EF7100E21905 /* ListeningQuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeningQuestionModel.swift; sourceTree = "<group>"; };
 		1A6520871F8813D400E21905 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A73C6B01FBF1F91008C70AC /* CellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfigurator.swift; sourceTree = "<group>"; };
 		1A73C6B31FBF232D008C70AC /* ChatMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageModel.swift; sourceTree = "<group>"; };
@@ -560,7 +560,7 @@
 			children = (
 				1A73C6B21FBF2248008C70AC /* Chat */,
 				1A65206E1F87B96500E21905 /* HintViewModel.swift */,
-				1A65207C1F87EF7100E21905 /* HintQuestionModel.swift */,
+				1A65207C1F87EF7100E21905 /* ListeningQuestionModel.swift */,
 				1AEA8FD11FA245EB009E67D1 /* LessonModel.swift */,
 				1A44314C1FB32DB200574954 /* NormalQuestionViewModel.swift */,
 			);
@@ -1330,7 +1330,7 @@
 				1A2B25CF1F512DFB00DFFD3A /* AppDelegate.swift in Sources */,
 				1A079BA6200BA59F0064C186 /* ShowDocumentViewController.swift in Sources */,
 				1A9133931F920096007A6CF2 /* PrivacyPolicyViewController.swift in Sources */,
-				1A65207D1F87EF7100E21905 /* HintQuestionModel.swift in Sources */,
+				1A65207D1F87EF7100E21905 /* ListeningQuestionModel.swift in Sources */,
 				1ABECC911F9C4758005056A5 /* ListDocumentViewController.swift in Sources */,
 				1AF6E58E1FBFF767005A2B16 /* UITextField+Login.swift in Sources */,
 				1AF6E5D61FC0A149005A2B16 /* TDModalStatusView.swift in Sources */,

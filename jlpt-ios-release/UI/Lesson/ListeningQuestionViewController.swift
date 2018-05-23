@@ -12,7 +12,13 @@ import Alamofire
 import AlamofireImage
 
 class ListeningQuestionViewController: UIViewController, AVAudioPlayerDelegate {
-    var questions: [HintQuestionModel] = []
+    var questions: [ListeningQuestionModel] = []
+    /// For request API
+    var unit: Int!
+    var type: TypeJLPT!
+    var level: LevelJLPT!
+    var isNormalQuestion: Bool = false
+    
     private var questionNumber = 0
     private var audioPlayer: AVAudioPlayer = AVAudioPlayer()
     private let playButtonSize = CGSize(width: 30, height: 30)
@@ -60,10 +66,37 @@ class ListeningQuestionViewController: UIViewController, AVAudioPlayerDelegate {
         setUpUI()
         self.playAudioButton.addTarget(self, action: #selector(playAudio), for: .touchUpInside)
         self.checkAnswerButton.addTarget(self, action: #selector(moveNextQuestion), for: .touchUpInside)
-        self.updateQuestion(questionIndex: 0)
+        if !questions.isEmpty {
+            self.updateQuestion(questionIndex: 0)
+        }
         self.setFontSize()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if isNormalQuestion {
+            self.fetchNormalListeningQuestion()
+        }
+    }
 
+    private func fetchNormalListeningQuestion() {
+        startAnimationLoading()
+        let request = QuestionRequest(type: type, level: level, unit: unit)
+        ApiClient.instance.request(request: request, completion: { (response) in
+            print(response)
+            self.stopAnimationLoading()
+            switch response {
+            case .success(let value):
+                print(value)
+                value.jlptQuestion.forEach { self.questions.append(ListeningQuestionModel(normalResponse: $0)) }
+                self.updateQuestion(questionIndex: self.questionNumber)
+            case .failure:
+                break
+            }
+        })
+    }
+    
+    
     private func setUpUI() {
         playAudioButton.setImage(UIImage.fontAwesomeIcon(name: .play, textColor: .black, size: CGSize(width: 30, height: 30)), for: .normal)
         checkAnswerButton.isEnabled = false
