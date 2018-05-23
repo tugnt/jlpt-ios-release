@@ -24,7 +24,7 @@ class NormalQuestionViewController: AdmobsViewController {
     var isHasDoneButton: Bool = true
     var needLoadRequest: Bool = false
     var level: LevelJLPT!
-    var unit: String!
+    var unit: Int!
     var type: TypeJLPT!
     // For admob
 
@@ -76,7 +76,7 @@ class NormalQuestionViewController: AdmobsViewController {
         var normalQuestions: [NormalQuestionViewModel] = []
         for item in questions.jlptQuestion {
             let question = NormalQuestionViewModel(question: item.question, answerA: item.answerA, answerB: item.answerB, answerC: item.answerC,
-                                                   answerD: item.answerD, solution: item.solution, linkAudio: item.linkAudio as? String)
+                                                   answerD: item.answerD, solution: item.solution, linkAudio: item.linkAudio)
             normalQuestions.append(question)
         }
         return normalQuestions

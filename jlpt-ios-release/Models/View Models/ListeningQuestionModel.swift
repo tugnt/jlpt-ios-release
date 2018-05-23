@@ -1,5 +1,5 @@
 //
-//  HintQuestionModel.swift
+//  ListeningQuestionModel.swift
 //  jlpt-ios-release
 //
 //  Created by Nguyen Trong Tung on 2017/10/07.
@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct HintQuestionModel {
+struct ListeningQuestionModel {
+    // Cái này không phải là hint question model mà phải là listening question model
     let question: String
     let answerA: String
     let answerB: String
@@ -28,5 +29,16 @@ struct HintQuestionModel {
         self.solution = response.solution
         self.audioUrl = response.audioUrl
         self.imageUrl = response.imageUrl
+    }
+    
+    init(normalResponse: QuestionResponse) {
+        self.question = normalResponse.question
+        self.answerA = normalResponse.answerA
+        self.answerB = normalResponse.answerB
+        self.answerC = normalResponse.answerC
+        self.answerD = normalResponse.answerD
+        self.solution = normalResponse.solution
+        self.audioUrl = normalResponse.linkAudio
+        self.imageUrl = normalResponse.imageUrl
     }
 }

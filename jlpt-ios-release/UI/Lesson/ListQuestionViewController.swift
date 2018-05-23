@@ -13,7 +13,7 @@ import ExpandingCollection
 class ListQuestionViewController: ExpandingViewController {
     var level: LevelJLPT!
     var type: TypeJLPT!
-    var units = [String]()
+    var units = [Int]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,14 +65,23 @@ class ListQuestionViewController: ExpandingViewController {
     }
     
     private func moveDetailQuestionScreen(indexPath: IndexPath) {
-        let unit = units[indexPath.row]
-        let vc = StoryboardScene.NomalQuestionViewController.normalQuestionViewController.instantiate()
         self.reductionCoins()
-        vc.type = type
-        vc.level = level
-        vc.unit = unit
-        vc.needLoadRequest = true
-        navigationController?.pushViewController(vc, animated: true)
+        if type == .listening {
+            let vc = StoryboardScene.ListeningQuestionViewController.listeningQuestionViewController.instantiate()
+            let unit = units[indexPath.row]
+            vc.type = type
+            vc.level = level
+            vc.unit = unit
+            navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let unit = units[indexPath.row]
+            let vc = StoryboardScene.NomalQuestionViewController.normalQuestionViewController.instantiate()
+            vc.type = type
+            vc.level = level
+            vc.unit = unit
+            vc.needLoadRequest = true
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
 

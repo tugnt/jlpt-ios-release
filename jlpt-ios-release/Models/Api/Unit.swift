@@ -20,7 +20,7 @@ struct UnitRequest: JLPTRequest {
 }
 
 struct  UnitResponse: JLPTResponse {
-    let units: [String]
+    let units: [Int]
 
     /// - Throws: DecodeError or an arbitrary ErrorType
     static func decode(_ e: Extractor) throws -> UnitResponse {

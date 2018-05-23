@@ -12,7 +12,7 @@ import MarkdownView
 class TheoryHintViewController: UIViewController {
     var type: TypeJLPT!
     var content: String?
-    var questions: [HintQuestionModel] = []
+    var questions: [ListeningQuestionModel] = []
     private let mdView = MarkdownView()
     
     override func viewDidLoad() {

@@ -17,7 +17,7 @@ struct QuestionRequest: JLPTRequest {
     }
     let type: TypeJLPT
     let level: LevelJLPT
-    let unit: String
+    let unit: Int
 }
 
 struct AudioResponseModel: JLPTResponse {
@@ -30,7 +30,7 @@ struct AudioResponseModel: JLPTResponse {
 }
 
 struct QuestionResponse: JLPTResponse {
-    let unit: String
+    let unit: Int
     let type: TypeJLPT
     let level: Int
     let question: String
@@ -39,7 +39,8 @@ struct QuestionResponse: JLPTResponse {
     let answerC: String
     let answerD: String
     let solution: String
-    var linkAudio: AnyObject?
+    let linkAudio: String?
+    let imageUrl: String?
     /// - Throws: DecodeError or an arbitrary ErrorType
     static func decode(_ e: Extractor) throws -> QuestionResponse {
         guard let jlptType: String = try? e <| "type", let type = TypeJLPT(rawValue: jlptType) else { fatalError("Can decode jlpt type") }
@@ -52,7 +53,8 @@ struct QuestionResponse: JLPTResponse {
                                     answerC: e <| "answerC",
                                     answerD: e <| "answerD",
                                     solution: e <| "solution",
-                                    linkAudio: type.data(e))
+                                    linkAudio: e <|? "linkAudio",
+                                    imageUrl: e <|? "imageUrl")
     }
 }
 
