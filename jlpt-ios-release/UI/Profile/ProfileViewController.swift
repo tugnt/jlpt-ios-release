@@ -44,7 +44,7 @@ class ProfileViewController: UIViewController {
     private let settingItems: [String] = ["Chi tiết tài khoản",
                                           "Phản hồi và chia sẻ",
                                           "Cài đặt ứng dụng",
-                                          "Điều khoản và chính sách"]
+                                          "Điều khoản sử dụng"]
     private var isLogin: Bool! {
         didSet {
             self.logoutBtn.isEnabled = isLogin
