@@ -39,7 +39,7 @@ class NormalQuestionViewController: AdmobsViewController {
         for _ in questions { solutionOfUser.append(5) }
         self.loadAdsVideo()
         // - Init array solution
-        if questions.count == 0 {
+        if questions.isEmpty {
             tableView.isHidden = true
             addEmptyStateView()
         }
@@ -52,13 +52,13 @@ class NormalQuestionViewController: AdmobsViewController {
             startAnimationLoading()
             let request = QuestionRequest(type: type, level: level, unit: unit)
             ApiClient.instance.request(request: request, completion: { (response) in
-                print(response)
+                self.stopAnimationLoading()
                 switch response {
                 case .success(let value):
                     let normalQuestion = self.convertViewModelObject(questions: value)
                     self.questions = normalQuestion.reversed()
                     self.stopAnimationLoading()
-                    if self.questions.count != 0 {
+                    if !self.questions.isEmpty {
                         self.tableView.isHidden = false
                         self.removeEmptyStateView()
                     }
@@ -66,7 +66,8 @@ class NormalQuestionViewController: AdmobsViewController {
                         self.tableView.reloadData()
                     }
                 case .failure:
-                    break
+                    self.tableView.isHidden = true
+                    self.addEmptyStateView()
                 }
             })
         }
@@ -75,8 +76,13 @@ class NormalQuestionViewController: AdmobsViewController {
     private func convertViewModelObject(questions: JLPTQuestionResponse) -> [NormalQuestionViewModel] {
         var normalQuestions: [NormalQuestionViewModel] = []
         for item in questions.jlptQuestion {
-            let question = NormalQuestionViewModel(question: item.question, answerA: item.answerA, answerB: item.answerB, answerC: item.answerC,
-                                                   answerD: item.answerD, solution: item.solution, linkAudio: item.linkAudio)
+            let question = NormalQuestionViewModel(question: item.question,
+                                                   answerA: item.answerA,
+                                                   answerB: item.answerB,
+                                                   answerC: item.answerC,
+                                                   answerD: item.answerD,
+                                                   solution: item.solution,
+                                                   linkAudio: item.linkAudio)
             normalQuestions.append(question)
         }
         return normalQuestions
@@ -88,9 +94,14 @@ class NormalQuestionViewController: AdmobsViewController {
     }
     
     @objc private func checkAnswer() {
+        let sampleSolution = ["A", "B", "C", "D"]
         for index in 0..<questions.count {
-            if Int(questions[index].solution) == solutionOfUser[index] {
-                point += 1
+            let userSolutionIndex = solutionOfUser[index]
+            if userSolutionIndex < sampleSolution.count {
+                let solution = sampleSolution[userSolutionIndex]
+                if questions[index].solution == solution {
+                    point += 1
+                }
             }
         }
         let confirmDialog = TDConfirmDialog(frame: view.bounds)
@@ -100,18 +111,20 @@ class NormalQuestionViewController: AdmobsViewController {
         confirmDialog.confirmButtonTitle = "Xem kết quả"
         view.addSubview(confirmDialog)
         confirmDialog.confirmDidSelected = {
-            self.point = 0
             self.isShowSolution = true
             self.tableView.reloadData()
             self.presentRewardAdVideo()
         }
         confirmDialog.cancelDidSelected = {
+            self.point = 0
             self.presentRewardAdVideo()
         }
     }
 }
 
-extension NormalQuestionViewController: UITableViewDelegate, UITableViewDataSource, NormalQuestionCellDelegate {
+// MARK: UITableView delegate method implement
+
+extension NormalQuestionViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -130,7 +143,11 @@ extension NormalQuestionViewController: UITableViewDelegate, UITableViewDataSour
         cell.showAnswerOfUser(ofUser: solutionOfUser[indexPath.row])
         return cell
     }
+}
 
+// MARK: NormalQuestionCellDelegate method implement
+
+extension NormalQuestionViewController: NormalQuestionCellDelegate {
     func radioClicked(_ indexButton: Int, didSelected: NomalQuestionCell) {
         guard let indexPath = tableView.indexPath(for: didSelected) else { return }
         solutionOfUser[indexPath.row] = indexButton

@@ -3,4 +3,4 @@
 //
 #import "SCSiriWaveformView/SCSiriWaveformView.h"
 #import <CommonCrypto/CommonCrypto.h>
-#import "FirebaseAuth/FIRAuthTokenResult.h"
+#import <FirebaseAuth/FIRAuthTokenResult.h>

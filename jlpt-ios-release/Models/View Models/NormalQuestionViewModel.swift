@@ -15,6 +15,7 @@ struct NormalQuestionViewModel {
     let answerC: String
     let answerD: String
     let solution: String
+    ///  A, B, C, C
     /// - If type of hint is listening. It will have link audio
     var linkAudio: String?
 }

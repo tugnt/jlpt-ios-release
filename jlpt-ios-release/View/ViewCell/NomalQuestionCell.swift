@@ -37,19 +37,7 @@ class NomalQuestionCell: UITableViewCell {
             answerBLabel.text = question.answerB
             answerCLabel.text = question.answerC
             answerDLabel.text = question.answerD
-            switch question.solution {
-            case "0":
-                solution = "A"
-            case "1":
-                solution = "B"
-            case "2":
-                solution = "C"
-            case "3":
-                solution = "D"
-            default:
-                break
-            }
-            solutionLabel.text = "Đáp án \(solution)"
+            solutionLabel.text = "Đáp án \(question.solution)"
         }
     }
     
