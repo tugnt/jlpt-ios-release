@@ -58,7 +58,10 @@ class ListeningQuestionViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     @IBOutlet weak var timeCountdownLabel: UILabel!
-    
+    @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var answerDContainerView: UIView!
+    @IBOutlet weak var answerCContainerView: UIView!
+    private var isInitialized = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,16 +81,21 @@ class ListeningQuestionViewController: UIViewController, AVAudioPlayerDelegate {
             self.fetchNormalListeningQuestion()
         }
     }
-
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if isInitialized && audioPlayer.isPlaying {
+            audioPlayer.stop()
+        }
+    }
+    
     private func fetchNormalListeningQuestion() {
         startAnimationLoading()
         let request = QuestionRequest(type: type, level: level, unit: unit)
         ApiClient.instance.request(request: request, completion: { (response) in
-            print(response)
             self.stopAnimationLoading()
             switch response {
             case .success(let value):
-                print(value)
                 value.jlptQuestion.forEach { self.questions.append(ListeningQuestionModel(normalResponse: $0)) }
                 self.updateQuestion(questionIndex: self.questionNumber)
             case .failure:
@@ -101,7 +109,7 @@ class ListeningQuestionViewController: UIViewController, AVAudioPlayerDelegate {
         playAudioButton.setImage(UIImage.fontAwesomeIcon(name: .play, textColor: .black, size: CGSize(width: 30, height: 30)), for: .normal)
         checkAnswerButton.isEnabled = false
     }
-
+    
     @objc private func moveNextQuestion() {
         userAnswer.append(curentUserAnswer)
         if questionNumber == questions.count - 1 {
@@ -112,12 +120,14 @@ class ListeningQuestionViewController: UIViewController, AVAudioPlayerDelegate {
             resetAllRadioButton()
         }
     }
-
+    
     private func updateQuestion(questionIndex: Int) {
         let question = questions[questionNumber]
         questionNumber == questions.count - 1 ? checkAnswerButton.setTitle("Kiểm tra đáp án", for: .normal) : ()
         questionLb.text = "Câu \(questionIndex + 1): \(question.question)"
-        guard let imageUrl = question.imageUrl else { return }
+        let imageUrl = question.imageUrl ?? ""
+        imageHeightConstraint.constant = imageUrl.isEmpty ? 0 : 250
+        questionImage.isHidden = imageUrl.isEmpty
         Alamofire.request(imageUrl).responseImage { response in
             if let image = response.result.value {
                 self.questionImage.image = image
@@ -128,6 +138,8 @@ class ListeningQuestionViewController: UIViewController, AVAudioPlayerDelegate {
         answerCLb.text = question.answerC
         answerDLb.text = question.answerD
         checkAnswerButton.isEnabled = false
+        answerCContainerView.isHidden = question.answerC.isEmpty
+        answerDContainerView.isHidden = question.answerD.isEmpty
     }
     
     private func setFontSize() {
@@ -141,13 +153,13 @@ class ListeningQuestionViewController: UIViewController, AVAudioPlayerDelegate {
             answerDLb.font = font
         }
     }
-
+    
     private func resetAllRadioButton() {
-        for radioButton in arrayRadioButton {
-            radioButton.isClicked = false
+        arrayRadioButton.forEach {
+            $0.isClicked = false
         }
     }
-
+    
     @objc private func playAudio() {
         let question = questions[questionNumber]
         guard let linkAudio = question.audioUrl else { return }
@@ -160,7 +172,7 @@ class ListeningQuestionViewController: UIViewController, AVAudioPlayerDelegate {
             audioPlayer.pause()
         }
     }
-
+    
     private func playAudioFromUrl(url: String) {
         do {
             guard let url = URL(string: url) else { return }
@@ -170,17 +182,18 @@ class ListeningQuestionViewController: UIViewController, AVAudioPlayerDelegate {
             audioPlayer.delegate = self
             let audioSession = AVAudioSession.sharedInstance()
             try audioSession.setCategory(AVAudioSessionCategoryPlayback)
-        } catch let error {
-            print(error)
+            isInitialized = true
+        } catch _ {
+            // TODO: Handle error here
         }
     }
-
+    
     private var timer: Timer!
     private func startCountdown() {
         timer?.invalidate()
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimeCoundownUI), userInfo: nil, repeats: true)
     }
-
+    
     @objc private func updateTimeCoundownUI() {
         let curentTime = audioPlayer.currentTime
         let originMiniute = Int(audioPlayer.duration / 60)
@@ -190,14 +203,14 @@ class ListeningQuestionViewController: UIViewController, AVAudioPlayerDelegate {
         timeCountdownLabel.text = "\(miniute):\(second)/\(originMiniute):\(originSecond)"
         audioProgressBar.progress = Float(curentTime / audioPlayer.duration)
     }
-
+    
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         timer.invalidate()
         timer = nil
         audioProgressBar.progress = 1.0
         playAudioButton.setImage(UIImage.fontAwesomeIcon(name: .play, textColor: .black, size: CGSize(width: 30, height: 30)), for: .normal)
     }
-
+    
     private func checkAnswer() {
         var result = 0
         print(questions.count)
@@ -218,7 +231,7 @@ class ListeningQuestionViewController: UIViewController, AVAudioPlayerDelegate {
         }
         view.addSubview(tdConfirmDialog)
     }
-
+    
     private func moveShowSolutionScreen() {
         let vc = StoryboardScene.NomalQuestionViewController.normalQuestionViewController.instantiate()
         vc.questions = convertHintQuestionToNormalQuestion()
@@ -226,7 +239,7 @@ class ListeningQuestionViewController: UIViewController, AVAudioPlayerDelegate {
         vc.isHasDoneButton = false
         navigationController?.pushViewController(vc, animated: true)
     }
-
+    
     private func convertHintQuestionToNormalQuestion() -> [NormalQuestionViewModel] {
         var normalQuestions: [NormalQuestionViewModel] = []
         normalQuestions = questions.map { NormalQuestionViewModel(question: $0.question, answerA: $0.answerA, answerB: $0.answerB,
