@@ -190,7 +190,7 @@
                                             <constraint firstItem="P0c-Qp-6F4" firstAttribute="top" secondItem="brU-79-26r" secondAttribute="bottom" constant="7" id="3xx-U7-ySp"/>
                                             <constraint firstAttribute="trailing" secondItem="P0c-Qp-6F4" secondAttribute="trailing" constant="8" id="Ank-b3-Mg8"/>
                                             <constraint firstItem="brU-79-26r" firstAttribute="top" secondItem="n6s-eX-zLc" secondAttribute="bottom" constant="23" id="Bo6-BJ-IR0"/>
-                                            <constraint firstAttribute="bottom" secondItem="eDn-qX-T9K" secondAttribute="bottom" constant="116" id="K5I-g8-S37"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="eDn-qX-T9K" secondAttribute="bottom" priority="250" constant="116" id="K5I-g8-S37"/>
                                             <constraint firstItem="3sB-IJ-pTn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="i2c-Hg-Oow" secondAttribute="leading" constant="20" symbolic="YES" id="KTG-iL-7rA"/>
                                             <constraint firstItem="4z5-do-IxO" firstAttribute="leading" secondItem="i2c-Hg-Oow" secondAttribute="leading" constant="13" id="Ukd-OY-Slg"/>
                                             <constraint firstAttribute="trailing" secondItem="eDn-qX-T9K" secondAttribute="trailing" constant="70" id="WyY-lS-ScQ"/>
@@ -251,10 +251,13 @@
                     <connections>
                         <outlet property="answerALb" destination="bOn-0B-wEA" id="Vp7-ty-94Y"/>
                         <outlet property="answerBLb" destination="POd-NX-mXF" id="DbS-Eb-Yme"/>
+                        <outlet property="answerCContainerView" destination="hM7-d4-QYl" id="boA-EY-9U3"/>
                         <outlet property="answerCLb" destination="wdU-xs-NLj" id="FoB-Eg-Fqy"/>
+                        <outlet property="answerDContainerView" destination="pgt-Wp-FLP" id="m7y-Kl-hFL"/>
                         <outlet property="answerDLb" destination="bzf-5E-bdC" id="KSO-Ae-fjh"/>
                         <outlet property="audioProgressBar" destination="eDn-qX-T9K" id="KWb-gG-nn5"/>
                         <outlet property="checkAnswerButton" destination="o98-RR-Pvq" id="zao-jh-7jM"/>
+                        <outlet property="imageHeightConstraint" destination="8rr-la-67S" id="qN4-R8-uxc"/>
                         <outlet property="playAudioButton" destination="4z5-do-IxO" id="JtZ-64-WjA"/>
                         <outlet property="questionImage" destination="n6s-eX-zLc" id="XEp-6I-W9X"/>
                         <outlet property="questionLb" destination="brU-79-26r" id="T7e-Uf-8np"/>

@@ -72,6 +72,7 @@ class ListQuestionViewController: ExpandingViewController {
             vc.type = type
             vc.level = level
             vc.unit = unit
+            vc.isNormalQuestion = true
             navigationController?.pushViewController(vc, animated: true)
         } else {
             let unit = units[indexPath.row]
