@@ -43,7 +43,7 @@ class DocumentCell: UITableViewCell {
             }
             let fileExits = FileHelper.checkFileExits(documentUrl: document.linkDocument)
             if fileExits {
-                downloadDocumentButton.setTitle("OPEN", for: .normal)
+                downloadDocumentButton.setTitle("MỞ", for: .normal)
             }
         }
     }

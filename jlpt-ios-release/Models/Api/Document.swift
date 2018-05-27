@@ -11,10 +11,10 @@ import Himotoki
 
 struct DocumentRequest: JLPTRequest {
     typealias Response = JLPTDocumentResponse
-    var endPoint: String { return "/documents/\(level.rawValue)/\(type.rawValue)" }
+    var endPoint: String { return "/documents/\(level)/\(type)" }
     let method: HTTPMethod = .get
-    let type: TypeJLPT
-    let level: LevelJLPT
+    let type: String
+    let level: Int
 }
 
 struct JLPTDocumentResponse: JLPTResponse {

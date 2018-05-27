@@ -25,6 +25,7 @@ class ShowDocumentViewController: UIViewController {
         webView.delegate = self
         let request = URLRequest(url: documentUrl)
         webView.loadRequest(request)
+        webView.scalesPageToFit = true
     }
 }
 

@@ -108,8 +108,8 @@
                                             <constraint firstAttribute="height" constant="50" id="dK6-BU-7bC"/>
                                         </constraints>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nghe hiểu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bX4-Va-hBO">
-                                        <rect key="frame" x="11" y="65" width="58" height="14.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đề thi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bX4-Va-hBO">
+                                        <rect key="frame" x="23" y="65" width="33.5" height="14.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -142,10 +142,10 @@
             <connections>
                 <outlet property="grammaLb" destination="eFb-aw-r5t" id="6zL-Fs-bOJ"/>
                 <outlet property="grammarBtn" destination="7Dx-9F-f28" id="hPW-to-ima"/>
-                <outlet property="listeningBtn" destination="94J-2J-gtc" id="Cmv-yK-6H7"/>
-                <outlet property="listeningLb" destination="bX4-Va-hBO" id="3Ec-xc-Lp9"/>
                 <outlet property="readingBtn" destination="hFS-Zk-CW2" id="BUb-36-GGA"/>
                 <outlet property="readingLb" destination="gNf-2i-J4C" id="YxE-So-KeO"/>
+                <outlet property="sampleTestButton" destination="94J-2J-gtc" id="IHf-dz-2zq"/>
+                <outlet property="smapleTestLabel" destination="bX4-Va-hBO" id="hau-FF-M7y"/>
                 <outlet property="vocabularyBtn" destination="yL8-DL-15N" id="1Z8-ac-bz7"/>
                 <outlet property="vocabularyLb" destination="Ogx-0d-wpl" id="jng-Y9-bWp"/>
             </connections>
