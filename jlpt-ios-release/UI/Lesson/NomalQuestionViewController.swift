@@ -85,7 +85,7 @@ class NormalQuestionViewController: AdmobsViewController {
                                                    linkAudio: item.linkAudio)
             normalQuestions.append(question)
         }
-        return normalQuestions
+        return normalQuestions.reversed()
     }
 
     private func addBarDoneButton() {
