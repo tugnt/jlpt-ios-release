@@ -14,12 +14,11 @@ class DocumentViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     lazy var headerSection: [DocumentHeader] = {
-        let headerN1 = DocumentHeader(color: ColorName.n1ColorBg.color, image: Asset.n1.image, title: "JLPT N1", titleNumberDocument: "", isExpanded: true, level: .n1)
-        let headerN2 = DocumentHeader(color: ColorName.n2ColorBg.color, image: Asset.n2.image, title: "JLPT N2", titleNumberDocument: "", isExpanded: false, level: .n2)
-        let headerN3 = DocumentHeader(color: ColorName.n3ColorBg.color, image: Asset.n3.image, title: "JLPT N3", titleNumberDocument: "", isExpanded: false, level: .n3)
-        let headerN4 = DocumentHeader(color: ColorName.n4ColorBg.color, image: Asset.n4.image, title: "JLPT N4", titleNumberDocument: "", isExpanded: false, level: .n4)
-        let headerN5 = DocumentHeader(color: ColorName.n5ColorBg.color, image: Asset.n5.image, title: "JLPT N5", titleNumberDocument: "", isExpanded: false, level: .n5)
-        return [headerN1, headerN2, headerN3, headerN4, headerN5]
+        let headerN1 = DocumentHeader(color: ColorName.n1ColorBg.color, image: Asset.n1.image, title: "JLPT N1", titleNumberDocument: "", isExpanded: true, level: 1)
+        let headerN2 = DocumentHeader(color: ColorName.n2ColorBg.color, image: Asset.n2.image, title: "JLPT N2", titleNumberDocument: "", isExpanded: false, level: 2)
+        let headerN3 = DocumentHeader(color: ColorName.n3ColorBg.color, image: Asset.n3.image, title: "JLPT N3", titleNumberDocument: "", isExpanded: false, level: 3)
+        let headerN4 = DocumentHeader(color: ColorName.n4ColorBg.color, image: Asset.n4.image, title: "JLPT N4 & N5", titleNumberDocument: "", isExpanded: false, level: 45)
+        return [headerN1, headerN2, headerN3, headerN4]
     }()
 
     override func viewDidLoad() {
@@ -74,11 +73,12 @@ extension DocumentViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension DocumentViewController: DocumentHeaderViewDeleagate, DocumentTypeCellDelegate {
-    func cell(_ cell: DocumentTypeCell, type: TypeJLPT) {
+    func cell(_ cell: DocumentTypeCell, type: TypeJLPT, isExam: Bool) {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         let vc = StoryboardScene.ListDocumentOfTypeViewController.listDocumentViewController.instantiate()
         vc.type = type
         vc.level = headerSection[indexPath.section].level
+        vc.isExam = isExam
         vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }

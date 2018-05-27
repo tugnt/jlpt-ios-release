@@ -80,7 +80,6 @@
 		1A73C6B11FBF1F91008C70AC /* CellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A73C6B01FBF1F91008C70AC /* CellConfigurator.swift */; };
 		1A73C6B41FBF232D008C70AC /* ChatMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A73C6B31FBF232D008C70AC /* ChatMessageModel.swift */; };
 		1A73C6B61FBF2695008C70AC /* MessageImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A73C6B51FBF2695008C70AC /* MessageImageViewCell.swift */; };
-		1A7C105720B87C430073D51B /* ListDocumentOfTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C105620B87C430073D51B /* ListDocumentOfTypeController.swift */; };
 		1A8168B0209628C200FA4B66 /* BannerAd.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A8168AE209628C200FA4B66 /* BannerAd.xib */; };
 		1A8168BB209B197500FA4B66 /* ExpandingCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8168BA209B197400FA4B66 /* ExpandingCollection.framework */; };
 		1A8E2A2B1FC5E096008E17F4 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8E2A2A1FC5E096008E17F4 /* AlamofireImage.framework */; };
@@ -274,7 +273,6 @@
 		1A73C6B01FBF1F91008C70AC /* CellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfigurator.swift; sourceTree = "<group>"; };
 		1A73C6B31FBF232D008C70AC /* ChatMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageModel.swift; sourceTree = "<group>"; };
 		1A73C6B51FBF2695008C70AC /* MessageImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageImageViewCell.swift; sourceTree = "<group>"; };
-		1A7C105620B87C430073D51B /* ListDocumentOfTypeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDocumentOfTypeController.swift; sourceTree = "<group>"; };
 		1A8168AF209628C200FA4B66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = BannerAd.xib; sourceTree = "<group>"; };
 		1A8168B8209B195200FA4B66 /* expanding_collection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = expanding_collection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A8168BA209B197400FA4B66 /* ExpandingCollection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExpandingCollection.framework; path = Carthage/Build/iOS/ExpandingCollection.framework; sourceTree = "<group>"; };
@@ -656,7 +654,6 @@
 				1AD7385C1F6D3B2000A4A1B9 /* Tabbar */,
 				1AF3492B1FE55CDA008924CB /* HidenKeyboardViewController.swift */,
 				1AE799AB209F728500BE38AB /* AdmobsViewController.swift */,
-				1A7C105620B87C430073D51B /* ListDocumentOfTypeController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1267,7 +1264,6 @@
 				1A26674B1FB9D17F00C9CFFB /* JLPTUnitCellCollectionViewCell.swift in Sources */,
 				1ABECC961F9C670A005056A5 /* DocumentCell.swift in Sources */,
 				1AB04DBB1F76384500E5AC27 /* Unit.swift in Sources */,
-				1A7C105720B87C430073D51B /* ListDocumentOfTypeController.swift in Sources */,
 				DF4C22F21F74CA7E00B2CCC5 /* Result.swift in Sources */,
 				1A136C3E1F6D3E7D00DF343E /* UIView+Contraints.swift in Sources */,
 				1AF6E59D1FC09357005A2B16 /* Validation.swift in Sources */,

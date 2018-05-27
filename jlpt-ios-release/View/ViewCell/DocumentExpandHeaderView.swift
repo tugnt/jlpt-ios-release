@@ -14,8 +14,8 @@ struct DocumentHeader {
     let title: String
     let titleNumberDocument: String
     var isExpanded: Bool
-    let level: LevelJLPT
-    init(color: UIColor, image: UIImage, title: String, titleNumberDocument: String, isExpanded: Bool, level: LevelJLPT) {
+    let level: Int
+    init(color: UIColor, image: UIImage, title: String, titleNumberDocument: String, isExpanded: Bool, level: Int) {
         self.color = color
         self.image = image
         self.title = title

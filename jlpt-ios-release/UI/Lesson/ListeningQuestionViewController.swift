@@ -213,8 +213,6 @@ class ListeningQuestionViewController: UIViewController, AVAudioPlayerDelegate {
     
     private func checkAnswer() {
         var result = 0
-        print(questions.count)
-        print(userAnswer.count)
         for index in questions.indices {
             result += userAnswer[index] == Int(questions[index].solution) ? 1 : 0
         }

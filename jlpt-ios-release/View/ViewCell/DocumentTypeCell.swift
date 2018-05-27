@@ -9,14 +9,14 @@
 import UIKit
 
 protocol DocumentTypeCellDelegate: class {
-    func cell(_ cell: DocumentTypeCell, type: TypeJLPT)
+    func cell(_ cell: DocumentTypeCell, type: TypeJLPT, isExam: Bool)
 }
 
 class DocumentTypeCell: UITableViewCell {
     static var identifier: String { return String(describing: self)}
     static var nib: UINib { return UINib(nibName: identifier, bundle: nil) }
 
-    @IBOutlet weak var listeningBtn: UIButton!
+    //@IBOutlet weak var listeningBtn: UIButton!
     @IBOutlet weak var readingBtn: UIButton!
     @IBOutlet weak var grammarBtn: UIButton!
     @IBOutlet weak var vocabularyBtn: UIButton!
@@ -24,8 +24,9 @@ class DocumentTypeCell: UITableViewCell {
     @IBOutlet weak var readingLb: UILabel!
     @IBOutlet weak var grammaLb: UILabel!
     @IBOutlet weak var vocabularyLb: UILabel!
-    @IBOutlet weak var listeningLb: UILabel!
-
+    @IBOutlet weak var sampleTestButton: UIButton!
+    @IBOutlet weak var smapleTestLabel: UILabel!
+    
     weak var delegate: DocumentTypeCellDelegate?
 
     var documentItem: DocumentHeader? {
@@ -44,10 +45,10 @@ class DocumentTypeCell: UITableViewCell {
             grammaLb.textColor = item.color
 
             /// - Listening button
-            let listeningTintedImage = Asset.listening.image.withRenderingMode(.alwaysTemplate)
-            listeningBtn.setImage(listeningTintedImage, for: .normal)
-            listeningBtn.tintColor = item.color
-            listeningLb.textColor = item.color
+            let testTintedImage = Asset.exam.image.withRenderingMode(.alwaysTemplate)
+            sampleTestButton.setImage(testTintedImage, for: .normal)
+            sampleTestButton.tintColor = item.color
+            smapleTestLabel.textColor = item.color
 
             /// - Vocabulary button
             let vocabularTintedImage = Asset.kanji.image.withRenderingMode(.alwaysTemplate)
@@ -59,26 +60,25 @@ class DocumentTypeCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         readingBtn.addTarget(self, action: #selector(readingSelected), for: .touchUpInside)
-        listeningBtn.addTarget(self, action: #selector(listeningSelected), for: .touchUpInside)
+        sampleTestButton.addTarget(self, action: #selector(examSelected), for: .touchUpInside)
         grammarBtn.addTarget(self, action: #selector(grammarSelected), for: .touchUpInside)
         vocabularyBtn.addTarget(self, action: #selector(vocabularySelected), for: .touchUpInside)
     }
 
     @objc func readingSelected() {
-        delegate?.cell(self, type: .reading)
+        delegate?.cell(self, type: .reading, isExam: false)
     }
 
-    @objc func listeningSelected() {
-        delegate?.cell(self, type: .listening)
+    @objc func examSelected() {
+        delegate?.cell(self, type: .listening, isExam: true)
     }
 
     @objc func grammarSelected() {
-        delegate?.cell(self, type: .grammar)
+        delegate?.cell(self, type: .grammar, isExam: false)
     }
 
     @objc func vocabularySelected() {
-        delegate?.cell(self, type: .vocabulary)
+        delegate?.cell(self, type: .vocabulary, isExam: false)
     }
 }

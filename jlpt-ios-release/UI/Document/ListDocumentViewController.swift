@@ -11,8 +11,9 @@ import Alamofire
 import Foundation
 
 class ListDocumentViewController: UIViewController {
-    var level: LevelJLPT!
+    var level: Int!
     var type: TypeJLPT!
+    var isExam: Bool!
     fileprivate let cellId = "documentCell"
     @IBOutlet weak var tableView: UITableView!
     private var documents: [DocumentReponse] = []
@@ -36,7 +37,8 @@ class ListDocumentViewController: UIViewController {
 
     private func fetchDocumentsData() {
         startAnimationLoading()
-        let request = DocumentRequest(type: type, level: level)
+        let typeValue = isExam ? "Exam" : type.rawValue
+        let request = DocumentRequest(type: typeValue, level: level)
         ApiClient.instance.request(request: request, completion: { response in
             self.stopAnimationLoading()
             switch response {

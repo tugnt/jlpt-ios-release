@@ -57,6 +57,7 @@ enum Asset {
   static let download = ImageAsset(name: "download")
   static let downloadDone = ImageAsset(name: "download_done")
   static let emptyStatePlaceholder = ImageAsset(name: "empty_state_placeholder")
+  static let exam = ImageAsset(name: "exam")
   static let facebook = ImageAsset(name: "facebook")
   static let g1 = ImageAsset(name: "g1")
   static let g10 = ImageAsset(name: "g10")
@@ -111,6 +112,7 @@ enum Asset {
     download,
     downloadDone,
     emptyStatePlaceholder,
+    exam,
     facebook,
     g1,
     g10,
