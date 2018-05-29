@@ -17,7 +17,7 @@ typealias JSONEncoding = Alamofire.JSONEncoding
 typealias URLEncoding = Alamofire.URLEncoding
 
 enum URLPath: String {
-    case base = "https://jlpt-api.herokuapp.com/api"
+    case base = "http://li588-160.members.linode.com:3000/api"
 }
 
 protocol JLPTService {
