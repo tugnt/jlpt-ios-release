@@ -73,13 +73,17 @@ class ListDocumentViewController: UIViewController {
             confirmDialog.confirmButtonTitle = "Download"
             confirmDialog.confirmDidSelected = {
                 cell.addLoadingView()
-                self.downloadDocument(documentUrl: self.documents[indexPath.row].linkDocument, cell: cell, fileName: self.documents[indexPath.row].jpName)
+                self.downloadDocument(documentUrl: self.documents[indexPath.row].linkDocument, cell: cell, fileName: self.documents[indexPath.row].jpName, completion: { complete in
+                    if complete {
+                        cell.removeLoadingView()
+                    }
+                })
             }
             self.view.addSubview(confirmDialog)
         }
     }
 
-    private func downloadDocument(documentUrl: String, cell: DocumentCell, fileName: String) {
+    private func downloadDocument(documentUrl: String, cell: DocumentCell, fileName: String, completion: @escaping (Bool) -> Void) {
         let destination: DownloadRequest.DownloadFileDestination = { _, _ in
             let savePath = FileHelper.createDocumentSavePath(documentUrl: documentUrl)
             return (savePath, [.removePreviousFile, .createIntermediateDirectories])
@@ -87,6 +91,7 @@ class ListDocumentViewController: UIViewController {
         Alamofire.download(documentUrl, to: destination).response { response in
             if response.error == nil, let pdfPath = response.destinationURL {
                 self.moveDetailDocumentViewController(documentUrl: pdfPath, fileName: fileName)
+                completion(true)
             }
         }
     }
