@@ -17,7 +17,7 @@ class PrivacyPolicyViewController: UIViewController {
         self.title = "Điều khoản sử dụng"
         webview = WKWebView(frame: view.bounds)
         view.addSubview(webview)
-        guard let url = URL(string: "https://jlpt-api.herokuapp.com/privacy") else { return }
+        guard let url = URL(string: "http://li588-160.members.linode.com:3000/privacy") else { return }
         let request = URLRequest(url: url)
         webview.load(request)
     }

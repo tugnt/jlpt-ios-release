@@ -2,171 +2,172 @@
 
 import Foundation
 
+// swiftlint:disable superfluous_disable_command
 // swiftlint:disable file_length
 
 // swiftlint:disable explicit_type_interface identifier_name line_length nesting type_body_length type_name
-enum L10n {
+internal enum L10n {
 
-  enum Data {
+  internal enum Data {
 
-    enum Hintcell {
+    internal enum Hintcell {
       /// Tổng hợp các mẹo hữu ích khi thi JLPT
-      static let description = L10n.tr("Localizable", "data.hintcell.description")
+      internal static let description = L10n.tr("Localizable", "data.hintcell.description")
       /// Mẹo luyện thi JLPT
-      static let title = L10n.tr("Localizable", "data.hintcell.title")
+      internal static let title = L10n.tr("Localizable", "data.hintcell.title")
     }
 
-    enum N1 {
+    internal enum N1 {
       /// Tổng hợp đề luyện thi cấp độ N1
-      static let description = L10n.tr("Localizable", "data.n1.description")
+      internal static let description = L10n.tr("Localizable", "data.n1.description")
       /// Thượng cấp N1
-      static let title = L10n.tr("Localizable", "data.n1.title")
+      internal static let title = L10n.tr("Localizable", "data.n1.title")
     }
 
-    enum N2 {
+    internal enum N2 {
       /// Tổng hợp đề luyện thi cấp độ N2
-      static let description = L10n.tr("Localizable", "data.n2.description")
+      internal static let description = L10n.tr("Localizable", "data.n2.description")
       /// Thượng cấp N2
-      static let title = L10n.tr("Localizable", "data.n2.title")
+      internal static let title = L10n.tr("Localizable", "data.n2.title")
     }
 
-    enum N3 {
+    internal enum N3 {
       /// Tổng hợp đề luyện thi cấp độ N3
-      static let description = L10n.tr("Localizable", "data.n3.description")
+      internal static let description = L10n.tr("Localizable", "data.n3.description")
       /// Trung cấp N3
-      static let title = L10n.tr("Localizable", "data.n3.title")
+      internal static let title = L10n.tr("Localizable", "data.n3.title")
     }
 
-    enum N4 {
+    internal enum N4 {
       /// Tổng hợp đề luyện thi cấp độ N4
-      static let description = L10n.tr("Localizable", "data.n4.description")
+      internal static let description = L10n.tr("Localizable", "data.n4.description")
       /// Sơ cấp N4
-      static let title = L10n.tr("Localizable", "data.n4.title")
+      internal static let title = L10n.tr("Localizable", "data.n4.title")
     }
 
-    enum N5 {
+    internal enum N5 {
       /// Tổng hợp đề luyện thi cấp độ N5
-      static let description = L10n.tr("Localizable", "data.n5.description")
+      internal static let description = L10n.tr("Localizable", "data.n5.description")
       /// Sơ cấp N5
-      static let title = L10n.tr("Localizable", "data.n5.title")
+      internal static let title = L10n.tr("Localizable", "data.n5.title")
     }
   }
 
-  enum Jlpt {
+  internal enum Jlpt {
 
-    enum `Type` {
+    internal enum `Type` {
       /// Ngữ pháp
-      static let grammar = L10n.tr("Localizable", "jlpt.type.grammar")
+      internal static let grammar = L10n.tr("Localizable", "jlpt.type.grammar")
       /// Hán tự
-      static let kanji = L10n.tr("Localizable", "jlpt.type.kanji")
+      internal static let kanji = L10n.tr("Localizable", "jlpt.type.kanji")
       /// Nghe hiểu
-      static let listening = L10n.tr("Localizable", "jlpt.type.listening")
+      internal static let listening = L10n.tr("Localizable", "jlpt.type.listening")
       /// Đọc hiểu
-      static let reading = L10n.tr("Localizable", "jlpt.type.reading")
+      internal static let reading = L10n.tr("Localizable", "jlpt.type.reading")
       /// Từ vựng
-      static let vocabulary = L10n.tr("Localizable", "jlpt.type.vocabulary")
+      internal static let vocabulary = L10n.tr("Localizable", "jlpt.type.vocabulary")
     }
   }
 
-  enum Lesson {
+  internal enum Lesson {
 
-    enum Screen {
+    internal enum Screen {
       /// Bài học
-      static let title = L10n.tr("Localizable", "lesson.screen.title")
+      internal static let title = L10n.tr("Localizable", "lesson.screen.title")
     }
   }
 
-  enum Level {
+  internal enum Level {
     /// JLPT N1
-    static let n1 = L10n.tr("Localizable", "level.n1")
+    internal static let n1 = L10n.tr("Localizable", "level.n1")
     /// JLPT N2
-    static let n2 = L10n.tr("Localizable", "level.n2")
+    internal static let n2 = L10n.tr("Localizable", "level.n2")
     /// JLPT N3
-    static let n3 = L10n.tr("Localizable", "level.n3")
+    internal static let n3 = L10n.tr("Localizable", "level.n3")
     /// JLPT N4
-    static let n4 = L10n.tr("Localizable", "level.n4")
+    internal static let n4 = L10n.tr("Localizable", "level.n4")
     /// JLPT N5
-    static let n5 = L10n.tr("Localizable", "level.n5")
+    internal static let n5 = L10n.tr("Localizable", "level.n5")
   }
 
-  enum Login {
+  internal enum Login {
 
-    enum Button {
+    internal enum Button {
       /// Đăng nhập
-      static let title = L10n.tr("Localizable", "login.button.title")
+      internal static let title = L10n.tr("Localizable", "login.button.title")
     }
 
-    enum Label {
+    internal enum Label {
       /// Đăng nhập
-      static let title = L10n.tr("Localizable", "login.label.title")
+      internal static let title = L10n.tr("Localizable", "login.label.title")
     }
 
-    enum Noaccount {
+    internal enum Noaccount {
       /// Bạn chưa có tài khoản
-      static let label = L10n.tr("Localizable", "login.noaccount.label")
+      internal static let label = L10n.tr("Localizable", "login.noaccount.label")
     }
 
-    enum Skip {
+    internal enum Skip {
       /// Đăng ký sau
-      static let label = L10n.tr("Localizable", "login.skip.label")
+      internal static let label = L10n.tr("Localizable", "login.skip.label")
     }
 
-    enum Social {
+    internal enum Social {
       /// Đăng nhập bằng tài khoản
-      static let label = L10n.tr("Localizable", "login.social.label")
+      internal static let label = L10n.tr("Localizable", "login.social.label")
     }
   }
 
-  enum Register {
+  internal enum Register {
     /// Đăng ký tài khoản
-    static let title = L10n.tr("Localizable", "register.title")
+    internal static let title = L10n.tr("Localizable", "register.title")
 
-    enum Button {
+    internal enum Button {
       /// Đăng ký
-      static let title = L10n.tr("Localizable", "register.button.title")
+      internal static let title = L10n.tr("Localizable", "register.button.title")
     }
 
-    enum Email {
+    internal enum Email {
       /// Nhập email
-      static let placeholder = L10n.tr("Localizable", "register.email.placeholder")
+      internal static let placeholder = L10n.tr("Localizable", "register.email.placeholder")
     }
 
-    enum Name {
+    internal enum Name {
       /// Tên hiển thị
-      static let placeholder = L10n.tr("Localizable", "register.name.placeholder")
+      internal static let placeholder = L10n.tr("Localizable", "register.name.placeholder")
     }
 
-    enum Pass {
+    internal enum Pass {
       /// Nhập mật khẩu
-      static let placeholder = L10n.tr("Localizable", "register.pass.placeholder")
+      internal static let placeholder = L10n.tr("Localizable", "register.pass.placeholder")
     }
 
-    enum Repass {
+    internal enum Repass {
       /// Xác nhận mật khẩu
-      static let placeholder = L10n.tr("Localizable", "register.repass.placeholder")
+      internal static let placeholder = L10n.tr("Localizable", "register.repass.placeholder")
     }
   }
 
-  enum Tab {
+  internal enum Tab {
 
-    enum Chatroom {
+    internal enum Chatroom {
       /// Trò chuyện
-      static let title = L10n.tr("Localizable", "tab.chatroom.title")
+      internal static let title = L10n.tr("Localizable", "tab.chatroom.title")
     }
 
-    enum Document {
+    internal enum Document {
       /// Tài liệu
-      static let title = L10n.tr("Localizable", "tab.document.title")
+      internal static let title = L10n.tr("Localizable", "tab.document.title")
     }
 
-    enum Lesson {
+    internal enum Lesson {
       /// Bài học
-      static let title = L10n.tr("Localizable", "tab.lesson.title")
+      internal static let title = L10n.tr("Localizable", "tab.lesson.title")
     }
 
-    enum Profile {
+    internal enum Profile {
       /// Tài khoản
-      static let title = L10n.tr("Localizable", "tab.profile.title")
+      internal static let title = L10n.tr("Localizable", "tab.profile.title")
     }
   }
 }
