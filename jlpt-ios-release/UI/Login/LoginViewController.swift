@@ -82,12 +82,12 @@ class LoginViewController: HidenKeyboardViewController, GIDSignInDelegate, GIDSi
                 self.showLoginAlert()
             }
             /// - Save user and move home screen
-            if let userInfo = user {
+            if let userInfo = user?.user {
                 let account = Account()
                 account.email = userInfo.email
                 account.userName = userInfo.displayName
                 account.uid = userInfo.uid
-                account.photoUrl = user?.photoURL?.absoluteString
+                account.photoUrl = userInfo.photoURL?.absoluteString
                 let realm = try? Realm()
                 do {
                     try realm?.write {

@@ -68,7 +68,7 @@ class RegisterViewController: HidenKeyboardViewController {
                 self.showRegisterAlert()
             } else {
                 /// Save to Firebase
-                guard let userInfo = user else { return }
+                guard let userInfo = user?.user else { return }
                 self.ref = Database.database().reference()
                 self.ref.child("users").child(userInfo.uid).setValue(["email": userInfo.email, "name": self.userNameTextField.text!], withCompletionBlock: { (err, _) in
                     if err != nil {
