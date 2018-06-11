@@ -14,6 +14,10 @@ class ListQuestionViewController: ExpandingViewController {
     var level: LevelJLPT!
     var type: TypeJLPT!
     var units = [Int]()
+    // For admob
+    private var adRequestInProgress = false
+    private var rewardBasedVideo: GADRewardBasedVideoAd?
+    private let rewardVideoUnitId = "ca-app-pub-8167183150215759/3144550312"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +26,33 @@ class ListQuestionViewController: ExpandingViewController {
         setUpNavBar()
         setUpExpandingCollectionView()
         fetchUnitData()
+        configAdVideo()
+        loadAdsVideo()
     }
     
+    private func configAdVideo() {
+        rewardBasedVideo = GADRewardBasedVideoAd.sharedInstance()
+        rewardBasedVideo?.delegate = self
+    }
+    
+    func loadAdsVideo() {
+        let request = GADRequest()
+        if !adRequestInProgress && rewardBasedVideo?.isReady == false {
+            rewardBasedVideo?.load(request, withAdUnitID: rewardVideoUnitId)
+            adRequestInProgress = true
+        }
+    }
+    
+    func presentRewardAdVideo() {
+        if rewardBasedVideo?.isReady == true {
+            rewardBasedVideo?.present(fromRootViewController: self)
+        } else {
+            // Todo: Show alert or toast here
+            self.showAlertDialog(title: "Thông báo", content: "Có lỗi xảy ra. Bạn vui lòng thử lại sau.", titleButton: "OK", cancelAction: {
+                print("Show nothing")
+            })
+        }
+    }
     
     private func setUpExpandingCollectionView() {
         itemSize = CGSize(width: 256, height: 460)
@@ -66,6 +95,9 @@ class ListQuestionViewController: ExpandingViewController {
     
     private func moveDetailQuestionScreen(indexPath: IndexPath) {
         self.reductionCoins()
+        if Setting.coins <= 0 {
+            presentRewardAdVideo()
+        }
         if type == .listening {
             let vc = StoryboardScene.ListeningQuestionViewController.listeningQuestionViewController.instantiate()
             let unit = units[indexPath.row]
@@ -107,5 +139,41 @@ extension ListQuestionViewController {
             self.moveDetailQuestionScreen(indexPath: indexPath)
         }
         return cell
+    }
+}
+
+extension ListQuestionViewController: GADRewardBasedVideoAdDelegate {
+    // MARK: GADRewardBasedVideoAdDelegate implementation
+    
+    func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd, didFailToLoadWithError error: Error) {
+        adRequestInProgress = false
+        print("Reward based video ad failed to load: \(error.localizedDescription)")
+    }
+    
+    func rewardBasedVideoAdDidReceive(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
+        adRequestInProgress = false
+        print("Reward based video ad is received.")
+    }
+    
+    func rewardBasedVideoAdDidOpen(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
+        print("Opened reward based video ad.")
+    }
+    
+    func rewardBasedVideoAdDidStartPlaying(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
+        print("Reward based video ad started playing.")
+    }
+    
+    func rewardBasedVideoAdDidClose(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
+        print("Reward based video ad is closed.")
+        loadAdsVideo()
+    }
+    
+    func rewardBasedVideoAdWillLeaveApplication(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
+        print("Reward based video ad will leave application.")
+    }
+    
+    func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd, didRewardUserWith reward: GADAdReward) {
+        self.earnCoins()
+        print("Reward received with currency: \(reward.type), amount \(reward.amount).")
     }
 }
