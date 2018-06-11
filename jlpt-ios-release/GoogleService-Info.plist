@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>982486001784-vffudalc7onr9snv50474qdq31h4lv52.apps.googleusercontent.com</string>
+	<string>10469886575-205d55aaqkq3p1ef8g32862c4t8jvp0i.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.982486001784-vffudalc7onr9snv50474qdq31h4lv52</string>
+	<string>com.googleusercontent.apps.10469886575-205d55aaqkq3p1ef8g32862c4t8jvp0i</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBxWkjabVY9dZY_Dy92wPHEWYBmmkNQY90</string>
+	<string>AIzaSyA3v4yiXBZiEeu5qWuLaOCWcQij1e9p2sY</string>
 	<key>GCM_SENDER_ID</key>
-	<string>982486001784</string>
+	<string>10469886575</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.xxthaodan.jlpt-ios-release</string>
+	<string>com.xxthaodan.jlpt-ios</string>
 	<key>PROJECT_ID</key>
-	<string>jlpt-ios-8ede2</string>
+	<string>jlpt-ios</string>
 	<key>STORAGE_BUCKET</key>
-	<string>jlpt-ios-8ede2.appspot.com</string>
+	<string>jlpt-ios.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:982486001784:ios:9dcc100ca8a9784b</string>
+	<string>1:10469886575:ios:0c640a46467d38de</string>
 	<key>DATABASE_URL</key>
-	<string>https://jlpt-ios-8ede2.firebaseio.com</string>
+	<string>https://jlpt-ios.firebaseio.com</string>
 </dict>
 </plist>

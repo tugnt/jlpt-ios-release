@@ -143,7 +143,6 @@
 		1AEA8FD21FA245EB009E67D1 /* LessonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA8FD11FA245EB009E67D1 /* LessonModel.swift */; };
 		1AF3492C1FE55CDA008924CB /* HidenKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3492B1FE55CDA008924CB /* HidenKeyboardViewController.swift */; };
 		1AF6E58E1FBFF767005A2B16 /* UITextField+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF6E58D1FBFF767005A2B16 /* UITextField+Login.swift */; };
-		1AF6E5921FC07FBF005A2B16 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1AF6E5911FC07FBF005A2B16 /* GoogleService-Info.plist */; };
 		1AF6E59D1FC09357005A2B16 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF6E59C1FC09357005A2B16 /* Validation.swift */; };
 		1AF6E5D51FC0A149005A2B16 /* TDModalStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AF6E5D31FC0A149005A2B16 /* TDModalStatusView.xib */; };
 		1AF6E5D61FC0A149005A2B16 /* TDModalStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF6E5D41FC0A149005A2B16 /* TDModalStatusView.swift */; };
@@ -158,6 +157,7 @@
 		DF4634A120AFCD540091581D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF4634A020AFCD540091581D /* Assets.xcassets */; };
 		DF49239520A68EA300FA57BA /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF49239420A68EA300FA57BA /* Setting.swift */; };
 		DF4C22F21F74CA7E00B2CCC5 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4C22F11F74CA7E00B2CCC5 /* Result.swift */; };
+		DFFA0A3E20CE14B100F856E9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DFFA0A3D20CE14B100F856E9 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -345,7 +345,6 @@
 		1AF26AD91F76E52F0098062A /* PaperOnboarding.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PaperOnboarding.framework; path = Carthage/Build/iOS/PaperOnboarding.framework; sourceTree = "<group>"; };
 		1AF3492B1FE55CDA008924CB /* HidenKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HidenKeyboardViewController.swift; sourceTree = "<group>"; };
 		1AF6E58D1FBFF767005A2B16 /* UITextField+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Login.swift"; sourceTree = "<group>"; };
-		1AF6E5911FC07FBF005A2B16 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1AF6E59C1FC09357005A2B16 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		1AF6E5D31FC0A149005A2B16 /* TDModalStatusView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDModalStatusView.xib; sourceTree = "<group>"; };
 		1AF6E5D41FC0A149005A2B16 /* TDModalStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDModalStatusView.swift; sourceTree = "<group>"; };
@@ -366,6 +365,7 @@
 		DFCCB9B61F8F6E2000123170 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		DFCCB9B81F8F6E5000123170 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
 		DFCCB9E41F8F7A6300123170 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		DFFA0A3D20CE14B100F856E9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F3735D0CC6B88E0BABF48E98 /* Pods-jlpt-ios-releaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jlpt-ios-releaseTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-jlpt-ios-releaseTests/Pods-jlpt-ios-releaseTests.release.xcconfig"; sourceTree = "<group>"; };
 		F47A53587C0DC2615FF3BBD7 /* Pods_jlpt_ios_releaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jlpt_ios_releaseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -498,10 +498,10 @@
 				1A6520851F8813D400E21905 /* Base.lproj */,
 				1A2B25CE1F512DFB00DFFD3A /* AppDelegate.swift */,
 				1A2667311FB6AFC400C9CFFB /* loader_ring.json */,
+				DFFA0A3D20CE14B100F856E9 /* GoogleService-Info.plist */,
 				1A29EE0D208AC897009D1068 /* Color.xcassets */,
 				DF4634A020AFCD540091581D /* Assets.xcassets */,
 				1A2B25DA1F512DFB00DFFD3A /* Info.plist */,
-				1AF6E5911FC07FBF005A2B16 /* GoogleService-Info.plist */,
 				1A46AC611F8A7728001FF467 /* color.txt */,
 				1A1C96981F9C965D00A19C7B /* jlpt-ios-release-Bridging-Header.h */,
 				1AC870372092476600B1F1DF /* Localizable.strings */,
@@ -927,7 +927,7 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 2SN4VSFT4Y;
 						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					1A2B25DE1F512DFB00DFFD3A = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -977,7 +977,6 @@
 				1A079BA9200BA5BB0064C186 /* ShowDocumentViewController.storyboard in Resources */,
 				1A4431571FB4B22300574954 /* TDConfirmDialog.xib in Resources */,
 				1A9133A71F924120007A6CF2 /* DocumentsViewController.storyboard in Resources */,
-				1AF6E5921FC07FBF005A2B16 /* GoogleService-Info.plist in Resources */,
 				1AD2FD711F80D98B00B5167D /* ListHintViewController.storyboard in Resources */,
 				1ABECC8E1F9BB778005056A5 /* DocumentTypeCell.xib in Resources */,
 				1A9133AE1F92427A007A6CF2 /* ChatRoomViewController.storyboard in Resources */,
@@ -1001,6 +1000,7 @@
 				1A6520761F87BEE000E21905 /* NomalQuestionViewController.storyboard in Resources */,
 				1ABECC8A1F97B734005056A5 /* DocumentExpandHeaderView.xib in Resources */,
 				1A46AC621F8A7728001FF467 /* color.txt in Resources */,
+				DFFA0A3E20CE14B100F856E9 /* GoogleService-Info.plist in Resources */,
 				1A9133A01F92167C007A6CF2 /* NotificationViewController.storyboard in Resources */,
 				1A2D07071F9E27BA00CB3864 /* LoginViewController.storyboard in Resources */,
 				1A29EE0E208AC897009D1068 /* Color.xcassets in Resources */,
@@ -1632,6 +1632,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 2SN4VSFT4Y;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1643,6 +1645,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xxthaodan.jlpt-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "96858514-c118-4be9-b8f2-81b34c0474d5";
+				PROVISIONING_PROFILE_SPECIFIER = "Jlpt Dev";
 				SWIFT_OBJC_BRIDGING_HEADER = "jlpt-ios-release/jlpt-ios-release-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -1656,6 +1660,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2SN4VSFT4Y;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1666,6 +1672,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xxthaodan.jlpt-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "96858514-c118-4be9-b8f2-81b34c0474d5";
+				PROVISIONING_PROFILE_SPECIFIER = "Jlpt Dev";
 				SWIFT_OBJC_BRIDGING_HEADER = "jlpt-ios-release/jlpt-ios-release-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
