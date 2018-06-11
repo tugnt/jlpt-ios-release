@@ -116,6 +116,18 @@ class ListQuestionViewController: ExpandingViewController {
             navigationController?.pushViewController(vc, animated: true)
         }
     }
+    
+    private func showAlert(indexPath: IndexPath) {
+        let alert = TDConfirmDialog(frame: view.bounds)
+        alert.set(title: "Thông báo")
+        alert.set(message: "Quảng cáo này giúp duy trì bài học miễn phí cho bạn.")
+        alert.cancelButtonTitle = "Cancel"
+        alert.confirmButtonTitle = "Đồng ý"
+        alert.confirmDidSelected = {
+            self.moveDetailQuestionScreen(indexPath: indexPath)
+        }
+        view.addSubview(alert)
+    }
 }
 
 extension ListQuestionViewController {
@@ -136,7 +148,8 @@ extension ListQuestionViewController {
         cell.jlptTypeLabel.text = type.rawValue
         cell.unitLabel.text = "Bài \(indexPath.row + 1)"
         cell.detaillButtonDidSelected = {
-            self.moveDetailQuestionScreen(indexPath: indexPath)
+            //self.moveDetailQuestionScreen(indexPath: indexPath)
+            self.showAlert(indexPath: indexPath)
         }
         return cell
     }
@@ -165,6 +178,8 @@ extension ListQuestionViewController: GADRewardBasedVideoAdDelegate {
     
     func rewardBasedVideoAdDidClose(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
         print("Reward based video ad is closed.")
+        /// Load thông báo ở đây.
+        
         loadAdsVideo()
     }
     
