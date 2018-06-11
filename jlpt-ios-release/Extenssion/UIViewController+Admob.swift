@@ -10,7 +10,7 @@ import Foundation
 
 extension UIViewController {
     func earnCoins() {
-        Setting.coins = Setting.coins + 1
+        Setting.coins = Setting.coins + 2
     }
     
     func reductionCoins() {
