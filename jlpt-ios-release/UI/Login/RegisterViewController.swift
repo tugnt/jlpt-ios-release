@@ -109,3 +109,5 @@ class RegisterViewController: HidenKeyboardViewController {
         view.addSubview(alertModal)
     }
 }
+
+

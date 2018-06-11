@@ -13,6 +13,8 @@ import Firebase
 import GoogleSignIn
 import GoogleMobileAds
 import Siren
+import FirebaseMessaging
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -33,8 +35,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = StoryboardScene.StartAppViewController.startAppViewController.instantiate()
 
         /// - Firebase
+        UIApplication.shared.registerForRemoteNotifications()
         FirebaseApp.configure()
-
+        Messaging.messaging().delegate = self
+        configApplePush(application)
         /// - Google SignIn
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         
@@ -69,9 +73,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         checkVersionOnDidBecomeActive()
+        Messaging.messaging().connect { error in
+            print(error)
+        }
     }
 
     func applicationWillTerminate(_ application: UIApplication) {}
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        print("Co chay vao day khong")
+        Messaging.messaging().apnsToken = deviceToken
+    }
 }
 
 extension AppDelegate {
@@ -84,3 +96,39 @@ extension AppDelegate {
     }
 }
 
+extension AppDelegate: UNUserNotificationCenterDelegate, MessagingDelegate {
+    func configApplePush(_ application: UIApplication) {
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().delegate = self
+            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+            UNUserNotificationCenter.current().requestAuthorization(
+                options: authOptions,
+                completionHandler: {_, _ in })
+        } else {
+            let settings: UIUserNotificationSettings =
+                UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            application.registerUserNotificationSettings(settings)
+        }
+        
+        application.registerForRemoteNotifications()
+        
+        if let token = Messaging.messaging().fcmToken {
+            print("FCM token: \(token)")
+        }
+    }
+    
+    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
+        print("message")
+        print(messaging)
+    }
+    
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+        print("didReceiveRegistrationToken")
+        print(messaging)
+    }
+    
+    func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
+        print("didRefreshRegistrationToken")
+        print(messaging)
+    }
+}

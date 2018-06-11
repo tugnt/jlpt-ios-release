@@ -17,7 +17,7 @@ class AdmobsViewController: UIViewController {
     /// Reward Base Video -------------------------
     private var adRequestInProgress = false
     private var rewardBasedVideo: GADRewardBasedVideoAd?
-    private let rewardVideoUnitId = "ca-app-pub-3940256099942544/1712485313"
+    private let rewardVideoUnitId = "ca-app-pub-8167183150215759/3144550312"
     private let banderUnitId = ""
     private let insterstitialUnitId = ""
     var checkCallBack: (() -> Void)?
@@ -30,9 +30,8 @@ class AdmobsViewController: UIViewController {
     
     func loadAdsVideo() {
         let request = GADRequest()
-        request.testDevices = [kGADSimulatorID]
         if !adRequestInProgress && rewardBasedVideo?.isReady == false {
-            rewardBasedVideo?.load(GADRequest(), withAdUnitID: rewardVideoUnitId)
+            rewardBasedVideo?.load(request, withAdUnitID: rewardVideoUnitId)
             adRequestInProgress = true
         }
     }

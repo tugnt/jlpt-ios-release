@@ -366,6 +366,7 @@
 		DFCCB9B81F8F6E5000123170 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
 		DFCCB9E41F8F7A6300123170 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		DFFA0A3D20CE14B100F856E9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DFFA0A6520CE69A100F856E9 /* jlpt-ios-release.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "jlpt-ios-release.entitlements"; sourceTree = "<group>"; };
 		F3735D0CC6B88E0BABF48E98 /* Pods-jlpt-ios-releaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jlpt-ios-releaseTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-jlpt-ios-releaseTests/Pods-jlpt-ios-releaseTests.release.xcconfig"; sourceTree = "<group>"; };
 		F47A53587C0DC2615FF3BBD7 /* Pods_jlpt_ios_releaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jlpt_ios_releaseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -484,6 +485,7 @@
 		1A2B25CD1F512DFB00DFFD3A /* jlpt-ios-release */ = {
 			isa = PBXGroup;
 			children = (
+				DFFA0A6520CE69A100F856E9 /* jlpt-ios-release.entitlements */,
 				DF49239320A68E9600FA57BA /* Setting */,
 				1AF6E59B1FC09347005A2B16 /* Utils */,
 				1A1C969C1F9CA9D000A19C7B /* SCSiriWaveformView */,
@@ -924,6 +926,11 @@
 						DevelopmentTeam = 2SN4VSFT4Y;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 					1A2B25DE1F512DFB00DFFD3A = {
 						CreatedOnToolsVersion = 8.3.3;
