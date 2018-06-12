@@ -48,8 +48,8 @@ class ListQuestionViewController: ExpandingViewController {
             rewardBasedVideo?.present(fromRootViewController: self)
         } else {
             // Todo: Show alert or toast here
-            self.showAlertDialog(title: "Thông báo", content: "Có lỗi xảy ra. Bạn vui lòng thử lại sau.", titleButton: "OK", cancelAction: {
-                print("Show nothing")
+            self.showAlertDialog(title: "Thông báo", content: "Có lỗi xảy ra trong quá trình tải dữ liệu. Vui lòng chờ giây lát và thử lại sau.", titleButton: "OK", cancelAction: {
+                print("Error")
             })
         }
     }
@@ -77,6 +77,7 @@ class ListQuestionViewController: ExpandingViewController {
         startAnimationLoading()
         let request = UnitRequest(method: .get, level: level, type: type)
         ApiClient.instance.request(request: request, completion: { (result) in
+            self.stopAnimationLoading()
             switch result {
             case .failure:
                 self.collectionView?.isHidden = true
@@ -89,7 +90,6 @@ class ListQuestionViewController: ExpandingViewController {
                 }
                 self.collectionView?.reloadData()
             }
-            self.stopAnimationLoading()
         })
     }
     
@@ -148,16 +148,15 @@ extension ListQuestionViewController {
         cell.jlptTypeLabel.text = type.rawValue
         cell.unitLabel.text = "Bài \(indexPath.row + 1)"
         cell.detaillButtonDidSelected = {
-            //self.moveDetailQuestionScreen(indexPath: indexPath)
             self.showAlert(indexPath: indexPath)
         }
         return cell
     }
 }
 
+// MARK: GADRewardBasedVideoAdDelegate implementation
+
 extension ListQuestionViewController: GADRewardBasedVideoAdDelegate {
-    // MARK: GADRewardBasedVideoAdDelegate implementation
-    
     func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd, didFailToLoadWithError error: Error) {
         adRequestInProgress = false
         print("Reward based video ad failed to load: \(error.localizedDescription)")
@@ -178,8 +177,6 @@ extension ListQuestionViewController: GADRewardBasedVideoAdDelegate {
     
     func rewardBasedVideoAdDidClose(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
         print("Reward based video ad is closed.")
-        /// Load thông báo ở đây.
-        
         loadAdsVideo()
     }
     
