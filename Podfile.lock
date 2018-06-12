@@ -1,4 +1,7 @@
 PODS:
+  - Alamofire (4.7.2)
+  - AlamofireImage (3.3.1):
+    - Alamofire (~> 4.5)
   - Crashlytics (3.9.0):
     - Fabric (~> 1.7.0)
   - Fabric (1.7.0)
@@ -69,11 +72,21 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - Protobuf (3.5.0)
+  - Realm (3.6.0):
+    - Realm/Headers (= 3.6.0)
+  - Realm/Headers (3.6.0)
+  - RealmSwift (3.6.0):
+    - Realm (= 3.6.0)
+  - RxCocoa (4.1.2):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.1.2)
   - Siren (3.4.0)
   - SwiftGen (5.2.1)
   - SwiftLint (0.23.1)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.7)
+  - AlamofireImage (~> 3.3)
   - Crashlytics
   - Fabric
   - Firebase/Auth
@@ -83,12 +96,17 @@ DEPENDENCIES:
   - Google-Mobile-Ads-SDK
   - GoogleSignIn
   - Himotoki
+  - RealmSwift
+  - RxCocoa (~> 4.0)
+  - RxSwift (~> 4.0)
   - Siren
   - SwiftGen
   - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireImage
     - Crashlytics
     - Fabric
     - Firebase
@@ -107,11 +125,17 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - Protobuf
+    - Realm
+    - RealmSwift
+    - RxCocoa
+    - RxSwift
     - Siren
     - SwiftGen
     - SwiftLint
 
 SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
   Crashlytics: 64aad5dd97249dd3ff94b979fea140144590cdd3
   Fabric: e6be012366472553807dada21243c5ab8d904151
   Firebase: e08fb0795f35707aeb1d8a715c731c45bdf6fd56
@@ -130,10 +154,14 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
+  Realm: 08b464b462d4f31bbd4ba5f5a1c8722ef0a700b7
+  RealmSwift: 973e1499c44ab571f894c2c908e2db450be280c3
+  RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
   Siren: 5b8be41b5cd05aa3528303325966e919bd53e412
   SwiftGen: 444b4c467e512a4812b8a800d731643fd265139e
   SwiftLint: 1b670ce79284c76520f84060e87d645078fd32fa
 
-PODFILE CHECKSUM: ddff2c453eaaec9cd43693f57d10160def75c6cb
+PODFILE CHECKSUM: 1e702197cea4c6cd6b1036478803e4a2c99ce80a
 
 COCOAPODS: 1.5.3

@@ -18,6 +18,8 @@ default_platform :ios
 platform :ios do
   before_all do
     # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
+    ENV["CRASHLYTICS_API_TOKEN"] = "435abf63424356a66fa71e0949da0e0d9998ef68"
+    ENV["CRASHLYTICS_BUILD_SECRET"] = "60a8460854494e7528513624e0fb8585b63086bdaeb5818029bcb2efeb81b375"
     cocoapods
     carthage
   end
@@ -30,12 +32,15 @@ platform :ios do
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do
-    # match(type: "appstore") # more information: https://codesigning.guide
-    gym(scheme: "jlpt-ios-release") # Build your app - more options available
-    pilot
+    # build the release variant
+    # build_android_app(task: "assembleRelease")
 
-    # sh "your_script.sh"
-    # You can also use other beta testing services here (run `fastlane actions`)
+    # upload to Beta by Crashlytics
+    # crashlytics(
+    #   api_token: "435abf63424356a66fa71e0949da0e0d9998ef68",
+    #   build_secret: "60a8460854494e7528513624e0fb8585b63086bdaeb5818029bcb2efeb81b375"
+    # )
+    upload_for_fabric("Develop", "Jathena.ipa","developers")
   end
 
   desc "Deploy a new version to the App Store"
@@ -46,6 +51,35 @@ platform :ios do
     deliver(force: true)
     # frameit
   end
+
+  def upload_for_fabric(configuration, ipa_name, groups)
+      gym(
+          output_directory: "./build",
+          clean: true,
+          scheme: configuration,
+          configuration: configuration,
+          export_method: "ad-hoc",
+          export_options: {
+            compileBitcode: false
+          }
+      )
+
+      api_token = ENV['CRASHLYTICS_API_TOKEN']
+      build_secret = ENV['CRASHLYTICS_BUILD_SECRET']
+
+      # canagelog作成
+      create_release_note
+      changelog = "./latest_commit_log.txt"
+
+      crashlytics(
+          api_token: api_token,
+          build_secret: build_secret,
+          ipa_path: './build/' + ipa_name,
+          notes: File.read(changelog),
+          groups: groups
+      )
+    end
+
 
   # You can define as many lanes as you want
 
@@ -69,5 +103,5 @@ end
 # More information about multiple platforms in fastlane: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Platforms.md
 # All available actions: https://docs.fastlane.tools/actions
 
-# fastlane reports which actions are used. No personal data is recorded. 
+# fastlane reports which actions are used. No personal data is recorded.
 # Learn more at https://github.com/fastlane/fastlane#metrics
