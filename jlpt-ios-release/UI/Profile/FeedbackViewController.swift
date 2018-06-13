@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import RxCocoa
 import RxSwift
+import FirebaseDatabase
 
 class FeedbackViewController: HidenKeyboardViewController {
     @IBOutlet weak var titleFeedbackTextField: UITextField!

@@ -84,6 +84,7 @@ class ListDocumentViewController: UIViewController {
     }
 
     private func downloadDocument(documentUrl: String, cell: DocumentCell, fileName: String, completion: @escaping (Bool) -> Void) {
+        Setting.coins = Setting.coins - 2
         let destination: DownloadRequest.DownloadFileDestination = { _, _ in
             let savePath = FileHelper.createDocumentSavePath(documentUrl: documentUrl)
             return (savePath, [.removePreviousFile, .createIntermediateDirectories])

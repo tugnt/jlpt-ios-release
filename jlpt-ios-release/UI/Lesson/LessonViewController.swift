@@ -20,7 +20,13 @@ struct Section {
 class LessonViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     let categoryId = String(describing: CategoryViewCell.self)
     var sections: [Section] = LessonModel.lessonModel
-
+    lazy var listQuestionVc: ListQuestionViewController = {
+        let vc = StoryboardScene.ListJLPTQuestionViewController.listQuestionViewController.instantiate()
+        
+        vc.hidesBottomBarWhenPushed = true
+        vc.loadAdsVideo()
+        return vc
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpNavBar()
@@ -87,11 +93,9 @@ class LessonViewController: UICollectionViewController, UICollectionViewDelegate
 
     func cellSelected(_ level: LevelJLPT?, _ type: TypeJLPT?) {
         if level != nil {
-            let vc = StoryboardScene.ListJLPTQuestionViewController.listQuestionViewController.instantiate()
-            vc.type = type
-            vc.level = level
-            vc.hidesBottomBarWhenPushed = true
-            navigationController?.pushViewController(vc, animated: true)
+            listQuestionVc.type = type
+            listQuestionVc.level = level
+            navigationController?.pushViewController(listQuestionVc, animated: true)
         } else {
             let vc = StoryboardScene.ListHintViewController.listHintController.instantiate()
             vc.type = type
