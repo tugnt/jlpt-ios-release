@@ -8,3 +8,25 @@
 
 app_identifier "com.xxthaodan.jlpt-ios" # The bundle identifier of your app
 username "tungnguyenlee2t@gmail.com" # your Apple ID user
+
+# ipa
+ipa "./Build/Jathena.ipa"
+
+app_version "1.0.0"
+
+# Screen shorts 
+screenshots_path "./fastlane/screenshots"
+
+# Metadata path
+metadata_path "./fastlane/metadata"
+
+# Review information
+app_review_information(
+	first_name: “Nguyen”,
+	last_name: “Trong Tung“,
+	phone_number: "+81-80-3571-0407”,
+	email_address: “tungnguyenlee2t@gmail.com”,
+	demo_user: "",
+	demo_password: "",
+	notes: ""
+)

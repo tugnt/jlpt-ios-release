@@ -58,14 +58,9 @@
 		1A4E45FA1FC17CF8004FE155 /* GroupChatViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E45F81FC17CF8004FE155 /* GroupChatViewCell.swift */; };
 		1A4E45FB1FC17CF8004FE155 /* GroupChatViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A4E45F91FC17CF8004FE155 /* GroupChatViewCell.xib */; };
 		1A4E45FD1FC1B59F004FE155 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DFCCB9E41F8F7A6300123170 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1A4E46011FC1B59F004FE155 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DFCCB9B61F8F6E2000123170 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A4E46021FC1B59F004FE155 /* MarkdownView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A46AC541F89D2E1001FF467 /* MarkdownView.framework */; };
 		1A4E46031FC1B59F004FE155 /* MarkdownView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A46AC541F89D2E1001FF467 /* MarkdownView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1A4E46071FC1B59F004FE155 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A46AC451F895207001FF467 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1A4E46091FC1B59F004FE155 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A46AC441F895206001FF467 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A4E460D1FC1B59F004FE155 /* Lottie.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABBE6B41F76B98300A23796 /* Lottie.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1A4E460E1FC1B59F004FE155 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF4C22EE1F74B6C300B2CCC5 /* Alamofire.framework */; };
-		1A4E460F1FC1B59F004FE155 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DF4C22EE1F74B6C300B2CCC5 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A565F0B1FA574C500AAC7C8 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A565F0A1FA574C500AAC7C8 /* EmptyStateView.swift */; };
 		1A565F0D1FA5779900AAC7C8 /* UIViewController+NavTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A565F0C1FA5779900AAC7C8 /* UIViewController+NavTitle.swift */; };
 		1A565F0F1FA59B9700AAC7C8 /* UIViewController+EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A565F0E1FA59B9700AAC7C8 /* UIViewController+EmptyState.swift */; };
@@ -82,7 +77,6 @@
 		1A73C6B61FBF2695008C70AC /* MessageImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A73C6B51FBF2695008C70AC /* MessageImageViewCell.swift */; };
 		1A8168B0209628C200FA4B66 /* BannerAd.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A8168AE209628C200FA4B66 /* BannerAd.xib */; };
 		1A8168BB209B197500FA4B66 /* ExpandingCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8168BA209B197400FA4B66 /* ExpandingCollection.framework */; };
-		1A8E2A2B1FC5E096008E17F4 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8E2A2A1FC5E096008E17F4 /* AlamofireImage.framework */; };
 		1A8E2A2D1FC5F04F008E17F4 /* GroupChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8E2A2C1FC5F04F008E17F4 /* GroupChatModel.swift */; };
 		1A8E2A2F1FC69426008E17F4 /* FontAwesome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8E2A2E1FC69426008E17F4 /* FontAwesome.framework */; };
 		1A9133911F92006D007A6CF2 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9133901F92006D007A6CF2 /* FeedbackViewController.swift */; };
@@ -120,7 +114,6 @@
 		1AC50CF91F6F859E007D161C /* JLPTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC50CF81F6F859E007D161C /* JLPTService.swift */; };
 		1AC50CFB1F6F8798007D161C /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC50CFA1F6F8798007D161C /* Question.swift */; };
 		1AC50CFD1F6F9481007D161C /* ApiTets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC50CFC1F6F9481007D161C /* ApiTets.swift */; };
-		1AC8701D208C7F7C00B1F1DF /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFCCB9B61F8F6E2000123170 /* Realm.framework */; };
 		1AC870392092476600B1F1DF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AC870372092476600B1F1DF /* Localizable.strings */; };
 		1AC8703C2092893700B1F1DF /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8703B2092893700B1F1DF /* Localizable.swift */; };
 		1ACCFAE71FBC5FB700D37E18 /* MessageTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACCFAE61FBC5FB700D37E18 /* MessageTimeView.swift */; };
@@ -150,9 +143,6 @@
 		1AFD3E74209B450400EA5969 /* UnitQuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AFD3E72209B450300EA5969 /* UnitQuestionCell.xib */; };
 		8B0CA1C45B0ECB1BA7EE1328 /* Pods_jlpt_ios_releaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C08FD44EC6F84A16E0F0DAA8 /* Pods_jlpt_ios_releaseUITests.framework */; };
 		938DA3C645C6A3C03128E4F2 /* Pods_jlpt_ios_releaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F47A53587C0DC2615FF3BBD7 /* Pods_jlpt_ios_releaseTests.framework */; };
-		DF41C96E20A4209D00B02100 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A46AC451F895207001FF467 /* RxCocoa.framework */; };
-		DF41C96F20A4209D00B02100 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A46AC441F895206001FF467 /* RxSwift.framework */; };
-		DF41C97020A4263600B02100 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFAAFE31FE5227D00F701B7 /* RealmSwift.framework */; };
 		DF41C97120A4264500B02100 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFCCB9E41F8F7A6300123170 /* SnapKit.framework */; };
 		DF4634A120AFCD540091581D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF4634A020AFCD540091581D /* Assets.xcassets */; };
 		DF49239520A68EA300FA57BA /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF49239420A68EA300FA57BA /* Setting.swift */; };
@@ -184,11 +174,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1A4E46071FC1B59F004FE155 /* RxCocoa.framework in Embed Frameworks */,
 				1A4E46031FC1B59F004FE155 /* MarkdownView.framework in Embed Frameworks */,
-				1A4E460F1FC1B59F004FE155 /* Alamofire.framework in Embed Frameworks */,
-				1A4E46091FC1B59F004FE155 /* RxSwift.framework in Embed Frameworks */,
-				1A4E46011FC1B59F004FE155 /* Realm.framework in Embed Frameworks */,
 				1A4E460D1FC1B59F004FE155 /* Lottie.framework in Embed Frameworks */,
 				1A4E45FD1FC1B59F004FE155 /* SnapKit.framework in Embed Frameworks */,
 			);
@@ -377,14 +363,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF41C97120A4264500B02100 /* SnapKit.framework in Frameworks */,
-				DF41C97020A4263600B02100 /* RealmSwift.framework in Frameworks */,
-				DF41C96E20A4209D00B02100 /* RxCocoa.framework in Frameworks */,
-				DF41C96F20A4209D00B02100 /* RxSwift.framework in Frameworks */,
 				1A8168BB209B197500FA4B66 /* ExpandingCollection.framework in Frameworks */,
-				1AC8701D208C7F7C00B1F1DF /* Realm.framework in Frameworks */,
 				1A8E2A2F1FC69426008E17F4 /* FontAwesome.framework in Frameworks */,
-				1A8E2A2B1FC5E096008E17F4 /* AlamofireImage.framework in Frameworks */,
-				1A4E460E1FC1B59F004FE155 /* Alamofire.framework in Frameworks */,
 				1A4E46021FC1B59F004FE155 /* MarkdownView.framework in Frameworks */,
 				1A46AC491F89AD9A001FF467 /* CoreText.framework in Frameworks */,
 				1ABBE6B51F76B98300A23796 /* Lottie.framework in Frameworks */,
@@ -1136,16 +1116,10 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Lottie.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/MarkdownView.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/FontAwesome.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ExpandingCollection.framework",
 			);
 			name = Carthage;
@@ -1162,22 +1136,34 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-jlpt-ios-release/Pods-jlpt-ios-release-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Himotoki/Himotoki.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Siren/Siren.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Himotoki.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Siren.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -1577,7 +1563,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 2SN4VSFT4Y;
@@ -1590,8 +1576,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xxthaodan.jlpt-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "96858514-c118-4be9-b8f2-81b34c0474d5";
-				PROVISIONING_PROFILE_SPECIFIER = "Jlpt Dev";
+				PROVISIONING_PROFILE = "6d0c9ae0-67a4-47ff-b747-d0cfe65caf91";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.xxthaodan.jlpt-ios";
 				SWIFT_OBJC_BRIDGING_HEADER = "jlpt-ios-release/jlpt-ios-release-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -1605,7 +1591,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2SN4VSFT4Y;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1617,8 +1603,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xxthaodan.jlpt-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "96858514-c118-4be9-b8f2-81b34c0474d5";
-				PROVISIONING_PROFILE_SPECIFIER = "Jlpt Dev";
+				PROVISIONING_PROFILE = "6d0c9ae0-67a4-47ff-b747-d0cfe65caf91";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.xxthaodan.jlpt-ios";
 				SWIFT_OBJC_BRIDGING_HEADER = "jlpt-ios-release/jlpt-ios-release-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;

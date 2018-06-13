@@ -124,6 +124,7 @@ class ListQuestionViewController: ExpandingViewController {
         alert.cancelButtonTitle = "Cancel"
         alert.confirmButtonTitle = "Đồng ý"
         alert.confirmDidSelected = {
+            self.presentRewardAdVideo()
             self.moveDetailQuestionScreen(indexPath: indexPath)
         }
         view.addSubview(alert)

@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import RxSwift
 import RxCocoa
+import FirebaseDatabase
 
 class ChatRoomViewController: UICollectionViewController {
     static var account: Account!

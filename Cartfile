@@ -1,9 +1,5 @@
-github "Alamofire/Alamofire"
 github "airbnb/lottie-ios" "master"
-github "ReactiveX/RxSwift" ~> 3.0
 github "keitaoouchi/MarkdownView"
-github "realm/realm-cocoa"
 github "SnapKit/SnapKit" ~> 4.0.0
-github "Alamofire/AlamofireImage" ~> 3.3
 github "thii/FontAwesome.swift"
 github "Ramotion/expanding-collection"
