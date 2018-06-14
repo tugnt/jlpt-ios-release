@@ -31,8 +31,8 @@ target 'jlpt-ios-release' do
   pod 'Siren'  
   pod 'RealmSwift'
   pod 'AlamofireImage', '~> 3.3'
-  pod 'Alamofire', '~> 4.7'
   pod 'RxSwift',    '~> 4.0'
   pod 'RxCocoa',    '~> 4.0'
+  pod 'Alamofire', '~> 4.7'
 end
 

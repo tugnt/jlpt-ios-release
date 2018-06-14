@@ -69,7 +69,7 @@ class FeedbackViewController: HidenKeyboardViewController {
             (self.contentFeedbackTextView.text != "Nhập nội dung")
         }
         let allValid = Observable.combineLatest(titleValid, contentValid) { $0 && $1 }
-        allValid.bind(to: sendFeedbackBtn.rx.isEnabled).addDisposableTo(disposeBag)
+        allValid.bind(to: sendFeedbackBtn.rx.isEnabled).disposed(by: disposeBag)
     }
 }
 

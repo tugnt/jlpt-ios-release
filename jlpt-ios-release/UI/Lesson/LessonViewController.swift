@@ -22,7 +22,6 @@ class LessonViewController: UICollectionViewController, UICollectionViewDelegate
     var sections: [Section] = LessonModel.lessonModel
     lazy var listQuestionVc: ListQuestionViewController = {
         let vc = StoryboardScene.ListJLPTQuestionViewController.listQuestionViewController.instantiate()
-        
         vc.hidesBottomBarWhenPushed = true
         vc.loadAdsVideo()
         return vc

@@ -20,7 +20,11 @@ class NormalQuestionViewController: AdmobsViewController {
     private var solutionOfUser: [Int] = []
     private var point: Int = 0
     private var doneButton: UIBarButtonItem!
-    var isShowSolution: Bool = false
+    var isShowSolution: Bool = false {
+        didSet {
+            doneButton.isEnabled = !isShowSolution
+        }
+    }
     var isHasDoneButton: Bool = true
     var needLoadRequest: Bool = false
     var level: LevelJLPT!
@@ -113,11 +117,6 @@ class NormalQuestionViewController: AdmobsViewController {
         confirmDialog.confirmDidSelected = {
             self.isShowSolution = true
             self.tableView.reloadData()
-            self.presentRewardAdVideo()
-        }
-        confirmDialog.cancelDidSelected = {
-            self.point = 0
-            self.presentRewardAdVideo()
         }
     }
 }

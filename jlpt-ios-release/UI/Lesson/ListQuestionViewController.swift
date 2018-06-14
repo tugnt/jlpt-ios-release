@@ -18,7 +18,15 @@ class ListQuestionViewController: ExpandingViewController {
     private var adRequestInProgress = false
     private var rewardBasedVideo: GADRewardBasedVideoAd?
     private let rewardVideoUnitId = "ca-app-pub-8167183150215759/3144550312"
-
+    //
+    lazy var normalVC: NormalQuestionViewController = {
+        let vc = StoryboardScene.NomalQuestionViewController.normalQuestionViewController.instantiate()
+        vc.type = type
+        vc.level = level
+        vc.needLoadRequest = true
+        vc.loadAdsVideo()
+        return vc
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Danh sách đề thi"
@@ -108,12 +116,8 @@ class ListQuestionViewController: ExpandingViewController {
             navigationController?.pushViewController(vc, animated: true)
         } else {
             let unit = units[indexPath.row]
-            let vc = StoryboardScene.NomalQuestionViewController.normalQuestionViewController.instantiate()
-            vc.type = type
-            vc.level = level
-            vc.unit = unit
-            vc.needLoadRequest = true
-            navigationController?.pushViewController(vc, animated: true)
+            normalVC.unit = unit
+            navigationController?.pushViewController(normalVC, animated: true)
         }
     }
     

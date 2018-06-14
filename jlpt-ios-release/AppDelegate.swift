@@ -73,9 +73,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         checkVersionOnDidBecomeActive()
-        Messaging.messaging().connect { error in
-            print(error)
-        }
     }
 
     func applicationWillTerminate(_ application: UIApplication) {}

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		015EE0821FC6BED4EE298993 /* Pods_jlpt_ios_release.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8801B0FB1C671067D045E0C /* Pods_jlpt_ios_release.framework */; };
+		015EE0821FC6BED4EE298993 /* Pods_jlpt_ios_release.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8801B0FB1C671067D045E0C /* Pods_jlpt_ios_release.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1A079BA4200B43F30064C186 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A079BA3200B43F30064C186 /* Document.swift */; };
 		1A079BA6200BA59F0064C186 /* ShowDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A079BA5200BA59F0064C186 /* ShowDocumentViewController.swift */; };
 		1A079BA9200BA5BB0064C186 /* ShowDocumentViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A079BA7200BA5BB0064C186 /* ShowDocumentViewController.storyboard */; };
@@ -843,6 +843,7 @@
 				DF4C22F01F74B6D800B2CCC5 /* Carthage */,
 				1A4430EC1FAEE1EB00574954 /* Embed Frameworks */,
 				1A44315A1FB607B800574954 /* SwiftGen */,
+				DFB6F7E020D216E500D03EDB /* App Store */,
 			);
 			buildRules = (
 			);
@@ -1128,6 +1129,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		DFB6F7E020D216E500D03EDB /* App Store */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "App Store";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n\n# This script loops through the frameworks embedded in the application and\n# removes unused architectures.\nfind \"$APP_PATH\" -name '*.framework' -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\necho \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\n\nEXTRACTED_ARCHS=()\n\nfor ARCH in $ARCHS\ndo\necho \"Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME\"\nlipo -extract \"$ARCH\" \"$FRAMEWORK_EXECUTABLE_PATH\" -o \"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\"\nEXTRACTED_ARCHS+=(\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\")\ndone\n\necho \"Merging extracted architectures: ${ARCHS}\"\nlipo -o \"$FRAMEWORK_EXECUTABLE_PATH-merged\" -create \"${EXTRACTED_ARCHS[@]}\"\nrm \"${EXTRACTED_ARCHS[@]}\"\n\necho \"Replacing original executable with thinned version\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_EXECUTABLE_PATH-merged\" \"$FRAMEWORK_EXECUTABLE_PATH\"\n\ndone\n";
 		};
 		E58FFD8FCD879651A28CC8D9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
