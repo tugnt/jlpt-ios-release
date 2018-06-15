@@ -51,6 +51,8 @@ class NormalQuestionViewController: AdmobsViewController {
         super.viewWillAppear(animated)
         self.doneButton.isEnabled = true
         self.isShowSolution = false
+        self.solutionOfUser = []
+        for _ in questions { solutionOfUser.append(5) }
         self.tableView.reloadData()
     }
     

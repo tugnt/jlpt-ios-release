@@ -34,6 +34,10 @@ class ListQuestionViewController: ExpandingViewController {
         setUpExpandingCollectionView()
         fetchUnitData()
         configAdVideo()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         loadAdsVideo()
     }
     
@@ -56,7 +60,7 @@ class ListQuestionViewController: ExpandingViewController {
         } else {
             // Todo: Show alert or toast here
             self.showAlertDialog(title: "Thông báo", content: "Có lỗi xảy ra trong quá trình tải dữ liệu. Vui lòng chờ giây lát và thử lại sau.", titleButton: "OK", cancelAction: {
-                print("Error")
+                self.loadAdsVideo()
             })
         }
     }
@@ -103,7 +107,8 @@ class ListQuestionViewController: ExpandingViewController {
     private func moveDetailQuestionScreen(indexPath: IndexPath) {
         self.reductionCoins()
         if Setting.coins <= 0 {
-            presentRewardAdVideo()
+            // TODO: Để sang version tiếp theo
+            //presentRewardAdVideo()
         }
         if type == .listening {
             let vc = StoryboardScene.ListeningQuestionViewController.listeningQuestionViewController.instantiate()
@@ -127,7 +132,6 @@ class ListQuestionViewController: ExpandingViewController {
         alert.cancelButtonTitle = "Cancel"
         alert.confirmButtonTitle = "Đồng ý"
         alert.confirmDidSelected = {
-            self.presentRewardAdVideo()
             self.moveDetailQuestionScreen(indexPath: indexPath)
         }
         view.addSubview(alert)
