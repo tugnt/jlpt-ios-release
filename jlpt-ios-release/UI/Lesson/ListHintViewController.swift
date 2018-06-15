@@ -10,7 +10,7 @@ import UIKit
 import GoogleMobileAds
 
 struct HintTableData {
-    let listHint: [HintViewModel]
+    var listHint: [HintViewModel]
     init(response: JLPTHintResponse) {
         var tmpArr: [HintViewModel] = []
         response.hints.forEach { tmpArr.append(HintViewModel(response: $0)) }
@@ -55,7 +55,8 @@ class ListHintController: UIViewController {
         ApiClient.instance.request(request: request, completion: { (result) in
             switch result {
             case .success(let response):
-                let hintModel = HintTableData(response: response)
+                var hintModel = HintTableData(response: response)
+                hintModel.listHint = hintModel.listHint.sorted(by: { $0.unit < $1.unit })
                 if hintModel.listHint.count == 0 {
                     self.tableView.isHidden = true
                     self.addEmptyStateView()

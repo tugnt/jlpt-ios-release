@@ -27,7 +27,7 @@ class NormalQuestionViewController: AdmobsViewController {
     var unit: Int!
     var type: TypeJLPT!
     // For admob
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpNavBar()
@@ -45,6 +45,13 @@ class NormalQuestionViewController: AdmobsViewController {
         }
         isHasDoneButton ? addBarDoneButton() : ()
         neededLoadRequest()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.doneButton.isEnabled = true
+        self.isShowSolution = false
+        self.tableView.reloadData()
     }
     
     private func neededLoadRequest() {
@@ -72,7 +79,7 @@ class NormalQuestionViewController: AdmobsViewController {
             })
         }
     }
-
+    
     private func convertViewModelObject(questions: JLPTQuestionResponse) -> [NormalQuestionViewModel] {
         var normalQuestions: [NormalQuestionViewModel] = []
         for item in questions.jlptQuestion {
@@ -87,7 +94,7 @@ class NormalQuestionViewController: AdmobsViewController {
         }
         return normalQuestions.reversed()
     }
-
+    
     private func addBarDoneButton() {
         doneButton = UIBarButtonItem(title: "Hoàn thành", style: .done, target: self, action: #selector(checkAnswer))
         navigationItem.rightBarButtonItem = doneButton
@@ -112,12 +119,8 @@ class NormalQuestionViewController: AdmobsViewController {
         view.addSubview(confirmDialog)
         confirmDialog.confirmDidSelected = {
             self.isShowSolution = true
+            self.doneButton.isEnabled = false
             self.tableView.reloadData()
-            self.presentRewardAdVideo()
-        }
-        confirmDialog.cancelDidSelected = {
-            self.point = 0
-            self.presentRewardAdVideo()
         }
     }
 }
@@ -128,11 +131,11 @@ extension NormalQuestionViewController: UITableViewDelegate, UITableViewDataSour
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return questions.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? NomalQuestionCell else {
             return UITableViewCell()

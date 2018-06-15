@@ -81,7 +81,7 @@ class ChatRoomViewController: UICollectionViewController {
         
         let messageValid = inputTextView.rx.text.orEmpty.map({ _ in
             return (!self.inputTextView.text.isEmpty && self.inputTextView.textColor != .lightGray)
-        }).shareReplay(1)
+        }).share()
         messageValid.bind(to: sendButton.rx.isEnabled).disposed(by: disposeBag)
     }
     
