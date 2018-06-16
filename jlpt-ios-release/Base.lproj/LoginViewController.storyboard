@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="HelveticaNeueLights.ttc">
-            <string>HelveticaNeue-Light</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Login View Controller-->
         <scene sceneID="oX4-Hv-U4j">
@@ -72,17 +67,10 @@
                                                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 </textField>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="FH0-Dr-cLc">
-                                                    <rect key="frame" x="93" y="229" width="115" height="50"/>
+                                                    <rect key="frame" x="125.5" y="229" width="50" height="50"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xE9-zm-9Wh">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="50" id="Hvm-IL-mRC"/>
-                                                                <constraint firstAttribute="width" constant="50" id="XOR-bI-HXr"/>
-                                                            </constraints>
-                                                        </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Kq-ND-wZP">
-                                                            <rect key="frame" x="65" y="0.0" width="50" height="50"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="Fcb-on-HPv"/>
                                                                 <constraint firstAttribute="width" constant="50" id="zYa-oN-ctW"/>
@@ -177,7 +165,6 @@
                     <connections>
                         <outlet property="alertLabel" destination="iDG-77-DJA" id="FKw-rV-Q5L"/>
                         <outlet property="emailTextField" destination="O3h-A0-zqS" id="xp8-g6-flE"/>
-                        <outlet property="facebookBtn" destination="xE9-zm-9Wh" id="7LS-lH-fPc"/>
                         <outlet property="googleBtn" destination="7Kq-ND-wZP" id="XsT-Kc-Stx"/>
                         <outlet property="loginBtn" destination="hhM-Nd-hdS" id="Ryi-V3-F1m"/>
                         <outlet property="notYetAccountBtn" destination="68A-j0-Okz" id="dvl-dv-fRp"/>

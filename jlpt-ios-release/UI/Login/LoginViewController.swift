@@ -18,7 +18,6 @@ import FirebaseDatabase
 class LoginViewController: HidenKeyboardViewController, GIDSignInDelegate, GIDSignInUIDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passTextField: UITextField!
-    @IBOutlet weak var facebookBtn: UIButton!
     @IBOutlet weak var googleBtn: UIButton!
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var notYetAccountBtn: UIButton!
@@ -40,7 +39,6 @@ class LoginViewController: HidenKeyboardViewController, GIDSignInDelegate, GIDSi
         emailTextField.setUpLoginTextField()
         emailTextField.clipsToBounds = true
         passTextField.setUpLoginTextField()
-        facebookBtn.setBackgroundImage(Asset.facebook.image, for: .normal)
         googleBtn.setBackgroundImage(Asset.google.image, for: .normal)
         loginBtn.layer.cornerRadius = 3.0
         loginBtn.clipsToBounds = true
@@ -130,14 +128,14 @@ class LoginViewController: HidenKeyboardViewController, GIDSignInDelegate, GIDSi
         if user != nil {
             if let auth = user.authentication {
                 let credential = GoogleAuthProvider.credential(withIDToken: auth.idToken, accessToken: auth.accessToken)
-                Auth.auth().signIn(with: credential, completion: { (user, _) in
+                Auth.auth().signInAndRetrieveData(with: credential, completion: { (user, _) in
                     /** Save data in local
                      Save user data to Firebas
                      Move to main screen
                      TODO: Kiểm tra nếu đã tồn tại ở db thì sẽ ko ghi lại người dùng này nữa, tránh trùng lặp
                      */
                     self.ref = Database.database().reference()
-                    if let userInfo = user {
+                    if let userInfo = user?.user {
                         guard let photoUrl = userInfo.photoURL?.absoluteString else { return }
                         self.ref.child("users").child(userInfo.uid).setValue(["email": userInfo.email, "name": userInfo.displayName, "photoUrl": photoUrl], withCompletionBlock: { (err, _) in
                             if err != nil {
