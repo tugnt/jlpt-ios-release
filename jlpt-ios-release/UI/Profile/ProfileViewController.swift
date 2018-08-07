@@ -119,21 +119,22 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var controlller: UIViewController?
+        var controller: UIViewController?
         switch indexPath.row {
         case 0:
-            controlller = StoryboardScene.EditProfileViewController.editProfileViewController.instantiate()
+            controller = StoryboardScene.EditProfileViewController.editProfileViewController.instantiate()
         case 1:
-            controlller = StoryboardScene.FeedBackViewController.feedbackViewController.instantiate()
+            controller = StoryboardScene.FeedBackViewController.feedbackViewController.instantiate()
+            controller = StoryboardScene.AppodealBannerViewController.appodealBannerViewController.instantiate()
         case 2:
             // Todo: Không dùng notification controller nữa. Mà thay vào đó màn hình setting. 
-            controlller = StoryboardScene.NotificationViewController.notificationViewController.instantiate()
+            controller = StoryboardScene.NotificationViewController.notificationViewController.instantiate()
         case 3:
-            controlller = StoryboardScene.PrivacyPolicyViewController.privacyPolicyViewController.instantiate()
+            controller = StoryboardScene.PrivacyPolicyViewController.privacyPolicyViewController.instantiate()
         default:
             break
         }
-        guard let vc = controlller else { return }
+        guard let vc = controller else { return }
         vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }

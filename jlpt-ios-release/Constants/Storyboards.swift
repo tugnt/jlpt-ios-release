@@ -53,6 +53,11 @@ internal extension UIViewController {
 
 // swiftlint:disable explicit_type_interface identifier_name line_length type_body_length type_name
 internal enum StoryboardScene {
+  internal enum AppodealBannerViewController: StoryboardType {
+    internal static let storyboardName = "AppodealBannerViewController"
+
+    internal static let appodealBannerViewController = SceneType<jlpt_ios_release.AppodealBannerViewController>(storyboard: AppodealBannerViewController.self, identifier: "AppodealBannerViewController")
+  }
   internal enum ChatRoomViewController: StoryboardType {
     internal static let storyboardName = "ChatRoomViewController"
 

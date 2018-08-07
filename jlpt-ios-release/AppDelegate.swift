@@ -12,9 +12,10 @@ import Crashlytics
 import Firebase
 import GoogleSignIn
 import GoogleMobileAds
-import Siren
+//import Siren
 import FirebaseMessaging
 import UserNotifications
+import Appodeal
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -44,18 +45,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         /// Initialize the Google Mobile Ads SDK.
         GADMobileAds.configure(withApplicationID: Env.adsAppId)
-        configSiren()
+        //configSiren()
+        let adTypes: AppodealAdType = [.interstitial, .rewardedVideo]
+        Appodeal.initialize(withApiKey: "34da15fe76327e04510997fe6041ea9d33dade41ac0a5551", types:  adTypes)
         return true
     }
     
-    private func configSiren() {
-        let siren = Siren.shared
-        siren.appName = "Luyện thi JLPT"
-        siren.alertType = .force
-        siren.majorUpdateAlertType = .force
-        siren.forceLanguageLocalization = .vietnamese
-        siren.checkVersion(checkType: .immediately)
-    }
+//    private func configSiren() {
+//        let siren = Siren.shared
+//        siren.appName = "Luyện thi JLPT"
+//        siren.alertType = .force
+//        siren.majorUpdateAlertType = .force
+//        siren.forceLanguageLocalization = .vietnamese
+//        siren.checkVersion(checkType: .immediately)
+//    }
 
     @available(iOS 9.0, *)
     func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey: Any])
@@ -68,33 +71,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {}
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        checkVersionOnWillEnterForeground()
+        //checkVersionOnWillEnterForeground()
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        checkVersionOnDidBecomeActive()
-        Messaging.messaging().connect { error in
-            print(error)
-        }
+        //checkVersionOnDidBecomeActive()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {}
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        print("Co chay vao day khong")
         Messaging.messaging().apnsToken = deviceToken
     }
 }
 
-extension AppDelegate {
-    func checkVersionOnWillEnterForeground() {
-        Siren.shared.checkVersion(checkType: .immediately)
-    }
-    
-    func checkVersionOnDidBecomeActive() {
-        Siren.shared.checkVersion(checkType: .immediately)
-    }
-}
+//extension AppDelegate {
+//    func checkVersionOnWillEnterForeground() {
+//       // Siren.shared.checkVersion(checkType: .immediately)
+//    }
+//
+//    func checkVersionOnDidBecomeActive() {
+//        //Siren.shared.checkVersion(checkType: .immediately)
+//    }
+//}
 
 extension AppDelegate: UNUserNotificationCenterDelegate, MessagingDelegate {
     func configApplePush(_ application: UIApplication) {
