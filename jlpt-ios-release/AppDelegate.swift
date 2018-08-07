@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         /// Initialize the Google Mobile Ads SDK.
         GADMobileAds.configure(withApplicationID: Env.adsAppId)
-        configSiren()
+        //configSiren()
         return true
     }
     
@@ -68,14 +68,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {}
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        checkVersionOnWillEnterForeground()
+        //checkVersionOnWillEnterForeground()
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        checkVersionOnDidBecomeActive()
-        Messaging.messaging().connect { error in
-            print(error)
-        }
+        //checkVersionOnDidBecomeActive()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {}
@@ -86,15 +83,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
-extension AppDelegate {
-    func checkVersionOnWillEnterForeground() {
-        Siren.shared.checkVersion(checkType: .immediately)
-    }
-    
-    func checkVersionOnDidBecomeActive() {
-        Siren.shared.checkVersion(checkType: .immediately)
-    }
-}
+//extension AppDelegate {
+//    func checkVersionOnWillEnterForeground() {
+//        Siren.shared.checkVersion(checkType: .immediately)
+//    }
+//
+//    func checkVersionOnDidBecomeActive() {
+//        Siren.shared.checkVersion(checkType: .immediately)
+//    }
+//}
 
 extension AppDelegate: UNUserNotificationCenterDelegate, MessagingDelegate {
     func configApplePush(_ application: UIApplication) {

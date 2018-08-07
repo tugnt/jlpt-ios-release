@@ -124,7 +124,8 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             controlller = StoryboardScene.EditProfileViewController.editProfileViewController.instantiate()
         case 1:
-            controlller = StoryboardScene.FeedBackViewController.feedbackViewController.instantiate()
+            controlller = StoryboardScene.NendBannerViewController.nendBannerViewController.instantiate()
+                //StoryboardScene.FeedBackViewController.feedbackViewController.instantiate()
         case 2:
             // Todo: Không dùng notification controller nữa. Mà thay vào đó màn hình setting. 
             controlller = StoryboardScene.NotificationViewController.notificationViewController.instantiate()

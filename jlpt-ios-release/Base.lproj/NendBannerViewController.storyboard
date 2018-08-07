@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Nend Banner View Controller-->
+        <scene sceneID="iGX-Up-5zU">
+            <objects>
+                <viewController storyboardIdentifier="NendBannerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1WK-DW-bre" customClass="NendBannerViewController" customModule="jlpt_ios_release" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hEF-Cc-tSe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SNV-16-rD4" customClass="NADView">
+                                <rect key="frame" x="28" y="584" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SNV-16-rD4" firstAttribute="centerX" secondItem="hEF-Cc-tSe" secondAttribute="centerX" id="1yD-nb-KHt"/>
+                            <constraint firstItem="SNV-16-rD4" firstAttribute="top" secondItem="8I0-5E-TFf" secondAttribute="top" constant="564" id="5es-L1-ecp"/>
+                            <constraint firstItem="SNV-16-rD4" firstAttribute="leading" secondItem="8I0-5E-TFf" secondAttribute="leading" constant="28" id="KUg-5k-5cS"/>
+                            <constraint firstItem="8I0-5E-TFf" firstAttribute="bottom" secondItem="SNV-16-rD4" secondAttribute="bottom" constant="33" id="jNG-37-naf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8I0-5E-TFf"/>
+                    </view>
+                    <connections>
+                        <outlet property="nadView" destination="SNV-16-rD4" id="Ecu-Ph-9Gi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oky-jv-noL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="191" y="41"/>
+        </scene>
+    </scenes>
+</document>

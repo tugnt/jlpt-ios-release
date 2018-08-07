@@ -1657,6 +1657,16 @@ SOFTWARE.
 		</dict>
 		<dict>
 			<key>FooterText</key>
+			<string>Copyright 2018 F@N Communications, Inc. All Rights Reserved.</string>
+			<key>License</key>
+			<string>Copyright</string>
+			<key>Title</key>
+			<string>NendSDK_iOS</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
 			<string>This license applies to all parts of Protocol Buffers except the following:
 
   - Atomicops support for generic gcc, located in

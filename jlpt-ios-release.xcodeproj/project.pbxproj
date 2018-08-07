@@ -143,6 +143,8 @@
 		1AFD3E74209B450400EA5969 /* UnitQuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AFD3E72209B450300EA5969 /* UnitQuestionCell.xib */; };
 		8B0CA1C45B0ECB1BA7EE1328 /* Pods_jlpt_ios_releaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C08FD44EC6F84A16E0F0DAA8 /* Pods_jlpt_ios_releaseUITests.framework */; };
 		938DA3C645C6A3C03128E4F2 /* Pods_jlpt_ios_releaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F47A53587C0DC2615FF3BBD7 /* Pods_jlpt_ios_releaseTests.framework */; };
+		DF24AA3C21198220005CD296 /* NendBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF24AA3B21198220005CD296 /* NendBannerViewController.swift */; };
+		DF24AA3F2119823E005CD296 /* NendBannerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF24AA3D2119823E005CD296 /* NendBannerViewController.storyboard */; };
 		DF41C97120A4264500B02100 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFCCB9E41F8F7A6300123170 /* SnapKit.framework */; };
 		DF4634A120AFCD540091581D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF4634A020AFCD540091581D /* Assets.xcassets */; };
 		DF49239520A68EA300FA57BA /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF49239420A68EA300FA57BA /* Setting.swift */; };
@@ -343,6 +345,8 @@
 		BE9914B5E17E996F26F6DB4A /* Pods-jlpt-ios-releaseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jlpt-ios-releaseUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jlpt-ios-releaseUITests/Pods-jlpt-ios-releaseUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C08FD44EC6F84A16E0F0DAA8 /* Pods_jlpt_ios_releaseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jlpt_ios_releaseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8801B0FB1C671067D045E0C /* Pods_jlpt_ios_release.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jlpt_ios_release.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF24AA3B21198220005CD296 /* NendBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NendBannerViewController.swift; sourceTree = "<group>"; };
+		DF24AA3E2119823E005CD296 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = NendBannerViewController.storyboard; sourceTree = "<group>"; };
 		DF4634A020AFCD540091581D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF49239420A68EA300FA57BA /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		DF4C22EE1F74B6C300B2CCC5 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -586,6 +590,7 @@
 				1A079BA7200BA5BB0064C186 /* ShowDocumentViewController.storyboard */,
 				1A37ED4A202F58B8007361D1 /* DocumentDetailViewController.storyboard */,
 				1ABECC8F1F9C313B005056A5 /* xib */,
+				DF24AA3D2119823E005CD296 /* NendBannerViewController.storyboard */,
 			);
 			path = Base.lproj;
 			sourceTree = "<group>";
@@ -626,6 +631,7 @@
 		1AD738591F6D3B0200A4A1B9 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				DF24AA38211981F5005CD296 /* Nend */,
 				DF46349F20AFC06F0091581D /* Chat */,
 				DF46349E20AFC05E0091581D /* Document */,
 				1A2D06FF1F9E21E700CB3864 /* Login */,
@@ -796,6 +802,14 @@
 				C08FD44EC6F84A16E0F0DAA8 /* Pods_jlpt_ios_releaseUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DF24AA38211981F5005CD296 /* Nend */ = {
+			isa = PBXGroup;
+			children = (
+				DF24AA3B21198220005CD296 /* NendBannerViewController.swift */,
+			);
+			path = Nend;
 			sourceTree = "<group>";
 		};
 		DF46349E20AFC05E0091581D /* Document */ = {
@@ -989,6 +1003,7 @@
 				1A29EE0E208AC897009D1068 /* Color.xcassets in Resources */,
 				1A9133961F92017F007A6CF2 /* FeedBackViewController.storyboard in Resources */,
 				DF4634A120AFCD540091581D /* Assets.xcassets in Resources */,
+				DF24AA3F2119823E005CD296 /* NendBannerViewController.storyboard in Resources */,
 				1A2D070A1F9F706E00CB3864 /* RegisterViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1082,10 +1097,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-jlpt-ios-release/Pods-jlpt-ios-release-resources.sh",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_ROOT}/NendSDK_iOS/NendAd.embeddedframework/NendAd.framework/Resources/NendAdResource.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NendAdResource.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1243,6 +1260,7 @@
 				1A9133AB1F92426B007A6CF2 /* ChatRoomViewController.swift in Sources */,
 				1AC50CEF1F6E5A69007D161C /* ApiClient.swift in Sources */,
 				1A29EE0A20865AAC009D1068 /* FileHelper.swift in Sources */,
+				DF24AA3C21198220005CD296 /* NendBannerViewController.swift in Sources */,
 				1AD7386A1F6D3CD300A4A1B9 /* ProcessViewController.swift in Sources */,
 				1A92D5171FC889740079970E /* EditProfileCell.swift in Sources */,
 				1ACCFAE91FBC5FD900D37E18 /* SampleMessageData.swift in Sources */,
@@ -1440,6 +1458,14 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
+		DF24AA3D2119823E005CD296 /* NendBannerViewController.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DF24AA3E2119823E005CD296 /* Base */,
+			);
+			name = NendBannerViewController.storyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -1563,7 +1589,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 2SN4VSFT4Y;
@@ -1576,8 +1602,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xxthaodan.jlpt-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6d0c9ae0-67a4-47ff-b747-d0cfe65caf91";
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.xxthaodan.jlpt-ios";
+				PROVISIONING_PROFILE = "cb10f8a6-24e6-41ec-a951-9cc379df11da";
+				PROVISIONING_PROFILE_SPECIFIER = "Jathena Dev 1";
 				SWIFT_OBJC_BRIDGING_HEADER = "jlpt-ios-release/jlpt-ios-release-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -1591,7 +1617,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2SN4VSFT4Y;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1603,8 +1629,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xxthaodan.jlpt-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6d0c9ae0-67a4-47ff-b747-d0cfe65caf91";
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.xxthaodan.jlpt-ios";
+				PROVISIONING_PROFILE = "cb10f8a6-24e6-41ec-a951-9cc379df11da";
+				PROVISIONING_PROFILE_SPECIFIER = "Jathena Dev 1";
 				SWIFT_OBJC_BRIDGING_HEADER = "jlpt-ios-release/jlpt-ios-release-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;

@@ -71,6 +71,7 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - NendSDK_iOS (5.0.1)
   - Protobuf (3.5.0)
   - Realm (3.6.0):
     - Realm/Headers (= 3.6.0)
@@ -96,6 +97,7 @@ DEPENDENCIES:
   - Google-Mobile-Ads-SDK
   - GoogleSignIn
   - Himotoki
+  - NendSDK_iOS
   - RealmSwift
   - RxCocoa (~> 4.0)
   - RxSwift (~> 4.0)
@@ -124,6 +126,7 @@ SPEC REPOS:
     - Himotoki
     - leveldb-library
     - nanopb
+    - NendSDK_iOS
     - Protobuf
     - Realm
     - RealmSwift
@@ -153,6 +156,7 @@ SPEC CHECKSUMS:
   Himotoki: b09643fa5456d49bda43d0fb4e30dfa79e37f72f
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  NendSDK_iOS: 2077b94e7e0e20e2af17d4cff122e466108f2906
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   Realm: 08b464b462d4f31bbd4ba5f5a1c8722ef0a700b7
   RealmSwift: 973e1499c44ab571f894c2c908e2db450be280c3
@@ -162,6 +166,6 @@ SPEC CHECKSUMS:
   SwiftGen: 444b4c467e512a4812b8a800d731643fd265139e
   SwiftLint: 1b670ce79284c76520f84060e87d645078fd32fa
 
-PODFILE CHECKSUM: 4eff3966f9ef1fa6c289a347ce1018d99b1024c2
+PODFILE CHECKSUM: 3e027d6ad58411378c08e5d15f66feca1d6b62af
 
 COCOAPODS: 1.5.3

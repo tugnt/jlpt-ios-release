@@ -1542,6 +1542,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
+## NendSDK_iOS
+
+Copyright 2018 F@N Communications, Inc. All Rights Reserved.
+
 ## Protobuf
 
 This license applies to all parts of Protocol Buffers except the following:
