@@ -10,57 +10,53 @@ import UIKit
 import NendAd
 
 class NendBannerViewController: UIViewController, NADViewDelegate {
-    //private var nadView: NADView!
-    
-    @IBOutlet weak var nadView: NADView!
+    private var nadView: NADView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Nend"
-        nadView.setNendID("3320ecbecc5d913eceb0befe67375b71bbb48c4d", spotID: "886891")
+        var magnification = self.view.frame.size.width / 320
+        magnification = 50 * magnification
+        nadView = NADView(frame: CGRect(x: 0, y: self.view.frame.size.height - magnification ,
+                                        width: self.view.frame.size.width,
+                                        height: magnification), isAdjustAdSize: true)
+        nadView.setNendID("3320ecbecc5d913eceb0befe67375b71bbb48c4d",spotID: "886891")
         nadView.delegate = self
         nadView.load()
-        print("Chay vao day khong")
+        self.view.addSubview(nadView)
+        adTimer()
     }
     
-    func nadViewDidFinishLoad(_ adView: NADView!) {
-        print("delegate nadViewDidFinishLoad:")
+    var timer = Timer()
+    func adTimer(){
+        self.timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(adShow), userInfo: nil, repeats: false)
     }
     
-    func nadViewDidClickAd(_ adView: NADView!) {
-        print("delegate nadViewDidClickAd")
-    }
-    
-    func nadViewDidClickInformation(_ adView: NADView!) {
-        print("delegate nadViewDidClickInformation")
-    }
-    
-    func nadViewDidReceiveAd(_ adView: NADView!) {
-        print("delegate nadViewDidReceiveAd")
-    }
-    
-    func nadViewDidFail(toReceiveAd adView: NADView!) {
-        // separate by error
-        let error = adView.error as NSError
-        
-        switch (error.code) {
-        case NADViewErrorCode.NADVIEW_AD_SIZE_TOO_LARGE.hashValue:
-            // The ad size is larger than the banner size
+    @objc func adShow() {
+        let showResult = NADInterstitial.sharedInstance().showAd(from: self)
+        switch(showResult){
+        case .AD_SHOW_SUCCESS:
+            print("Quang cao thanh cong")
             break
-        case NADViewErrorCode.NADVIEW_INVALID_RESPONSE_TYPE.hashValue:
-            // Invalid banner type
+        case .AD_SHOW_ALREADY:
+            print("Da duoc hien thi")
             break
-        case NADViewErrorCode.NADVIEW_FAILED_AD_REQUEST.hashValue:
-            // Failed ad request
+        case .AD_FREQUENCY_NOT_REACHABLE:
+            print("Chưa đạt đến số lượng tần suất quảng cáo.")
             break
-        case NADViewErrorCode.NADVIEW_FAILED_AD_DOWNLOAD.hashValue:
-            // Failed ad download
+        case .AD_LOAD_INCOMPLETE:
+            print("Yêu cầu xổ số chưa được thực hiện hoặc đang chạy.")
             break
-        case NADViewErrorCode.NADVIEW_AD_SIZE_DIFFERENCES.hashValue:
-            // difference in ad sizes
+        case .AD_REQUEST_INCOMPLETE:
+            print("Tôi đã thất bại trong yêu cầu.")
             break
-        default:
+        case .AD_DOWNLOAD_INCOMPLETE:
+            print("Tải xuống quảng cáo chưa được hoàn thành.")
+            break
+        case .AD_CANNOT_DISPLAY:
+            print("Quảng cáo không thể được hiển thị trên ViewController đã chỉ định。")
             break
         }
     }
+    
+    
 }

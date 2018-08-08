@@ -15,6 +15,7 @@ import GoogleMobileAds
 import Siren
 import FirebaseMessaging
 import UserNotifications
+import NendAd
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -45,6 +46,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /// Initialize the Google Mobile Ads SDK.
         GADMobileAds.configure(withApplicationID: Env.adsAppId)
         //configSiren()
+        //NADInterstitial.sharedInstance().loadAdWithApiKey("管理画面より発行された apiKey",spotID: "管理画面
+        NADInterstitial.sharedInstance().loadAd(withApiKey: "3320ecbecc5d913eceb0befe67375b71bbb48c4d", spotId: "886891")
         return true
     }
     
