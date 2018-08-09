@@ -143,12 +143,23 @@
 		1AFD3E74209B450400EA5969 /* UnitQuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AFD3E72209B450300EA5969 /* UnitQuestionCell.xib */; };
 		8B0CA1C45B0ECB1BA7EE1328 /* Pods_jlpt_ios_releaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C08FD44EC6F84A16E0F0DAA8 /* Pods_jlpt_ios_releaseUITests.framework */; };
 		938DA3C645C6A3C03128E4F2 /* Pods_jlpt_ios_releaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F47A53587C0DC2615FF3BBD7 /* Pods_jlpt_ios_releaseTests.framework */; };
+		DF16EB5C211D30BA00161D19 /* AppodealInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF16EB5B211D30BA00161D19 /* AppodealInterstitialViewController.swift */; };
+		DF16EB5F211D30C800161D19 /* AppodealInterstitialViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF16EB5D211D30C800161D19 /* AppodealInterstitialViewController.storyboard */; };
 		DF24AA312119766D005CD296 /* AppodealBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF24AA302119766D005CD296 /* AppodealBannerViewController.swift */; };
 		DF24AA36211976AD005CD296 /* AppodealBannerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF24AA34211976AD005CD296 /* AppodealBannerViewController.storyboard */; };
 		DF41C97120A4264500B02100 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFCCB9E41F8F7A6300123170 /* SnapKit.framework */; };
 		DF4634A120AFCD540091581D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF4634A020AFCD540091581D /* Assets.xcassets */; };
 		DF49239520A68EA300FA57BA /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF49239420A68EA300FA57BA /* Setting.swift */; };
 		DF4C22F21F74CA7E00B2CCC5 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4C22F11F74CA7E00B2CCC5 /* Result.swift */; };
+		DF707FE9212E575800E7AA28 /* NativeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF707FE8212E575800E7AA28 /* NativeView.xib */; };
+		DF707FEB212E57AA00E7AA28 /* NativeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF707FEA212E57AA00E7AA28 /* NativeView.swift */; };
+		DF972E8E21338A3A0033A8DF /* NendBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF972E8D21338A3A0033A8DF /* NendBannerViewController.swift */; };
+		DFB8F55B212299F40040CACE /* FacebookInterstitialViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFB8F559212299F40040CACE /* FacebookInterstitialViewController.storyboard */; };
+		DFB8F55E21229A0D0040CACE /* FacebookInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB8F55D21229A0D0040CACE /* FacebookInterstitialViewController.swift */; };
+		DFB8F5612122AFB90040CACE /* AdmodRewardVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB8F5602122AFB90040CACE /* AdmodRewardVideoViewController.swift */; };
+		DFEE69CF212A4365006FEC58 /* AppodealRewardVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEE69CE212A4365006FEC58 /* AppodealRewardVideoViewController.swift */; };
+		DFEE69D1212A6256006FEC58 /* AppodealNativeAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEE69D0212A6256006FEC58 /* AppodealNativeAdViewController.swift */; };
+		DFEE69D4212A626B006FEC58 /* AppodealNativeAdViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFEE69D2212A626B006FEC58 /* AppodealNativeAdViewController.storyboard */; };
 		DFFA0A3E20CE14B100F856E9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DFFA0A3D20CE14B100F856E9 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -345,6 +356,8 @@
 		BE9914B5E17E996F26F6DB4A /* Pods-jlpt-ios-releaseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jlpt-ios-releaseUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jlpt-ios-releaseUITests/Pods-jlpt-ios-releaseUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C08FD44EC6F84A16E0F0DAA8 /* Pods_jlpt_ios_releaseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jlpt_ios_releaseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8801B0FB1C671067D045E0C /* Pods_jlpt_ios_release.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jlpt_ios_release.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF16EB5B211D30BA00161D19 /* AppodealInterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppodealInterstitialViewController.swift; sourceTree = "<group>"; };
+		DF16EB5E211D30C800161D19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = AppodealInterstitialViewController.storyboard; sourceTree = "<group>"; };
 		DF24AA302119766D005CD296 /* AppodealBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppodealBannerViewController.swift; sourceTree = "<group>"; };
 		DF24AA35211976AD005CD296 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = AppodealBannerViewController.storyboard; sourceTree = "<group>"; };
 		DF4634A020AFCD540091581D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -352,9 +365,18 @@
 		DF4C22EE1F74B6C300B2CCC5 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		DF4C22F11F74CA7E00B2CCC5 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		DF50CD572125A82AE1988C65 /* Pods-jlpt-ios-releaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jlpt-ios-releaseTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jlpt-ios-releaseTests/Pods-jlpt-ios-releaseTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DF707FE8212E575800E7AA28 /* NativeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NativeView.xib; sourceTree = "<group>"; };
+		DF707FEA212E57AA00E7AA28 /* NativeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeView.swift; sourceTree = "<group>"; };
+		DF972E8D21338A3A0033A8DF /* NendBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NendBannerViewController.swift; sourceTree = "<group>"; };
+		DFB8F55A212299F40040CACE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = FacebookInterstitialViewController.storyboard; sourceTree = "<group>"; };
+		DFB8F55D21229A0D0040CACE /* FacebookInterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookInterstitialViewController.swift; sourceTree = "<group>"; };
+		DFB8F5602122AFB90040CACE /* AdmodRewardVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmodRewardVideoViewController.swift; sourceTree = "<group>"; };
 		DFCCB9B61F8F6E2000123170 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		DFCCB9B81F8F6E5000123170 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
 		DFCCB9E41F8F7A6300123170 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		DFEE69CE212A4365006FEC58 /* AppodealRewardVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppodealRewardVideoViewController.swift; sourceTree = "<group>"; };
+		DFEE69D0212A6256006FEC58 /* AppodealNativeAdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppodealNativeAdViewController.swift; sourceTree = "<group>"; };
+		DFEE69D3212A626B006FEC58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = AppodealNativeAdViewController.storyboard; sourceTree = "<group>"; };
 		DFFA0A3D20CE14B100F856E9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DFFA0A6520CE69A100F856E9 /* jlpt-ios-release.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "jlpt-ios-release.entitlements"; sourceTree = "<group>"; };
 		F3735D0CC6B88E0BABF48E98 /* Pods-jlpt-ios-releaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jlpt-ios-releaseTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-jlpt-ios-releaseTests/Pods-jlpt-ios-releaseTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -591,6 +613,9 @@
 				1A37ED4A202F58B8007361D1 /* DocumentDetailViewController.storyboard */,
 				1ABECC8F1F9C313B005056A5 /* xib */,
 				DF24AA34211976AD005CD296 /* AppodealBannerViewController.storyboard */,
+				DF16EB5D211D30C800161D19 /* AppodealInterstitialViewController.storyboard */,
+				DFB8F559212299F40040CACE /* FacebookInterstitialViewController.storyboard */,
+				DFEE69D2212A626B006FEC58 /* AppodealNativeAdViewController.storyboard */,
 			);
 			path = Base.lproj;
 			sourceTree = "<group>";
@@ -624,6 +649,7 @@
 				1ABECC881F97B734005056A5 /* DocumentExpandHeaderView.xib */,
 				1A4431561FB4B22300574954 /* TDConfirmDialog.xib */,
 				1A20D5641FB68F2600B6002D /* TDIndicator.xib */,
+				DF707FE8212E575800E7AA28 /* NativeView.xib */,
 			);
 			path = xib;
 			sourceTree = "<group>";
@@ -631,7 +657,7 @@
 		1AD738591F6D3B0200A4A1B9 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				DF24AA37211976C9005CD296 /* Appodeal */,
+				DF972E8B21338A0A0033A8DF /* Ads */,
 				DF46349F20AFC06F0091581D /* Chat */,
 				DF46349E20AFC05E0091581D /* Document */,
 				1A2D06FF1F9E21E700CB3864 /* Login */,
@@ -808,6 +834,10 @@
 			isa = PBXGroup;
 			children = (
 				DF24AA302119766D005CD296 /* AppodealBannerViewController.swift */,
+				DF16EB5B211D30BA00161D19 /* AppodealInterstitialViewController.swift */,
+				DFEE69CE212A4365006FEC58 /* AppodealRewardVideoViewController.swift */,
+				DFEE69D0212A6256006FEC58 /* AppodealNativeAdViewController.swift */,
+				DF707FEA212E57AA00E7AA28 /* NativeView.swift */,
 			);
 			path = Appodeal;
 			sourceTree = "<group>";
@@ -838,6 +868,41 @@
 				DF49239420A68EA300FA57BA /* Setting.swift */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		DF972E8B21338A0A0033A8DF /* Ads */ = {
+			isa = PBXGroup;
+			children = (
+				DF972E8C21338A170033A8DF /* Nend */,
+				DFB8F55F2122AFA40040CACE /* Admob */,
+				DFB8F55C212299FD0040CACE /* Facebook */,
+				DF24AA37211976C9005CD296 /* Appodeal */,
+			);
+			path = Ads;
+			sourceTree = "<group>";
+		};
+		DF972E8C21338A170033A8DF /* Nend */ = {
+			isa = PBXGroup;
+			children = (
+				DF972E8D21338A3A0033A8DF /* NendBannerViewController.swift */,
+			);
+			path = Nend;
+			sourceTree = "<group>";
+		};
+		DFB8F55C212299FD0040CACE /* Facebook */ = {
+			isa = PBXGroup;
+			children = (
+				DFB8F55D21229A0D0040CACE /* FacebookInterstitialViewController.swift */,
+			);
+			path = Facebook;
+			sourceTree = "<group>";
+		};
+		DFB8F55F2122AFA40040CACE /* Admob */ = {
+			isa = PBXGroup;
+			children = (
+				DFB8F5602122AFB90040CACE /* AdmodRewardVideoViewController.swift */,
+			);
+			path = Admob;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -969,12 +1034,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A2667321FB6AFC400C9CFFB /* loader_ring.json in Resources */,
+				DFEE69D4212A626B006FEC58 /* AppodealNativeAdViewController.storyboard in Resources */,
 				1A37ED4C202F58B8007361D1 /* DocumentDetailViewController.storyboard in Resources */,
 				1A46AC5E1F8A5FBD001FF467 /* ListeningQuestionViewController.storyboard in Resources */,
+				DF707FE9212E575800E7AA28 /* NativeView.xib in Resources */,
 				1A079BA9200BA5BB0064C186 /* ShowDocumentViewController.storyboard in Resources */,
 				1A4431571FB4B22300574954 /* TDConfirmDialog.xib in Resources */,
 				1A9133A71F924120007A6CF2 /* DocumentsViewController.storyboard in Resources */,
 				1AD2FD711F80D98B00B5167D /* ListHintViewController.storyboard in Resources */,
+				DF16EB5F211D30C800161D19 /* AppodealInterstitialViewController.storyboard in Resources */,
 				1ABECC8E1F9BB778005056A5 /* DocumentTypeCell.xib in Resources */,
 				1A9133AE1F92427A007A6CF2 /* ChatRoomViewController.storyboard in Resources */,
 				1A8168B0209628C200FA4B66 /* BannerAd.xib in Resources */,
@@ -994,6 +1062,7 @@
 				1A3684A41F7D2DFC001FEF88 /* StartAppViewController.storyboard in Resources */,
 				1A65208A1F8813D500E21905 /* LaunchScreen.storyboard in Resources */,
 				1AD738761F6D3D8E00A4A1B9 /* ProfileViewController.storyboard in Resources */,
+				DFB8F55B212299F40040CACE /* FacebookInterstitialViewController.storyboard in Resources */,
 				1ABECC941F9C4DD5005056A5 /* ListDocumentOfTypeViewController.storyboard in Resources */,
 				1A6520761F87BEE000E21905 /* NomalQuestionViewController.storyboard in Resources */,
 				1ABECC8A1F97B734005056A5 /* DocumentExpandHeaderView.xib in Resources */,
@@ -1119,6 +1188,7 @@
 				"${PODS_ROOT}/Appodeal/APDTwitterMoPubAdapter.embeddedframework/Resources/MPUnmutedBtn@3x.png",
 				"${PODS_ROOT}/Appodeal/APDTwitterMoPubAdapter.embeddedframework/Resources/MRAID.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_ROOT}/NendSDK_iOS/NendAd.embeddedframework/NendAd.framework/Resources/NendAdResource.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -1145,6 +1215,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPUnmutedBtn@3x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MRAID.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NendAdResource.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1200,6 +1271,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Himotoki/Himotoki.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
@@ -1217,6 +1289,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Himotoki.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
@@ -1242,6 +1315,7 @@
 				1AFD3E73209B450400EA5969 /* UnitQuestionCell.swift in Sources */,
 				1A37ED2B202A0682007361D1 /* DocumentDetailViewController.swift in Sources */,
 				1A73C6B61FBF2695008C70AC /* MessageImageViewCell.swift in Sources */,
+				DFEE69CF212A4365006FEC58 /* AppodealRewardVideoViewController.swift in Sources */,
 				1AD738681F6D3CC400A4A1B9 /* ProfileViewController.swift in Sources */,
 				1AB04DB61F7630F600E5AC27 /* Hint.swift in Sources */,
 				1A73C6B11FBF1F91008C70AC /* CellConfigurator.swift in Sources */,
@@ -1274,9 +1348,12 @@
 				DF24AA312119766D005CD296 /* AppodealBannerViewController.swift in Sources */,
 				1AD2FD761F80D9CC00B5167D /* ListQuestionViewController.swift in Sources */,
 				1A5AA4561F9CB6F1005393FE /* WaveView.swift in Sources */,
+				DF16EB5C211D30BA00161D19 /* AppodealInterstitialViewController.swift in Sources */,
+				DFEE69D1212A6256006FEC58 /* AppodealNativeAdViewController.swift in Sources */,
 				1A2667291FB6A50500C9CFFB /* TDIndicator.swift in Sources */,
 				1A46AC391F892199001FF467 /* Storyboards.swift in Sources */,
 				1A46AC591F8A5E97001FF467 /* ListeningQuestionViewController.swift in Sources */,
+				DF707FEB212E57AA00E7AA28 /* NativeView.swift in Sources */,
 				1A44314D1FB32DB200574954 /* NormalQuestionViewModel.swift in Sources */,
 				1A3E516C1F8B1C9B0025F4E2 /* TDRadioButton.swift in Sources */,
 				1AEA8B2C1F6D4986005A7FC0 /* CategoryViewCell.swift in Sources */,
@@ -1292,12 +1369,14 @@
 				1A2D07041F9E24CB00CB3864 /* LoginViewController.swift in Sources */,
 				1AF3492C1FE55CDA008924CB /* HidenKeyboardViewController.swift in Sources */,
 				1A30115320ADB87A009CB7B0 /* UIViewController+Admob.swift in Sources */,
+				DF972E8E21338A3A0033A8DF /* NendBannerViewController.swift in Sources */,
 				1A37ED0B20124F9F007361D1 /* DownloadHelper.swift in Sources */,
 				1AC8703C2092893700B1F1DF /* Localizable.swift in Sources */,
 				1A4431531FB4B20700574954 /* TDConfirmDialog.swift in Sources */,
 				1A565F0D1FA5779900AAC7C8 /* UIViewController+NavTitle.swift in Sources */,
 				1A46AC5B1F8A5EA5001FF467 /* NomalQuestionViewController.swift in Sources */,
 				1A2D070C1F9F75AC00CB3864 /* RegisterViewController.swift in Sources */,
+				DFB8F55E21229A0D0040CACE /* FacebookInterstitialViewController.swift in Sources */,
 				1AC50CF11F6E5DB0007D161C /* ApiError.swift in Sources */,
 				1AD738661F6D3CB400A4A1B9 /* TabbarViewController.swift in Sources */,
 				1A9133AB1F92426B007A6CF2 /* ChatRoomViewController.swift in Sources */,
@@ -1319,6 +1398,7 @@
 				1A9133A21F92168C007A6CF2 /* NotificationViewController.swift in Sources */,
 				1A9133911F92006D007A6CF2 /* FeedbackViewController.swift in Sources */,
 				1A2B25CF1F512DFB00DFFD3A /* AppDelegate.swift in Sources */,
+				DFB8F5612122AFB90040CACE /* AdmodRewardVideoViewController.swift in Sources */,
 				1A079BA6200BA59F0064C186 /* ShowDocumentViewController.swift in Sources */,
 				1A9133931F920096007A6CF2 /* PrivacyPolicyViewController.swift in Sources */,
 				1A65207D1F87EF7100E21905 /* ListeningQuestionModel.swift in Sources */,
@@ -1500,12 +1580,36 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
+		DF16EB5D211D30C800161D19 /* AppodealInterstitialViewController.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DF16EB5E211D30C800161D19 /* Base */,
+			);
+			name = AppodealInterstitialViewController.storyboard;
+			sourceTree = "<group>";
+		};
 		DF24AA34211976AD005CD296 /* AppodealBannerViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				DF24AA35211976AD005CD296 /* Base */,
 			);
 			name = AppodealBannerViewController.storyboard;
+			sourceTree = "<group>";
+		};
+		DFB8F559212299F40040CACE /* FacebookInterstitialViewController.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DFB8F55A212299F40040CACE /* Base */,
+			);
+			name = FacebookInterstitialViewController.storyboard;
+			sourceTree = "<group>";
+		};
+		DFEE69D2212A626B006FEC58 /* AppodealNativeAdViewController.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DFEE69D3212A626B006FEC58 /* Base */,
+			);
+			name = AppodealNativeAdViewController.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

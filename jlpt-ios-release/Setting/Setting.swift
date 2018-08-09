@@ -48,4 +48,54 @@ struct Setting {
             UserDefaults.standard.synchronize()
         }
     }
+    
+    static var isAutoAppodeal: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: #function)
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: #function)
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
+    static var isAutoFacebookInterstitial: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: #function)
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: #function)
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
+    static var isAutoShowAds: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: #function)
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: #function)
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
+    static var numberNendBannerInpression: Int {
+        get {
+            return UserDefaults.standard.integer(forKey: #function)
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: #function)
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
+    static var isNendAutoLoad: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: #function)
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: #function)
+            UserDefaults.standard.synchronize()
+        }
+    }
 }

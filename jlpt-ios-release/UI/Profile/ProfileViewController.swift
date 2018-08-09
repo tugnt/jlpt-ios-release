@@ -42,9 +42,10 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     private let settingItems: [String] = ["Chi tiết tài khoản",
-                                          "Phản hồi và chia sẻ",
+                                          "Phản hồi và chia sẻ - Appodeal",
                                           "Cài đặt ứng dụng",
-                                          "Điều khoản sử dụng"]
+                                          "Điều khoản sử dụng",
+                                          "Facebook Interstitial"]
     private var isLogin: Bool! {
         didSet {
             self.logoutBtn.isEnabled = isLogin
@@ -61,7 +62,16 @@ class ProfileViewController: UIViewController {
         fetchAccountAndUpdateUI()
         logoutBtn.addTarget(self, action: #selector(handleAuth), for: .touchUpInside)
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if Setting.isNendAutoLoad {
+            let vc = NendBannerViewController()
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
     private func fetchAccountAndUpdateUI() {
         if Account.checkoutUserLogin() {
             guard let account = Account.getAccount() else { return }
@@ -76,7 +86,7 @@ class ProfileViewController: UIViewController {
             }
         }
     }
-
+    
     @objc private func handleAuth() {
         Account.checkoutUserLogin() ? logout() : moveLoginScreen()
     }
@@ -105,11 +115,11 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return settingItems.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         cell.accessoryType = .disclosureIndicator
@@ -117,20 +127,22 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.font = UIFont.systemFont(ofSize: 16, weight: .thin)
         return cell
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var controller: UIViewController?
         switch indexPath.row {
         case 0:
             controller = StoryboardScene.EditProfileViewController.editProfileViewController.instantiate()
         case 1:
-            controller = StoryboardScene.FeedBackViewController.feedbackViewController.instantiate()
-            controller = StoryboardScene.AppodealBannerViewController.appodealBannerViewController.instantiate()
+            controller = NendBannerViewController()
+            //StoryboardScene.AppodealNativeAdViewController.appodealNativeAdViewController.instantiate()
+        //StoryboardScene.AppodealInterstitialViewController.appodealInterstitialViewController.instantiate()
         case 2:
-            // Todo: Không dùng notification controller nữa. Mà thay vào đó màn hình setting. 
             controller = StoryboardScene.NotificationViewController.notificationViewController.instantiate()
         case 3:
             controller = StoryboardScene.PrivacyPolicyViewController.privacyPolicyViewController.instantiate()
+        case 4:
+            controller = StoryboardScene.FacebookInterstitialViewController.facebookInterstitialViewController.instantiate()
         default:
             break
         }

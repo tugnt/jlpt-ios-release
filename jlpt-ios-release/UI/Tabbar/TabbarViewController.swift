@@ -20,12 +20,10 @@ class TabbarViewController: UITabBarController, UITabBarControllerDelegate {
         let lessionController = LessonViewController(collectionViewLayout: layout)
 
         let ProfileViewController = StoryboardScene.ProfileViewController.profileViewController.instantiate()
-        let _ = StoryboardScene.ProcessViewController.processViewController.instantiate()
+        let progressController = StoryboardScene.ProcessViewController.processViewController.instantiate()
         let ChatRoomViewController = StoryboardScene.GroupChatViewController.groupChatViewController.instantiate()
         let DocumentViewController = StoryboardScene.DocumentsViewController.documentViewController.instantiate()
-//        createNavController("Tiến độ",
-//                            UIImage.fontAwesomeIcon(name: .areaChart, textColor: .black, size: tabIconSize),
-//                            viewController: progressController),
+    
         let tabIconSize = CGSize(width: 30, height: 30)
         self.viewControllers = [createNavController("Bài học",
                                                     UIImage.fontAwesomeIcon(name: .graduationCap, textColor: .black, size: tabIconSize),
@@ -38,7 +36,10 @@ class TabbarViewController: UITabBarController, UITabBarControllerDelegate {
                                                     viewController: ChatRoomViewController),
                                 createNavController("Tài khoản",
                                                     UIImage.fontAwesomeIcon(name: .userCircleO, textColor: .black, size: tabIconSize),
-                                                    viewController: ProfileViewController)]
+                                                    viewController: ProfileViewController),
+                                createNavController("Audience",
+                                                    UIImage.fontAwesomeIcon(name: .areaChart, textColor: .black, size: tabIconSize),
+                                                    viewController: progressController)]
     }
 
     private func createNavController(_ title: String, _ image: Image, viewController: UIViewController) -> UINavigationController {

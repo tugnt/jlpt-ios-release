@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Appodeal Native Ad View Controller-->
+        <scene sceneID="QDg-rQ-Ucg">
+            <objects>
+                <viewController storyboardIdentifier="AppodealNativeAdViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mQ7-9j-stf" customClass="AppodealNativeAdViewController" customModule="jlpt_ios_release" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MAv-6T-Uy2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WEM-oP-p07">
+                                <rect key="frame" x="28" y="140" width="318" height="407"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="407" id="CnH-Df-zwz"/>
+                                    <constraint firstAttribute="width" constant="318" id="oUO-nR-5Wn"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WEM-oP-p07" firstAttribute="centerY" secondItem="U1Q-40-84T" secondAttribute="centerY" id="TTk-BH-vk2"/>
+                            <constraint firstItem="WEM-oP-p07" firstAttribute="centerX" secondItem="U1Q-40-84T" secondAttribute="centerX" id="mtA-74-JFC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="U1Q-40-84T"/>
+                    </view>
+                    <connections>
+                        <outlet property="nativeAdContainer" destination="WEM-oP-p07" id="xYs-dJ-Ip7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5XV-b1-f8F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="447" y="-206"/>
+        </scene>
+    </scenes>
+</document>

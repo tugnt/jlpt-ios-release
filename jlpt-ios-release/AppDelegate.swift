@@ -16,6 +16,7 @@ import GoogleMobileAds
 import FirebaseMessaging
 import UserNotifications
 import Appodeal
+import NendAd
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -44,10 +45,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         
         /// Initialize the Google Mobile Ads SDK.
-        GADMobileAds.configure(withApplicationID: Env.adsAppId)
+        //GADMobileAds.configure(withApplicationID: Env.adsAppId)
         //configSiren()
-        let adTypes: AppodealAdType = [.interstitial, .rewardedVideo]
+        let adTypes: AppodealAdType = [.banner,.interstitial, .nonSkippableVideo, .nativeAd]
         Appodeal.initialize(withApiKey: "34da15fe76327e04510997fe6041ea9d33dade41ac0a5551", types:  adTypes)
+        NADInterstitial.sharedInstance().loadAd(withApiKey: "1bc76ffe7caa22967c2e0e2b0e7d464eda139b4c", spotId: "899712")
+        //sharedInstance().loadAdWithApiKey("",spotID: "管理画面より発行された spotID")
+        //GADMobileAds.configure(withApplicationID: "ca-app-pub-8167183150215759~7072389639")
         return true
     }
     

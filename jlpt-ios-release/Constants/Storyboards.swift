@@ -58,6 +58,16 @@ internal enum StoryboardScene {
 
     internal static let appodealBannerViewController = SceneType<jlpt_ios_release.AppodealBannerViewController>(storyboard: AppodealBannerViewController.self, identifier: "AppodealBannerViewController")
   }
+  internal enum AppodealInterstitialViewController: StoryboardType {
+    internal static let storyboardName = "AppodealInterstitialViewController"
+
+    internal static let appodealInterstitialViewController = SceneType<jlpt_ios_release.AppodealInterstitialViewController>(storyboard: AppodealInterstitialViewController.self, identifier: "AppodealInterstitialViewController")
+  }
+  internal enum AppodealNativeAdViewController: StoryboardType {
+    internal static let storyboardName = "AppodealNativeAdViewController"
+
+    internal static let appodealNativeAdViewController = SceneType<jlpt_ios_release.AppodealNativeAdViewController>(storyboard: AppodealNativeAdViewController.self, identifier: "AppodealNativeAdViewController")
+  }
   internal enum ChatRoomViewController: StoryboardType {
     internal static let storyboardName = "ChatRoomViewController"
 
@@ -77,6 +87,11 @@ internal enum StoryboardScene {
     internal static let storyboardName = "EditProfileViewController"
 
     internal static let editProfileViewController = SceneType<jlpt_ios_release.EditProfileViewController>(storyboard: EditProfileViewController.self, identifier: "EditProfileViewController")
+  }
+  internal enum FacebookInterstitialViewController: StoryboardType {
+    internal static let storyboardName = "FacebookInterstitialViewController"
+
+    internal static let facebookInterstitialViewController = SceneType<jlpt_ios_release.FacebookInterstitialViewController>(storyboard: FacebookInterstitialViewController.self, identifier: "FacebookInterstitialViewController")
   }
   internal enum FeedBackViewController: StoryboardType {
     internal static let storyboardName = "FeedBackViewController"

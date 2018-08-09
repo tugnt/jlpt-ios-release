@@ -6,7 +6,8 @@
 
 ![Swift Support](https://img.shields.io/badge/Swift-2.3%2C%203.1%2C%203.2%2C%204.1-orange.svg) ![Documentation](https://github.com/ArtSabintsev/Siren/blob/master/docs/badge.svg)
 
-[![CocoaPods](https://img.shields.io/cocoapods/v/Siren.svg)](https://cocoapods.org/pods/Siren)  [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![SwiftPM Compatible](https://img.shields.io/badge/SwiftPM-Compatible-brightgreen.svg)](https://swift.org/package-manager/) [![CocoaPods](https://img.shields.io/cocoapods/dt/Siren.svg)](https://cocoapods.org/pods/Siren) [![CocoaPods](https://img.shields.io/cocoapods/dm/Siren.svg)](https://cocoapods.org/pods/Siren)
+[![CocoaPods](https://img.shields.io/cocoapods/v/Siren.svg)](https://cocoapods.org/pods/Siren)  [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![SwiftPM Compatible](https://img.shields.io/badge/SwiftPM-Compatible-brightgreen.svg)](https://swift.org/package-manager/)
+
 ---
 
 ## Table of Contents
@@ -70,7 +71,7 @@ If a new version is available, an alert can be presented to the user informing t
 | 2.3  | swift2.3 | No  
 
 ### CocoaPods
-For Swift 4 support:
+For Swift 4.1 support:
 ```ruby
 pod 'Siren'
 ```
@@ -91,7 +92,7 @@ pod 'Siren', :git => 'https://github.com/ArtSabintsev/Siren.git', :branch => 'sw
 ```
 
 ### Carthage
-For Swift 4 support:
+For Swift 4.1 support:
 ```swift
 github "ArtSabintsev/Siren"
 ```
@@ -123,7 +124,7 @@ github "ArtSabintsev/Siren", "swift2.3"
 
 Below is some commented sample code. Adapt this to meet your app's needs.
 
-For a full list of optional settings/preferences, please refer to https://github.com/ArtSabintsev/Siren/blob/master/SirenExample/SirenExample/AppDelegate.swift in the Sample Project.
+For a full list of optional settings/preferences, please refer to https://github.com/ArtSabintsev/Siren/blob/master/Example/Example/AppDelegate.swift in the Sample Project.
 
 ```Swift
 func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -298,12 +299,12 @@ You can enable it like so:
 Siren.shared.forceLanguageLocalization = Siren.LanguageType.<#Siren.LanguageType_Enum_Value#>
 ```
 ## Device Compatibility
-If an app update is available, Siren checks to make sure that the version of iOS on the user's device is compatible with the one that is required by the app update. For example, if a user has iOS 9 installed on their device, but the app update requires iOS 10, an alert will not be shown. This takes care of the *false positive* case regarding app updating.
+If an app update is available, Siren checks to make sure that the version of iOS on the user's device is compatible with the one that is required by the app update. For example, if a user has iOS 10 installed on their device, but the app update requires iOS 11, an alert will not be shown. This takes care of the *false positive* case regarding app updating.
 
 ## Testing Siren
 Temporarily change the version string in Xcode (within the `.xcodeproj`) to an older version than the one that's currently available in the App Store. Afterwards, build and run your app, and you should see the alert.
 
-If you currently don't have an app in the store, change your bundleID to one that is already in the store. In the sample app packaged with this library, we use the [iTunes Connect Mobile](https://itunes.apple.com/us/app/itunes-connect/id376771144?mt=8) app's bundleID: `com.apple.itunesconnect.mobile`.
+If you currently don't have an app in the store, change your bundleID to one that is already in the store. In the sample app packaged with this library, we use the [App Store Connect](https://itunes.apple.com/app/id1234793120) app's bundleID: `com.apple.AppStoreConnect`.
 
 For your convenience, you may turn on debugging statements by setting `self.debugEnabled = true` before calling the `checkVersion()` method.
 

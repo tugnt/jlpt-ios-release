@@ -27,3 +27,14 @@ class Account: Object {
         return true
     }
 }
+
+
+class AdsReport: Object {
+    @objc dynamic var network: String = ""
+    @objc dynamic var numberRequest: Int = 0
+    @objc dynamic var impression: Int = 0
+    @objc dynamic var clicks: Int = 0
+    @objc dynamic var ctr: Double = 0.0
+    
+    //static getReport()
+}
