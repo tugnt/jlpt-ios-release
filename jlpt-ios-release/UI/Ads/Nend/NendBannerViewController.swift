@@ -34,7 +34,7 @@ class NendBannerViewController: UIViewController {
         nadView.delegate = self
         self.nadView.load()
         if Setting.isNendAutoLoad {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                 self.navigationController?.popViewController(animated: true)
             })
         }

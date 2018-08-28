@@ -36,5 +36,6 @@ target 'jlpt-ios-release' do
   pod 'RxCocoa',    '~> 4.0'
   pod 'Appodeal', '2.4.4.4-Beta'
   pod ‘NendSDK_iOS'
+  pod 'SmaatoSDK' 
 end
 

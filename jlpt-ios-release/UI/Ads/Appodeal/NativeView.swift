@@ -27,9 +27,9 @@ class NativeView: UIView {
     override func draw(_ rect: CGRect) {
         self.icon.layer.cornerRadius = 10.0
         self.icon.layer.masksToBounds = true
-        
         self.callToAction.layer.cornerRadius = 10.0
         self.callToAction.layer.masksToBounds = true
+
     }
 }
 
