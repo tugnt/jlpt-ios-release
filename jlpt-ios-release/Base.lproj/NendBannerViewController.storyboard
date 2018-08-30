@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Nend Banner View Controller-->
+        <scene sceneID="sSZ-8X-gdG">
+            <objects>
+                <viewController storyboardIdentifier="NendBannerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gs8-MN-0K3" customClass="NendBannerViewController" customModule="jlpt_ios_release" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bVe-p1-pSF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="e1e-7F-hHP">
+                                <rect key="frame" x="27.5" y="0.0" width="320" height="550"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QTc-pG-Fy9" customClass="NADView">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="1K8-bF-UiG"/>
+                                            <constraint firstAttribute="height" constant="50" id="COf-hG-Zcw"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s2h-75-njq" customClass="NADView">
+                                        <rect key="frame" x="0.0" y="50" width="320" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="3Ut-kV-Zpp"/>
+                                            <constraint firstAttribute="width" constant="320" id="plg-sT-Hlr"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h8m-pS-36W" customClass="NADView">
+                                        <rect key="frame" x="0.0" y="100" width="320" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="f1a-4d-zXE"/>
+                                            <constraint firstAttribute="width" constant="320" id="sWW-he-kzh"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qDx-F6-6gi" customClass="NADView">
+                                        <rect key="frame" x="0.0" y="150" width="320" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Qoo-7j-keS"/>
+                                            <constraint firstAttribute="width" constant="320" id="U33-e5-eXv"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sDg-TA-JD7" customClass="NADView">
+                                        <rect key="frame" x="0.0" y="200" width="320" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="QTQ-dj-9cK"/>
+                                            <constraint firstAttribute="height" constant="50" id="z9R-iC-HBb"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fFx-Ck-NaB" customClass="NADView">
+                                        <rect key="frame" x="0.0" y="250" width="320" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="c7S-gi-j0g"/>
+                                            <constraint firstAttribute="height" constant="50" id="xrh-PC-Y4E"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ug2-Nl-UPJ" customClass="NADView">
+                                        <rect key="frame" x="0.0" y="300" width="320" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="jKD-0a-ZNu"/>
+                                            <constraint firstAttribute="height" constant="50" id="pGD-Ae-B5x"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IW1-fz-4fk" customClass="NADView">
+                                        <rect key="frame" x="0.0" y="350" width="320" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="H8p-cN-PHj"/>
+                                            <constraint firstAttribute="width" constant="320" id="zgG-SB-req"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l7d-Ez-IbQ" customClass="NADView">
+                                        <rect key="frame" x="0.0" y="400" width="320" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="FWL-21-I9x"/>
+                                            <constraint firstAttribute="height" constant="50" id="RQW-yx-3Wb"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lgp-f0-hwC" customClass="NADView">
+                                        <rect key="frame" x="0.0" y="450" width="320" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="DOL-nK-YOe"/>
+                                            <constraint firstAttribute="height" constant="50" id="aIA-SJ-hDU"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ja-fS-BmT" customClass="NADView">
+                                        <rect key="frame" x="0.0" y="500" width="320" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="GMj-h7-FR1"/>
+                                            <constraint firstAttribute="width" constant="320" id="qOM-Y1-ogO"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="s2h-75-njq" firstAttribute="leading" secondItem="e1e-7F-hHP" secondAttribute="leading" id="0Jb-VQ-GeB"/>
+                                    <constraint firstAttribute="trailing" secondItem="l7d-Ez-IbQ" secondAttribute="trailing" id="0sy-aE-zSl"/>
+                                    <constraint firstItem="Ug2-Nl-UPJ" firstAttribute="top" secondItem="fFx-Ck-NaB" secondAttribute="bottom" id="1Wj-QW-BK1"/>
+                                    <constraint firstItem="QTc-pG-Fy9" firstAttribute="top" secondItem="e1e-7F-hHP" secondAttribute="top" id="1cJ-Tq-wPs"/>
+                                    <constraint firstItem="l7d-Ez-IbQ" firstAttribute="leading" secondItem="e1e-7F-hHP" secondAttribute="leading" id="1rB-SC-s38"/>
+                                    <constraint firstAttribute="trailing" secondItem="h8m-pS-36W" secondAttribute="trailing" id="327-S5-dB2"/>
+                                    <constraint firstItem="Ug2-Nl-UPJ" firstAttribute="leading" secondItem="e1e-7F-hHP" secondAttribute="leading" id="4DI-50-2eL"/>
+                                    <constraint firstItem="IW1-fz-4fk" firstAttribute="leading" secondItem="e1e-7F-hHP" secondAttribute="leading" id="674-qm-fN3"/>
+                                    <constraint firstItem="l7d-Ez-IbQ" firstAttribute="top" secondItem="IW1-fz-4fk" secondAttribute="bottom" id="6WD-sx-R8d"/>
+                                    <constraint firstItem="sDg-TA-JD7" firstAttribute="leading" secondItem="e1e-7F-hHP" secondAttribute="leading" id="6Y9-BR-NZO"/>
+                                    <constraint firstItem="Lgp-f0-hwC" firstAttribute="leading" secondItem="e1e-7F-hHP" secondAttribute="leading" id="7Pl-dj-9Hp"/>
+                                    <constraint firstItem="2Ja-fS-BmT" firstAttribute="leading" secondItem="e1e-7F-hHP" secondAttribute="leading" id="9GE-He-hkD"/>
+                                    <constraint firstItem="qDx-F6-6gi" firstAttribute="leading" secondItem="e1e-7F-hHP" secondAttribute="leading" id="9YV-Qp-BNd"/>
+                                    <constraint firstItem="2Ja-fS-BmT" firstAttribute="top" secondItem="Lgp-f0-hwC" secondAttribute="bottom" id="Ant-76-li9"/>
+                                    <constraint firstItem="qDx-F6-6gi" firstAttribute="top" secondItem="h8m-pS-36W" secondAttribute="bottom" id="BoH-zD-9gv"/>
+                                    <constraint firstItem="IW1-fz-4fk" firstAttribute="top" secondItem="Ug2-Nl-UPJ" secondAttribute="bottom" id="CAh-k2-Yd9"/>
+                                    <constraint firstAttribute="trailing" secondItem="fFx-Ck-NaB" secondAttribute="trailing" id="DS1-Co-Eri"/>
+                                    <constraint firstItem="Lgp-f0-hwC" firstAttribute="top" secondItem="l7d-Ez-IbQ" secondAttribute="bottom" id="EzQ-Cv-1G2"/>
+                                    <constraint firstAttribute="trailing" secondItem="QTc-pG-Fy9" secondAttribute="trailing" id="FmL-B0-bJf"/>
+                                    <constraint firstAttribute="trailing" secondItem="2Ja-fS-BmT" secondAttribute="trailing" id="I2j-5f-98s"/>
+                                    <constraint firstItem="l7d-Ez-IbQ" firstAttribute="top" secondItem="IW1-fz-4fk" secondAttribute="bottom" id="IFC-tZ-xWU"/>
+                                    <constraint firstItem="qDx-F6-6gi" firstAttribute="top" secondItem="h8m-pS-36W" secondAttribute="bottom" id="MWa-nN-0WB"/>
+                                    <constraint firstItem="s2h-75-njq" firstAttribute="top" secondItem="QTc-pG-Fy9" secondAttribute="bottom" id="MwD-RJ-AZh"/>
+                                    <constraint firstItem="IW1-fz-4fk" firstAttribute="top" secondItem="Ug2-Nl-UPJ" secondAttribute="bottom" id="PFV-Xk-Efm"/>
+                                    <constraint firstItem="QTc-pG-Fy9" firstAttribute="leading" secondItem="e1e-7F-hHP" secondAttribute="leading" id="PXu-H0-jDI"/>
+                                    <constraint firstItem="Ug2-Nl-UPJ" firstAttribute="top" secondItem="fFx-Ck-NaB" secondAttribute="bottom" id="QoQ-9D-zxn"/>
+                                    <constraint firstItem="2Ja-fS-BmT" firstAttribute="top" secondItem="Lgp-f0-hwC" secondAttribute="bottom" id="TWA-F7-F5G"/>
+                                    <constraint firstItem="sDg-TA-JD7" firstAttribute="top" secondItem="qDx-F6-6gi" secondAttribute="bottom" id="UqB-bL-R8G"/>
+                                    <constraint firstItem="fFx-Ck-NaB" firstAttribute="top" secondItem="sDg-TA-JD7" secondAttribute="bottom" id="YFy-sm-7Jt"/>
+                                    <constraint firstAttribute="trailing" secondItem="sDg-TA-JD7" secondAttribute="trailing" id="Zf3-uQ-clD"/>
+                                    <constraint firstItem="h8m-pS-36W" firstAttribute="leading" secondItem="e1e-7F-hHP" secondAttribute="leading" id="aFJ-b5-c4M"/>
+                                    <constraint firstAttribute="bottom" secondItem="2Ja-fS-BmT" secondAttribute="bottom" id="cVX-mf-Wja"/>
+                                    <constraint firstAttribute="trailing" secondItem="qDx-F6-6gi" secondAttribute="trailing" id="eWL-Hr-hNI"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ug2-Nl-UPJ" secondAttribute="trailing" id="fQF-h3-4MK"/>
+                                    <constraint firstItem="s2h-75-njq" firstAttribute="top" secondItem="QTc-pG-Fy9" secondAttribute="bottom" id="fbx-bF-tfk"/>
+                                    <constraint firstItem="sDg-TA-JD7" firstAttribute="top" secondItem="qDx-F6-6gi" secondAttribute="bottom" id="gVs-IX-jkd"/>
+                                    <constraint firstItem="h8m-pS-36W" firstAttribute="top" secondItem="s2h-75-njq" secondAttribute="bottom" id="ieN-44-1Gr"/>
+                                    <constraint firstItem="fFx-Ck-NaB" firstAttribute="leading" secondItem="e1e-7F-hHP" secondAttribute="leading" id="iiv-AA-teE"/>
+                                    <constraint firstItem="Lgp-f0-hwC" firstAttribute="top" secondItem="l7d-Ez-IbQ" secondAttribute="bottom" id="kcG-io-DVP"/>
+                                    <constraint firstAttribute="trailing" secondItem="Lgp-f0-hwC" secondAttribute="trailing" id="mHi-Rn-jKD"/>
+                                    <constraint firstItem="h8m-pS-36W" firstAttribute="top" secondItem="s2h-75-njq" secondAttribute="bottom" id="n6u-7L-Jxe"/>
+                                    <constraint firstAttribute="trailing" secondItem="s2h-75-njq" secondAttribute="trailing" id="rCt-Ll-wU1"/>
+                                    <constraint firstItem="fFx-Ck-NaB" firstAttribute="top" secondItem="sDg-TA-JD7" secondAttribute="bottom" id="uTm-9v-LQC"/>
+                                    <constraint firstAttribute="trailing" secondItem="IW1-fz-4fk" secondAttribute="trailing" id="ums-Fv-27A"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="e1e-7F-hHP" firstAttribute="centerX" secondItem="bxz-gD-jGc" secondAttribute="centerX" id="HbP-QW-dC7"/>
+                            <constraint firstItem="e1e-7F-hHP" firstAttribute="top" secondItem="bVe-p1-pSF" secondAttribute="top" id="x6Y-Vs-Bbk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bxz-gD-jGc"/>
+                    </view>
+                    <connections>
+                        <outletCollection property="nendBannerViews" destination="IW1-fz-4fk" collectionClass="NSMutableArray" id="SSX-R6-Trd"/>
+                        <outletCollection property="nendBannerViews" destination="s2h-75-njq" collectionClass="NSMutableArray" id="lyr-61-ZEk"/>
+                        <outletCollection property="nendBannerViews" destination="h8m-pS-36W" collectionClass="NSMutableArray" id="Pw8-NS-qQ0"/>
+                        <outletCollection property="nendBannerViews" destination="qDx-F6-6gi" collectionClass="NSMutableArray" id="eiq-bn-Zaw"/>
+                        <outletCollection property="nendBannerViews" destination="sDg-TA-JD7" collectionClass="NSMutableArray" id="BvM-L5-Xjm"/>
+                        <outletCollection property="nendBannerViews" destination="fFx-Ck-NaB" collectionClass="NSMutableArray" id="fp9-j7-gZi"/>
+                        <outletCollection property="nendBannerViews" destination="Ug2-Nl-UPJ" collectionClass="NSMutableArray" id="lm2-CN-fd9"/>
+                        <outletCollection property="nendBannerViews" destination="l7d-Ez-IbQ" collectionClass="NSMutableArray" id="LGY-CA-y1k"/>
+                        <outletCollection property="nendBannerViews" destination="Lgp-f0-hwC" collectionClass="NSMutableArray" id="KIq-82-WMp"/>
+                        <outletCollection property="nendBannerViews" destination="2Ja-fS-BmT" collectionClass="NSMutableArray" id="I2b-M3-tCk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YQS-c7-G61" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="69.599999999999994" y="-60.719640179910051"/>
+        </scene>
+    </scenes>
+</document>

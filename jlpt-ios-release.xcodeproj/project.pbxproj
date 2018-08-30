@@ -151,6 +151,8 @@
 		DF4634A120AFCD540091581D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF4634A020AFCD540091581D /* Assets.xcassets */; };
 		DF49239520A68EA300FA57BA /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF49239420A68EA300FA57BA /* Setting.swift */; };
 		DF49C2E42134F48600366021 /* SmaatoInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF49C2E32134F48600366021 /* SmaatoInterstitialViewController.swift */; };
+		DF49C2EA213795CA00366021 /* NendBannerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF49C2E9213795CA00366021 /* NendBannerViewController.storyboard */; };
+		DF49C2EC2137E83000366021 /* NendRewardVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF49C2EB2137E83000366021 /* NendRewardVideoViewController.swift */; };
 		DF4C22F21F74CA7E00B2CCC5 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4C22F11F74CA7E00B2CCC5 /* Result.swift */; };
 		DF707FE9212E575800E7AA28 /* NativeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF707FE8212E575800E7AA28 /* NativeView.xib */; };
 		DF707FEB212E57AA00E7AA28 /* NativeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF707FEA212E57AA00E7AA28 /* NativeView.swift */; };
@@ -364,6 +366,8 @@
 		DF4634A020AFCD540091581D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF49239420A68EA300FA57BA /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		DF49C2E32134F48600366021 /* SmaatoInterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmaatoInterstitialViewController.swift; sourceTree = "<group>"; };
+		DF49C2E9213795CA00366021 /* NendBannerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NendBannerViewController.storyboard; sourceTree = "<group>"; };
+		DF49C2EB2137E83000366021 /* NendRewardVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NendRewardVideoViewController.swift; sourceTree = "<group>"; };
 		DF4C22EE1F74B6C300B2CCC5 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		DF4C22F11F74CA7E00B2CCC5 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		DF50CD572125A82AE1988C65 /* Pods-jlpt-ios-releaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jlpt-ios-releaseTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jlpt-ios-releaseTests/Pods-jlpt-ios-releaseTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -592,6 +596,7 @@
 		1A6520851F8813D400E21905 /* Base.lproj */ = {
 			isa = PBXGroup;
 			children = (
+				DF49C2E9213795CA00366021 /* NendBannerViewController.storyboard */,
 				1A9133AC1F92427A007A6CF2 /* ChatRoomViewController.storyboard */,
 				1A9133A51F924120007A6CF2 /* DocumentsViewController.storyboard */,
 				1A91339A1F9215C6007A6CF2 /* EditProfileViewController.storyboard */,
@@ -896,6 +901,7 @@
 			isa = PBXGroup;
 			children = (
 				DF972E8D21338A3A0033A8DF /* NendBannerViewController.swift */,
+				DF49C2EB2137E83000366021 /* NendRewardVideoViewController.swift */,
 			);
 			path = Nend;
 			sourceTree = "<group>";
@@ -1050,6 +1056,7 @@
 				1A46AC5E1F8A5FBD001FF467 /* ListeningQuestionViewController.storyboard in Resources */,
 				DF707FE9212E575800E7AA28 /* NativeView.xib in Resources */,
 				1A079BA9200BA5BB0064C186 /* ShowDocumentViewController.storyboard in Resources */,
+				DF49C2EA213795CA00366021 /* NendBannerViewController.storyboard in Resources */,
 				1A4431571FB4B22300574954 /* TDConfirmDialog.xib in Resources */,
 				1A9133A71F924120007A6CF2 /* DocumentsViewController.storyboard in Resources */,
 				1AD2FD711F80D98B00B5167D /* ListHintViewController.storyboard in Resources */,
@@ -1359,6 +1366,7 @@
 				1A65206F1F87B96500E21905 /* HintViewModel.swift in Sources */,
 				DF24AA312119766D005CD296 /* AppodealBannerViewController.swift in Sources */,
 				1AD2FD761F80D9CC00B5167D /* ListQuestionViewController.swift in Sources */,
+				DF49C2EC2137E83000366021 /* NendRewardVideoViewController.swift in Sources */,
 				1A5AA4561F9CB6F1005393FE /* WaveView.swift in Sources */,
 				DF16EB5C211D30BA00161D19 /* AppodealInterstitialViewController.swift in Sources */,
 				DFEE69D1212A6256006FEC58 /* AppodealNativeAdViewController.swift in Sources */,

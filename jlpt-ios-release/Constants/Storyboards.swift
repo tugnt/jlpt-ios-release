@@ -133,6 +133,11 @@ internal enum StoryboardScene {
 
     internal static let loginViewController = SceneType<jlpt_ios_release.LoginViewController>(storyboard: LoginViewController.self, identifier: "LoginViewController")
   }
+  internal enum NendBannerViewController: StoryboardType {
+    internal static let storyboardName = "NendBannerViewController"
+
+    internal static let nendBannerViewController = SceneType<jlpt_ios_release.NendBannerViewController>(storyboard: NendBannerViewController.self, identifier: "NendBannerViewController")
+  }
   internal enum NomalQuestionViewController: StoryboardType {
     internal static let storyboardName = "NomalQuestionViewController"
 

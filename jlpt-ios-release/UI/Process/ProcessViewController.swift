@@ -13,6 +13,7 @@ class ProcessViewController: UIViewController {
     @IBOutlet weak var autoFacebookInterstitialSwitch: UISwitch!
     @IBOutlet weak var autoShowAdsSwitch: UISwitch!
     @IBOutlet weak var autoNendBanner: UISwitch!
+    @IBOutlet weak var autoNendRewardVideo: UISwitch!
     
     @IBOutlet var autoAdSwitches: [UISwitch]!
     
@@ -64,5 +65,10 @@ class ProcessViewController: UIViewController {
     @IBAction func nendAutoDidSwitched(_ sender: Any) {
         disableOtherSwitch(autoSwitch: autoNendBanner)
         Setting.isNendAutoLoad = autoNendBanner.isOn
+    }
+    
+    @IBAction func nendRewardedVideoDidSelect(_ sender: Any) {
+        disableOtherSwitch(autoSwitch: autoNendBanner)
+        Setting.isNendRewardVideo = autoNendRewardVideo.isOn
     }
 }

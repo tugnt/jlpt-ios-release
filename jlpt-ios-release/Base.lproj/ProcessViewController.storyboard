@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oVh-vI-Uiz">
-                                <rect key="frame" x="46" y="40" width="283" height="154"/>
+                                <rect key="frame" x="46" y="40" width="283" height="195"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FlF-9E-K1w">
                                         <rect key="frame" x="0.0" y="0.0" width="283" height="31"/>
@@ -98,10 +98,30 @@
                                             </switch>
                                         </subviews>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W3Y-sG-V0Z">
+                                        <rect key="frame" x="0.0" y="164" width="283" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nend Reward Video" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5nG-Fs-A9N">
+                                                <rect key="frame" x="0.0" y="0.0" width="234" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="t9O-5m-Y3P">
+                                                <rect key="frame" x="234" y="0.0" width="51" height="31"/>
+                                                <color key="onTintColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <connections>
+                                                    <action selector="autoShowAdsDidSwitch:" destination="Gjr-8X-iXR" eventType="valueChanged" id="lvP-BM-li2"/>
+                                                    <action selector="nendAutoDidSwitched:" destination="Gjr-8X-iXR" eventType="valueChanged" id="gSc-PW-Ax1"/>
+                                                    <action selector="nendRewardedVideoDidSelect:" destination="Gjr-8X-iXR" eventType="valueChanged" id="uTF-wq-1Of"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWM-uK-yHn">
-                                <rect key="frame" x="66" y="214" width="243" height="40"/>
+                                <rect key="frame" x="66" y="255" width="243" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="bwf-Li-4pJ"/>
                                 </constraints>
@@ -122,12 +142,14 @@
                         <outlet property="autoAppodealSwitch" destination="KAu-tx-Ivs" id="47D-uw-Gwz"/>
                         <outlet property="autoFacebookInterstitialSwitch" destination="ek7-aA-IDL" id="n9D-i8-F9D"/>
                         <outlet property="autoNendBanner" destination="eM9-fS-Nw3" id="yA9-mp-IVo"/>
+                        <outlet property="autoNendRewardVideo" destination="t9O-5m-Y3P" id="HCF-Go-QEK"/>
                         <outlet property="autoShowAdsSwitch" destination="urL-Uz-rkH" id="dHi-gK-Ddb"/>
                         <outlet property="reportButton" destination="YWM-uK-yHn" id="Nex-3V-k1h"/>
                         <outletCollection property="autoAdSwitches" destination="KAu-tx-Ivs" collectionClass="NSMutableArray" id="iqi-zW-BFa"/>
                         <outletCollection property="autoAdSwitches" destination="ek7-aA-IDL" collectionClass="NSMutableArray" id="PJh-ZU-mM3"/>
                         <outletCollection property="autoAdSwitches" destination="urL-Uz-rkH" collectionClass="NSMutableArray" id="qdx-dl-Pjc"/>
                         <outletCollection property="autoAdSwitches" destination="eM9-fS-Nw3" collectionClass="NSMutableArray" id="MyE-Fy-rIq"/>
+                        <outletCollection property="autoAdSwitches" destination="t9O-5m-Y3P" collectionClass="NSMutableArray" id="PVT-Zc-GJU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HST-66-zyt" userLabel="First Responder" sceneMemberID="firstResponder"/>

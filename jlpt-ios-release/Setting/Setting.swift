@@ -98,4 +98,24 @@ struct Setting {
             UserDefaults.standard.synchronize()
         }
     }
+    
+    static var isNendRewardVideo: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: #function)
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: #function)
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
+    static var numberRewardVideo: Int {
+        get {
+            return UserDefaults.standard.integer(forKey: #function)
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: #function)
+            UserDefaults.standard.synchronize()
+        }
+    }
 }

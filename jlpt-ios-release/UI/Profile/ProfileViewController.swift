@@ -42,8 +42,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     private let settingItems: [String] = ["Chi tiết tài khoản",
-                                          "Phản hồi và chia sẻ - Appodeal",
-                                          "Cài đặt ứng dụng",
+                                          "Nend Banner",
+                                          "Nend Reward Video",
                                           "Điều khoản sử dụng",
                                           "Facebook Interstitial"]
     private var isLogin: Bool! {
@@ -68,7 +68,11 @@ class ProfileViewController: UIViewController {
         if Setting.isNendAutoLoad {
             let vc = NendBannerViewController()
             vc.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.pushViewController(vc, animated: false)
+        } else if Setting.isNendRewardVideo {
+            let vc = NendRewardVideoViewController()
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: false)
         }
     }
     
@@ -135,10 +139,10 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             controller = StoryboardScene.EditProfileViewController.editProfileViewController.instantiate()
         case 1:
             controller = NendBannerViewController()
-            //StoryboardScene.AppodealNativeAdViewController.appodealNativeAdViewController.instantiate()
-        //StoryboardScene.AppodealInterstitialViewController.appodealInterstitialViewController.instantiate()
+            break
         case 2:
-            controller = StoryboardScene.NotificationViewController.notificationViewController.instantiate()
+            controller = NendRewardVideoViewController()
+                //StoryboardScene.NotificationViewController.notificationViewController.instantiate()
         case 3:
             controller = StoryboardScene.PrivacyPolicyViewController.privacyPolicyViewController.instantiate()
         case 4:
